@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Kairos.ai - Innovative AI applications and intelligent systems that help you work smarter and live better.">
+    <title>Kairos.ai - Unlock New Possibilities with AI</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-wrapper">
+                <div class="logo">
+                    <div class="logo-container">
+                        <img src="logo.png" alt="Kairos.ai logo" class="logo-image">
+                        <span class="logo-text">Kairos<span class="logo-accent">.ai</span></span>
+                    </div>
+                </div>
+                <ul class="nav-menu">
+                    <li><a href="#home" class="nav-link" data-i18n="nav.home">Home</a></li>
+                    <li><a href="#services" class="nav-link" data-i18n="nav.services">Services</a></li>
+                    <li><a href="#about" class="nav-link" data-i18n="nav.about">About</a></li>
+                    <li><a href="#contact" class="nav-link" data-i18n="nav.contact">Contact</a></li>
+                </ul>
+                <div class="language-switcher">
+                    <button class="lang-selector-btn" id="langSelector">
+                        <svg class="lang-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="12" cy="12" r="10"/>
+                            <line x1="2" y1="12" x2="22" y2="12"/>
+                            <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+                        </svg>
+                        <span id="currentLang">EN</span>
+                        <svg class="dropdown-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polyline points="6 9 12 15 18 9"/>
+                        </svg>
+                    </button>
+                    <div class="lang-dropdown" id="langDropdown">
+                        <button class="lang-option active" data-lang="en">
+                            <span class="lang-flag">🇬🇧</span>
+                            <span class="lang-name">English</span>
+                        </button>
+                        <button class="lang-option" data-lang="zh-TW">
+                            <span class="lang-flag">🇹🇼</span>
+                            <span class="lang-name">繁體中文</span>
+                        </button>
+                        <button class="lang-option" data-lang="ja">
+                            <span class="lang-flag">🇯🇵</span>
+                            <span class="lang-name">日本語</span>
+                        </button>
+                        <button class="lang-option" data-lang="es">
+                            <span class="lang-flag">🇪🇸</span>
+                            <span class="lang-name">Español</span>
+                        </button>
+                    </div>
+                </div>
+                <button class="hamburger" id="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-background-slider">
+            <div class="bg-slide active" style="background-image: url('logo.png'); background-size: contain; background-position: center;"></div>
+            <div class="bg-slide" style="background-image: url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=1920&q=80');"></div>
+            <div class="bg-slide" style="background-image: url('https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=1920&q=80');"></div>
+            <div class="bg-slide" style="background-image: url('https://images.unsplash.com/photo-1518770660439-4636190af475?w=1920&q=80');"></div>
+            <div class="bg-slide" style="background-image: url('https://images.unsplash.com/photo-1480714378408-67cf0d13bc1b?w=1920&q=80');"></div>
+            <div class="bg-slide" style="background-image: url('https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=1920&q=80');"></div>
+            <div class="hero-overlay"></div>
+        </div>
+        <div class="hero-background">
+            <div class="gradient-orb orb-1"></div>
+            <div class="gradient-orb orb-2"></div>
+            <div class="gradient-orb orb-3"></div>
+        </div>
+        <div class="container">
+            <div class="hero-content">
+                <h1 class="hero-title">
+                    <span data-i18n="hero.title1">Make Every Moment</span> <span class="gradient-text" data-i18n="hero.title2">Count</span>
+                </h1>
+                <p class="hero-subtitle" data-i18n="hero.subtitle">
+                    At Kairos.ai, we believe time is the most valuable resource. Our mission is to reshape how people experience and manage time through innovative AI applications and intelligent systems.
+                </p>
+                <div class="hero-cta">
+                    <a href="#contact" class="btn btn-primary" data-i18n="hero.cta1">Get Started</a>
+                    <a href="#services" class="btn btn-secondary" data-i18n="hero.cta2">Our Services</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="services">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title" data-i18n="services.title">Our Services</h2>
+                <p class="section-subtitle" data-i18n="services.subtitle">
+                    We combine cutting-edge AI with human-centered design to unlock new possibilities
+                </p>
+            </div>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
+                        </svg>
+                    </div>
+                    <h3 class="service-title" data-i18n="services.ai.title">AI Systems Design</h3>
+                    <p class="service-description" data-i18n="services.ai.desc">
+                        Custom AI solutions tailored to your business needs. We design intelligent systems that learn, adapt, and deliver measurable results.
+                    </p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <rect x="2" y="2" width="20" height="8" rx="2" ry="2"/>
+                            <rect x="2" y="14" width="20" height="8" rx="2" ry="2"/>
+                            <line x1="6" y1="6" x2="6.01" y2="6"/>
+                            <line x1="6" y1="18" x2="6.01" y2="18"/>
+                        </svg>
+                    </div>
+                    <h3 class="service-title" data-i18n="services.backend.title">Backend Systems</h3>
+                    <p class="service-description" data-i18n="services.backend.desc">
+                        Robust, scalable backend infrastructure that powers your applications. Built for performance, security, and reliability.
+                    </p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <rect x="5" y="2" width="14" height="20" rx="2" ry="2"/>
+                            <line x1="12" y1="18" x2="12.01" y2="18"/>
+                        </svg>
+                    </div>
+                    <h3 class="service-title" data-i18n="services.apps.title">AI Applications</h3>
+                    <p class="service-description" data-i18n="services.apps.desc">
+                        Innovative AI-powered applications that transform user experiences and drive engagement. From concept to deployment.
+                    </p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <line x1="18" y1="20" x2="18" y2="10"/>
+                            <line x1="12" y1="20" x2="12" y2="4"/>
+                            <line x1="6" y1="20" x2="6" y2="14"/>
+                        </svg>
+                    </div>
+                    <h3 class="service-title" data-i18n="services.data.title">Data Analysis</h3>
+                    <p class="service-description" data-i18n="services.data.desc">
+                        Transform raw data into actionable insights. Our advanced analytics solutions help you make data-driven decisions with confidence.
+                    </p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/>
+                            <circle cx="9" cy="9" r="1.5"/>
+                            <circle cx="15" cy="15" r="1.5"/>
+                        </svg>
+                    </div>
+                    <h3 class="service-title" data-i18n="services.factory.title">Factory Process Optimization</h3>
+                    <p class="service-description" data-i18n="services.factory.desc">
+                        Modernize and optimize your manufacturing processes with AI-driven solutions. We help improve efficiency, reduce costs, and enhance quality control in your operations.
+                    </p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/>
+                            <path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/>
+                        </svg>
+                    </div>
+                    <h3 class="service-title" data-i18n="services.custom.title">Customized Solutions</h3>
+                    <p class="service-description" data-i18n="services.custom.desc">
+                        Tailored projects designed specifically for your unique business needs. From concept to completion, we build bespoke solutions that perfectly fit your requirements.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Technologies Section -->
+    <section class="technologies">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title" data-i18n="tech.title">Powered by Leading Technologies</h2>
+                <p class="section-subtitle" data-i18n="tech.subtitle">
+                    We leverage cutting-edge tools and frameworks to deliver exceptional results
+                </p>
+            </div>
+            <div class="tech-grid">
+                <div class="tech-item">
+                    <div class="tech-icon">AI/ML</div>
+                    <p data-i18n="tech.ml">Machine Learning</p>
+                </div>
+                <div class="tech-item">
+                    <div class="tech-icon">Cloud</div>
+                    <p data-i18n="tech.cloud">Cloud Infrastructure</p>
+                </div>
+                <div class="tech-item">
+                    <div class="tech-icon">API</div>
+                    <p data-i18n="tech.api">RESTful APIs</p>
+                </div>
+                <div class="tech-item">
+                    <div class="tech-icon">DB</div>
+                    <p data-i18n="tech.db">Database Systems</p>
+                </div>
+                <div class="tech-item">
+                    <div class="tech-icon">AI</div>
+                    <p data-i18n="tech.neural">Neural Networks</p>
+                </div>
+                <div class="tech-item">
+                    <div class="tech-icon">Dev</div>
+                    <p data-i18n="tech.devops">DevOps & CI/CD</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-text">
+                    <h2 class="section-title" data-i18n="about.title">Why Choose Kairos.ai?</h2>
+                    <p class="about-description" data-i18n="about.desc">
+                        We are dedicated to creating solutions that don't just save time, but unlock new possibilities for our users and customers.
+                    </p>
+                    <ul class="about-features">
+                        <li>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polyline points="20 6 9 17 4 12"/>
+                            </svg>
+                            <span data-i18n="about.feature1">Cutting-edge AI technology</span>
+                        </li>
+                        <li>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polyline points="20 6 9 17 4 12"/>
+                            </svg>
+                            <span data-i18n="about.feature2">Human-centered design approach</span>
+                        </li>
+                        <li>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polyline points="20 6 9 17 4 12"/>
+                            </svg>
+                            <span data-i18n="about.feature3">Proven track record of success</span>
+                        </li>
+                        <li>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polyline points="20 6 9 17 4 12"/>
+                            </svg>
+                            <span data-i18n="about.feature4">Dedicated support and partnership</span>
+                        </li>
+                    </ul>
+                </div>
+                <div class="about-visual">
+                    <div class="visual-card">
+                        <div class="stat-number">10x</div>
+                        <div class="stat-label" data-i18n="about.stat1">Faster Implementation</div>
+                    </div>
+                    <div class="visual-card">
+                        <div class="stat-number">100%</div>
+                        <div class="stat-label" data-i18n="about.stat2">Client Satisfaction</div>
+                    </div>
+                    <div class="visual-card">
+                        <div class="stat-number">24/7</div>
+                        <div class="stat-label" data-i18n="about.stat3">Support Available</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title" data-i18n="contact.title">Let's Work Together</h2>
+                <p class="section-subtitle" data-i18n="contact.subtitle">
+                    Ready to unlock new possibilities? Get in touch with us today.
+                </p>
+            </div>
+            <div class="contact-content">
+                <form class="contact-form" id="contactForm" action="https://formsubmit.co/kairos.ai.tech@gmail.com" method="POST">
+                    <!-- FormSubmit Configuration -->
+                    <input type="hidden" name="_subject" value="New contact form submission from Kairos.ai">
+                    <input type="hidden" name="_captcha" value="false">
+                    <input type="text" name="_honey" style="display:none">
+                    <input type="hidden" name="_template" value="table">
+
+                    <div class="form-group">
+                        <input type="text" id="name" name="name" data-i18n-placeholder="contact.form.name" placeholder="Your Name" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" id="email" name="email" data-i18n-placeholder="contact.form.email" placeholder="Your Email" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" id="company" name="company" data-i18n-placeholder="contact.form.company" placeholder="Company Name">
+                    </div>
+                    <div class="form-group">
+                        <textarea id="message" name="message" rows="5" data-i18n-placeholder="contact.form.message" placeholder="Tell us about your project" required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-block" data-i18n="contact.form.submit">Send Message</button>
+                </form>
+                <div class="contact-info">
+                    <div class="info-item">
+                        <h3 data-i18n="contact.info.email">Email</h3>
+                        <p>kairos.ai.tech@gmail.com</p>
+                    </div>
+                    <div class="info-item">
+                        <h3 data-i18n="contact.info.workTitle">Work With Us</h3>
+                        <p data-i18n="contact.info.workDesc">We're always looking for exciting new projects and partnerships.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <div class="logo">
+                        <div class="logo-container">
+                            <img src="logo.png" alt="Kairos.ai logo" class="logo-image">
+                            <span class="logo-text">Kairos<span class="logo-accent">.ai</span></span>
+                        </div>
+                    </div>
+                    <p class="footer-tagline" data-i18n="footer.tagline">Making every moment count</p>
+                    <p class="footer-email">kairos.ai.tech@gmail.com</p>
+                </div>
+                <div class="footer-links">
+                    <div class="footer-column">
+                        <h4 data-i18n="footer.company">Company</h4>
+                        <ul>
+                            <li><a href="#about" data-i18n="footer.about">About</a></li>
+                            <li><a href="#services" data-i18n="footer.services">Services</a></li>
+                            <li><a href="#contact" data-i18n="footer.contact">Contact</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h4 data-i18n="footer.servicesTitle">Services</h4>
+                        <ul>
+                            <li><a href="#services" data-i18n="footer.aiSystems">AI Systems</a></li>
+                            <li><a href="#services" data-i18n="footer.backend">Backend Development</a></li>
+                            <li><a href="#services" data-i18n="footer.aiApps">AI Applications</a></li>
+                            <li><a href="#services" data-i18n="footer.dataAnalysis">Data Analysis</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p data-i18n="footer.copyright">&copy; 2025 Kairos.ai. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
