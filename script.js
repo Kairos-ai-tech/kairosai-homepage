@@ -64,7 +64,7 @@ const translations = {
         'footer.backend': 'Backend Development',
         'footer.aiApps': 'AI Applications',
         'footer.dataAnalysis': 'Data Analysis',
-        'footer.copyright': '© 2024 Kairos.ai. All rights reserved.'
+        'footer.copyright': '© 2025 Kairos.ai. All rights reserved.'
     },
     'zh-TW': {
         'nav.home': '首頁',
@@ -127,7 +127,7 @@ const translations = {
         'footer.backend': '後端開發',
         'footer.aiApps': 'AI 應用程式',
         'footer.dataAnalysis': '數據分析',
-        'footer.copyright': '© 2024 Kairos.ai. 版權所有。'
+        'footer.copyright': '© 2025 Kairos.ai. 版權所有。'
     },
     ja: {
         'nav.home': 'ホーム',
@@ -190,7 +190,7 @@ const translations = {
         'footer.backend': 'バックエンド開発',
         'footer.aiApps': 'AIアプリケーション',
         'footer.dataAnalysis': 'データ分析',
-        'footer.copyright': '© 2024 Kairos.ai. All rights reserved.'
+        'footer.copyright': '© 2025 Kairos.ai. All rights reserved.'
     },
     es: {
         'nav.home': 'Inicio',
@@ -253,7 +253,7 @@ const translations = {
         'footer.backend': 'Desarrollo Backend',
         'footer.aiApps': 'Aplicaciones de IA',
         'footer.dataAnalysis': 'Análisis de Datos',
-        'footer.copyright': '© 2024 Kairos.ai. Todos los derechos reservados.'
+        'footer.copyright': '© 2025 Kairos.ai. Todos los derechos reservados.'
     }
 };
 
@@ -420,7 +420,7 @@ window.addEventListener('scroll', () => {
 // ===========================
 
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
+    anchor.addEventListener('click', function(e) {
         e.preventDefault();
         const target = document.querySelector(this.getAttribute('href'));
 
@@ -469,53 +469,46 @@ revealElements.forEach(element => {
 // ===========================
 
 const contactForm = document.getElementById('contactForm');
+const submitButton = contactForm ? contactForm.querySelector('button[type="submit"]') : null;
+const submitButtonDefaultText = submitButton ? submitButton.textContent : '';
 
-contactForm.addEventListener('submit', (e) => {
-    e.preventDefault();
+if (contactForm) {
+    contactForm.addEventListener('submit', async(e) => {
+        e.preventDefault();
 
-    // Get form data
-    const formData = {
-        name: document.getElementById('name').value,
-        email: document.getElementById('email').value,
-        company: document.getElementById('company').value,
-        message: document.getElementById('message').value
-    };
+        if (submitButton) {
+            submitButton.disabled = true;
+            submitButton.textContent = 'Sending...';
+        }
 
-    // Here you would typically send this data to a server
-    // For now, we'll just show a success message
-    console.log('Form submitted:', formData);
+        const formData = new FormData(contactForm);
 
-    // Show success message
-    alert('Thank you for your message! We will get back to you soon.');
+        try {
+            const response = await fetch(contactForm.action, {
+                method: 'POST',
+                body: formData,
+                headers: {
+                    'Accept': 'application/json'
+                }
+            });
 
-    // Reset form
-    contactForm.reset();
-
-    // In a real application, you would:
-    // 1. Send data to your backend API
-    // 2. Handle validation
-    // 3. Show proper success/error messages
-    // Example:
-    /*
-    fetch('/api/contact', {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(formData)
-    })
-    .then(response => response.json())
-    .then(data => {
-        console.log('Success:', data);
-        alert('Thank you for your message!');
-        contactForm.reset();
-    })
-    .catch((error) => {
-        console.error('Error:', error);
-        alert('There was an error sending your message. Please try again.');
+            if (response.ok) {
+                alert('Thank you! Your message has been sent.');
+                contactForm.reset();
+            } else {
+                alert('There was an issue sending your message. Please try again.');
+            }
+        } catch (error) {
+            console.error('Error submitting form:', error);
+            alert('Unable to send your message right now. Please try again later.');
+        } finally {
+            if (submitButton) {
+                submitButton.disabled = false;
+                submitButton.textContent = submitButtonDefaultText || 'Send Message';
+            }
+        }
     });
-    */
-});
+}
 
 // ===========================
 // Parallax Effect for Hero
@@ -595,10 +588,16 @@ const highlightNavigation = () => {
         const sectionTop = section.offsetTop - 100;
         const sectionId = section.getAttribute('id');
 
+        const navLink = document.querySelector(`.nav-link[href*="${sectionId}"]`);
+
+        if (!navLink) {
+            return;
+        }
+
         if (scrollY > sectionTop && scrollY <= sectionTop + sectionHeight) {
-            document.querySelector(`.nav-link[href*="${sectionId}"]`)?.classList.add('active');
+            navLink.classList.add('active');
         } else {
-            document.querySelector(`.nav-link[href*="${sectionId}"]`)?.classList.remove('active');
+            navLink.classList.remove('active');
         }
     });
 };
