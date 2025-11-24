@@ -257,7 +257,7 @@ const translations = {
     }
 };
 
-let currentLang = 'en';
+let currentLang = 'zh-TW';
 
 const langLabels = {
     'en': 'EN',
@@ -335,7 +335,7 @@ document.querySelectorAll('.lang-option').forEach(option => {
 
 // Load saved language preference
 window.addEventListener('DOMContentLoaded', () => {
-    const savedLang = localStorage.getItem('preferredLanguage') || 'en';
+    const savedLang = localStorage.getItem('preferredLanguage') || 'zh-TW';
     setLanguage(savedLang);
 });
 
