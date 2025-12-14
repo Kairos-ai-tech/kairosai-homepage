@@ -65,6 +65,9 @@ const translations = {
         'footer.backend': 'Backend Development',
         'footer.aiApps': 'AI Applications',
         'footer.dataAnalysis': 'Data Analysis',
+        'footer.connect': 'Connect',
+        'footer.linkedin': 'LinkedIn',
+        'footer.github': 'GitHub',
         'footer.copyright': '© 2025 Kairos.ai. All rights reserved.'
     },
     'zh-TW': {
@@ -129,6 +132,9 @@ const translations = {
         'footer.backend': '後端開發',
         'footer.aiApps': 'AI 應用程式',
         'footer.dataAnalysis': '數據分析',
+        'footer.connect': '聯絡方式',
+        'footer.linkedin': 'LinkedIn',
+        'footer.github': 'GitHub',
         'footer.copyright': '© 2025 Kairos.ai. 版權所有。'
     },
     ja: {
@@ -193,6 +199,9 @@ const translations = {
         'footer.backend': 'バックエンド開発',
         'footer.aiApps': 'AIアプリケーション',
         'footer.dataAnalysis': 'データ分析',
+        'footer.connect': '連絡先',
+        'footer.linkedin': 'LinkedIn',
+        'footer.github': 'GitHub',
         'footer.copyright': '© 2025 Kairos.ai. All rights reserved.'
     },
     es: {
@@ -257,6 +266,9 @@ const translations = {
         'footer.backend': 'Desarrollo Backend',
         'footer.aiApps': 'Aplicaciones de IA',
         'footer.dataAnalysis': 'Análisis de Datos',
+        'footer.connect': 'Conectar',
+        'footer.linkedin': 'LinkedIn',
+        'footer.github': 'GitHub',
         'footer.copyright': '© 2025 Kairos.ai. Todos los derechos reservados.'
     }
 };
