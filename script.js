@@ -65,6 +65,9 @@ const translations = {
         'footer.backend': 'Backend Development',
         'footer.aiApps': 'AI Applications',
         'footer.dataAnalysis': 'Data Analysis',
+        'footer.connect': 'Connect',
+        'footer.linkedin': 'LinkedIn',
+        'footer.github': 'GitHub',
         'footer.copyright': '© 2025 Kairos.ai. All rights reserved.'
     },
     'zh-TW': {
@@ -74,7 +77,7 @@ const translations = {
         'nav.contact': '聯絡我們',
         'hero.title1': '讓每一刻',
         'hero.title2': '都有價值',
-        'hero.subtitle': '在 Kairos.ai，我們相信時間是最寶貴的資源。我們的使命是透過創新的人工智慧應用程式和智慧系統，重塑人們體驗和管理時間的方式。',
+        'hero.subtitle': '在優時科技，我們相信時間是最寶貴的資源。我們的使命是透過創新的人工智慧應用程式和智慧系統，重塑人們體驗和管理時間的方式。',
         'hero.cta1': '立即開始',
         'hero.cta2': '我們的服務',
         'services.title': '我們的服務',
@@ -129,7 +132,10 @@ const translations = {
         'footer.backend': '後端開發',
         'footer.aiApps': 'AI 應用程式',
         'footer.dataAnalysis': '數據分析',
-        'footer.copyright': '© 2025 Kairos.ai. 版權所有。'
+        'footer.connect': '聯絡方式',
+        'footer.linkedin': 'LinkedIn',
+        'footer.github': 'GitHub',
+        'footer.copyright': '© 2025 Kairos.ai 優時科技. 版權所有。'
     },
     ja: {
         'nav.home': 'ホーム',
@@ -193,6 +199,9 @@ const translations = {
         'footer.backend': 'バックエンド開発',
         'footer.aiApps': 'AIアプリケーション',
         'footer.dataAnalysis': 'データ分析',
+        'footer.connect': '連絡先',
+        'footer.linkedin': 'LinkedIn',
+        'footer.github': 'GitHub',
         'footer.copyright': '© 2025 Kairos.ai. All rights reserved.'
     },
     es: {
@@ -257,6 +266,9 @@ const translations = {
         'footer.backend': 'Desarrollo Backend',
         'footer.aiApps': 'Aplicaciones de IA',
         'footer.dataAnalysis': 'Análisis de Datos',
+        'footer.connect': 'Conectar',
+        'footer.linkedin': 'LinkedIn',
+        'footer.github': 'GitHub',
         'footer.copyright': '© 2025 Kairos.ai. Todos los derechos reservados.'
     }
 };
