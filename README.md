@@ -79,9 +79,16 @@ kairosai-homepage/
 ├── styles.css          # CSS styles
 ├── script.js           # JavaScript functionality
 ├── logo.png            # Company logo (used in navbar and background slider)
-├── logo.svg            # SVG version of logo
 └── README.md           # This file
 ```
+
+## SEO and Google Search Console
+
+The website is optimized for search engines.
+
+### Google Site Verification
+
+The site is verified with Google Search Console using a verification file (`googlecd5f9e35ea4d3910.html`) placed in the root directory. This method is used to prove ownership of the domain to Google.
 
 ## Customization
 

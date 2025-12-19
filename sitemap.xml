@@ -14,28 +14,4 @@
         <xhtml:link rel="alternate" hreflang="es" href="https://www.kairosaitech.com/?lang=es"/>
     </url>
 
-    <!-- Services Section -->
-    <url>
-        <loc>https://www.kairosaitech.com/#services</loc>
-        <lastmod>2025-12-19</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.9</priority>
-    </url>
-
-    <!-- About Section -->
-    <url>
-        <loc>https://www.kairosaitech.com/#about</loc>
-        <lastmod>2025-12-19</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.8</priority>
-    </url>
-
-    <!-- Contact Section -->
-    <url>
-        <loc>https://www.kairosaitech.com/#contact</loc>
-        <lastmod>2025-12-19</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.7</priority>
-    </url>
-
 </urlset>
