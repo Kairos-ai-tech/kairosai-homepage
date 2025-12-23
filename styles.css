@@ -1174,3 +1174,107 @@ body {
     opacity: 1;
     transform: translateY(0);
 }
+
+
+/* ===========================
+   Solutions Section - SEO Content
+   =========================== */
+
+.solutions {
+    padding: var(--spacing-xl) 0;
+    background: linear-gradient(135deg, rgba(38, 128, 255, 0.03) 0%, rgba(147, 51, 234, 0.03) 100%);
+}
+
+.solutions .section-header {
+    margin-bottom: var(--spacing-xl);
+}
+
+.solutions-content {
+    display: grid;
+    gap: var(--spacing-lg);
+    margin-bottom: var(--spacing-xl);
+}
+
+.solution-item {
+    background: rgba(255, 255, 255, 0.8);
+    padding: var(--spacing-lg);
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.solution-item:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.1);
+}
+
+.solution-item h3 {
+    color: var(--primary);
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: var(--spacing-md);
+}
+
+.solution-item p {
+    color: var(--text-secondary);
+    line-height: 1.8;
+    font-size: 1rem;
+}
+
+.solution-item strong {
+    color: var(--primary);
+    font-weight: 600;
+}
+
+.industry-keywords {
+    margin-top: var(--spacing-xl);
+    padding: var(--spacing-lg);
+    background: rgba(255, 255, 255, 0.6);
+    border-radius: 12px;
+}
+
+.industry-keywords h3 {
+    color: var(--text-primary);
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-bottom: var(--spacing-md);
+    text-align: center;
+}
+
+.keywords-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--spacing-sm);
+    justify-content: center;
+}
+
+.keyword-tag {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%);
+    color: white;
+    border-radius: 20px;
+    font-size: 0.875rem;
+    font-weight: 500;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.keyword-tag:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 8px rgba(38, 128, 255, 0.3);
+}
+
+@media (max-width: 768px) {
+    .solution-item h3 {
+        font-size: 1.25rem;
+    }
+
+    .solution-item p {
+        font-size: 0.9rem;
+    }
+
+    .keyword-tag {
+        font-size: 0.75rem;
+        padding: 0.4rem 0.8rem;
+    }
+}
