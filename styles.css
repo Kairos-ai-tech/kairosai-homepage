@@ -1232,6 +1232,15 @@ body {
     margin-bottom: var(--spacing-md);
 }
 
+.solutions .section-subtitle {
+    font-size: 1.25rem;
+    font-weight: 500;
+    color: var(--text-secondary);
+    max-width: 800px;
+    margin: 0 auto;
+    line-height: 1.6;
+}
+
 .solutions-content {
     display: flex;
     flex-direction: column;
@@ -1488,6 +1497,10 @@ body {
 @media (max-width: 768px) {
     .solutions {
         padding: var(--spacing-xl) 0;
+    }
+
+    .solutions .section-subtitle {
+        font-size: 1.1rem;
     }
 
     .solutions-content {
