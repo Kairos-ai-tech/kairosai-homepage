@@ -1,4 +1,4 @@
-# robots.txt for Kairos.ai 優時科技有限公司
+# robots.txt for Kairos.ai 優時科技
 # https://www.kairosaitech.com
 
 # Allow all search engines
