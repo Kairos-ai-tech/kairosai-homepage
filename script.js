@@ -438,6 +438,37 @@ const langLabels = {
     'es': 'ES'
 };
 
+// ===========================
+// Dynamic Canonical URL Update
+// ===========================
+
+function updateCanonicalURL() {
+    // Get the current URL and parse lang parameter
+    const urlParams = new URLSearchParams(window.location.search);
+    const langParam = urlParams.get('lang');
+
+    // Get or create canonical link element
+    let canonicalLink = document.querySelector('link[rel="canonical"]');
+    if (!canonicalLink) {
+        canonicalLink = document.createElement('link');
+        canonicalLink.setAttribute('rel', 'canonical');
+        document.head.appendChild(canonicalLink);
+    }
+
+    // Set canonical URL based on lang parameter
+    const baseURL = 'https://www.kairosaitech.com/';
+    if (langParam && ['zh-TW', 'en', 'ja', 'es'].includes(langParam)) {
+        // Self-referencing canonical for language-specific pages
+        canonicalLink.setAttribute('href', `${baseURL}?lang=${langParam}`);
+    } else {
+        // Default canonical for base URL
+        canonicalLink.setAttribute('href', baseURL);
+    }
+}
+
+// Update canonical URL immediately when script loads
+updateCanonicalURL();
+
 function setLanguage(lang) {
     currentLang = lang;
 
@@ -470,6 +501,14 @@ function setLanguage(lang) {
             option.classList.add('active');
         }
     });
+
+    // Update URL with language parameter
+    const url = new URL(window.location);
+    url.searchParams.set('lang', lang);
+    window.history.replaceState({}, '', url);
+
+    // Update canonical URL
+    updateCanonicalURL();
 
     // Save preference
     localStorage.setItem('preferredLanguage', lang);
@@ -505,10 +544,15 @@ document.querySelectorAll('.lang-option').forEach(option => {
     });
 });
 
-// Load saved language preference
+// Load language preference (prioritize URL parameter over saved preference)
 window.addEventListener('DOMContentLoaded', () => {
-    const savedLang = localStorage.getItem('preferredLanguage') || 'zh-TW';
-    setLanguage(savedLang);
+    const urlParams = new URLSearchParams(window.location.search);
+    const urlLang = urlParams.get('lang');
+    const savedLang = localStorage.getItem('preferredLanguage');
+
+    // Prioritize URL parameter, then saved preference, then default to 'zh-TW'
+    const langToSet = (urlLang && ['zh-TW', 'en', 'ja', 'es'].includes(urlLang)) ? urlLang : (savedLang || 'zh-TW');
+    setLanguage(langToSet);
 });
 
 // ===========================
