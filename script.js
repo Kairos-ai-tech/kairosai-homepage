@@ -512,6 +512,11 @@ function setLanguage(lang) {
 
     // Save preference
     localStorage.setItem('preferredLanguage', lang);
+
+    // Reinitialize particles after language change
+    if (typeof window.reinitParticles === 'function') {
+        setTimeout(window.reinitParticles, 100);
+    }
 }
 
 // Language dropdown toggle
@@ -819,3 +824,239 @@ const highlightNavigation = () => {
 };
 
 window.addEventListener('scroll', highlightNavigation);
+
+// ===========================
+// Particle Text Effect
+// ===========================
+
+(function() {
+    const canvas = document.getElementById('particleCanvas');
+    if (!canvas) return;
+
+    const ctx = canvas.getContext('2d');
+    let particles = [];
+    let mouse = { x: null, y: null, radius: 100 };
+    let animationId = null;
+    let isAnimating = false;
+    const text = '優時科技 Kairos.ai';
+
+    // Set canvas size
+    function resizeCanvas() {
+        const hero = document.querySelector('.hero');
+        if (hero) {
+            canvas.width = hero.offsetWidth;
+            canvas.height = hero.offsetHeight;
+        }
+        initParticles();
+    }
+
+    // Particle class
+    class Particle {
+        constructor(x, y, color) {
+            this.x = x;
+            this.y = y;
+            this.baseX = x;
+            this.baseY = y;
+            this.size = 2;
+            this.color = color;
+            this.density = (Math.random() * 30) + 1;
+        }
+
+        draw() {
+            ctx.fillStyle = this.color;
+            ctx.beginPath();
+            ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+            ctx.closePath();
+            ctx.fill();
+        }
+
+        update() {
+            if (mouse.x === null || mouse.y === null) {
+                // Return to base position when mouse is not over canvas
+                if (this.x !== this.baseX) {
+                    let dx = this.x - this.baseX;
+                    this.x -= dx / 10;
+                }
+                if (this.y !== this.baseY) {
+                    let dy = this.y - this.baseY;
+                    this.y -= dy / 10;
+                }
+                return;
+            }
+
+            // Calculate distance between mouse and particle
+            let dx = mouse.x - this.x;
+            let dy = mouse.y - this.y;
+            let distance = Math.sqrt(dx * dx + dy * dy);
+
+            if (distance < mouse.radius) {
+                // Push particles away from mouse
+                let forceDirectionX = dx / distance;
+                let forceDirectionY = dy / distance;
+                let force = (mouse.radius - distance) / mouse.radius;
+                let directionX = forceDirectionX * force * this.density;
+                let directionY = forceDirectionY * force * this.density;
+                this.x -= directionX;
+                this.y -= directionY;
+            } else {
+                // Return to base position with easing
+                if (this.x !== this.baseX) {
+                    let dx = this.x - this.baseX;
+                    this.x -= dx / 10;
+                }
+                if (this.y !== this.baseY) {
+                    let dy = this.y - this.baseY;
+                    this.y -= dy / 10;
+                }
+            }
+        }
+    }
+
+    // Initialize particles from text
+    function initParticles() {
+        particles = [];
+
+        if (canvas.width === 0 || canvas.height === 0) return;
+
+        // Calculate font size based on canvas width
+        let fontSize = Math.min(canvas.width / 10, 90);
+        if (canvas.width < 768) {
+            fontSize = Math.min(canvas.width / 6, 45);
+        }
+
+        // Create temporary canvas for text rendering
+        const tempCanvas = document.createElement('canvas');
+        const tempCtx = tempCanvas.getContext('2d');
+
+        // Set temp canvas size
+        tempCanvas.width = canvas.width;
+        tempCanvas.height = canvas.height;
+
+        // Use system fonts that support Chinese characters
+        const fontFamily = '"PingFang SC", "Microsoft YaHei", "Hiragino Sans GB", "Noto Sans CJK SC", "WenQuanYi Micro Hei", "Heiti SC", sans-serif';
+        tempCtx.fillStyle = 'white';
+        tempCtx.font = `bold ${fontSize}px ${fontFamily}`;
+        tempCtx.textAlign = 'center';
+        tempCtx.textBaseline = 'middle';
+
+        // Position text - centered horizontally, lower position vertically
+        const textX = tempCanvas.width / 2;
+        const textY = tempCanvas.height * 0.22;
+
+        // Draw text once with center alignment
+        tempCtx.fillText(text, textX, textY);
+
+        // Get image data from temp canvas
+        const imageData = tempCtx.getImageData(0, 0, tempCanvas.width, tempCanvas.height);
+        const data = imageData.data;
+
+        // Sample pixels and create particles
+        const gap = 3; // Sampling gap - smaller = more particles
+
+        for (let y = 0; y < tempCanvas.height; y += gap) {
+            for (let x = 0; x < tempCanvas.width; x += gap) {
+                const index = (y * tempCanvas.width + x) * 4;
+                const alpha = data[index + 3];
+
+                if (alpha > 128) {
+                    // Create particle with gradient color
+                    const hue = 210 + (x / canvas.width) * 30; // Blue gradient
+                    const color = `hsla(${hue}, 80%, 70%, 0.9)`;
+                    particles.push(new Particle(x, y, color));
+                }
+            }
+        }
+    }
+
+    // Animation loop
+    function animate() {
+        if (!isAnimating) return;
+
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+        for (let i = 0; i < particles.length; i++) {
+            particles[i].draw();
+            particles[i].update();
+        }
+
+        animationId = requestAnimationFrame(animate);
+    }
+
+    // Start animation
+    function startAnimation() {
+        if (!isAnimating) {
+            isAnimating = true;
+            animate();
+        }
+    }
+
+    // Stop animation
+    function stopAnimation() {
+        isAnimating = false;
+        if (animationId) {
+            cancelAnimationFrame(animationId);
+            animationId = null;
+        }
+    }
+
+    // Mouse events
+    canvas.addEventListener('mousemove', function(e) {
+        const rect = canvas.getBoundingClientRect();
+        mouse.x = e.clientX - rect.left;
+        mouse.y = e.clientY - rect.top;
+    });
+
+    canvas.addEventListener('mouseleave', function() {
+        mouse.x = null;
+        mouse.y = null;
+    });
+
+    // Touch events for mobile
+    canvas.addEventListener('touchmove', function(e) {
+        e.preventDefault();
+        const rect = canvas.getBoundingClientRect();
+        const touch = e.touches[0];
+        mouse.x = touch.clientX - rect.left;
+        mouse.y = touch.clientY - rect.top;
+    }, { passive: false });
+
+    canvas.addEventListener('touchend', function() {
+        mouse.x = null;
+        mouse.y = null;
+    });
+
+    // Initialize on DOM ready
+    function init() {
+        resizeCanvas();
+        startAnimation();
+    }
+
+    // Initialize when DOM is ready
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', init);
+    } else {
+        init();
+    }
+
+    // Also reinitialize on window load to ensure fonts are loaded
+    window.addEventListener('load', function() {
+        resizeCanvas();
+    });
+
+    // Handle resize
+    window.addEventListener('resize', debounce(resizeCanvas, 250));
+
+    // Handle visibility change to pause/resume animation
+    document.addEventListener('visibilitychange', function() {
+        if (document.hidden) {
+            stopAnimation();
+        } else {
+            startAnimation();
+        }
+    });
+
+    // Expose reinit function globally for language changes
+    window.reinitParticles = function() {
+        resizeCanvas();
+    };
+})();
