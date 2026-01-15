@@ -1,4 +1,101 @@
 // ===========================
+// Data Stream Background Effect
+// ===========================
+
+(function createDataStream() {
+    const canvas = document.createElement('canvas');
+    canvas.id = 'dataStreamCanvas';
+    canvas.style.cssText = `
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        pointer-events: none;
+        z-index: 0;
+        opacity: 0.15;
+    `;
+    document.body.insertBefore(canvas, document.body.firstChild);
+
+    const ctx = canvas.getContext('2d');
+    let streams = [];
+    const chars = '01アイウエオカキクケコサシスセソタチツテトナニヌネノハヒフヘホマミムメモヤユヨラリルレロワヲン';
+
+    function resizeCanvas() {
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+        initStreams();
+    }
+
+    function initStreams() {
+        streams = [];
+        const columns = Math.floor(canvas.width / 20);
+        for (let i = 0; i < columns; i++) {
+            streams.push({
+                x: i * 20,
+                y: Math.random() * canvas.height,
+                speed: 1 + Math.random() * 3,
+                chars: [],
+                length: 5 + Math.floor(Math.random() * 15)
+            });
+            for (let j = 0; j < streams[i].length; j++) {
+                streams[i].chars.push(chars[Math.floor(Math.random() * chars.length)]);
+            }
+        }
+    }
+
+    function draw() {
+        ctx.fillStyle = 'rgba(13, 17, 23, 0.05)';
+        ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+        streams.forEach(stream => {
+            stream.chars.forEach((char, i) => {
+                const y = stream.y - i * 20;
+                if (y > 0 && y < canvas.height) {
+                    const alpha = 1 - (i / stream.length);
+                    if (i === 0) {
+                        ctx.fillStyle = `rgba(0, 212, 255, ${alpha})`;
+                        ctx.shadowColor = 'rgba(0, 212, 255, 0.8)';
+                        ctx.shadowBlur = 10;
+                    } else {
+                        ctx.fillStyle = `rgba(0, 212, 255, ${alpha * 0.5})`;
+                        ctx.shadowBlur = 0;
+                    }
+                    ctx.font = '14px monospace';
+                    ctx.fillText(char, stream.x, y);
+                }
+            });
+
+            stream.y += stream.speed;
+            if (stream.y - stream.length * 20 > canvas.height) {
+                stream.y = 0;
+                stream.chars = stream.chars.map(() => chars[Math.floor(Math.random() * chars.length)]);
+            }
+
+            if (Math.random() < 0.01) {
+                const idx = Math.floor(Math.random() * stream.chars.length);
+                stream.chars[idx] = chars[Math.floor(Math.random() * chars.length)];
+            }
+        });
+
+        requestAnimationFrame(draw);
+    }
+
+    window.addEventListener('resize', debounce(resizeCanvas, 250));
+
+    function debounce(func, wait) {
+        let timeout;
+        return function(...args) {
+            clearTimeout(timeout);
+            timeout = setTimeout(() => func.apply(this, args), wait);
+        };
+    }
+
+    resizeCanvas();
+    draw();
+})();
+
+// ===========================
 // Internationalization (i18n)
 // ===========================
 
