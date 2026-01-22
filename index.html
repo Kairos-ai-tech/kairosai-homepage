@@ -41,8 +41,20 @@
     <meta name="twitter:description" content="優時科技 Kairos.ai 專精 AI系統、智慧工廠、數位轉型。協助製造業導入智慧工廠、AI 系統設計與數位轉型服務。">
     <meta name="twitter:image" content="https://www.kairosaitech.com/logo_title.png">
 
-    <!-- Canonical URL -->
+    <!-- Canonical URL - Updated dynamically based on lang parameter -->
     <link rel="canonical" href="https://www.kairosaitech.com/">
+    <script>
+        // Immediately update canonical URL for proper SEO indexing
+        (function() {
+            var params = new URLSearchParams(window.location.search);
+            var lang = params.get('lang');
+            var validLangs = ['zh-TW', 'en', 'ja', 'es'];
+            var canonical = document.querySelector('link[rel="canonical"]');
+            if (canonical && lang && validLangs.indexOf(lang) !== -1) {
+                canonical.setAttribute('href', 'https://www.kairosaitech.com/?lang=' + lang);
+            }
+        })();
+    </script>
 
     <!-- Language Alternates for International SEO -->
     <link rel="alternate" hreflang="zh-TW" href="https://www.kairosaitech.com/?lang=zh-TW">
