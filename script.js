@@ -935,7 +935,7 @@ window.addEventListener('scroll', highlightNavigation);
     let mouse = { x: null, y: null, radius: 100 };
     let animationId = null;
     let isAnimating = false;
-    const text = '優時科技 Kairos.ai';
+    const text = 'Kairos.ai';
 
     // Set canvas size
     function resizeCanvas() {
