@@ -48,7 +48,7 @@
         (function() {
             var params = new URLSearchParams(window.location.search);
             var lang = params.get('lang');
-            var validLangs = ['zh-TW', 'en', 'ja', 'es'];
+            var validLangs = ['zh-TW', 'zh-CN', 'en', 'ja', 'es'];
             var canonical = document.querySelector('link[rel="canonical"]');
             if (canonical && lang && validLangs.indexOf(lang) !== -1) {
                 canonical.setAttribute('href', 'https://www.kairosaitech.com/?lang=' + lang);
@@ -58,6 +58,7 @@
 
     <!-- Language Alternates for International SEO -->
     <link rel="alternate" hreflang="zh-TW" href="https://www.kairosaitech.com/?lang=zh-TW">
+    <link rel="alternate" hreflang="zh-CN" href="https://www.kairosaitech.com/?lang=zh-CN">
     <link rel="alternate" hreflang="en" href="https://www.kairosaitech.com/?lang=en">
     <link rel="alternate" hreflang="ja" href="https://www.kairosaitech.com/?lang=ja">
     <link rel="alternate" hreflang="es" href="https://www.kairosaitech.com/?lang=es">
@@ -384,19 +385,18 @@
                     </button>
                     <div class="lang-dropdown" id="langDropdown">
                         <button class="lang-option active" data-lang="en">
-                            <span class="lang-flag">🇬🇧</span>
                             <span class="lang-name">English</span>
                         </button>
                         <button class="lang-option" data-lang="zh-TW">
-                            <span class="lang-flag">🇹🇼</span>
                             <span class="lang-name">繁體中文</span>
                         </button>
+                        <button class="lang-option" data-lang="zh-CN">
+                            <span class="lang-name">简体中文</span>
+                        </button>
                         <button class="lang-option" data-lang="ja">
-                            <span class="lang-flag">🇯🇵</span>
                             <span class="lang-name">日本語</span>
                         </button>
                         <button class="lang-option" data-lang="es">
-                            <span class="lang-flag">🇪🇸</span>
                             <span class="lang-name">Español</span>
                         </button>
                     </div>
