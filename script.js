@@ -536,35 +536,13 @@ const langLabels = {
 };
 
 // ===========================
-// Dynamic Canonical URL Update
+// Canonical URL Note
 // ===========================
-
-function updateCanonicalURL() {
-    // Get the current URL and parse lang parameter
-    const urlParams = new URLSearchParams(window.location.search);
-    const langParam = urlParams.get('lang');
-
-    // Get or create canonical link element
-    let canonicalLink = document.querySelector('link[rel="canonical"]');
-    if (!canonicalLink) {
-        canonicalLink = document.createElement('link');
-        canonicalLink.setAttribute('rel', 'canonical');
-        document.head.appendChild(canonicalLink);
-    }
-
-    // Set canonical URL based on lang parameter
-    const baseURL = 'https://www.kairosaitech.com/';
-    if (langParam && ['zh-TW', 'en', 'ja', 'es'].includes(langParam)) {
-        // Self-referencing canonical for language-specific pages
-        canonicalLink.setAttribute('href', `${baseURL}?lang=${langParam}`);
-    } else {
-        // Default canonical for base URL
-        canonicalLink.setAttribute('href', baseURL);
-    }
-}
-
-// Update canonical URL immediately when script loads
-updateCanonicalURL();
+// The canonical URL is set statically in index.html to the base URL (https://www.kairosaitech.com/)
+// This is the correct approach for static sites with language parameters because:
+// 1. Googlebot doesn't reliably execute JavaScript
+// 2. hreflang tags in the HTML head tell Google about language relationships
+// 3. Google consolidates all language versions to the canonical URL for ranking signals
 
 function setLanguage(lang) {
     currentLang = lang;
@@ -603,9 +581,6 @@ function setLanguage(lang) {
     const url = new URL(window.location);
     url.searchParams.set('lang', lang);
     window.history.replaceState({}, '', url);
-
-    // Update canonical URL
-    updateCanonicalURL();
 
     // Save preference
     localStorage.setItem('preferredLanguage', lang);
