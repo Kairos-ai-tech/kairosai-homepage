@@ -204,7 +204,16 @@ const translations = {
         'solutions.keywords.tag11': 'Semiconductor AI',
         'solutions.keywords.tag12': 'Solar Smart Factory',
         'solutions.keywords.tag13': 'Digital Transformation Experts',
-        'solutions.keywords.tag14': 'Intelligent Factory'
+        'solutions.keywords.tag14': 'Intelligent Factory',
+        'products.title': 'Our Products',
+        'products.subtitle': 'Innovative AI-powered applications designed to enhance productivity and creativity',
+        'products.voicesketch.badge': 'iOS App',
+        'products.voicesketch.tagline': 'Transform Voice into Visual Learning',
+        'products.voicesketch.desc': 'Convert spoken content into organized visual learning materials. Perfect for students and professionals who want to capture ideas efficiently.',
+        'products.voicesketch.feature1': 'AI-Powered',
+        'products.voicesketch.feature2': '8 Languages',
+        'products.voicesketch.feature3': 'Mobile-First',
+        'products.voicesketch.cta': 'Learn More'
     },
     'zh-TW': {
         'nav.home': '首頁',
@@ -310,7 +319,16 @@ const translations = {
         'solutions.keywords.tag11': '半導體 AI',
         'solutions.keywords.tag12': '太陽能智慧工廠',
         'solutions.keywords.tag13': '數位轉型專家',
-        'solutions.keywords.tag14': '智能工廠'
+        'solutions.keywords.tag14': '智能工廠',
+        'products.title': '我們的產品',
+        'products.subtitle': '創新的 AI 應用程式，提升生產力與創造力',
+        'products.voicesketch.badge': 'iOS 應用程式',
+        'products.voicesketch.tagline': '將語音轉化為視覺學習',
+        'products.voicesketch.desc': '將口述內容轉換為有組織的視覺學習素材。非常適合希望高效捕捉想法的學生和專業人士。',
+        'products.voicesketch.feature1': 'AI 驅動',
+        'products.voicesketch.feature2': '8 種語言',
+        'products.voicesketch.feature3': '行動優先',
+        'products.voicesketch.cta': '了解更多'
     },
     ja: {
         'nav.home': 'ホーム',
@@ -416,7 +434,16 @@ const translations = {
         'solutions.keywords.tag11': '半導体AI',
         'solutions.keywords.tag12': '太陽光スマートファクトリー',
         'solutions.keywords.tag13': 'デジタルトランスフォーメーション専門家',
-        'solutions.keywords.tag14': 'インテリジェントファクトリー'
+        'solutions.keywords.tag14': 'インテリジェントファクトリー',
+        'products.title': '製品紹介',
+        'products.subtitle': '生産性と創造性を高める革新的なAIアプリケーション',
+        'products.voicesketch.badge': 'iOSアプリ',
+        'products.voicesketch.tagline': '音声を視覚的な学習に変換',
+        'products.voicesketch.desc': '話した内容を整理された視覚的な学習教材に変換します。アイデアを効率的にキャプチャしたい学生やプロフェッショナルに最適です。',
+        'products.voicesketch.feature1': 'AI搭載',
+        'products.voicesketch.feature2': '8言語対応',
+        'products.voicesketch.feature3': 'モバイル最適化',
+        'products.voicesketch.cta': '詳しく見る'
     },
     es: {
         'nav.home': 'Inicio',
@@ -522,7 +549,16 @@ const translations = {
         'solutions.keywords.tag11': 'IA de Semiconductores',
         'solutions.keywords.tag12': 'Fábrica Inteligente Solar',
         'solutions.keywords.tag13': 'Expertos en Transformación Digital',
-        'solutions.keywords.tag14': 'Fábrica Inteligente'
+        'solutions.keywords.tag14': 'Fábrica Inteligente',
+        'products.title': 'Nuestros Productos',
+        'products.subtitle': 'Aplicaciones innovadoras impulsadas por IA diseñadas para mejorar la productividad y creatividad',
+        'products.voicesketch.badge': 'App iOS',
+        'products.voicesketch.tagline': 'Transforma la Voz en Aprendizaje Visual',
+        'products.voicesketch.desc': 'Convierte contenido hablado en materiales de aprendizaje visual organizados. Perfecto para estudiantes y profesionales que desean capturar ideas de manera eficiente.',
+        'products.voicesketch.feature1': 'Impulsado por IA',
+        'products.voicesketch.feature2': '8 Idiomas',
+        'products.voicesketch.feature3': 'Móvil Primero',
+        'products.voicesketch.cta': 'Saber Más'
     }
 };
 
