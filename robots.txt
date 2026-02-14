@@ -24,3 +24,7 @@ Allow: /
 # Disallow certain files (if any)
 Disallow: /CNAME
 Disallow: /*.log$
+
+# Block WordPress-style search URLs (no search functionality on this static site)
+Disallow: /*?s=
+Disallow: /*&s=
