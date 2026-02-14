@@ -667,6 +667,21 @@ window.addEventListener('DOMContentLoaded', () => {
     const urlLang = urlParams.get('lang');
     const savedLang = localStorage.getItem('preferredLanguage');
 
+    // Strip unknown query parameters (e.g. ?s= from WordPress search bots)
+    // Only ?lang= is a valid parameter for this site
+    const allowedParams = ['lang'];
+    const cleanUrl = new URL(window.location);
+    let hasUnknownParams = false;
+    for (const key of [...cleanUrl.searchParams.keys()]) {
+        if (!allowedParams.includes(key)) {
+            cleanUrl.searchParams.delete(key);
+            hasUnknownParams = true;
+        }
+    }
+    if (hasUnknownParams) {
+        window.history.replaceState({}, '', cleanUrl);
+    }
+
     // Prioritize URL parameter, then saved preference, then default to 'zh-TW'
     const langToSet = (urlLang && ['zh-TW', 'en', 'ja', 'es'].includes(urlLang)) ? urlLang : (savedLang || 'zh-TW');
     setLanguage(langToSet);
