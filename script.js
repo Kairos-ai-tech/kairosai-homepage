@@ -575,15 +575,6 @@ const langLabels = {
     'es': 'ES'
 };
 
-// ===========================
-// Canonical URL Note
-// ===========================
-// The canonical URL is set statically in index.html to the base URL (https://www.kairosaitech.com/)
-// This is the correct approach for static sites with language parameters because:
-// 1. Googlebot doesn't reliably execute JavaScript
-// 2. hreflang tags in the HTML head tell Google about language relationships
-// 3. Google consolidates all language versions to the canonical URL for ranking signals
-
 function setLanguage(lang) {
     currentLang = lang;
 
@@ -621,6 +612,15 @@ function setLanguage(lang) {
     const url = new URL(window.location);
     url.searchParams.set('lang', lang);
     window.history.replaceState({}, '', url);
+
+    // Update canonical link to self-reference the current language variant
+    const canonicalLink = document.getElementById('canonicalLink');
+    if (canonicalLink) {
+        canonicalLink.href = 'https://www.kairosaitech.com/?lang=' + lang;
+    }
+
+    // Update html lang attribute
+    document.documentElement.lang = lang;
 
     // Save preference
     localStorage.setItem('preferredLanguage', lang);
