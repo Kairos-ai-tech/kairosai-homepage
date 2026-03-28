@@ -214,7 +214,14 @@ const translations = {
         'products.voicesketch.feature1': 'AI-Powered',
         'products.voicesketch.feature2': '8 Languages',
         'products.voicesketch.feature3': 'Mobile-First',
-        'products.voicesketch.cta': 'Learn More'
+        'products.voicesketch.cta': 'Learn More',
+        'products.w2e.badge': 'Coming Soon',
+        'products.w2e.tagline': 'What to Eat - Never wonder again',
+        'products.w2e.desc': 'AI-powered food discovery app that helps you decide what to eat based on your preferences, location, and mood. Say goodbye to mealtime indecision.',
+        'products.w2e.feature1': 'AI-Powered',
+        'products.w2e.feature2': 'Location-Based',
+        'products.w2e.feature3': 'Personalized',
+        'products.w2e.cta': 'Learn More'
     },
     'zh-TW': {
         'nav.home': '首頁',
@@ -330,7 +337,14 @@ const translations = {
         'products.voicesketch.feature1': 'AI 驅動',
         'products.voicesketch.feature2': '8 種語言',
         'products.voicesketch.feature3': '行動優先',
-        'products.voicesketch.cta': '了解更多'
+        'products.voicesketch.cta': '了解更多',
+        'products.w2e.badge': '即將推出',
+        'products.w2e.tagline': '吃什麼 - 不再煩惱選擇',
+        'products.w2e.desc': 'AI 驅動的美食探索應用，根據您的偏好、位置和心情幫您決定吃什麼。告別用餐選擇困難症。',
+        'products.w2e.feature1': 'AI 驅動',
+        'products.w2e.feature2': '基於位置',
+        'products.w2e.feature3': '個人化推薦',
+        'products.w2e.cta': '了解更多'
     },
     ja: {
         'nav.home': 'ホーム',
@@ -446,7 +460,14 @@ const translations = {
         'products.voicesketch.feature1': 'AI搭載',
         'products.voicesketch.feature2': '8言語対応',
         'products.voicesketch.feature3': 'モバイル最適化',
-        'products.voicesketch.cta': '詳しく見る'
+        'products.voicesketch.cta': '詳しく見る',
+        'products.w2e.badge': '近日公開',
+        'products.w2e.tagline': '何食べる？ - もう迷わない',
+        'products.w2e.desc': 'AIを活用したフード発見アプリ。好み、場所、気分に基づいて食事を提案します。食事選びの悩みにさようなら。',
+        'products.w2e.feature1': 'AI搭載',
+        'products.w2e.feature2': '位置情報連携',
+        'products.w2e.feature3': 'パーソナライズ',
+        'products.w2e.cta': '詳しく見る'
     },
     es: {
         'nav.home': 'Inicio',
@@ -562,7 +583,14 @@ const translations = {
         'products.voicesketch.feature1': 'Impulsado por IA',
         'products.voicesketch.feature2': '8 Idiomas',
         'products.voicesketch.feature3': 'Móvil Primero',
-        'products.voicesketch.cta': 'Saber Más'
+        'products.voicesketch.cta': 'Saber Más',
+        'products.w2e.badge': 'Próximamente',
+        'products.w2e.tagline': 'Qué Comer - No más indecisión',
+        'products.w2e.desc': 'Aplicación de descubrimiento de comida impulsada por IA que te ayuda a decidir qué comer según tus preferencias, ubicación y estado de ánimo. Di adiós a la indecisión a la hora de comer.',
+        'products.w2e.feature1': 'Impulsado por IA',
+        'products.w2e.feature2': 'Basado en Ubicación',
+        'products.w2e.feature3': 'Personalizado',
+        'products.w2e.cta': 'Saber Más'
     }
 };
 

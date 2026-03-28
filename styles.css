@@ -1125,6 +1125,30 @@ body::after {
     z-index: 5;
 }
 
+.product-badge--coming-soon {
+    background: linear-gradient(135deg, #ff6b35, #f7c948);
+    box-shadow: 0 4px 15px rgba(255, 107, 53, 0.4);
+}
+
+.product-card--coming-soon {
+    position: relative;
+}
+
+.product-card--coming-soon::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.15);
+    border-radius: var(--radius-lg);
+    z-index: 1;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+}
+
+.product-card--coming-soon:hover::after {
+    opacity: 0.05;
+}
+
 .product-content {
     padding: var(--spacing-lg);
     display: flex;
