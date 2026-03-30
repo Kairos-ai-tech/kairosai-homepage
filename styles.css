@@ -1017,10 +1017,14 @@ body::after {
 
 .products-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    grid-template-columns: repeat(2, 1fr);
     gap: var(--spacing-lg);
     position: relative;
     z-index: 1;
+}
+
+.product-card--itech {
+    grid-column: 1 / -1;
 }
 
 .product-card {
@@ -1293,6 +1297,10 @@ body::after {
 @media (max-width: 768px) {
     .products-grid {
         grid-template-columns: 1fr;
+    }
+
+    .product-card--itech {
+        grid-column: auto;
     }
 
     .product-image-container {
