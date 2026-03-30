@@ -325,6 +325,8 @@ body::after {
     border-radius: 8px;
     box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5), var(--glow-primary);
     min-width: 180px;
+    max-height: 360px;
+    overflow-y: auto;
     opacity: 0;
     visibility: hidden;
     transform: translateY(-10px);
@@ -1015,10 +1017,14 @@ body::after {
 
 .products-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    grid-template-columns: repeat(2, 1fr);
     gap: var(--spacing-lg);
     position: relative;
     z-index: 1;
+}
+
+.product-card--itech {
+    grid-column: 1 / -1;
 }
 
 .product-card {
@@ -1125,11 +1131,69 @@ body::after {
     z-index: 5;
 }
 
+.product-image-container--itech {
+    height: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #2dd4a8 0%, #0d9488 50%, #0f766e 100%);
+}
+
+.product-logo-image--itech {
+    width: 130px;
+    height: 130px;
+    border-radius: 0;
+}
+
+.product-badge--beta {
+    background: linear-gradient(135deg, #10b981, #059669);
+    box-shadow: 0 4px 15px rgba(16, 185, 129, 0.4);
+}
+
+.product-image-container--w2e {
+    height: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #56b4ff 0%, #2680ff 50%, #1a6bde 100%);
+}
+
+.product-image-container--w2e .product-logo-image {
+    width: 160px;
+    height: 160px;
+}
+
+.product-badge--coming-soon {
+    background: linear-gradient(135deg, #ff6b35, #f7c948);
+    box-shadow: 0 4px 15px rgba(255, 107, 53, 0.4);
+}
+
+.product-card--coming-soon {
+    position: relative;
+}
+
+.product-card--coming-soon::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.15);
+    border-radius: var(--radius-lg);
+    z-index: 1;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+}
+
+.product-card--coming-soon:hover::after {
+    opacity: 0.05;
+}
+
 .product-content {
     padding: var(--spacing-lg);
     display: flex;
     flex-direction: column;
     flex: 1;
+    position: relative;
+    z-index: 2;
 }
 
 .product-icon {
@@ -1235,6 +1299,10 @@ body::after {
 @media (max-width: 768px) {
     .products-grid {
         grid-template-columns: 1fr;
+    }
+
+    .product-card--itech {
+        grid-column: auto;
     }
 
     .product-image-container {
