@@ -1133,6 +1133,11 @@ body::after {
     background: linear-gradient(135deg, #56b4ff 0%, #2680ff 50%, #1a6bde 100%);
 }
 
+.product-image-container--w2e .product-logo-image {
+    width: 160px;
+    height: 160px;
+}
+
 .product-badge--coming-soon {
     background: linear-gradient(135deg, #ff6b35, #f7c948);
     box-shadow: 0 4px 15px rgba(255, 107, 53, 0.4);
