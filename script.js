@@ -1204,7 +1204,9 @@ function setLanguage(lang) {
     // Update canonical link to self-reference the current language variant
     const canonicalLink = document.getElementById('canonicalLink');
     if (canonicalLink) {
-        canonicalLink.href = 'https://www.kairosaitech.com/?lang=' + lang;
+        const baseURL = 'https://www.kairosaitech.com/';
+        const hasLangParam = new URLSearchParams(window.location.search).has('lang');
+        canonicalLink.href = (lang === 'zh-TW' && !hasLangParam) ? baseURL : baseURL + '?lang=' + lang;
     }
 
     // Update html lang attribute
@@ -1271,7 +1273,7 @@ window.addEventListener('DOMContentLoaded', () => {
     }
 
     // Prioritize URL parameter, then saved preference, then default to 'zh-TW'
-    const langToSet = (urlLang && ['zh-TW', 'en', 'ja', 'es'].includes(urlLang)) ? urlLang : (savedLang || 'zh-TW');
+    const langToSet = (urlLang && ['zh-TW', 'en', 'ja', 'es', 'it', 'fr', 'ko', 'de'].includes(urlLang)) ? urlLang : (savedLang || 'zh-TW');
     setLanguage(langToSet);
 });
 
