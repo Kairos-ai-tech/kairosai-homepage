@@ -325,6 +325,8 @@ body::after {
     border-radius: 8px;
     box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5), var(--glow-primary);
     min-width: 180px;
+    max-height: 360px;
+    overflow-y: auto;
     opacity: 0;
     visibility: hidden;
     transform: translateY(-10px);
