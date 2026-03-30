@@ -1205,8 +1205,7 @@ function setLanguage(lang) {
     const canonicalLink = document.getElementById('canonicalLink');
     if (canonicalLink) {
         const baseURL = 'https://www.kairosaitech.com/';
-        const hasLangParam = new URLSearchParams(window.location.search).has('lang');
-        canonicalLink.href = (lang === 'zh-TW' && !hasLangParam) ? baseURL : baseURL + '?lang=' + lang;
+        canonicalLink.href = (lang === 'zh-TW') ? baseURL : baseURL + '?lang=' + lang;
     }
 
     // Update html lang attribute
