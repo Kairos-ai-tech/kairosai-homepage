@@ -1,10 +1,12 @@
 // ===========================
-// Data Stream Background Effect
+// Ambient Starfield — subtle floating points for depth
 // ===========================
 
-(function createDataStream() {
+(function createAmbientField() {
+    if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
     const canvas = document.createElement('canvas');
-    canvas.id = 'dataStreamCanvas';
+    canvas.id = 'ambientCanvas';
     canvas.style.cssText = `
         position: fixed;
         top: 0;
@@ -13,83 +15,59 @@
         height: 100%;
         pointer-events: none;
         z-index: 0;
-        opacity: 0.15;
+        opacity: 0.55;
     `;
     document.body.insertBefore(canvas, document.body.firstChild);
 
     const ctx = canvas.getContext('2d');
-    let streams = [];
-    const chars = '01アイウエオカキクケコサシスセソタチツテトナニヌネノハヒフヘホマミムメモヤユヨラリルレロワヲン';
+    let points = [];
 
     function resizeCanvas() {
         canvas.width = window.innerWidth;
         canvas.height = window.innerHeight;
-        initStreams();
+        initPoints();
     }
 
-    function initStreams() {
-        streams = [];
-        const columns = Math.floor(canvas.width / 20);
-        for (let i = 0; i < columns; i++) {
-            streams.push({
-                x: i * 20,
+    function initPoints() {
+        points = [];
+        const density = Math.min(80, Math.floor((canvas.width * canvas.height) / 18000));
+        for (let i = 0; i < density; i++) {
+            points.push({
+                x: Math.random() * canvas.width,
                 y: Math.random() * canvas.height,
-                speed: 1 + Math.random() * 3,
-                chars: [],
-                length: 5 + Math.floor(Math.random() * 15)
+                r: Math.random() * 1.1 + 0.3,
+                vy: (Math.random() * 0.15) + 0.03,
+                a: Math.random() * 0.5 + 0.2,
+                hue: Math.random() > 0.5 ? 'cyan' : 'violet'
             });
-            for (let j = 0; j < streams[i].length; j++) {
-                streams[i].chars.push(chars[Math.floor(Math.random() * chars.length)]);
-            }
         }
     }
 
     function draw() {
-        ctx.fillStyle = 'rgba(13, 17, 23, 0.05)';
-        ctx.fillRect(0, 0, canvas.width, canvas.height);
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        points.forEach(p => {
+            const color = p.hue === 'cyan'
+                ? `rgba(140, 210, 255, ${p.a})`
+                : `rgba(180, 160, 255, ${p.a})`;
+            ctx.fillStyle = color;
+            ctx.beginPath();
+            ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+            ctx.fill();
 
-        streams.forEach(stream => {
-            stream.chars.forEach((char, i) => {
-                const y = stream.y - i * 20;
-                if (y > 0 && y < canvas.height) {
-                    const alpha = 1 - (i / stream.length);
-                    if (i === 0) {
-                        ctx.fillStyle = `rgba(0, 212, 255, ${alpha})`;
-                        ctx.shadowColor = 'rgba(0, 212, 255, 0.8)';
-                        ctx.shadowBlur = 10;
-                    } else {
-                        ctx.fillStyle = `rgba(0, 212, 255, ${alpha * 0.5})`;
-                        ctx.shadowBlur = 0;
-                    }
-                    ctx.font = '14px monospace';
-                    ctx.fillText(char, stream.x, y);
-                }
-            });
-
-            stream.y += stream.speed;
-            if (stream.y - stream.length * 20 > canvas.height) {
-                stream.y = 0;
-                stream.chars = stream.chars.map(() => chars[Math.floor(Math.random() * chars.length)]);
-            }
-
-            if (Math.random() < 0.01) {
-                const idx = Math.floor(Math.random() * stream.chars.length);
-                stream.chars[idx] = chars[Math.floor(Math.random() * chars.length)];
+            p.y -= p.vy;
+            if (p.y < -5) {
+                p.y = canvas.height + 5;
+                p.x = Math.random() * canvas.width;
             }
         });
-
         requestAnimationFrame(draw);
     }
 
-    window.addEventListener('resize', debounce(resizeCanvas, 250));
-
-    function debounce(func, wait) {
-        let timeout;
-        return function(...args) {
-            clearTimeout(timeout);
-            timeout = setTimeout(() => func.apply(this, args), wait);
-        };
-    }
+    let resizeTimer;
+    window.addEventListener('resize', () => {
+        clearTimeout(resizeTimer);
+        resizeTimer = setTimeout(resizeCanvas, 200);
+    });
 
     resizeCanvas();
     draw();
@@ -229,7 +207,12 @@ const translations = {
         'products.w2e.feature1': 'AI-Powered',
         'products.w2e.feature2': 'Location-Based',
         'products.w2e.feature3': 'Food Discovery',
-        'products.w2e.cta': 'Learn More'
+        'products.w2e.cta': 'Learn More',
+        'products.tabs.all': 'All',
+        'products.tabs.business': 'For Business',
+        'products.tabs.consumer': 'For You',
+        'products.category.business': 'Business',
+        'products.category.consumer': 'Consumer'
     },
     'zh-TW': {
         'nav.home': '首頁',
@@ -360,7 +343,12 @@ const translations = {
         'products.w2e.feature1': 'AI 驅動',
         'products.w2e.feature2': '基於位置',
         'products.w2e.feature3': '美食探索',
-        'products.w2e.cta': '了解更多'
+        'products.w2e.cta': '了解更多',
+        'products.tabs.all': '全部',
+        'products.tabs.business': '企業方案',
+        'products.tabs.consumer': '個人應用',
+        'products.category.business': '企業',
+        'products.category.consumer': '個人'
     },
     ja: {
         'nav.home': 'ホーム',
@@ -491,7 +479,12 @@ const translations = {
         'products.w2e.feature1': 'AI搭載',
         'products.w2e.feature2': '位置情報連携',
         'products.w2e.feature3': 'フード発見',
-        'products.w2e.cta': '詳しく見る'
+        'products.w2e.cta': '詳しく見る',
+        'products.tabs.all': 'すべて',
+        'products.tabs.business': '企業向け',
+        'products.tabs.consumer': '個人向け',
+        'products.category.business': '企業',
+        'products.category.consumer': '個人'
     },
     es: {
         'nav.home': 'Inicio',
@@ -622,7 +615,12 @@ const translations = {
         'products.w2e.feature1': 'Impulsado por IA',
         'products.w2e.feature2': 'Basado en Ubicación',
         'products.w2e.feature3': 'Descubre Comida',
-        'products.w2e.cta': 'Saber Más'
+        'products.w2e.cta': 'Saber Más',
+        'products.tabs.all': 'Todo',
+        'products.tabs.business': 'Para Empresas',
+        'products.tabs.consumer': 'Para Ti',
+        'products.category.business': 'Empresa',
+        'products.category.consumer': 'Consumidor'
     },
     it: {
         'nav.home': 'Home',
@@ -753,7 +751,12 @@ const translations = {
         'products.w2e.feature1': 'Basato su AI',
         'products.w2e.feature2': 'Basato sulla Posizione',
         'products.w2e.feature3': 'Scopri Cibo',
-        'products.w2e.cta': 'Scopri di Più'
+        'products.w2e.cta': 'Scopri di Più',
+        'products.tabs.all': 'Tutti',
+        'products.tabs.business': 'Per Aziende',
+        'products.tabs.consumer': 'Per Te',
+        'products.category.business': 'Aziende',
+        'products.category.consumer': 'Consumatori'
     },
     fr: {
         'nav.home': 'Accueil',
@@ -884,7 +887,12 @@ const translations = {
         'products.w2e.feature1': 'Propulsé par IA',
         'products.w2e.feature2': 'Basé sur la Localisation',
         'products.w2e.feature3': 'Découverte Culinaire',
-        'products.w2e.cta': 'En Savoir Plus'
+        'products.w2e.cta': 'En Savoir Plus',
+        'products.tabs.all': 'Tous',
+        'products.tabs.business': 'Pour Entreprises',
+        'products.tabs.consumer': 'Pour Vous',
+        'products.category.business': 'Entreprise',
+        'products.category.consumer': 'Grand Public'
     },
     ko: {
         'nav.home': '홈',
@@ -1015,7 +1023,12 @@ const translations = {
         'products.w2e.feature1': 'AI 기반',
         'products.w2e.feature2': '위치 기반',
         'products.w2e.feature3': '음식 발견',
-        'products.w2e.cta': '자세히 보기'
+        'products.w2e.cta': '자세히 보기',
+        'products.tabs.all': '전체',
+        'products.tabs.business': '기업용',
+        'products.tabs.consumer': '개인용',
+        'products.category.business': '기업',
+        'products.category.consumer': '소비자'
     },
     de: {
         'nav.home': 'Startseite',
@@ -1146,7 +1159,12 @@ const translations = {
         'products.w2e.feature1': 'KI-Gestützt',
         'products.w2e.feature2': 'Standortbasiert',
         'products.w2e.feature3': 'Food Discovery',
-        'products.w2e.cta': 'Mehr Erfahren'
+        'products.w2e.cta': 'Mehr Erfahren',
+        'products.tabs.all': 'Alle',
+        'products.tabs.business': 'Für Unternehmen',
+        'products.tabs.consumer': 'Für Dich',
+        'products.category.business': 'Unternehmen',
+        'products.category.consumer': 'Verbraucher'
     }
 };
 
@@ -1542,237 +1560,35 @@ const highlightNavigation = () => {
 window.addEventListener('scroll', highlightNavigation);
 
 // ===========================
-// Particle Text Effect
+// Particle Text Effect (disabled for cleaner aesthetic)
 // ===========================
 
-(function() {
-    const canvas = document.getElementById('particleCanvas');
-    if (!canvas) return;
+window.reinitParticles = function() {};
 
-    const ctx = canvas.getContext('2d');
-    let particles = [];
-    let mouse = { x: null, y: null, radius: 100 };
-    let animationId = null;
-    let isAnimating = false;
-    const text = 'Kairos.ai';
+// ===========================
+// Product Category Tabs (B2B / B2C)
+// ===========================
 
-    // Set canvas size
-    function resizeCanvas() {
-        const hero = document.querySelector('.hero');
-        if (hero) {
-            canvas.width = hero.offsetWidth;
-            canvas.height = hero.offsetHeight;
-        }
-        initParticles();
-    }
+(function initProductTabs() {
+    const tabs = document.querySelectorAll('.product-tab');
+    const cards = document.querySelectorAll('.product-card');
+    if (!tabs.length || !cards.length) return;
 
-    // Particle class
-    class Particle {
-        constructor(x, y, color) {
-            this.x = x;
-            this.y = y;
-            this.baseX = x;
-            this.baseY = y;
-            this.size = 2;
-            this.color = color;
-            this.density = (Math.random() * 30) + 1;
-        }
+    tabs.forEach(tab => {
+        tab.addEventListener('click', () => {
+            const category = tab.dataset.category;
 
-        draw() {
-            ctx.fillStyle = this.color;
-            ctx.beginPath();
-            ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
-            ctx.closePath();
-            ctx.fill();
-        }
+            tabs.forEach(t => {
+                const isActive = t === tab;
+                t.classList.toggle('active', isActive);
+                t.setAttribute('aria-selected', isActive ? 'true' : 'false');
+            });
 
-        update() {
-            if (mouse.x === null || mouse.y === null) {
-                // Return to base position when mouse is not over canvas
-                if (this.x !== this.baseX) {
-                    let dx = this.x - this.baseX;
-                    this.x -= dx / 10;
-                }
-                if (this.y !== this.baseY) {
-                    let dy = this.y - this.baseY;
-                    this.y -= dy / 10;
-                }
-                return;
-            }
-
-            // Calculate distance between mouse and particle
-            let dx = mouse.x - this.x;
-            let dy = mouse.y - this.y;
-            let distance = Math.sqrt(dx * dx + dy * dy);
-
-            if (distance < mouse.radius) {
-                // Push particles away from mouse
-                let forceDirectionX = dx / distance;
-                let forceDirectionY = dy / distance;
-                let force = (mouse.radius - distance) / mouse.radius;
-                let directionX = forceDirectionX * force * this.density;
-                let directionY = forceDirectionY * force * this.density;
-                this.x -= directionX;
-                this.y -= directionY;
-            } else {
-                // Return to base position with easing
-                if (this.x !== this.baseX) {
-                    let dx = this.x - this.baseX;
-                    this.x -= dx / 10;
-                }
-                if (this.y !== this.baseY) {
-                    let dy = this.y - this.baseY;
-                    this.y -= dy / 10;
-                }
-            }
-        }
-    }
-
-    // Initialize particles from text
-    function initParticles() {
-        particles = [];
-
-        if (canvas.width === 0 || canvas.height === 0) return;
-
-        // Calculate font size based on canvas width
-        let fontSize = Math.min(canvas.width / 10, 90);
-        if (canvas.width < 768) {
-            fontSize = Math.min(canvas.width / 6, 45);
-        }
-
-        // Create temporary canvas for text rendering
-        const tempCanvas = document.createElement('canvas');
-        const tempCtx = tempCanvas.getContext('2d');
-
-        // Set temp canvas size
-        tempCanvas.width = canvas.width;
-        tempCanvas.height = canvas.height;
-
-        // Use system fonts that support Chinese characters
-        const fontFamily = '"PingFang SC", "Microsoft YaHei", "Hiragino Sans GB", "Noto Sans CJK SC", "WenQuanYi Micro Hei", "Heiti SC", sans-serif';
-        tempCtx.fillStyle = 'white';
-        tempCtx.font = `bold ${fontSize}px ${fontFamily}`;
-        tempCtx.textAlign = 'center';
-        tempCtx.textBaseline = 'middle';
-
-        // Position text - centered horizontally, lower position vertically
-        const textX = tempCanvas.width / 2;
-        const textY = tempCanvas.height * 0.22;
-
-        // Draw text once with center alignment
-        tempCtx.fillText(text, textX, textY);
-
-        // Get image data from temp canvas
-        const imageData = tempCtx.getImageData(0, 0, tempCanvas.width, tempCanvas.height);
-        const data = imageData.data;
-
-        // Sample pixels and create particles
-        const gap = 3; // Sampling gap - smaller = more particles
-
-        for (let y = 0; y < tempCanvas.height; y += gap) {
-            for (let x = 0; x < tempCanvas.width; x += gap) {
-                const index = (y * tempCanvas.width + x) * 4;
-                const alpha = data[index + 3];
-
-                if (alpha > 128) {
-                    // Create particle with gradient color
-                    const hue = 210 + (x / canvas.width) * 30; // Blue gradient
-                    const color = `hsla(${hue}, 80%, 70%, 0.9)`;
-                    particles.push(new Particle(x, y, color));
-                }
-            }
-        }
-    }
-
-    // Animation loop
-    function animate() {
-        if (!isAnimating) return;
-
-        ctx.clearRect(0, 0, canvas.width, canvas.height);
-
-        for (let i = 0; i < particles.length; i++) {
-            particles[i].draw();
-            particles[i].update();
-        }
-
-        animationId = requestAnimationFrame(animate);
-    }
-
-    // Start animation
-    function startAnimation() {
-        if (!isAnimating) {
-            isAnimating = true;
-            animate();
-        }
-    }
-
-    // Stop animation
-    function stopAnimation() {
-        isAnimating = false;
-        if (animationId) {
-            cancelAnimationFrame(animationId);
-            animationId = null;
-        }
-    }
-
-    // Mouse events
-    canvas.addEventListener('mousemove', function(e) {
-        const rect = canvas.getBoundingClientRect();
-        mouse.x = e.clientX - rect.left;
-        mouse.y = e.clientY - rect.top;
+            cards.forEach(card => {
+                const matches = category === 'all' || card.dataset.category === category;
+                card.dataset.hidden = matches ? 'false' : 'true';
+            });
+        });
     });
-
-    canvas.addEventListener('mouseleave', function() {
-        mouse.x = null;
-        mouse.y = null;
-    });
-
-    // Touch events for mobile
-    canvas.addEventListener('touchmove', function(e) {
-        e.preventDefault();
-        const rect = canvas.getBoundingClientRect();
-        const touch = e.touches[0];
-        mouse.x = touch.clientX - rect.left;
-        mouse.y = touch.clientY - rect.top;
-    }, { passive: false });
-
-    canvas.addEventListener('touchend', function() {
-        mouse.x = null;
-        mouse.y = null;
-    });
-
-    // Initialize on DOM ready
-    function init() {
-        resizeCanvas();
-        startAnimation();
-    }
-
-    // Initialize when DOM is ready
-    if (document.readyState === 'loading') {
-        document.addEventListener('DOMContentLoaded', init);
-    } else {
-        init();
-    }
-
-    // Also reinitialize on window load to ensure fonts are loaded
-    window.addEventListener('load', function() {
-        resizeCanvas();
-    });
-
-    // Handle resize
-    window.addEventListener('resize', debounce(resizeCanvas, 250));
-
-    // Handle visibility change to pause/resume animation
-    document.addEventListener('visibilitychange', function() {
-        if (document.hidden) {
-            stopAnimation();
-        } else {
-            startAnimation();
-        }
-    });
-
-    // Expose reinit function globally for language changes
-    window.reinitParticles = function() {
-        resizeCanvas();
-    };
 })();
+

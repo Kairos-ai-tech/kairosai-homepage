@@ -614,9 +614,37 @@
                     Innovative AI-powered applications designed to enhance productivity and creativity
                 </p>
             </div>
+
+            <div class="product-tabs" role="tablist" aria-label="Product category">
+                <button class="product-tab active" data-category="all" role="tab" aria-selected="true">
+                    <svg class="product-tab-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <rect x="3" y="3" width="7" height="7" rx="1"/>
+                        <rect x="14" y="3" width="7" height="7" rx="1"/>
+                        <rect x="3" y="14" width="7" height="7" rx="1"/>
+                        <rect x="14" y="14" width="7" height="7" rx="1"/>
+                    </svg>
+                    <span data-i18n="products.tabs.all">All</span>
+                </button>
+                <button class="product-tab" data-category="business" role="tab" aria-selected="false">
+                    <svg class="product-tab-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <rect x="2" y="7" width="20" height="14" rx="2"/>
+                        <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/>
+                    </svg>
+                    <span data-i18n="products.tabs.business">For Business</span>
+                </button>
+                <button class="product-tab" data-category="consumer" role="tab" aria-selected="false">
+                    <svg class="product-tab-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
+                        <circle cx="12" cy="7" r="4"/>
+                    </svg>
+                    <span data-i18n="products.tabs.consumer">For You</span>
+                </button>
+            </div>
+
             <div class="products-grid">
-                <div class="product-card product-card--itech">
+                <div class="product-card product-card--itech" data-category="business">
                     <div class="product-image-container product-image-container--logo product-image-container--itech">
+                        <span class="product-category product-category--business" data-i18n="products.category.business">Business</span>
                         <svg class="product-logo-image product-logo-image--itech" viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <rect width="120" height="120" rx="24" fill="white" fill-opacity="0.15"/>
                             <path d="M30 85V35h8v50h-8z" fill="white"/>
@@ -654,8 +682,9 @@
                         </div>
                     </div>
                 </div>
-                <a href="https://voicesketch.kairosaitech.com/" target="_blank" rel="noopener noreferrer" class="product-card product-card--voicesketch">
+                <a href="https://voicesketch.kairosaitech.com/" target="_blank" rel="noopener noreferrer" class="product-card product-card--voicesketch" data-category="consumer">
                     <div class="product-image-container product-image-container--logo">
+                        <span class="product-category product-category--consumer" data-i18n="products.category.consumer">Consumer</span>
                         <img src="https://raw.githubusercontent.com/Kairos-ai-tech/VoiceSketch-Product-page/main/assets/logo.png" alt="VoiceSketch - Transform voice to visual notes" class="product-logo-image" loading="lazy">
                         <div class="product-badge" data-i18n="products.voicesketch.badge">iOS App</div>
                     </div>
@@ -687,8 +716,9 @@
                         </div>
                     </div>
                 </a>
-                <a href="https://w2e.kairosaitech.com/" target="_blank" rel="noopener noreferrer" class="product-card product-card--w2e product-card--coming-soon">
+                <a href="https://w2e.kairosaitech.com/" target="_blank" rel="noopener noreferrer" class="product-card product-card--w2e product-card--coming-soon" data-category="consumer">
                     <div class="product-image-container product-image-container--logo product-image-container--w2e">
+                        <span class="product-category product-category--consumer" data-i18n="products.category.consumer">Consumer</span>
                         <img src="https://raw.githubusercontent.com/Kairos-ai-tech/W2E-Product-page/main/imgs/w2e_app_icon.png" alt="W2E - What to Eat food finding app" class="product-logo-image" loading="lazy">
                         <div class="product-badge product-badge--coming-soon" data-i18n="products.w2e.badge">Coming Soon</div>
                     </div>
