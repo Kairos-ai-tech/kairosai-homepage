@@ -1,0 +1,39 @@
+{
+  "linkset": [
+    {
+      "anchor": "https://www.kairosaitech.com/",
+      "service-doc": [
+        {
+          "href": "https://www.kairosaitech.com/",
+          "type": "text/html",
+          "title": "Kairos.ai — homepage and service documentation"
+        }
+      ],
+      "service-meta": [
+        {
+          "href": "https://www.kairosaitech.com/.well-known/mcp/server-card.json",
+          "type": "application/json",
+          "title": "MCP server card"
+        },
+        {
+          "href": "https://www.kairosaitech.com/.well-known/agent-skills/index.json",
+          "type": "application/json",
+          "title": "Agent skills discovery index"
+        }
+      ],
+      "status": [
+        {
+          "href": "https://www.kairosaitech.com/",
+          "type": "text/html",
+          "title": "Site status (200 OK from GitHub Pages)"
+        }
+      ],
+      "author": [
+        {
+          "href": "mailto:kairos.ai.tech@gmail.com",
+          "title": "Kairos.ai 優時科技"
+        }
+      ]
+    }
+  ]
+}

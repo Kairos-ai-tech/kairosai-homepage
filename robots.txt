@@ -5,6 +5,9 @@
 User-agent: *
 Allow: /
 
+# Content Signals (https://contentsignals.org/) — declare AI usage preferences
+Content-Signal: ai-train=no, search=yes, ai-input=no
+
 # Sitemap location
 Sitemap: https://www.kairosaitech.com/sitemap.xml
 

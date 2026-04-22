@@ -1776,3 +1776,118 @@ window.addEventListener('scroll', highlightNavigation);
         resizeCanvas();
     };
 })();
+
+// ============================================================================
+// WebMCP — expose site tools to AI agents loading this page.
+// Spec: https://webmachinelearning.github.io/webmcp/
+// ============================================================================
+(function initWebMCP() {
+    if (typeof navigator === 'undefined' || !navigator.modelContext || typeof navigator.modelContext.provideContext !== 'function') {
+        return;
+    }
+
+    const scrollToHash = function(hash) {
+        const target = document.querySelector(hash);
+        if (!target) return false;
+        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        return true;
+    };
+
+    const tools = [
+        {
+            name: 'navigate_section',
+            description: 'Scroll the Kairos.ai homepage to one of its main sections: home, about, solutions, products, team, or contact.',
+            inputSchema: {
+                type: 'object',
+                required: ['section'],
+                properties: {
+                    section: {
+                        type: 'string',
+                        enum: ['home', 'about', 'solutions', 'products', 'team', 'contact'],
+                        description: 'Section anchor to scroll to.'
+                    }
+                }
+            },
+            execute: async function(input) {
+                const ok = scrollToHash('#' + input.section);
+                return {
+                    ok,
+                    url: window.location.origin + window.location.pathname + '#' + input.section
+                };
+            }
+        },
+        {
+            name: 'set_language',
+            description: 'Switch the Kairos.ai site language. Supported: en, zh-TW, ja, es, it, fr, ko, de.',
+            inputSchema: {
+                type: 'object',
+                required: ['lang'],
+                properties: {
+                    lang: {
+                        type: 'string',
+                        enum: ['en', 'zh-TW', 'ja', 'es', 'it', 'fr', 'ko', 'de']
+                    }
+                }
+            },
+            execute: async function(input) {
+                if (typeof window.setLanguage === 'function') {
+                    window.setLanguage(input.lang);
+                    return { ok: true, lang: input.lang };
+                }
+                const url = new URL(window.location.href);
+                url.searchParams.set('lang', input.lang);
+                window.location.href = url.toString();
+                return { ok: true, lang: input.lang, redirected: true };
+            }
+        },
+        {
+            name: 'contact_kairos',
+            description: 'Populate the Kairos.ai contact form with the user\'s name, email, and message. The user still reviews and submits the form.',
+            inputSchema: {
+                type: 'object',
+                required: ['name', 'email', 'message'],
+                properties: {
+                    name: { type: 'string', description: 'Full name' },
+                    email: { type: 'string', format: 'email', description: 'Reply-to email' },
+                    message: { type: 'string', description: 'Inquiry body' }
+                }
+            },
+            execute: async function(input) {
+                scrollToHash('#contact');
+                const form = document.querySelector('#contact form, form[action*="formsubmit.co"]');
+                if (!form) return { ok: false, reason: 'contact form not found' };
+                const nameEl = form.querySelector('[name="name"]');
+                const emailEl = form.querySelector('[name="email"]');
+                const msgEl = form.querySelector('[name="message"]');
+                if (nameEl) nameEl.value = input.name;
+                if (emailEl) emailEl.value = input.email;
+                if (msgEl) msgEl.value = input.message;
+                return { ok: true, note: 'Form populated. User review and submission still required.' };
+            }
+        },
+        {
+            name: 'get_company_info',
+            description: 'Return a short structured summary of Kairos.ai (company name, tagline, contact email, locales, product families).',
+            inputSchema: { type: 'object', properties: {} },
+            execute: async function() {
+                return {
+                    name: 'Kairos.ai 優時科技',
+                    tagline: 'AI systems, smart factory solutions, and digital transformation for manufacturing.',
+                    contact: 'kairos.ai.tech@gmail.com',
+                    homepage: 'https://www.kairosaitech.com/',
+                    locales: ['en', 'zh-TW', 'ja', 'es', 'it', 'fr', 'ko', 'de'],
+                    productFamilies: {
+                        b2b: ['Smart factory solutions', 'AI quality inspection', 'MES integration', 'Digital transformation consulting'],
+                        b2c: ['VoiceSketch', 'W2E', 'AI學徒']
+                    }
+                };
+            }
+        }
+    ];
+
+    try {
+        navigator.modelContext.provideContext({ tools });
+    } catch (err) {
+        if (window.console && console.warn) console.warn('[WebMCP] provideContext failed:', err);
+    }
+})();

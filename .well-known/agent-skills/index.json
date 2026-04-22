@@ -1,0 +1,30 @@
+{
+  "$schema": "https://agentskills.io/schemas/v0.2.0/index.json",
+  "name": "kairosai-site-skills",
+  "version": "1.0.0",
+  "description": "Agent-consumable skills published by Kairos.ai 優時科技.",
+  "homepage": "https://www.kairosaitech.com/",
+  "skills": [
+    {
+      "name": "contact-kairos",
+      "type": "form",
+      "description": "Submit an inquiry to Kairos.ai via the contact form on the homepage.",
+      "url": "https://www.kairosaitech.com/.well-known/agent-skills/contact-kairos/SKILL.md",
+      "sha256": "a77a251441066eb1ebf60037cd17e9f871b7a49414978cec22e1176877b4eb11"
+    },
+    {
+      "name": "browse-products",
+      "type": "reference",
+      "description": "Browse Kairos.ai product lineup (B2B smart-factory solutions and B2C consumer AI apps).",
+      "url": "https://www.kairosaitech.com/.well-known/agent-skills/browse-products/SKILL.md",
+      "sha256": "e38dd38d59520a3351e1b5897d466e5f3728896d9522c62533d8f02e6cbeeb6a"
+    },
+    {
+      "name": "about-kairos",
+      "type": "reference",
+      "description": "Learn about Kairos.ai 優時科技 — a Taiwan-based AI and smart-factory company.",
+      "url": "https://www.kairosaitech.com/.well-known/agent-skills/about-kairos/SKILL.md",
+      "sha256": "5c0a6314a1949b1147e779258ced00f6ebe97fc3d47215e9c03fb4e64f8fa757"
+    }
+  ]
+}
