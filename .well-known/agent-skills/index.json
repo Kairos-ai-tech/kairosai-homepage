@@ -1,5 +1,4 @@
 {
-  "$schema": "https://agentskills.io/schemas/v0.2.0/index.json",
   "name": "kairosai-site-skills",
   "version": "1.0.0",
   "description": "Agent-consumable skills published by Kairos.ai 優時科技.",

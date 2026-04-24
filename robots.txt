@@ -11,18 +11,23 @@ Content-Signal: ai-train=no, search=yes, ai-input=no
 # Sitemap location
 Sitemap: https://www.kairosaitech.com/sitemap.xml
 
-# Specific crawlers
+# Specific crawlers — each carries its own Content-Signal because
+# contentsignals.org groups do not inherit from the '*' group.
 User-agent: Googlebot
 Allow: /
+Content-Signal: ai-train=no, search=yes, ai-input=no
 
 User-agent: Googlebot-Image
 Allow: /
+Content-Signal: ai-train=no, search=yes, ai-input=no
 
 User-agent: Bingbot
 Allow: /
+Content-Signal: ai-train=no, search=yes, ai-input=no
 
 User-agent: Baiduspider
 Allow: /
+Content-Signal: ai-train=no, search=yes, ai-input=no
 
 # Disallow certain files (if any)
 Disallow: /CNAME
