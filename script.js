@@ -2029,61 +2029,33 @@ window.addEventListener('scroll', highlightNavigation);
 })();
 
 // ===========================
-// Other Products auto-carousel
+// Other Products tab toggle
 // ===========================
-(function initOtherProductsCarousel() {
-    const carousel = document.querySelector('[data-products-carousel]');
-    if (!carousel) return;
+(function initOtherProductsToggle() {
+    const root = document.querySelector('[data-products-toggle]');
+    if (!root) return;
 
-    const slides = carousel.querySelectorAll('.product-slide');
-    const dots = carousel.querySelectorAll('.products-others-dot');
-    if (slides.length < 2) return;
+    const tabs = root.querySelectorAll('.products-others-tab');
+    const panels = root.querySelectorAll('.product-panel');
+    if (!tabs.length || !panels.length) return;
 
-    let index = 0;
-    let timer = null;
-    const INTERVAL = 5000;
-
-    function activate(next) {
-        if (next === index) return;
-        slides[index].classList.remove('is-active');
-        dots[index] && dots[index].classList.remove('is-active');
-        index = (next + slides.length) % slides.length;
-        slides[index].classList.add('is-active');
-        dots[index] && dots[index].classList.add('is-active');
+    function activate(target) {
+        tabs.forEach((tab) => {
+            const match = tab.getAttribute('data-toggle-to') === String(target);
+            tab.classList.toggle('is-active', match);
+            tab.setAttribute('aria-selected', match ? 'true' : 'false');
+        });
+        panels.forEach((panel) => {
+            const match = panel.getAttribute('data-panel') === String(target);
+            panel.classList.toggle('is-active', match);
+        });
     }
 
-    function start() {
-        stop();
-        timer = setInterval(() => activate(index + 1), INTERVAL);
-    }
-
-    function stop() {
-        if (timer) {
-            clearInterval(timer);
-            timer = null;
-        }
-    }
-
-    dots.forEach((dot) => {
-        dot.addEventListener('click', () => {
-            const target = parseInt(dot.getAttribute('data-slide-to'), 10);
-            if (Number.isNaN(target)) return;
+    tabs.forEach((tab) => {
+        tab.addEventListener('click', () => {
+            const target = tab.getAttribute('data-toggle-to');
+            if (target == null) return;
             activate(target);
-            start();
         });
     });
-
-    carousel.addEventListener('mouseenter', stop);
-    carousel.addEventListener('mouseleave', start);
-    carousel.addEventListener('focusin', stop);
-    carousel.addEventListener('focusout', start);
-
-    document.addEventListener('visibilitychange', () => {
-        if (document.hidden) stop();
-        else start();
-    });
-
-    if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-        start();
-    }
 })();
