@@ -216,6 +216,10 @@ const translations = {
         'products.itech.feature2': 'Skill Transfer',
         'products.itech.feature3': 'Manufacturing',
         'products.itech.cta': 'Learn More',
+        'products.itech.stat1': 'Faster onboarding',
+        'products.itech.stat2num': 'Months',
+        'products.itech.stat2': 'vs years to master',
+        'products.itech.stat3': 'Real-time guidance',
         'products.vcom.badge': 'B2B',
         'products.vcom.tagline': 'Hire a virtual company in 5 minutes',
         'products.vcom.desc': 'A virtual company of AI coworkers — Anna, Kai, and Oliver — that runs the operating cadence of a real team. Built for solo founders and lean orgs who need leverage, not headcount.',
@@ -223,6 +227,10 @@ const translations = {
         'products.vcom.feature2': 'Standups',
         'products.vcom.feature3': 'Solo Founders',
         'products.vcom.cta': 'Learn More',
+        'products.vcom.stat1unit': 'min',
+        'products.vcom.stat1': 'to launch',
+        'products.vcom.stat2': 'AI coworkers',
+        'products.vcom.stat3': 'Always on',
         'products.others.title': 'Other Products',
         'products.others.subtitle': 'Consumer apps from the Kairos.ai labs',
         'products.voicesketch.badge': 'iOS App',
@@ -356,6 +364,10 @@ const translations = {
         'products.itech.feature2': '技能傳承',
         'products.itech.feature3': '製造業',
         'products.itech.cta': '了解更多',
+        'products.itech.stat1': '更快上手',
+        'products.itech.stat2num': '數月',
+        'products.itech.stat2': '取代多年苦練',
+        'products.itech.stat3': '即時指導',
         'products.vcom.badge': 'B2B',
         'products.vcom.tagline': '5 分鐘聘用一間虛擬公司',
         'products.vcom.desc': '由 AI 同事 Anna、Kai、Oliver 組成的虛擬公司，以真實團隊的節奏運作。為單人創辦人與精實組織打造，要的是槓桿，不是人頭。',
@@ -363,6 +375,10 @@ const translations = {
         'products.vcom.feature2': '每日站會',
         'products.vcom.feature3': '單人創辦人',
         'products.vcom.cta': '了解更多',
+        'products.vcom.stat1unit': '分鐘',
+        'products.vcom.stat1': '即可上線',
+        'products.vcom.stat2': 'AI 同事',
+        'products.vcom.stat3': '全天候運轉',
         'products.others.title': '其他產品',
         'products.others.subtitle': 'Kairos.ai 實驗室推出的消費級應用',
         'products.voicesketch.badge': 'iOS 應用程式',
@@ -496,6 +512,10 @@ const translations = {
         'products.itech.feature2': '技能伝承',
         'products.itech.feature3': '製造業',
         'products.itech.cta': '詳しく見る',
+        'products.itech.stat1': '習得を加速',
+        'products.itech.stat2num': '数ヶ月',
+        'products.itech.stat2': '従来の数年を短縮',
+        'products.itech.stat3': 'リアルタイム支援',
         'products.vcom.badge': 'B2B',
         'products.vcom.tagline': '5分でバーチャル会社を雇う',
         'products.vcom.desc': 'Anna・Kai・OliverというAI同僚で構成されるバーチャル会社。実チームと同じ運営リズムで動きます。人員ではなくレバレッジを必要とする一人創業者と少数精鋭組織のために。',
@@ -503,6 +523,10 @@ const translations = {
         'products.vcom.feature2': 'スタンドアップ',
         'products.vcom.feature3': '一人創業者',
         'products.vcom.cta': '詳しく見る',
+        'products.vcom.stat1unit': '分',
+        'products.vcom.stat1': 'で起動',
+        'products.vcom.stat2': 'AI同僚',
+        'products.vcom.stat3': '24時間稼働',
         'products.others.title': 'その他の製品',
         'products.others.subtitle': 'Kairos.ai ラボ発のコンシューマーアプリ',
         'products.voicesketch.badge': 'iOSアプリ',
@@ -636,6 +660,10 @@ const translations = {
         'products.itech.feature2': 'Transferencia',
         'products.itech.feature3': 'Manufactura',
         'products.itech.cta': 'Saber Más',
+        'products.itech.stat1': 'Onboarding más rápido',
+        'products.itech.stat2num': 'Meses',
+        'products.itech.stat2': 'en vez de años',
+        'products.itech.stat3': 'Guía en tiempo real',
         'products.vcom.badge': 'B2B',
         'products.vcom.tagline': 'Contrata una empresa virtual en 5 minutos',
         'products.vcom.desc': 'Una empresa virtual de compañeros de IA — Anna, Kai y Oliver — que opera con el ritmo de un equipo real. Hecha para fundadores en solitario y organizaciones ágiles que necesitan apalancamiento, no más personal.',
@@ -643,6 +671,10 @@ const translations = {
         'products.vcom.feature2': 'Standups',
         'products.vcom.feature3': 'Fundadores Solo',
         'products.vcom.cta': 'Saber Más',
+        'products.vcom.stat1unit': 'min',
+        'products.vcom.stat1': 'para lanzar',
+        'products.vcom.stat2': 'Compañeros IA',
+        'products.vcom.stat3': 'Siempre activo',
         'products.others.title': 'Otros Productos',
         'products.others.subtitle': 'Apps de consumo desde los laboratorios de Kairos.ai',
         'products.voicesketch.badge': 'App iOS',
@@ -776,6 +808,10 @@ const translations = {
         'products.itech.feature2': 'Trasferimento',
         'products.itech.feature3': 'Manifatturiero',
         'products.itech.cta': 'Scopri di Più',
+        'products.itech.stat1': 'Onboarding più veloce',
+        'products.itech.stat2num': 'Mesi',
+        'products.itech.stat2': 'invece di anni',
+        'products.itech.stat3': 'Guida in tempo reale',
         'products.vcom.badge': 'B2B',
         'products.vcom.tagline': 'Assumi un\'azienda virtuale in 5 minuti',
         'products.vcom.desc': 'Un\'azienda virtuale di colleghi AI — Anna, Kai e Oliver — che lavora con la cadenza operativa di un team reale. Pensata per fondatori solo e organizzazioni snelle che vogliono leva, non più organico.',
@@ -783,6 +819,10 @@ const translations = {
         'products.vcom.feature2': 'Standup',
         'products.vcom.feature3': 'Fondatori Solo',
         'products.vcom.cta': 'Scopri di Più',
+        'products.vcom.stat1unit': 'min',
+        'products.vcom.stat1': 'per lanciare',
+        'products.vcom.stat2': 'Colleghi AI',
+        'products.vcom.stat3': 'Sempre attivo',
         'products.others.title': 'Altri Prodotti',
         'products.others.subtitle': 'App consumer dai laboratori Kairos.ai',
         'products.voicesketch.badge': 'App iOS',
@@ -916,6 +956,10 @@ const translations = {
         'products.itech.feature2': 'Transfert',
         'products.itech.feature3': 'Manufacturier',
         'products.itech.cta': 'En Savoir Plus',
+        'products.itech.stat1': 'Montée en compétence accélérée',
+        'products.itech.stat2num': 'Mois',
+        'products.itech.stat2': 'au lieu d\'années',
+        'products.itech.stat3': 'Guidage temps réel',
         'products.vcom.badge': 'B2B',
         'products.vcom.tagline': 'Embauchez une entreprise virtuelle en 5 minutes',
         'products.vcom.desc': 'Une entreprise virtuelle de collègues IA — Anna, Kai et Oliver — qui suit la cadence opérationnelle d\'une vraie équipe. Conçue pour les fondateurs solo et les structures lean qui cherchent du levier, pas des effectifs.',
@@ -923,6 +967,10 @@ const translations = {
         'products.vcom.feature2': 'Standups',
         'products.vcom.feature3': 'Fondateurs Solo',
         'products.vcom.cta': 'En Savoir Plus',
+        'products.vcom.stat1unit': 'min',
+        'products.vcom.stat1': 'pour lancer',
+        'products.vcom.stat2': 'Collègues IA',
+        'products.vcom.stat3': 'Toujours actif',
         'products.others.title': 'Autres Produits',
         'products.others.subtitle': 'Apps grand public des labos Kairos.ai',
         'products.voicesketch.badge': 'App iOS',
@@ -1056,6 +1104,10 @@ const translations = {
         'products.itech.feature2': '기술 전수',
         'products.itech.feature3': '제조업',
         'products.itech.cta': '자세히 보기',
+        'products.itech.stat1': '온보딩 가속',
+        'products.itech.stat2num': '몇 달',
+        'products.itech.stat2': '수년이 아닌',
+        'products.itech.stat3': '실시간 가이드',
         'products.vcom.badge': 'B2B',
         'products.vcom.tagline': '5분 만에 가상 회사를 채용하세요',
         'products.vcom.desc': 'Anna, Kai, Oliver로 구성된 AI 동료들의 가상 회사. 실제 팀과 같은 운영 리듬으로 움직입니다. 인원이 아니라 레버리지가 필요한 1인 창업자와 린 조직을 위해 설계되었습니다.',
@@ -1063,6 +1115,10 @@ const translations = {
         'products.vcom.feature2': '스탠드업',
         'products.vcom.feature3': '1인 창업자',
         'products.vcom.cta': '자세히 보기',
+        'products.vcom.stat1unit': '분',
+        'products.vcom.stat1': '만에 시작',
+        'products.vcom.stat2': 'AI 동료',
+        'products.vcom.stat3': '24/7 가동',
         'products.others.title': '기타 제품',
         'products.others.subtitle': 'Kairos.ai 랩에서 만든 컨슈머 앱',
         'products.voicesketch.badge': 'iOS 앱',
@@ -1196,6 +1252,10 @@ const translations = {
         'products.itech.feature2': 'Kompetenztransfer',
         'products.itech.feature3': 'Fertigung',
         'products.itech.cta': 'Mehr Erfahren',
+        'products.itech.stat1': 'Schnelleres Onboarding',
+        'products.itech.stat2num': 'Monate',
+        'products.itech.stat2': 'statt Jahre',
+        'products.itech.stat3': 'Echtzeit-Anleitung',
         'products.vcom.badge': 'B2B',
         'products.vcom.tagline': 'Stellen Sie eine virtuelle Firma in 5 Minuten ein',
         'products.vcom.desc': 'Eine virtuelle Firma aus KI-Kollegen — Anna, Kai und Oliver — die im Takt eines echten Teams arbeitet. Gebaut für Solo-Gründer und schlanke Organisationen, die Hebel statt Headcount brauchen.',
@@ -1203,6 +1263,10 @@ const translations = {
         'products.vcom.feature2': 'Standups',
         'products.vcom.feature3': 'Solo-Gründer',
         'products.vcom.cta': 'Mehr Erfahren',
+        'products.vcom.stat1unit': 'min',
+        'products.vcom.stat1': 'bis zum Start',
+        'products.vcom.stat2': 'KI-Kollegen',
+        'products.vcom.stat3': 'Immer online',
         'products.others.title': 'Weitere Produkte',
         'products.others.subtitle': 'Consumer-Apps aus den Kairos.ai Labs',
         'products.voicesketch.badge': 'iOS App',
@@ -1961,5 +2025,65 @@ window.addEventListener('scroll', highlightNavigation);
         navigator.modelContext.provideContext({ tools });
     } catch (err) {
         if (window.console && console.warn) console.warn('[WebMCP] provideContext failed:', err);
+    }
+})();
+
+// ===========================
+// Other Products auto-carousel
+// ===========================
+(function initOtherProductsCarousel() {
+    const carousel = document.querySelector('[data-products-carousel]');
+    if (!carousel) return;
+
+    const slides = carousel.querySelectorAll('.product-slide');
+    const dots = carousel.querySelectorAll('.products-others-dot');
+    if (slides.length < 2) return;
+
+    let index = 0;
+    let timer = null;
+    const INTERVAL = 5000;
+
+    function activate(next) {
+        if (next === index) return;
+        slides[index].classList.remove('is-active');
+        dots[index] && dots[index].classList.remove('is-active');
+        index = (next + slides.length) % slides.length;
+        slides[index].classList.add('is-active');
+        dots[index] && dots[index].classList.add('is-active');
+    }
+
+    function start() {
+        stop();
+        timer = setInterval(() => activate(index + 1), INTERVAL);
+    }
+
+    function stop() {
+        if (timer) {
+            clearInterval(timer);
+            timer = null;
+        }
+    }
+
+    dots.forEach((dot) => {
+        dot.addEventListener('click', () => {
+            const target = parseInt(dot.getAttribute('data-slide-to'), 10);
+            if (Number.isNaN(target)) return;
+            activate(target);
+            start();
+        });
+    });
+
+    carousel.addEventListener('mouseenter', stop);
+    carousel.addEventListener('mouseleave', start);
+    carousel.addEventListener('focusin', stop);
+    carousel.addEventListener('focusout', start);
+
+    document.addEventListener('visibilitychange', () => {
+        if (document.hidden) stop();
+        else start();
+    });
+
+    if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+        start();
     }
 })();
