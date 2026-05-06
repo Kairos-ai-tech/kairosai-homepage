@@ -1073,13 +1073,14 @@ body::after {
 }
 
 /* ===== Featured (B2B) cards ===== */
-.product-card--featured {
+.product-card.product-card--featured {
     background: rgba(22, 27, 34, 0.95);
     border: 1px solid rgba(0, 212, 255, 0.25);
     box-shadow: 0 12px 40px rgba(0, 0, 0, 0.45), inset 0 1px 0 rgba(255, 255, 255, 0.04);
+    will-change: transform;
 }
 
-.product-card--featured::before {
+.product-card.product-card--featured::before {
     height: 4px;
     transform: scaleX(1);
     background: linear-gradient(90deg, var(--neon-blue), var(--neon-purple), var(--neon-pink), var(--neon-blue));
@@ -1092,14 +1093,14 @@ body::after {
     100% { background-position: 100% 0%; }
 }
 
-.product-card--featured {
-    will-change: transform;
-}
-
-.product-card--featured:hover {
+.product-card.product-card--featured:hover {
     transform: translateY(-16px) translateZ(0);
     box-shadow: 0 28px 80px rgba(0, 0, 0, 0.5), 0 0 60px rgba(0, 212, 255, 0.35);
     border-color: var(--neon-blue);
+}
+
+.product-card.product-card--featured:hover::before {
+    transform: scaleX(1);
 }
 
 .product-card--featured .product-image-container {
@@ -1257,7 +1258,7 @@ body::after {
 }
 
 /* primary CTA pill */
-.product-cta--primary {
+.product-cta.product-cta--primary {
     display: inline-flex;
     align-self: flex-start;
     padding: 0.7rem 1.2rem;
@@ -1267,26 +1268,26 @@ body::after {
     transition: all 0.3s ease;
 }
 
-.product-card:hover .product-cta--primary {
+.product-card:hover .product-cta.product-cta--primary {
     background: linear-gradient(135deg, var(--neon-blue), var(--neon-purple));
     border-color: var(--neon-blue);
     color: white;
     box-shadow: 0 8px 24px rgba(0, 212, 255, 0.4);
 }
 
-.product-card:hover .product-cta--primary svg {
+.product-card:hover .product-cta.product-cta--primary svg {
     color: white;
 }
 
 @media (hover: none) {
-    .product-cta--primary {
+    .product-cta.product-cta--primary {
         background: linear-gradient(135deg, var(--neon-blue), var(--neon-purple));
         border-color: var(--neon-blue);
         color: white;
         box-shadow: 0 8px 24px rgba(0, 212, 255, 0.35);
     }
 
-    .product-cta--primary svg {
+    .product-cta.product-cta--primary svg {
         color: white;
     }
 }
