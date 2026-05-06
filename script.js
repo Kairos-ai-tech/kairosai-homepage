@@ -2028,34 +2028,3 @@ window.addEventListener('scroll', highlightNavigation);
     }
 })();
 
-// ===========================
-// Other Products tab toggle
-// ===========================
-(function initOtherProductsToggle() {
-    const root = document.querySelector('[data-products-toggle]');
-    if (!root) return;
-
-    const tabs = root.querySelectorAll('.products-others-tab');
-    const panels = root.querySelectorAll('.product-panel');
-    if (!tabs.length || !panels.length) return;
-
-    function activate(target) {
-        tabs.forEach((tab) => {
-            const match = tab.getAttribute('data-toggle-to') === String(target);
-            tab.classList.toggle('is-active', match);
-            tab.setAttribute('aria-selected', match ? 'true' : 'false');
-        });
-        panels.forEach((panel) => {
-            const match = panel.getAttribute('data-panel') === String(target);
-            panel.classList.toggle('is-active', match);
-        });
-    }
-
-    tabs.forEach((tab) => {
-        tab.addEventListener('click', () => {
-            const target = tab.getAttribute('data-toggle-to');
-            if (target == null) return;
-            activate(target);
-        });
-    });
-})();
