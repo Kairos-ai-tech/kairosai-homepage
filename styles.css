@@ -1215,6 +1215,9 @@ body::after {
 
 .product-stat {
     text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
 }
 
 .product-stat-num {
@@ -1236,7 +1239,6 @@ body::after {
     color: var(--text-primary);
     text-transform: uppercase;
     letter-spacing: 0.04em;
-    padding-top: 0.3rem;
 }
 
 .product-stat-prefix,
@@ -1293,7 +1295,7 @@ body::after {
 }
 
 @media (prefers-reduced-motion: reduce) {
-    .product-card--featured::before,
+    .product-card.product-card--featured::before,
     .product-image-sheen,
     .product-image-grid,
     .product-logo-ring,
@@ -1301,7 +1303,7 @@ body::after {
         animation: none;
     }
 
-    .product-card--featured:hover {
+    .product-card.product-card--featured:hover {
         transform: none;
     }
 }
