@@ -220,6 +220,9 @@ const translations = {
         'products.itech.stat2num': 'Months',
         'products.itech.stat2': 'vs years to master',
         'products.itech.stat3': 'Real-time guidance',
+        'products.itech.aria': 'iTech — AI + AR Skills Transfer Platform',
+        'products.vcom.title': 'vcom',
+        'products.vcom.aria': 'vcom — Virtual company of AI coworkers',
         'products.vcom.badge': 'B2B',
         'products.vcom.tagline': 'Hire a virtual company in 5 minutes',
         'products.vcom.desc': 'A virtual company of AI coworkers — Anna, Kai, and Oliver — that runs the operating cadence of a real team. Built for solo founders and lean orgs who need leverage, not headcount.',
@@ -368,6 +371,9 @@ const translations = {
         'products.itech.stat2num': '數月',
         'products.itech.stat2': '取代多年苦練',
         'products.itech.stat3': '即時指導',
+        'products.itech.aria': 'iTech — AI + AR 技能傳承平台',
+        'products.vcom.title': 'vcom',
+        'products.vcom.aria': 'vcom — AI 同事虛擬公司',
         'products.vcom.badge': 'B2B',
         'products.vcom.tagline': '5 分鐘聘用一間虛擬公司',
         'products.vcom.desc': '由 AI 同事 Anna、Kai、Oliver 組成的虛擬公司，以真實團隊的節奏運作。為單人創辦人與精實組織打造，要的是槓桿，不是人頭。',
@@ -514,8 +520,11 @@ const translations = {
         'products.itech.cta': '詳しく見る',
         'products.itech.stat1': '習得を加速',
         'products.itech.stat2num': '数ヶ月',
-        'products.itech.stat2': '従来の数年を短縮',
+        'products.itech.stat2': '数年ではなく',
         'products.itech.stat3': 'リアルタイム支援',
+        'products.itech.aria': 'iTech — AI + AR 技能伝承プラットフォーム',
+        'products.vcom.title': 'vcom',
+        'products.vcom.aria': 'vcom — AI同僚のバーチャル会社',
         'products.vcom.badge': 'B2B',
         'products.vcom.tagline': '5分でバーチャル会社を雇う',
         'products.vcom.desc': 'Anna・Kai・OliverというAI同僚で構成されるバーチャル会社。実チームと同じ運営リズムで動きます。人員ではなくレバレッジを必要とする一人創業者と少数精鋭組織のために。',
@@ -664,6 +673,9 @@ const translations = {
         'products.itech.stat2num': 'Meses',
         'products.itech.stat2': 'en vez de años',
         'products.itech.stat3': 'Guía en tiempo real',
+        'products.itech.aria': 'iTech — Plataforma de Transferencia de Habilidades con IA + AR',
+        'products.vcom.title': 'vcom',
+        'products.vcom.aria': 'vcom — Empresa virtual de compañeros de IA',
         'products.vcom.badge': 'B2B',
         'products.vcom.tagline': 'Contrata una empresa virtual en 5 minutos',
         'products.vcom.desc': 'Una empresa virtual de compañeros de IA — Anna, Kai y Oliver — que opera con el ritmo de un equipo real. Hecha para fundadores en solitario y organizaciones ágiles que necesitan apalancamiento, no más personal.',
@@ -812,6 +824,9 @@ const translations = {
         'products.itech.stat2num': 'Mesi',
         'products.itech.stat2': 'invece di anni',
         'products.itech.stat3': 'Guida in tempo reale',
+        'products.itech.aria': 'iTech — Piattaforma di Trasferimento Competenze AI + AR',
+        'products.vcom.title': 'vcom',
+        'products.vcom.aria': 'vcom — Azienda virtuale di colleghi AI',
         'products.vcom.badge': 'B2B',
         'products.vcom.tagline': 'Assumi un\'azienda virtuale in 5 minuti',
         'products.vcom.desc': 'Un\'azienda virtuale di colleghi AI — Anna, Kai e Oliver — che lavora con la cadenza operativa di un team reale. Pensata per fondatori solo e organizzazioni snelle che vogliono leva, non più organico.',
@@ -960,6 +975,9 @@ const translations = {
         'products.itech.stat2num': 'Mois',
         'products.itech.stat2': 'au lieu d\'années',
         'products.itech.stat3': 'Guidage temps réel',
+        'products.itech.aria': 'iTech — Plateforme de Transfert de Compétences AI + AR',
+        'products.vcom.title': 'vcom',
+        'products.vcom.aria': 'vcom — Entreprise virtuelle de collègues IA',
         'products.vcom.badge': 'B2B',
         'products.vcom.tagline': 'Embauchez une entreprise virtuelle en 5 minutes',
         'products.vcom.desc': 'Une entreprise virtuelle de collègues IA — Anna, Kai et Oliver — qui suit la cadence opérationnelle d\'une vraie équipe. Conçue pour les fondateurs solo et les structures lean qui cherchent du levier, pas des effectifs.',
@@ -1108,6 +1126,9 @@ const translations = {
         'products.itech.stat2num': '몇 달',
         'products.itech.stat2': '수년이 아닌',
         'products.itech.stat3': '실시간 가이드',
+        'products.itech.aria': 'iTech — AI + AR 기술 전수 플랫폼',
+        'products.vcom.title': 'vcom',
+        'products.vcom.aria': 'vcom — AI 동료들의 가상 회사',
         'products.vcom.badge': 'B2B',
         'products.vcom.tagline': '5분 만에 가상 회사를 채용하세요',
         'products.vcom.desc': 'Anna, Kai, Oliver로 구성된 AI 동료들의 가상 회사. 실제 팀과 같은 운영 리듬으로 움직입니다. 인원이 아니라 레버리지가 필요한 1인 창업자와 린 조직을 위해 설계되었습니다.',
@@ -1256,6 +1277,9 @@ const translations = {
         'products.itech.stat2num': 'Monate',
         'products.itech.stat2': 'statt Jahre',
         'products.itech.stat3': 'Echtzeit-Anleitung',
+        'products.itech.aria': 'iTech — KI + AR Kompetenztransfer-Plattform',
+        'products.vcom.title': 'vcom',
+        'products.vcom.aria': 'vcom — Virtuelle Firma aus KI-Kollegen',
         'products.vcom.badge': 'B2B',
         'products.vcom.tagline': 'Stellen Sie eine virtuelle Firma in 5 Minuten ein',
         'products.vcom.desc': 'Eine virtuelle Firma aus KI-Kollegen — Anna, Kai und Oliver — die im Takt eines echten Teams arbeitet. Gebaut für Solo-Gründer und schlanke Organisationen, die Hebel statt Headcount brauchen.',
@@ -1315,6 +1339,14 @@ function setLanguage(lang) {
         const key = element.getAttribute('data-i18n-placeholder');
         if (translations[lang] && translations[lang][key]) {
             element.placeholder = translations[lang][key];
+        }
+    });
+
+    // Update aria-label attributes
+    document.querySelectorAll('[data-i18n-aria-label]').forEach(element => {
+        const key = element.getAttribute('data-i18n-aria-label');
+        if (translations[lang] && translations[lang][key]) {
+            element.setAttribute('aria-label', translations[lang][key]);
         }
     });
 
