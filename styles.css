@@ -1032,10 +1032,11 @@ body::after {
 }
 
 .product-logo-image--vcom {
-    width: 130px;
-    height: 130px;
-    border-radius: 0;
-    image-rendering: pixelated;
+    width: 140px;
+    height: 140px;
+    border-radius: 22px;
+    object-fit: cover;
+    box-shadow: 0 8px 28px rgba(0, 0, 0, 0.45);
 }
 
 /* ===== Featured (B2B) cards ===== */
