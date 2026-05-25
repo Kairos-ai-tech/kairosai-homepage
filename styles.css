@@ -1023,40 +1023,6 @@ body::after {
     z-index: 1;
 }
 
-.products-grid--primary {
-    margin-bottom: var(--spacing-xl);
-}
-
-.products-others {
-    position: relative;
-    z-index: 1;
-    margin-top: var(--spacing-xl);
-    padding-top: var(--spacing-lg);
-    border-top: 1px solid var(--glass-border);
-}
-
-.products-others-header {
-    text-align: center;
-    margin-bottom: var(--spacing-lg);
-}
-
-.products-others-title {
-    font-size: 1.5rem;
-    font-weight: 600;
-    color: var(--text-primary);
-    margin-bottom: 0.5rem;
-    letter-spacing: 0.02em;
-    text-transform: uppercase;
-    opacity: 0.85;
-}
-
-.products-others-subtitle {
-    color: var(--text-secondary);
-    font-size: 0.95rem;
-    margin: 0;
-    opacity: 0.7;
-}
-
 .product-image-container--vcom {
     height: 200px;
     display: flex;
@@ -1431,43 +1397,6 @@ body::after {
     box-shadow: 0 4px 15px rgba(16, 185, 129, 0.4);
 }
 
-.product-image-container--w2e {
-    height: 200px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: linear-gradient(135deg, #56b4ff 0%, #2680ff 50%, #1a6bde 100%);
-}
-
-.product-image-container--w2e .product-logo-image {
-    width: 160px;
-    height: 160px;
-}
-
-.product-badge--coming-soon {
-    background: linear-gradient(135deg, #ff6b35, #f7c948);
-    box-shadow: 0 4px 15px rgba(255, 107, 53, 0.4);
-}
-
-.product-card--coming-soon {
-    position: relative;
-}
-
-.product-card--coming-soon::after {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background: rgba(0, 0, 0, 0.15);
-    border-radius: var(--radius-lg);
-    z-index: 1;
-    pointer-events: none;
-    transition: opacity 0.3s ease;
-}
-
-.product-card--coming-soon:hover::after {
-    opacity: 0.05;
-}
-
 .product-content {
     padding: var(--spacing-lg);
     display: flex;
@@ -1580,10 +1509,6 @@ body::after {
 @media (max-width: 768px) {
     .products-grid {
         grid-template-columns: 1fr;
-    }
-
-    .products-others-title {
-        font-size: 1.25rem;
     }
 
     .product-image-container {
