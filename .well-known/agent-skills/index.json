@@ -14,9 +14,9 @@
     {
       "name": "browse-products",
       "type": "reference",
-      "description": "Browse Kairos.ai product lineup (B2B smart-factory solutions and B2C consumer AI apps).",
+      "description": "Browse Kairos.ai product lineup (B2B AI platforms and smart-factory services for manufacturing).",
       "url": "https://www.kairosaitech.com/.well-known/agent-skills/browse-products/SKILL.md",
-      "sha256": "e38dd38d59520a3351e1b5897d466e5f3728896d9522c62533d8f02e6cbeeb6a"
+      "sha256": "1de211336a434406e2998bad955339c8497a016742c7d75da9ffe65cea12bc7f"
     },
     {
       "name": "about-kairos",

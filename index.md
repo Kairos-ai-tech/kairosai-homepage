@@ -29,11 +29,13 @@ system design, smart-factory optimization, and data-driven decision making.
 - **Digital transformation consulting** — MES integration, data platform
   migration, and AI-readiness assessments.
 
-## Products (B2C)
+## Products (B2B)
 
-- **VoiceSketch** — voice-first sketching assistant.
-- **W2E** — food and nutrition companion app.
-- **AI學徒** — AI apprentice / learning companion.
+- **iTech (AI學徒)** — AI + AR skills transfer platform for manufacturing.
+  Quantifies master craftsman expertise and delivers AR real-time guidance so
+  new apprentices reach proficiency in months instead of years.
+- **vcom** — virtual company of AI coworkers (Anna, Kai, Oliver) that runs the
+  operating cadence of a real team. Built for solo founders and lean orgs.
 
 ## Languages
 
