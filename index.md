@@ -31,9 +31,9 @@ system design, smart-factory optimization, and data-driven decision making.
 
 ## Products (B2B)
 
-- **iTech (AI學徒)** — AI + AR skills transfer platform for manufacturing.
-  Quantifies master craftsman expertise and delivers AR real-time guidance so
-  new apprentices reach proficiency in months instead of years.
+- **iTech** — AI rebar estimation system for the AEC industry. An end-to-end
+  platform that turns construction drawings into accurate rebar estimates and
+  bar-bending schedules, replacing slow, error-prone manual takeoff.
 - **vcom** — virtual company of AI coworkers (Anna, Kai, Oliver) that runs the
   operating cadence of a real team. Built for solo founders and lean orgs.
 
