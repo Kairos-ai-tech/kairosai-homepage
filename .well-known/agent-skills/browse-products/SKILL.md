@@ -4,7 +4,7 @@ Browse the Kairos.ai product lineup.
 
 ## What's available
 - **B2B platforms**:
-  - **iTech (AI學徒)** — AI + AR skills transfer platform for manufacturing
+  - **iTech** — AI rebar estimation system for the AEC industry (drawings to bar-bending schedules)
   - **vcom** — virtual company of AI coworkers for solo founders and lean orgs
 - **B2B services** — smart-factory solutions, MES integration, AI quality
   inspection, and digital transformation consulting for manufacturing.
