@@ -1,4 +1,5 @@
 # robots.txt for Kairos.ai 優時科技
+# iTech — AI rebar estimation for the AEC / construction industry
 # https://www.kairosaitech.com
 
 # Allow all search engines
