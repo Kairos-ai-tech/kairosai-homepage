@@ -949,7 +949,7 @@ const translations = {
     }
 };
 
-let currentLang = 'zh-TW';
+let currentLang = 'en';
 
 const langLabels = {
     'en': 'EN',
@@ -1012,7 +1012,7 @@ function setLanguage(lang) {
     const canonicalLink = document.getElementById('canonicalLink');
     if (canonicalLink) {
         const baseURL = 'https://www.kairosaitech.com/';
-        canonicalLink.href = (lang === 'zh-TW') ? baseURL : baseURL + '?lang=' + lang;
+        canonicalLink.href = (lang === 'en') ? baseURL : baseURL + '?lang=' + lang;
     }
 
     // Update html lang attribute
@@ -1079,7 +1079,7 @@ window.addEventListener('DOMContentLoaded', () => {
     }
 
     // Prioritize URL parameter, then saved preference, then default to 'zh-TW'
-    const langToSet = (urlLang && ['zh-TW', 'en', 'ja', 'es', 'it', 'fr', 'ko', 'de'].includes(urlLang)) ? urlLang : (savedLang || 'zh-TW');
+    const langToSet = (urlLang && ['zh-TW', 'en', 'ja', 'es', 'it', 'fr', 'ko', 'de'].includes(urlLang)) ? urlLang : (savedLang || 'en');
     setLanguage(langToSet);
 });
 
