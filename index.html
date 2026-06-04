@@ -86,6 +86,14 @@
 
         gtag('config', 'G-N7Z66L7WBR');
     </script>
+
+    <!-- No-JS fallback: reveal animations rely on JS to add .is-visible. If JS is
+         unavailable, force all scroll-reveal content visible so nothing disappears. -->
+    <noscript>
+        <style>
+            [data-reveal] { opacity: 1 !important; transform: none !important; }
+        </style>
+    </noscript>
 </head>
 
 <body>
@@ -124,7 +132,7 @@
                 "@type": "ContactPoint",
                 "email": "kairos.ai.tech@gmail.com",
                 "contactType": "customer service",
-                "availableLanguage": ["zh-TW", "en", "ja", "es"]
+                "availableLanguage": ["en", "zh-TW", "ja", "es", "it", "fr", "ko", "de"]
             },
             "areaServed": ["TW", "ASIA"],
             "knowsAbout": [
@@ -194,7 +202,7 @@
             "alternateName": "Kairos.ai - iTech AI 鋼筋估算",
             "url": "https://www.kairosaitech.com/",
             "description": "優時科技 Kairos.ai 打造 iTech — AEC 產業的 AI 鋼筋估算系統，並提供客製 AI 系統與數據分析平台。",
-            "inLanguage": ["zh-TW", "en", "ja", "es"],
+            "inLanguage": ["en", "zh-TW", "ja", "es", "it", "fr", "ko", "de"],
             "potentialAction": {
                 "@type": "SearchAction",
                 "target": "https://www.kairosaitech.com/?s={search_term_string}",
@@ -336,7 +344,7 @@
                         <span class="logo-text">Kairos<span class="logo-accent">.ai</span></span>
                     </div>
                 </a>
-                <ul class="nav-menu">
+                <ul class="nav-menu" id="navMenu">
                     <li><a href="#how" class="nav-link" data-i18n="nav.how">How it works</a></li>
                     <li><a href="#product" class="nav-link" data-i18n="nav.products">iTech</a></li>
                     <li><a href="#services" class="nav-link" data-i18n="nav.services">Services</a></li>
@@ -344,7 +352,7 @@
                     <li><a href="#contact" class="nav-link" data-i18n="nav.contact">Contact</a></li>
                 </ul>
                 <div class="language-switcher">
-                    <button class="lang-selector-btn" id="langSelector">
+                    <button class="lang-selector-btn" id="langSelector" aria-haspopup="true" aria-expanded="false" aria-label="Select language">
                         <svg class="lang-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                             <circle cx="12" cy="12" r="10"/>
                             <line x1="2" y1="12" x2="22" y2="12"/>
@@ -366,7 +374,7 @@
                         <button class="lang-option" data-lang="de"><span class="lang-flag">🇩🇪</span><span class="lang-name">Deutsch</span></button>
                     </div>
                 </div>
-                <button class="hamburger" id="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
+                <button class="hamburger" id="hamburger" aria-label="Menu" aria-expanded="false" aria-controls="navMenu"><span></span><span></span><span></span></button>
             </div>
         </div>
     </nav>

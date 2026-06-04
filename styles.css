@@ -30,7 +30,7 @@ ul { list-style: none; }
     --amber-2: #ed7a1c;
     --paper:   #e9f1fb;
     --muted:   #9db1cb;
-    --faint:   #61768f;
+    --faint:   #8597b0;
 
     --font-display: "Khand", "Saira Condensed", sans-serif;
     --font-body: "Hanken Grotesk", system-ui, sans-serif;
@@ -53,6 +53,9 @@ body {
     -webkit-font-smoothing: antialiased;
     text-rendering: optimizeLegibility;
 }
+
+/* Visible keyboard focus for all interactive elements (mouse clicks unaffected) */
+:focus-visible { outline: 2px solid var(--cyan); outline-offset: 3px; border-radius: 4px; }
 
 /* ===== Continuous fixed canvas (shared by every section) ===== */
 .bg-atmos, .bg-grid, .bg-noise { position: fixed; inset: 0; pointer-events: none; }
@@ -400,7 +403,7 @@ section { position: relative; padding: clamp(84px, 12vh, 150px) 0; }
     transition: border-color 0.25s, background 0.25s;
 }
 .contact-form input::placeholder, .contact-form textarea::placeholder { color: var(--faint); }
-.contact-form input:focus, .contact-form textarea:focus { outline: none; border-color: var(--cyan); background: rgba(91, 200, 255, 0.05); }
+.contact-form input:focus, .contact-form textarea:focus { outline: none; border-color: var(--cyan); background: rgba(91, 200, 255, 0.05); box-shadow: 0 0 0 3px rgba(91, 200, 255, 0.25); }
 .contact-form textarea { resize: vertical; min-height: 130px; }
 .btn-block { width: 100%; justify-content: center; }
 .contact-info { display: grid; gap: 22px; align-content: start; }
@@ -457,9 +460,10 @@ section { position: relative; padding: clamp(84px, 12vh, 150px) 0; }
     .nav-menu {
         position: fixed; inset: 64px 0 auto 0; flex-direction: column; align-items: stretch; gap: 4px;
         background: rgba(8, 12, 20, 0.97); backdrop-filter: blur(16px); padding: 16px var(--gutter) 24px;
-        border-bottom: 1px solid var(--line); transform: translateY(-130%); transition: transform 0.4s var(--ease);
+        border-bottom: 1px solid var(--line); transform: translateY(-130%); transition: transform 0.4s var(--ease), visibility 0.4s;
+        visibility: hidden;
     }
-    .nav-menu.active { transform: translateY(0); }
+    .nav-menu.active { transform: translateY(0); visibility: visible; }
     .nav-link { padding: 14px; font-size: 1rem; }
     .nav-link::after { display: none; }
     .hamburger { display: flex; }

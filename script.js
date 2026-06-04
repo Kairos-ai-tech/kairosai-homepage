@@ -24,18 +24,6 @@ const translations = {
         'services.apps.desc': 'Innovative AI-powered applications that transform user experiences and drive engagement. From concept to deployment.',
         'services.data.title': 'Data Analysis',
         'services.data.desc': 'Transform raw data into actionable insights. Our advanced analytics solutions help you make data-driven decisions with confidence.',
-        'services.factory.title': 'Factory Process Optimization',
-        'services.factory.desc': 'Modernize and optimize your manufacturing processes with AI-driven solutions. We help improve efficiency, reduce costs, and enhance quality control in your operations.',
-        'services.custom.title': 'Customized Solutions',
-        'services.custom.desc': 'Tailored projects designed specifically for your unique business needs. From concept to completion, we build bespoke solutions that perfectly fit your requirements.',
-        'tech.title': 'Powered by Leading Technologies',
-        'tech.subtitle': 'We leverage cutting-edge tools and frameworks to deliver exceptional results',
-        'tech.ml': 'Machine Learning',
-        'tech.cloud': 'Cloud Infrastructure',
-        'tech.api': 'RESTful APIs',
-        'tech.db': 'Database Systems',
-        'tech.neural': 'Neural Networks',
-        'tech.devops': 'DevOps & CI/CD',
         'about.title': 'Why Choose Kairos.ai?',
         'about.intro': 'At Kairos.ai, we bring applied AI to the construction industry. Our flagship system, iTech, automates rebar estimation for AEC teams — and we build custom AI systems, backend infrastructure, and data platforms with the same engineering rigor.',
         'about.desc': 'We are dedicated to creating solutions that don\'t just save time, but unlock new possibilities for our users and customers.',
@@ -72,43 +60,6 @@ const translations = {
         'footer.linkedin': 'LinkedIn',
         'footer.github': 'GitHub',
         'footer.copyright': '© 2025 Kairos.ai. All rights reserved.',
-        'solutions.title': 'Kairos.ai AI Systems & Data Intelligence Solutions',
-        'solutions.subtitle': 'Applied AI — from rebar estimation to custom AI systems and data platforms',
-        'solutions.ai.title': 'AI Systems Design & Implementation',
-        'solutions.ai.desc': 'Kairos.ai provides professional AI systems design services, from requirements analysis, system architecture design, AI model development to system integration, creating customized AI solutions for enterprises. Our AI systems cover machine learning, deep learning, computer vision, natural language processing and other fields, helping enterprises implement AI applications in smart factories, production optimization, quality control and other scenarios.',
-        'solutions.ai.badge1': 'Machine Learning',
-        'solutions.ai.badge2': 'Deep Learning',
-        'solutions.ai.badge3': 'Computer Vision',
-        'solutions.factory.title': 'Smart Factory Construction & Optimization',
-        'solutions.factory.desc': 'Smart Factory is the core of Industry 4.0. Kairos.ai specializes in smart factory construction and optimization services. We provide intelligent manufacturing solutions such as process monitoring, production line automation, predictive maintenance, and quality inspection. Through IoT, AI, and big data analysis technologies, we build truly smart factories to improve production efficiency, reduce operating costs, and enhance product quality. We have extensive smart factory implementation experience in semiconductor manufacturing, solar energy industry, food processing and other fields.',
-        'solutions.factory.badge1': 'Process Monitoring',
-        'solutions.factory.badge2': 'Production Automation',
-        'solutions.factory.badge3': 'Predictive Maintenance',
-        'solutions.transform.title': 'Manufacturing Digital Transformation Services',
-        'solutions.transform.desc': 'Digital transformation is the key for enterprises to maintain competitiveness. Kairos.ai helps traditional manufacturing industries undergo comprehensive digital transformation, from digital infrastructure, data platform construction, AI system implementation to smart manufacturing realization. Our digital transformation services include: enterprise process digitization, production data management systems, AI-driven decision support systems, smart factory transformation planning, etc. Through systematic digital transformation strategies, we help enterprises transition from traditional manufacturing to smart manufacturing and achieve industrial upgrading.',
-        'solutions.transform.badge1': 'Process Digitization',
-        'solutions.transform.badge2': 'Data Platform',
-        'solutions.transform.badge3': 'AI Implementation',
-        'solutions.data.title': 'Manufacturing AI Data Analysis Platform',
-        'solutions.data.desc': 'Data is the core asset of smart factories. Kairos.ai\'s AI data analysis platform integrates multi-source data such as production equipment data, quality data, and material data, using AI technology for real-time monitoring, anomaly detection, trend prediction, and process optimization. Our data analysis solutions help enterprises: improve yield, reduce downtime, optimize production scheduling, and reduce energy consumption. Through data-driven decision-making, we achieve precise management and continuous improvement of smart factories.',
-        'solutions.data.badge1': 'Real-time Monitoring',
-        'solutions.data.badge2': 'Anomaly Detection',
-        'solutions.data.badge3': 'Trend Prediction',
-        'solutions.keywords.title': 'Industry Keywords',
-        'solutions.keywords.tag1': 'Kairos.ai',
-        'solutions.keywords.tag2': 'Kairos.ai',
-        'solutions.keywords.tag3': 'AI Systems',
-        'solutions.keywords.tag4': 'Smart Factory',
-        'solutions.keywords.tag5': 'Digital Transformation',
-        'solutions.keywords.tag6': 'AI Systems Design',
-        'solutions.keywords.tag7': 'Smart Manufacturing',
-        'solutions.keywords.tag8': 'Industry 4.0',
-        'solutions.keywords.tag9': 'Process Optimization',
-        'solutions.keywords.tag10': 'AI Data Analysis',
-        'solutions.keywords.tag11': 'Semiconductor AI',
-        'solutions.keywords.tag12': 'Solar Smart Factory',
-        'solutions.keywords.tag13': 'Digital Transformation Experts',
-        'solutions.keywords.tag14': 'Intelligent Factory',
         'products.title': 'Our Products',
         'products.subtitle': 'Applied AI for the construction industry',
         'products.itech.title': 'iTech',
@@ -142,18 +93,6 @@ const translations = {
         'services.apps.desc': '創新的人工智慧應用程式，轉變用戶體驗並提高參與度。從概念到部署，全程服務。',
         'services.data.title': '數據分析',
         'services.data.desc': '將原始數據轉化為可操作的洞察。我們先進的分析解決方案幫助您充滿信心地做出數據驅動的決策。',
-        'services.factory.title': '工廠流程優化',
-        'services.factory.desc': '透過人工智慧驅動的解決方案，現代化和優化您的製造流程。我們幫助提高效率、降低成本並增強您營運的品質控制。',
-        'services.custom.title': '客製化解決方案',
-        'services.custom.desc': '專為您獨特的業務需求量身設計的客製化專案。從概念到完成，我們構建完全符合您要求的定制解決方案。',
-        'tech.title': '頂尖科技驅動',
-        'tech.subtitle': '我們運用尖端工具和框架，提供卓越成果',
-        'tech.ml': '機器學習',
-        'tech.cloud': '雲端基礎設施',
-        'tech.api': 'RESTful APIs',
-        'tech.db': '資料庫系統',
-        'tech.neural': '神經網路',
-        'tech.devops': 'DevOps & CI/CD',
         'about.title': '為什麼選擇優時科技？',
         'about.intro': '優時科技（Kairos.ai）將應用 AI 帶進營建產業。旗艦系統 iTech 為 AEC 團隊自動化鋼筋估算；我們也以同等的工程實力打造客製 AI 系統、後端架構與數據平台。',
         'about.desc': '我們致力於創造不僅節省時間，更能為用戶和客戶開啟新可能性的解決方案。',
@@ -190,43 +129,6 @@ const translations = {
         'footer.linkedin': 'LinkedIn',
         'footer.github': 'GitHub',
         'footer.copyright': '© 2025 Kairos.ai 優時科技. 版權所有。',
-        'solutions.title': '優時科技 AI 系統與數據智慧解決方案',
-        'solutions.subtitle': '應用 AI — 從鋼筋估算到客製 AI 系統與數據平台',
-        'solutions.ai.title': 'AI系統設計與導入',
-        'solutions.ai.desc': '優時科技 Kairos.ai 提供專業的 AI系統設計服務，從需求分析、系統架構設計、AI 模型開發到系統整合，為企業打造客製化的 AI 解決方案。我們的 AI系統涵蓋機器學習、深度學習、電腦視覺、自然語言處理等領域，協助企業在 智慧工廠、生產優化、品質控制等場景中實現 AI 應用。',
-        'solutions.ai.badge1': '機器學習',
-        'solutions.ai.badge2': '深度學習',
-        'solutions.ai.badge3': '電腦視覺',
-        'solutions.factory.title': '智慧工廠建置與優化',
-        'solutions.factory.desc': '智慧工廠是工業 4.0 的核心，優時科技專精於智慧工廠建置與優化服務。我們提供製程監控、產線自動化、預測性維護、品質檢測等智慧製造解決方案。透過 IoT 物聯網、AI 人工智慧、大數據分析等技術，打造真正的智慧工廠，提升生產效率、降低營運成本、提高產品品質。我們在半導體製造、太陽能產業、食品加工等領域擁有豐富的智慧工廠實作經驗。',
-        'solutions.factory.badge1': '製程監控',
-        'solutions.factory.badge2': '產線自動化',
-        'solutions.factory.badge3': '預測性維護',
-        'solutions.transform.title': '製造業數位轉型服務',
-        'solutions.transform.desc': '數位轉型是企業保持競爭力的關鍵。優時科技協助傳統製造業進行全方位的數位轉型，從數位化基礎建設、數據平台搭建、AI 系統導入到智慧製造實現。我們的數位轉型服務包含：企業流程數位化、生產數據管理系統、AI 驅動的決策支援系統、智慧工廠轉型規劃等。透過系統性的數位轉型策略，協助企業從傳統製造邁向智慧製造，實現產業升級。',
-        'solutions.transform.badge1': '流程數位化',
-        'solutions.transform.badge2': '數據平台',
-        'solutions.transform.badge3': 'AI 導入',
-        'solutions.data.title': '製造業 AI 數據分析平台',
-        'solutions.data.desc': '數據是智慧工廠的核心資產。優時科技的 AI 數據分析平台整合生產設備數據、品質數據、物料數據等多源資料，運用 AI 技術進行即時監控、異常檢測、趨勢預測、製程優化。我們的數據分析解決方案協助企業：提升良率、減少停機時間、優化生產排程、降低能源消耗。透過數據驅動的決策，實現智慧工廠的精準管理與持續改善。',
-        'solutions.data.badge1': '即時監控',
-        'solutions.data.badge2': '異常檢測',
-        'solutions.data.badge3': '趨勢預測',
-        'solutions.keywords.title': '產業關鍵字',
-        'solutions.keywords.tag1': '優時科技',
-        'solutions.keywords.tag2': 'Kairos.ai',
-        'solutions.keywords.tag3': 'AI系統',
-        'solutions.keywords.tag4': '智慧工廠',
-        'solutions.keywords.tag5': '數位轉型',
-        'solutions.keywords.tag6': 'AI系統設計',
-        'solutions.keywords.tag7': '智慧製造',
-        'solutions.keywords.tag8': '工業4.0',
-        'solutions.keywords.tag9': '製程優化',
-        'solutions.keywords.tag10': 'AI 數據分析',
-        'solutions.keywords.tag11': '半導體 AI',
-        'solutions.keywords.tag12': '太陽能智慧工廠',
-        'solutions.keywords.tag13': '數位轉型專家',
-        'solutions.keywords.tag14': '智能工廠',
         'products.title': '我們的產品',
         'products.subtitle': '為營建產業打造的應用 AI',
         'products.itech.title': 'iTech',
@@ -260,18 +162,6 @@ const translations = {
         'services.apps.desc': 'ユーザーエクスペリエンスを変革し、エンゲージメントを促進する革新的なAI搭載アプリケーション。コンセプトから展開まで。',
         'services.data.title': 'データ分析',
         'services.data.desc': '生データを実用的な洞察に変換します。当社の高度な分析ソリューションは、自信を持ってデータ駆動型の意思決定を行うのに役立ちます。',
-        'services.factory.title': '工場プロセスの最適化',
-        'services.factory.desc': 'AI駆動のソリューションで製造プロセスを近代化および最適化します。効率を向上させ、コストを削減し、運用における品質管理を強化します。',
-        'services.custom.title': 'カスタマイズソリューション',
-        'services.custom.desc': 'お客様独自のビジネスニーズに合わせて特別に設計されたカスタマイズプロジェクト。コンセプトから完成まで、お客様の要件に完璧に適合するソリューションを構築します。',
-        'tech.title': '最先端技術による実現',
-        'tech.subtitle': '最新のツールとフレームワークを活用し、卓越した成果を提供します',
-        'tech.ml': '機械学習',
-        'tech.cloud': 'クラウドインフラストラクチャ',
-        'tech.api': 'RESTful APIs',
-        'tech.db': 'データベースシステム',
-        'tech.neural': 'ニューラルネットワーク',
-        'tech.devops': 'DevOps & CI/CD',
         'about.title': 'なぜKairos.aiを選ぶのか？',
         'about.intro': 'Kairos.aiは応用AIを建設業界に届けます。旗艦システムiTechはAECチームの鉄筋積算を自動化。同じ技術力でカスタムAIシステム、バックエンド基盤、データプラットフォームも構築します。',
         'about.desc': '私たちは、単に時間を節約するだけでなく、ユーザーやお客様に新しい可能性を開くソリューションの創造に専念しています。',
@@ -308,43 +198,6 @@ const translations = {
         'footer.linkedin': 'LinkedIn',
         'footer.github': 'GitHub',
         'footer.copyright': '© 2025 Kairos.ai. All rights reserved.',
-        'solutions.title': 'Kairos.ai AIシステムとデータインテリジェンスソリューション',
-        'solutions.subtitle': '応用AI — 鉄筋積算からカスタムAIシステム、データプラットフォームまで',
-        'solutions.ai.title': 'AIシステム設計と導入',
-        'solutions.ai.desc': 'Kairos.aiは、要件分析、システムアーキテクチャ設計、AIモデル開発からシステム統合まで、企業向けにカスタマイズされたAIソリューションを構築する専門的なAIシステム設計サービスを提供します。当社のAIシステムは、機械学習、ディープラーニング、コンピュータビジョン、自然言語処理などの分野をカバーし、スマートファクトリー、生産最適化、品質管理などのシナリオでAIアプリケーションの実装を支援します。',
-        'solutions.ai.badge1': '機械学習',
-        'solutions.ai.badge2': 'ディープラーニング',
-        'solutions.ai.badge3': 'コンピュータビジョン',
-        'solutions.factory.title': 'スマートファクトリー構築と最適化',
-        'solutions.factory.desc': 'スマートファクトリーはインダストリー4.0の中核です。Kairos.aiはスマートファクトリーの構築と最適化サービスを専門としています。プロセス監視、生産ライン自動化、予知保全、品質検査などのインテリジェント製造ソリューションを提供します。IoT、AI、ビッグデータ分析などの技術を通じて、真のスマートファクトリーを構築し、生産効率を向上させ、運営コストを削減し、製品品質を向上させます。半導体製造、太陽光発電産業、食品加工などの分野で豊富なスマートファクトリー実装経験を持っています。',
-        'solutions.factory.badge1': 'プロセス監視',
-        'solutions.factory.badge2': '生産自動化',
-        'solutions.factory.badge3': '予知保全',
-        'solutions.transform.title': '製造業デジタルトランスフォーメーションサービス',
-        'solutions.transform.desc': 'デジタルトランスフォーメーションは企業が競争力を維持するための鍵です。Kairos.aiは、デジタルインフラストラクチャ、データプラットフォーム構築、AIシステム導入からスマート製造実現まで、伝統的な製造業の包括的なデジタルトランスフォーメーションを支援します。当社のデジタルトランスフォーメーションサービスには、企業プロセスのデジタル化、生産データ管理システム、AI駆動の意思決定支援システム、スマートファクトリー変革計画などが含まれます。体系的なデジタルトランスフォーメーション戦略を通じて、企業が従来の製造からスマート製造への移行を支援し、産業のアップグレードを実現します。',
-        'solutions.transform.badge1': 'プロセスデジタル化',
-        'solutions.transform.badge2': 'データプラットフォーム',
-        'solutions.transform.badge3': 'AI導入',
-        'solutions.data.title': '製造業AIデータ分析プラットフォーム',
-        'solutions.data.desc': 'データはスマートファクトリーの中核資産です。Kairos.aiのAIデータ分析プラットフォームは、生産設備データ、品質データ、材料データなどのマルチソースデータを統合し、AI技術を使用してリアルタイム監視、異常検出、トレンド予測、プロセス最適化を行います。当社のデータ分析ソリューションは、企業が歩留まりを向上させ、ダウンタイムを削減し、生産スケジューリングを最適化し、エネルギー消費を削減することを支援します。データ駆動型の意思決定を通じて、スマートファクトリーの精密な管理と継続的な改善を実現します。',
-        'solutions.data.badge1': 'リアルタイム監視',
-        'solutions.data.badge2': '異常検出',
-        'solutions.data.badge3': 'トレンド予測',
-        'solutions.keywords.title': '業界キーワード',
-        'solutions.keywords.tag1': 'Kairos.ai',
-        'solutions.keywords.tag2': 'Kairos.ai',
-        'solutions.keywords.tag3': 'AIシステム',
-        'solutions.keywords.tag4': 'スマートファクトリー',
-        'solutions.keywords.tag5': 'デジタルトランスフォーメーション',
-        'solutions.keywords.tag6': 'AIシステム設計',
-        'solutions.keywords.tag7': 'スマート製造',
-        'solutions.keywords.tag8': 'インダストリー4.0',
-        'solutions.keywords.tag9': 'プロセス最適化',
-        'solutions.keywords.tag10': 'AIデータ分析',
-        'solutions.keywords.tag11': '半導体AI',
-        'solutions.keywords.tag12': '太陽光スマートファクトリー',
-        'solutions.keywords.tag13': 'デジタルトランスフォーメーション専門家',
-        'solutions.keywords.tag14': 'インテリジェントファクトリー',
         'products.title': '製品紹介',
         'products.subtitle': '建設業界のための応用AI',
         'products.itech.title': 'iTech',
@@ -378,18 +231,6 @@ const translations = {
         'services.apps.desc': 'Aplicaciones innovadoras impulsadas por IA que transforman las experiencias de los usuarios y aumentan el compromiso. Desde el concepto hasta el despliegue.',
         'services.data.title': 'Análisis de Datos',
         'services.data.desc': 'Transforme datos sin procesar en información accionable. Nuestras soluciones de análisis avanzado le ayudan a tomar decisiones basadas en datos con confianza.',
-        'services.factory.title': 'Optimización de Procesos de Fábrica',
-        'services.factory.desc': 'Modernice y optimice sus procesos de fabricación con soluciones impulsadas por IA. Ayudamos a mejorar la eficiencia, reducir costos y mejorar el control de calidad en sus operaciones.',
-        'services.custom.title': 'Soluciones Personalizadas',
-        'services.custom.desc': 'Proyectos a medida diseñados específicamente para sus necesidades comerciales únicas. Desde el concepto hasta la finalización, construimos soluciones personalizadas que se ajustan perfectamente a sus requisitos.',
-        'tech.title': 'Impulsados por Tecnologías Líderes',
-        'tech.subtitle': 'Aprovechamos herramientas y marcos de vanguardia para ofrecer resultados excepcionales',
-        'tech.ml': 'Aprendizaje Automático',
-        'tech.cloud': 'Infraestructura en la Nube',
-        'tech.api': 'APIs RESTful',
-        'tech.db': 'Sistemas de Base de Datos',
-        'tech.neural': 'Redes Neuronales',
-        'tech.devops': 'DevOps & CI/CD',
         'about.title': '¿Por qué elegir Kairos.ai?',
         'about.intro': 'En Kairos.ai llevamos la IA aplicada al sector de la construcción. Nuestro sistema insignia, iTech, automatiza la estimación de acero para equipos AEC; y construimos sistemas de IA a medida, infraestructura backend y plataformas de datos con el mismo rigor de ingeniería.',
         'about.desc': 'Nos dedicamos a crear soluciones que no solo ahorran tiempo, sino que desbloquean nuevas posibilidades para nuestros usuarios y clientes.',
@@ -426,43 +267,6 @@ const translations = {
         'footer.linkedin': 'LinkedIn',
         'footer.github': 'GitHub',
         'footer.copyright': '© 2025 Kairos.ai. Todos los derechos reservados.',
-        'solutions.title': 'Kairos.ai Sistemas de IA y Soluciones de Inteligencia de Datos',
-        'solutions.subtitle': 'IA aplicada — desde la estimación de acero hasta sistemas de IA a medida y plataformas de datos',
-        'solutions.ai.title': 'Diseño e Implementación de Sistemas de IA',
-        'solutions.ai.desc': 'Kairos.ai proporciona servicios profesionales de diseño de sistemas de IA, desde análisis de requisitos, diseño de arquitectura de sistemas, desarrollo de modelos de IA hasta integración de sistemas, creando soluciones de IA personalizadas para empresas. Nuestros sistemas de IA cubren aprendizaje automático, aprendizaje profundo, visión por computadora, procesamiento de lenguaje natural y otros campos, ayudando a las empresas a implementar aplicaciones de IA en fábricas inteligentes, optimización de producción, control de calidad y otros escenarios.',
-        'solutions.ai.badge1': 'Aprendizaje Automático',
-        'solutions.ai.badge2': 'Aprendizaje Profundo',
-        'solutions.ai.badge3': 'Visión por Computadora',
-        'solutions.factory.title': 'Construcción y Optimización de Fábrica Inteligente',
-        'solutions.factory.desc': 'La Fábrica Inteligente es el núcleo de la Industria 4.0. Kairos.ai se especializa en servicios de construcción y optimización de fábricas inteligentes. Proporcionamos soluciones de fabricación inteligente como monitoreo de procesos, automatización de líneas de producción, mantenimiento predictivo e inspección de calidad. A través de tecnologías IoT, IA y análisis de big data, construimos verdaderas fábricas inteligentes para mejorar la eficiencia de producción, reducir costos operativos y mejorar la calidad del producto. Tenemos amplia experiencia en implementación de fábricas inteligentes en fabricación de semiconductores, industria de energía solar, procesamiento de alimentos y otros campos.',
-        'solutions.factory.badge1': 'Monitoreo de Procesos',
-        'solutions.factory.badge2': 'Automatización de Producción',
-        'solutions.factory.badge3': 'Mantenimiento Predictivo',
-        'solutions.transform.title': 'Servicios de Transformación Digital en Manufactura',
-        'solutions.transform.desc': 'La transformación digital es la clave para que las empresas mantengan la competitividad. Kairos.ai ayuda a las industrias manufactureras tradicionales a realizar una transformación digital integral, desde infraestructura digital, construcción de plataformas de datos, implementación de sistemas de IA hasta realización de fabricación inteligente. Nuestros servicios de transformación digital incluyen: digitalización de procesos empresariales, sistemas de gestión de datos de producción, sistemas de apoyo a decisiones impulsados por IA, planificación de transformación de fábricas inteligentes, etc. A través de estrategias sistemáticas de transformación digital, ayudamos a las empresas a pasar de la fabricación tradicional a la fabricación inteligente y lograr la actualización industrial.',
-        'solutions.transform.badge1': 'Digitalización de Procesos',
-        'solutions.transform.badge2': 'Plataforma de Datos',
-        'solutions.transform.badge3': 'Implementación de IA',
-        'solutions.data.title': 'Plataforma de Análisis de Datos de IA para Manufactura',
-        'solutions.data.desc': 'Los datos son el activo central de las fábricas inteligentes. La plataforma de análisis de datos de IA de Kairos.ai integra datos de múltiples fuentes como datos de equipos de producción, datos de calidad y datos de materiales, utilizando tecnología de IA para monitoreo en tiempo real, detección de anomalías, predicción de tendencias y optimización de procesos. Nuestras soluciones de análisis de datos ayudan a las empresas a: mejorar el rendimiento, reducir el tiempo de inactividad, optimizar la programación de producción y reducir el consumo de energía. A través de la toma de decisiones basada en datos, logramos una gestión precisa y mejora continua de las fábricas inteligentes.',
-        'solutions.data.badge1': 'Monitoreo en Tiempo Real',
-        'solutions.data.badge2': 'Detección de Anomalías',
-        'solutions.data.badge3': 'Predicción de Tendencias',
-        'solutions.keywords.title': 'Palabras Clave de la Industria',
-        'solutions.keywords.tag1': 'Kairos.ai',
-        'solutions.keywords.tag2': 'Kairos.ai',
-        'solutions.keywords.tag3': 'Sistemas de IA',
-        'solutions.keywords.tag4': 'Fábrica Inteligente',
-        'solutions.keywords.tag5': 'Transformación Digital',
-        'solutions.keywords.tag6': 'Diseño de Sistemas de IA',
-        'solutions.keywords.tag7': 'Fabricación Inteligente',
-        'solutions.keywords.tag8': 'Industria 4.0',
-        'solutions.keywords.tag9': 'Optimización de Procesos',
-        'solutions.keywords.tag10': 'Análisis de Datos de IA',
-        'solutions.keywords.tag11': 'IA de Semiconductores',
-        'solutions.keywords.tag12': 'Fábrica Inteligente Solar',
-        'solutions.keywords.tag13': 'Expertos en Transformación Digital',
-        'solutions.keywords.tag14': 'Fábrica Inteligente',
         'products.title': 'Nuestros Productos',
         'products.subtitle': 'IA aplicada para el sector de la construcción',
         'products.itech.title': 'iTech',
@@ -496,18 +300,6 @@ const translations = {
         'services.apps.desc': 'Applicazioni innovative basate sull\'AI che trasformano l\'esperienza utente e aumentano il coinvolgimento. Dal concept al deployment.',
         'services.data.title': 'Analisi dei Dati',
         'services.data.desc': 'Trasforma i dati grezzi in insight azionabili. Le nostre soluzioni di analisi avanzata ti aiutano a prendere decisioni basate sui dati con sicurezza.',
-        'services.factory.title': 'Ottimizzazione Processi di Fabbrica',
-        'services.factory.desc': 'Modernizza e ottimizza i tuoi processi produttivi con soluzioni basate sull\'AI. Ti aiutiamo a migliorare l\'efficienza, ridurre i costi e migliorare il controllo qualità.',
-        'services.custom.title': 'Soluzioni Personalizzate',
-        'services.custom.desc': 'Progetti su misura progettati specificamente per le tue esigenze aziendali uniche. Dal concept al completamento, costruiamo soluzioni che si adattano perfettamente ai tuoi requisiti.',
-        'tech.title': 'Alimentati dalle Tecnologie Leader',
-        'tech.subtitle': 'Sfruttiamo strumenti e framework all\'avanguardia per offrire risultati eccezionali',
-        'tech.ml': 'Machine Learning',
-        'tech.cloud': 'Infrastruttura Cloud',
-        'tech.api': 'API RESTful',
-        'tech.db': 'Sistemi di Database',
-        'tech.neural': 'Reti Neurali',
-        'tech.devops': 'DevOps & CI/CD',
         'about.title': 'Perché Scegliere Kairos.ai?',
         'about.intro': 'In Kairos.ai portiamo l\'IA applicata al settore delle costruzioni. Il nostro sistema di punta, iTech, automatizza il computo dei ferri per i team AEC; e realizziamo sistemi AI su misura, infrastrutture backend e piattaforme dati con lo stesso rigore ingegneristico.',
         'about.desc': 'Ci dedichiamo a creare soluzioni che non solo fanno risparmiare tempo, ma sbloccano nuove possibilità per i nostri utenti e clienti.',
@@ -544,43 +336,6 @@ const translations = {
         'footer.linkedin': 'LinkedIn',
         'footer.github': 'GitHub',
         'footer.copyright': '© 2025 Kairos.ai. Tutti i diritti riservati.',
-        'solutions.title': 'Kairos.ai Sistemi AI e Soluzioni di Intelligenza dei Dati',
-        'solutions.subtitle': 'IA applicata — dalla stima dei ferri d\'armatura ai sistemi AI su misura e alle piattaforme dati',
-        'solutions.ai.title': 'Progettazione e Implementazione di Sistemi AI',
-        'solutions.ai.desc': 'Kairos.ai fornisce servizi professionali di progettazione di sistemi AI, dall\'analisi dei requisiti, progettazione dell\'architettura di sistema, sviluppo di modelli AI fino all\'integrazione di sistema, creando soluzioni AI personalizzate per le aziende. I nostri sistemi AI coprono machine learning, deep learning, computer vision, elaborazione del linguaggio naturale e altri campi.',
-        'solutions.ai.badge1': 'Machine Learning',
-        'solutions.ai.badge2': 'Deep Learning',
-        'solutions.ai.badge3': 'Computer Vision',
-        'solutions.factory.title': 'Costruzione e Ottimizzazione della Fabbrica Intelligente',
-        'solutions.factory.desc': 'La Fabbrica Intelligente è il cuore dell\'Industria 4.0. Kairos.ai è specializzata in servizi di costruzione e ottimizzazione di fabbriche intelligenti. Forniamo soluzioni di produzione intelligente come monitoraggio dei processi, automazione delle linee di produzione, manutenzione predittiva e ispezione della qualità.',
-        'solutions.factory.badge1': 'Monitoraggio Processi',
-        'solutions.factory.badge2': 'Automazione Produzione',
-        'solutions.factory.badge3': 'Manutenzione Predittiva',
-        'solutions.transform.title': 'Servizi di Trasformazione Digitale per il Manifatturiero',
-        'solutions.transform.desc': 'La trasformazione digitale è la chiave per mantenere la competitività aziendale. Kairos.ai aiuta le industrie manifatturiere tradizionali a realizzare una trasformazione digitale completa, dall\'infrastruttura digitale, alla costruzione di piattaforme dati, all\'implementazione di sistemi AI fino alla realizzazione della produzione intelligente.',
-        'solutions.transform.badge1': 'Digitalizzazione Processi',
-        'solutions.transform.badge2': 'Piattaforma Dati',
-        'solutions.transform.badge3': 'Implementazione AI',
-        'solutions.data.title': 'Piattaforma di Analisi Dati AI per il Manifatturiero',
-        'solutions.data.desc': 'I dati sono l\'asset centrale delle fabbriche intelligenti. La piattaforma di analisi dati AI di Kairos.ai integra dati da più fonti utilizzando la tecnologia AI per il monitoraggio in tempo reale, il rilevamento delle anomalie, la previsione delle tendenze e l\'ottimizzazione dei processi.',
-        'solutions.data.badge1': 'Monitoraggio in Tempo Reale',
-        'solutions.data.badge2': 'Rilevamento Anomalie',
-        'solutions.data.badge3': 'Previsione Tendenze',
-        'solutions.keywords.title': 'Parole Chiave del Settore',
-        'solutions.keywords.tag1': 'Kairos.ai',
-        'solutions.keywords.tag2': 'Kairos.ai',
-        'solutions.keywords.tag3': 'Sistemi AI',
-        'solutions.keywords.tag4': 'Fabbrica Intelligente',
-        'solutions.keywords.tag5': 'Trasformazione Digitale',
-        'solutions.keywords.tag6': 'Progettazione Sistemi AI',
-        'solutions.keywords.tag7': 'Produzione Intelligente',
-        'solutions.keywords.tag8': 'Industria 4.0',
-        'solutions.keywords.tag9': 'Ottimizzazione Processi',
-        'solutions.keywords.tag10': 'Analisi Dati AI',
-        'solutions.keywords.tag11': 'AI Semiconduttori',
-        'solutions.keywords.tag12': 'Fabbrica Intelligente Solare',
-        'solutions.keywords.tag13': 'Esperti Trasformazione Digitale',
-        'solutions.keywords.tag14': 'Fabbrica Intelligente',
         'products.title': 'I Nostri Prodotti',
         'products.subtitle': 'IA applicata per il settore delle costruzioni',
         'products.itech.title': 'iTech',
@@ -614,18 +369,6 @@ const translations = {
         'services.apps.desc': 'Applications innovantes propulsées par l\'IA qui transforment l\'expérience utilisateur et stimulent l\'engagement. Du concept au déploiement.',
         'services.data.title': 'Analyse de Données',
         'services.data.desc': 'Transformez les données brutes en informations exploitables. Nos solutions d\'analyse avancée vous aident à prendre des décisions basées sur les données en toute confiance.',
-        'services.factory.title': 'Optimisation des Processus d\'Usine',
-        'services.factory.desc': 'Modernisez et optimisez vos processus de fabrication avec des solutions basées sur l\'IA. Nous aidons à améliorer l\'efficacité, réduire les coûts et améliorer le contrôle qualité.',
-        'services.custom.title': 'Solutions Sur Mesure',
-        'services.custom.desc': 'Projets sur mesure conçus spécifiquement pour vos besoins commerciaux uniques. Du concept à la réalisation, nous construisons des solutions qui correspondent parfaitement à vos exigences.',
-        'tech.title': 'Propulsé par les Technologies de Pointe',
-        'tech.subtitle': 'Nous exploitons des outils et frameworks de pointe pour fournir des résultats exceptionnels',
-        'tech.ml': 'Apprentissage Automatique',
-        'tech.cloud': 'Infrastructure Cloud',
-        'tech.api': 'APIs RESTful',
-        'tech.db': 'Systèmes de Bases de Données',
-        'tech.neural': 'Réseaux de Neurones',
-        'tech.devops': 'DevOps & CI/CD',
         'about.title': 'Pourquoi Choisir Kairos.ai ?',
         'about.intro': 'Chez Kairos.ai, nous mettons l\'IA appliquée au service du secteur de la construction. Notre système phare, iTech, automatise l\'estimation des armatures pour les équipes AEC ; et nous concevons des systèmes IA sur mesure, des infrastructures backend et des plateformes de données avec la même rigueur d\'ingénierie.',
         'about.desc': 'Nous nous consacrons à créer des solutions qui ne font pas que gagner du temps, mais ouvrent de nouvelles possibilités pour nos utilisateurs et clients.',
@@ -662,43 +405,6 @@ const translations = {
         'footer.linkedin': 'LinkedIn',
         'footer.github': 'GitHub',
         'footer.copyright': '© 2025 Kairos.ai. Tous droits réservés.',
-        'solutions.title': 'Kairos.ai Systèmes IA et Solutions d\'Intelligence des Données',
-        'solutions.subtitle': 'IA appliquée — de l\'estimation des armatures aux systèmes IA sur mesure et plateformes de données',
-        'solutions.ai.title': 'Conception et Mise en Œuvre de Systèmes IA',
-        'solutions.ai.desc': 'Kairos.ai fournit des services professionnels de conception de systèmes IA, de l\'analyse des besoins, la conception de l\'architecture système, le développement de modèles IA jusqu\'à l\'intégration système, créant des solutions IA personnalisées pour les entreprises. Nos systèmes IA couvrent l\'apprentissage automatique, le deep learning, la vision par ordinateur, le traitement du langage naturel et d\'autres domaines.',
-        'solutions.ai.badge1': 'Apprentissage Automatique',
-        'solutions.ai.badge2': 'Deep Learning',
-        'solutions.ai.badge3': 'Vision par Ordinateur',
-        'solutions.factory.title': 'Construction et Optimisation d\'Usine Intelligente',
-        'solutions.factory.desc': 'L\'Usine Intelligente est au cœur de l\'Industrie 4.0. Kairos.ai est spécialisé dans les services de construction et d\'optimisation d\'usines intelligentes. Nous fournissons des solutions de fabrication intelligente telles que la surveillance des processus, l\'automatisation des lignes de production, la maintenance prédictive et l\'inspection qualité.',
-        'solutions.factory.badge1': 'Surveillance des Processus',
-        'solutions.factory.badge2': 'Automatisation de Production',
-        'solutions.factory.badge3': 'Maintenance Prédictive',
-        'solutions.transform.title': 'Services de Transformation Numérique pour le Manufacturier',
-        'solutions.transform.desc': 'La transformation numérique est la clé pour que les entreprises maintiennent leur compétitivité. Kairos.ai aide les industries manufacturières traditionnelles à réaliser une transformation numérique complète, de l\'infrastructure numérique à la construction de plateformes de données, l\'implémentation de systèmes IA jusqu\'à la réalisation de la fabrication intelligente.',
-        'solutions.transform.badge1': 'Numérisation des Processus',
-        'solutions.transform.badge2': 'Plateforme de Données',
-        'solutions.transform.badge3': 'Implémentation IA',
-        'solutions.data.title': 'Plateforme d\'Analyse de Données IA pour le Manufacturier',
-        'solutions.data.desc': 'Les données sont l\'actif central des usines intelligentes. La plateforme d\'analyse de données IA de Kairos.ai intègre des données multi-sources en utilisant la technologie IA pour la surveillance en temps réel, la détection d\'anomalies, la prédiction de tendances et l\'optimisation des processus.',
-        'solutions.data.badge1': 'Surveillance en Temps Réel',
-        'solutions.data.badge2': 'Détection d\'Anomalies',
-        'solutions.data.badge3': 'Prédiction de Tendances',
-        'solutions.keywords.title': 'Mots-clés du Secteur',
-        'solutions.keywords.tag1': 'Kairos.ai',
-        'solutions.keywords.tag2': 'Kairos.ai',
-        'solutions.keywords.tag3': 'Systèmes IA',
-        'solutions.keywords.tag4': 'Usine Intelligente',
-        'solutions.keywords.tag5': 'Transformation Numérique',
-        'solutions.keywords.tag6': 'Conception Systèmes IA',
-        'solutions.keywords.tag7': 'Fabrication Intelligente',
-        'solutions.keywords.tag8': 'Industrie 4.0',
-        'solutions.keywords.tag9': 'Optimisation des Processus',
-        'solutions.keywords.tag10': 'Analyse de Données IA',
-        'solutions.keywords.tag11': 'IA Semi-conducteurs',
-        'solutions.keywords.tag12': 'Usine Intelligente Solaire',
-        'solutions.keywords.tag13': 'Experts Transformation Numérique',
-        'solutions.keywords.tag14': 'Usine Intelligente',
         'products.title': 'Nos Produits',
         'products.subtitle': 'IA appliquée pour le secteur de la construction',
         'products.itech.title': 'iTech',
@@ -732,18 +438,6 @@ const translations = {
         'services.apps.desc': '사용자 경험을 혁신하고 참여를 촉진하는 AI 기반 혁신 애플리케이션. 컨셉부터 배포까지.',
         'services.data.title': '데이터 분석',
         'services.data.desc': '원시 데이터를 실행 가능한 인사이트로 전환합니다. 고급 분석 솔루션으로 자신감 있는 데이터 기반 의사결정을 지원합니다.',
-        'services.factory.title': '공장 프로세스 최적화',
-        'services.factory.desc': 'AI 기반 솔루션으로 제조 프로세스를 현대화하고 최적화합니다. 효율성 향상, 비용 절감, 품질 관리 강화를 도와드립니다.',
-        'services.custom.title': '맞춤형 솔루션',
-        'services.custom.desc': '고유한 비즈니스 요구에 맞게 특별히 설계된 맞춤형 프로젝트. 컨셉부터 완성까지 요구 사항에 완벽히 맞는 솔루션을 구축합니다.',
-        'tech.title': '최첨단 기술로 구동',
-        'tech.subtitle': '최신 도구와 프레임워크를 활용하여 탁월한 결과를 제공합니다',
-        'tech.ml': '머신러닝',
-        'tech.cloud': '클라우드 인프라',
-        'tech.api': 'RESTful API',
-        'tech.db': '데이터베이스 시스템',
-        'tech.neural': '신경망',
-        'tech.devops': 'DevOps & CI/CD',
         'about.title': '왜 Kairos.ai를 선택하나요?',
         'about.intro': 'Kairos.ai는 응용 AI를 건설 산업에 제공합니다. 대표 시스템 iTech는 AEC 팀의 철근 산출을 자동화하며, 동일한 엔지니어링 역량으로 맞춤형 AI 시스템, 백엔드 인프라, 데이터 플랫폼을 구축합니다.',
         'about.desc': '시간을 절약할 뿐만 아니라 사용자와 고객에게 새로운 가능성을 열어주는 솔루션을 만드는 데 전념합니다.',
@@ -780,43 +474,6 @@ const translations = {
         'footer.linkedin': 'LinkedIn',
         'footer.github': 'GitHub',
         'footer.copyright': '© 2025 Kairos.ai. All rights reserved.',
-        'solutions.title': 'Kairos.ai AI 시스템 및 데이터 인텔리전스 솔루션',
-        'solutions.subtitle': '응용 AI — 철근 산출부터 맞춤형 AI 시스템과 데이터 플랫폼까지',
-        'solutions.ai.title': 'AI 시스템 설계 및 구현',
-        'solutions.ai.desc': 'Kairos.ai는 요구사항 분석, 시스템 아키텍처 설계, AI 모델 개발부터 시스템 통합까지 전문적인 AI 시스템 설계 서비스를 제공하여 기업을 위한 맞춤형 AI 솔루션을 구축합니다. 머신러닝, 딥러닝, 컴퓨터 비전, 자연어 처리 등의 분야를 다룹니다.',
-        'solutions.ai.badge1': '머신러닝',
-        'solutions.ai.badge2': '딥러닝',
-        'solutions.ai.badge3': '컴퓨터 비전',
-        'solutions.factory.title': '스마트 팩토리 구축 및 최적화',
-        'solutions.factory.desc': '스마트 팩토리는 인더스트리 4.0의 핵심입니다. Kairos.ai는 스마트 팩토리 구축 및 최적화 서비스를 전문으로 합니다. 공정 모니터링, 생산 라인 자동화, 예측 정비, 품질 검사 등 지능형 제조 솔루션을 제공합니다.',
-        'solutions.factory.badge1': '공정 모니터링',
-        'solutions.factory.badge2': '생산 자동화',
-        'solutions.factory.badge3': '예측 정비',
-        'solutions.transform.title': '제조업 디지털 전환 서비스',
-        'solutions.transform.desc': '디지털 전환은 기업이 경쟁력을 유지하는 핵심입니다. Kairos.ai는 디지털 인프라, 데이터 플랫폼 구축, AI 시스템 도입부터 스마트 제조 실현까지 전통 제조업의 종합적인 디지털 전환을 지원합니다.',
-        'solutions.transform.badge1': '프로세스 디지털화',
-        'solutions.transform.badge2': '데이터 플랫폼',
-        'solutions.transform.badge3': 'AI 도입',
-        'solutions.data.title': '제조업 AI 데이터 분석 플랫폼',
-        'solutions.data.desc': '데이터는 스마트 팩토리의 핵심 자산입니다. Kairos.ai의 AI 데이터 분석 플랫폼은 다중 소스 데이터를 통합하여 AI 기술로 실시간 모니터링, 이상 감지, 트렌드 예측, 공정 최적화를 수행합니다.',
-        'solutions.data.badge1': '실시간 모니터링',
-        'solutions.data.badge2': '이상 감지',
-        'solutions.data.badge3': '트렌드 예측',
-        'solutions.keywords.title': '산업 키워드',
-        'solutions.keywords.tag1': 'Kairos.ai',
-        'solutions.keywords.tag2': 'Kairos.ai',
-        'solutions.keywords.tag3': 'AI 시스템',
-        'solutions.keywords.tag4': '스마트 팩토리',
-        'solutions.keywords.tag5': '디지털 전환',
-        'solutions.keywords.tag6': 'AI 시스템 설계',
-        'solutions.keywords.tag7': '스마트 제조',
-        'solutions.keywords.tag8': '인더스트리 4.0',
-        'solutions.keywords.tag9': '공정 최적화',
-        'solutions.keywords.tag10': 'AI 데이터 분석',
-        'solutions.keywords.tag11': '반도체 AI',
-        'solutions.keywords.tag12': '태양광 스마트 팩토리',
-        'solutions.keywords.tag13': '디지털 전환 전문가',
-        'solutions.keywords.tag14': '지능형 공장',
         'products.title': '제품 소개',
         'products.subtitle': '건설 산업을 위한 응용 AI',
         'products.itech.title': 'iTech',
@@ -850,18 +507,6 @@ const translations = {
         'services.apps.desc': 'Innovative KI-gestützte Anwendungen, die Benutzererfahrungen transformieren und Engagement fördern. Vom Konzept bis zur Bereitstellung.',
         'services.data.title': 'Datenanalyse',
         'services.data.desc': 'Verwandeln Sie Rohdaten in umsetzbare Erkenntnisse. Unsere fortschrittlichen Analyselösungen helfen Ihnen, datengestützte Entscheidungen mit Zuversicht zu treffen.',
-        'services.factory.title': 'Fabrikprozessoptimierung',
-        'services.factory.desc': 'Modernisieren und optimieren Sie Ihre Fertigungsprozesse mit KI-gesteuerten Lösungen. Wir helfen, Effizienz zu steigern, Kosten zu senken und die Qualitätskontrolle zu verbessern.',
-        'services.custom.title': 'Maßgeschneiderte Lösungen',
-        'services.custom.desc': 'Individuell gestaltete Projekte, speziell für Ihre einzigartigen Geschäftsanforderungen. Vom Konzept bis zur Fertigstellung bauen wir Lösungen, die perfekt zu Ihren Anforderungen passen.',
-        'tech.title': 'Angetrieben von Führenden Technologien',
-        'tech.subtitle': 'Wir nutzen modernste Tools und Frameworks, um außergewöhnliche Ergebnisse zu liefern',
-        'tech.ml': 'Maschinelles Lernen',
-        'tech.cloud': 'Cloud-Infrastruktur',
-        'tech.api': 'RESTful APIs',
-        'tech.db': 'Datenbanksysteme',
-        'tech.neural': 'Neuronale Netze',
-        'tech.devops': 'DevOps & CI/CD',
         'about.title': 'Warum Kairos.ai Wählen?',
         'about.intro': 'Bei Kairos.ai bringen wir angewandte KI in die Baubranche. Unser Flaggschiff iTech automatisiert die Bewehrungskalkulation für AEC-Teams — und wir bauen mit derselben technischen Sorgfalt maßgeschneiderte KI-Systeme, Backend-Infrastruktur und Datenplattformen.',
         'about.desc': 'Wir widmen uns der Entwicklung von Lösungen, die nicht nur Zeit sparen, sondern neue Möglichkeiten für unsere Benutzer und Kunden erschließen.',
@@ -898,43 +543,6 @@ const translations = {
         'footer.linkedin': 'LinkedIn',
         'footer.github': 'GitHub',
         'footer.copyright': '© 2025 Kairos.ai. Alle Rechte vorbehalten.',
-        'solutions.title': 'Kairos.ai KI-Systeme und Datenintelligenz-Lösungen',
-        'solutions.subtitle': 'Angewandte KI — von der Bewehrungskalkulation bis zu maßgeschneiderten KI-Systemen und Datenplattformen',
-        'solutions.ai.title': 'KI-Systemdesign und -Implementierung',
-        'solutions.ai.desc': 'Kairos.ai bietet professionelle KI-Systemdesign-Dienste, von der Anforderungsanalyse, Systemarchitekturdesign, KI-Modellentwicklung bis zur Systemintegration, um maßgeschneiderte KI-Lösungen für Unternehmen zu erstellen. Unsere KI-Systeme umfassen maschinelles Lernen, Deep Learning, Computer Vision, natürliche Sprachverarbeitung und weitere Bereiche.',
-        'solutions.ai.badge1': 'Maschinelles Lernen',
-        'solutions.ai.badge2': 'Deep Learning',
-        'solutions.ai.badge3': 'Computer Vision',
-        'solutions.factory.title': 'Aufbau und Optimierung Intelligenter Fabriken',
-        'solutions.factory.desc': 'Die Intelligente Fabrik ist der Kern von Industrie 4.0. Kairos.ai ist spezialisiert auf den Aufbau und die Optimierung intelligenter Fabriken. Wir bieten intelligente Fertigungslösungen wie Prozessüberwachung, Produktionslinienautomatisierung, vorausschauende Wartung und Qualitätsprüfung.',
-        'solutions.factory.badge1': 'Prozessüberwachung',
-        'solutions.factory.badge2': 'Produktionsautomatisierung',
-        'solutions.factory.badge3': 'Vorausschauende Wartung',
-        'solutions.transform.title': 'Digitale Transformationsdienste für die Fertigung',
-        'solutions.transform.desc': 'Die digitale Transformation ist der Schlüssel für Unternehmen, um wettbewerbsfähig zu bleiben. Kairos.ai hilft traditionellen Fertigungsunternehmen bei einer umfassenden digitalen Transformation, von der digitalen Infrastruktur über den Aufbau von Datenplattformen und die Implementierung von KI-Systemen bis hin zur Realisierung intelligenter Fertigung.',
-        'solutions.transform.badge1': 'Prozessdigitalisierung',
-        'solutions.transform.badge2': 'Datenplattform',
-        'solutions.transform.badge3': 'KI-Implementierung',
-        'solutions.data.title': 'KI-Datenanalyseplattform für die Fertigung',
-        'solutions.data.desc': 'Daten sind das zentrale Asset intelligenter Fabriken. Die KI-Datenanalyseplattform von Kairos.ai integriert Multi-Source-Daten und nutzt KI-Technologie für Echtzeitüberwachung, Anomalieerkennung, Trendvorhersage und Prozessoptimierung.',
-        'solutions.data.badge1': 'Echtzeitüberwachung',
-        'solutions.data.badge2': 'Anomalieerkennung',
-        'solutions.data.badge3': 'Trendvorhersage',
-        'solutions.keywords.title': 'Branchenschlüsselwörter',
-        'solutions.keywords.tag1': 'Kairos.ai',
-        'solutions.keywords.tag2': 'Kairos.ai',
-        'solutions.keywords.tag3': 'KI-Systeme',
-        'solutions.keywords.tag4': 'Intelligente Fabrik',
-        'solutions.keywords.tag5': 'Digitale Transformation',
-        'solutions.keywords.tag6': 'KI-Systemdesign',
-        'solutions.keywords.tag7': 'Intelligente Fertigung',
-        'solutions.keywords.tag8': 'Industrie 4.0',
-        'solutions.keywords.tag9': 'Prozessoptimierung',
-        'solutions.keywords.tag10': 'KI-Datenanalyse',
-        'solutions.keywords.tag11': 'Halbleiter-KI',
-        'solutions.keywords.tag12': 'Solar Intelligente Fabrik',
-        'solutions.keywords.tag13': 'Experten Digitale Transformation',
-        'solutions.keywords.tag14': 'Intelligente Fabrik',
         'products.title': 'Unsere Produkte',
         'products.subtitle': 'Angewandte KI für die Baubranche',
         'products.itech.title': 'iTech',
@@ -1020,11 +628,6 @@ function setLanguage(lang) {
 
     // Save preference
     localStorage.setItem('preferredLanguage', lang);
-
-    // Reinitialize particles after language change
-    if (typeof window.reinitParticles === 'function') {
-        setTimeout(window.reinitParticles, 100);
-    }
 }
 
 // Language dropdown toggle
@@ -1034,8 +637,9 @@ const langDropdown = document.getElementById('langDropdown');
 if (langSelector && langDropdown) {
     langSelector.addEventListener('click', (e) => {
         e.stopPropagation();
-        langDropdown.classList.toggle('show');
-        langSelector.classList.toggle('active');
+        const open = langDropdown.classList.toggle('show');
+        langSelector.classList.toggle('active', open);
+        langSelector.setAttribute('aria-expanded', open ? 'true' : 'false');
     });
 
     // Close dropdown when clicking outside
@@ -1043,6 +647,7 @@ if (langSelector && langDropdown) {
         if (!langSelector.contains(e.target) && !langDropdown.contains(e.target)) {
             langDropdown.classList.remove('show');
             langSelector.classList.remove('active');
+            langSelector.setAttribute('aria-expanded', 'false');
         }
     });
 }
@@ -1054,6 +659,7 @@ document.querySelectorAll('.lang-option').forEach(option => {
         setLanguage(lang);
         langDropdown.classList.remove('show');
         langSelector.classList.remove('active');
+        if (langSelector) langSelector.setAttribute('aria-expanded', 'false');
     });
 });
 
@@ -1078,7 +684,7 @@ window.addEventListener('DOMContentLoaded', () => {
         window.history.replaceState({}, '', cleanUrl);
     }
 
-    // Prioritize URL parameter, then saved preference, then default to 'zh-TW'
+    // Prioritize URL parameter, then saved preference, then default to 'en'
     const langToSet = (urlLang && ['zh-TW', 'en', 'ja', 'es', 'it', 'fr', 'ko', 'de'].includes(urlLang)) ? urlLang : (savedLang || 'en');
     setLanguage(langToSet);
 });
@@ -1101,7 +707,11 @@ const extraI18n = {
         'process.step2.desc': 'Computer-vision models read bars, sizes, spacing, and laps directly from the drawings.',
         'process.step3.title': 'Estimate & schedule',
         'process.step3.desc': 'Get accurate quantities, weights, and a bar-bending schedule ready to export.',
-        'footer.tagline': 'AI rebar estimation and applied AI for the construction industry.'
+        'footer.tagline': 'AI rebar estimation and applied AI for the construction industry.',
+        'form.sending': 'Sending…',
+        'form.success': 'Thank you! Your message has been sent.',
+        'form.error': 'There was an issue sending your message. Please try again.',
+        'form.errorNetwork': 'Unable to send your message right now. Please try again later.'
     },
     'zh-TW': {
         'nav.how': '運作方式',
@@ -1117,7 +727,11 @@ const extraI18n = {
         'process.step2.desc': '電腦視覺模型直接從圖面讀取鋼筋號數、間距與搭接。',
         'process.step3.title': '估算與斷料',
         'process.step3.desc': '產出精準數量、重量與可匯出的鋼筋斷料彎曲表。',
-        'footer.tagline': '為營建產業打造的 AI 鋼筋估算與應用 AI。'
+        'footer.tagline': '為營建產業打造的 AI 鋼筋估算與應用 AI。',
+        'form.sending': '傳送中…',
+        'form.success': '感謝您！訊息已送出。',
+        'form.error': '訊息送出時發生問題，請再試一次。',
+        'form.errorNetwork': '目前無法送出訊息，請稍後再試。'
     },
     ja: {
         'nav.how': '仕組み',
@@ -1133,7 +747,11 @@ const extraI18n = {
         'process.step2.desc': 'コンピュータビジョンが鉄筋の径・ピッチ・継手を図面から直接読み取り。',
         'process.step3.title': '積算と加工帳',
         'process.step3.desc': '正確な数量・重量と、出力可能な鉄筋加工帳を生成。',
-        'footer.tagline': '建設業界のためのAI鉄筋積算と応用AI。'
+        'footer.tagline': '建設業界のためのAI鉄筋積算と応用AI。',
+        'form.sending': '送信中…',
+        'form.success': 'ありがとうございます！メッセージを送信しました。',
+        'form.error': '送信中に問題が発生しました。もう一度お試しください。',
+        'form.errorNetwork': '現在メッセージを送信できません。後ほどお試しください。'
     },
     es: {
         'nav.how': 'Cómo funciona',
@@ -1149,7 +767,11 @@ const extraI18n = {
         'process.step2.desc': 'Modelos de visión leen barras, diámetros, separación y solapes desde los planos.',
         'process.step3.title': 'Estima y programa',
         'process.step3.desc': 'Obtén cantidades y pesos precisos y una lista de despiece lista para exportar.',
-        'footer.tagline': 'Estimación de acero con IA e IA aplicada para la construcción.'
+        'footer.tagline': 'Estimación de acero con IA e IA aplicada para la construcción.',
+        'form.sending': 'Enviando…',
+        'form.success': '¡Gracias! Tu mensaje ha sido enviado.',
+        'form.error': 'Hubo un problema al enviar tu mensaje. Inténtalo de nuevo.',
+        'form.errorNetwork': 'No se puede enviar tu mensaje ahora. Inténtalo más tarde.'
     },
     it: {
         'nav.how': 'Come funziona',
@@ -1165,7 +787,11 @@ const extraI18n = {
         'process.step2.desc': 'Modelli di visione leggono barre, diametri, passo e sovrapposizioni dai disegni.',
         'process.step3.title': 'Stima e distinta',
         'process.step3.desc': 'Ottieni quantità e pesi precisi e una distinta di piegatura pronta da esportare.',
-        'footer.tagline': "Stima dei ferri con IA e IA applicata per le costruzioni."
+        'footer.tagline': "Stima dei ferri con IA e IA applicata per le costruzioni.",
+        'form.sending': 'Invio in corso…',
+        'form.success': 'Grazie! Il tuo messaggio è stato inviato.',
+        'form.error': "Si è verificato un problema nell'invio del messaggio. Riprova.",
+        'form.errorNetwork': 'Impossibile inviare il messaggio ora. Riprova più tardi.'
     },
     fr: {
         'nav.how': 'Comment ça marche',
@@ -1181,7 +807,11 @@ const extraI18n = {
         'process.step2.desc': 'Des modèles de vision lisent barres, diamètres, espacements et recouvrements depuis les plans.',
         'process.step3.title': 'Estimez et planifiez',
         'process.step3.desc': 'Obtenez quantités et poids précis et une nomenclature de façonnage prête à exporter.',
-        'footer.tagline': "Estimation des armatures par IA et IA appliquée pour la construction."
+        'footer.tagline': "Estimation des armatures par IA et IA appliquée pour la construction.",
+        'form.sending': 'Envoi en cours…',
+        'form.success': 'Merci ! Votre message a été envoyé.',
+        'form.error': "Un problème est survenu lors de l'envoi. Veuillez réessayer.",
+        'form.errorNetwork': "Impossible d'envoyer votre message pour le moment. Réessayez plus tard."
     },
     ko: {
         'nav.how': '작동 방식',
@@ -1197,7 +827,11 @@ const extraI18n = {
         'process.step2.desc': '컴퓨터 비전이 도면에서 철근 호칭·간격·이음을 직접 읽어냅니다.',
         'process.step3.title': '산출 및 가공',
         'process.step3.desc': '정확한 수량·중량과 내보내기 가능한 철근 가공목록을 생성합니다.',
-        'footer.tagline': '건설 산업을 위한 AI 철근 산출과 응용 AI.'
+        'footer.tagline': '건설 산업을 위한 AI 철근 산출과 응용 AI.',
+        'form.sending': '전송 중…',
+        'form.success': '감사합니다! 메시지가 전송되었습니다.',
+        'form.error': '메시지 전송 중 문제가 발생했습니다. 다시 시도해 주세요.',
+        'form.errorNetwork': '지금은 메시지를 보낼 수 없습니다. 나중에 다시 시도해 주세요.'
     },
     de: {
         'nav.how': 'So funktioniert es',
@@ -1213,7 +847,11 @@ const extraI18n = {
         'process.step2.desc': 'Computer-Vision liest Stäbe, Durchmesser, Abstände und Übergreifungen direkt aus den Plänen.',
         'process.step3.title': 'Kalkulieren & planen',
         'process.step3.desc': 'Erhalte präzise Mengen und Gewichte sowie eine exportfertige Biegeliste.',
-        'footer.tagline': 'KI-Bewehrungskalkulation und angewandte KI für das Bauwesen.'
+        'footer.tagline': 'KI-Bewehrungskalkulation und angewandte KI für das Bauwesen.',
+        'form.sending': 'Wird gesendet…',
+        'form.success': 'Danke! Ihre Nachricht wurde gesendet.',
+        'form.error': 'Beim Senden Ihrer Nachricht ist ein Problem aufgetreten. Bitte erneut versuchen.',
+        'form.errorNetwork': 'Ihre Nachricht kann derzeit nicht gesendet werden. Bitte später erneut versuchen.'
     }
 };
 if (typeof translations === 'object') {
@@ -1240,6 +878,7 @@ const navLinks = document.querySelectorAll('.nav-link');
 
 function setHamburger(open) {
     if (!hamburger) return;
+    hamburger.setAttribute('aria-expanded', open ? 'true' : 'false');
     const spans = hamburger.querySelectorAll('span');
     if (open) {
         spans[0].style.transform = 'rotate(45deg) translate(5px, 5px)';
@@ -1382,23 +1021,33 @@ if (!prefersReduced && window.matchMedia('(pointer:fine)').matches) {
 const contactForm = document.getElementById('contactForm');
 const submitButton = contactForm ? contactForm.querySelector('button[type="submit"]') : null;
 const submitButtonDefaultText = submitButton ? submitButton.textContent : '';
+// Resolve a translation key for the active language, with English then literal fallback.
+function formMsg(key, fallback) {
+    const dict = translations[currentLang] || translations.en || {};
+    return dict[key] || translations.en?.[key] || fallback;
+}
 if (contactForm) {
     contactForm.addEventListener('submit', async (e) => {
         e.preventDefault();
-        if (submitButton) { submitButton.disabled = true; submitButton.textContent = 'Sending…'; }
+        if (submitButton) { submitButton.disabled = true; submitButton.textContent = formMsg('form.sending', 'Sending…'); }
         try {
             const response = await fetch(contactForm.action, {
                 method: 'POST',
                 body: new FormData(contactForm),
                 headers: { 'Accept': 'application/json' }
             });
-            if (response.ok) { alert('Thank you! Your message has been sent.'); contactForm.reset(); }
-            else { alert('There was an issue sending your message. Please try again.'); }
+            if (response.ok) { alert(formMsg('form.success', 'Thank you! Your message has been sent.')); contactForm.reset(); }
+            else { alert(formMsg('form.error', 'There was an issue sending your message. Please try again.')); }
         } catch (err) {
             console.error('Error submitting form:', err);
-            alert('Unable to send your message right now. Please try again later.');
+            alert(formMsg('form.errorNetwork', 'Unable to send your message right now. Please try again later.'));
         } finally {
-            if (submitButton) { submitButton.disabled = false; submitButton.textContent = submitButtonDefaultText || 'Send Message'; }
+            if (submitButton) {
+                submitButton.disabled = false;
+                // Restore the button's translated label rather than a stale snapshot.
+                const restore = translations[currentLang]?.['contact.form.submit'] || submitButtonDefaultText || 'Send Message';
+                submitButton.textContent = restore;
+            }
         }
     });
 }
