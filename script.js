@@ -1776,12 +1776,12 @@ window.addEventListener('scroll', highlightNavigation);
             execute: async function() {
                 return {
                     name: 'Kairos.ai 優時科技',
-                    tagline: 'AI systems, smart factory solutions, and digital transformation for manufacturing.',
+                    tagline: 'AI rebar estimation and applied AI for the construction industry.',
                     contact: 'kairos.ai.tech@gmail.com',
                     homepage: 'https://www.kairosaitech.com/',
                     locales: ['en', 'zh-TW', 'ja', 'es', 'it', 'fr', 'ko', 'de'],
                     productFamilies: {
-                        b2b: ['iTech (AI rebar estimation for AEC)', 'vcom (AI coworkers)', 'Smart factory solutions', 'AI quality inspection', 'MES integration', 'Digital transformation consulting']
+                        b2b: ['iTech (AI rebar estimation for AEC)', 'Custom AI systems', 'Data analysis platforms']
                     }
                 };
             }
