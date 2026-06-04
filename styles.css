@@ -1017,7 +1017,8 @@ body::after {
 
 .products-grid {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(auto-fit, minmax(320px, 520px));
+    justify-content: center;
     gap: var(--spacing-lg);
     position: relative;
     z-index: 1;
