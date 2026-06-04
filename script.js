@@ -1,102 +1,5 @@
 // ===========================
-// Data Stream Background Effect
-// ===========================
-
-(function createDataStream() {
-    const canvas = document.createElement('canvas');
-    canvas.id = 'dataStreamCanvas';
-    canvas.style.cssText = `
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        pointer-events: none;
-        z-index: 0;
-        opacity: 0.15;
-    `;
-    document.body.insertBefore(canvas, document.body.firstChild);
-
-    const ctx = canvas.getContext('2d');
-    let streams = [];
-    const chars = '01アイウエオカキクケコサシスセソタチツテトナニヌネノハヒフヘホマミムメモヤユヨラリルレロワヲン';
-
-    function resizeCanvas() {
-        canvas.width = window.innerWidth;
-        canvas.height = window.innerHeight;
-        initStreams();
-    }
-
-    function initStreams() {
-        streams = [];
-        const columns = Math.floor(canvas.width / 20);
-        for (let i = 0; i < columns; i++) {
-            streams.push({
-                x: i * 20,
-                y: Math.random() * canvas.height,
-                speed: 1 + Math.random() * 3,
-                chars: [],
-                length: 5 + Math.floor(Math.random() * 15)
-            });
-            for (let j = 0; j < streams[i].length; j++) {
-                streams[i].chars.push(chars[Math.floor(Math.random() * chars.length)]);
-            }
-        }
-    }
-
-    function draw() {
-        ctx.fillStyle = 'rgba(13, 17, 23, 0.05)';
-        ctx.fillRect(0, 0, canvas.width, canvas.height);
-
-        streams.forEach(stream => {
-            stream.chars.forEach((char, i) => {
-                const y = stream.y - i * 20;
-                if (y > 0 && y < canvas.height) {
-                    const alpha = 1 - (i / stream.length);
-                    if (i === 0) {
-                        ctx.fillStyle = `rgba(0, 212, 255, ${alpha})`;
-                        ctx.shadowColor = 'rgba(0, 212, 255, 0.8)';
-                        ctx.shadowBlur = 10;
-                    } else {
-                        ctx.fillStyle = `rgba(0, 212, 255, ${alpha * 0.5})`;
-                        ctx.shadowBlur = 0;
-                    }
-                    ctx.font = '14px monospace';
-                    ctx.fillText(char, stream.x, y);
-                }
-            });
-
-            stream.y += stream.speed;
-            if (stream.y - stream.length * 20 > canvas.height) {
-                stream.y = 0;
-                stream.chars = stream.chars.map(() => chars[Math.floor(Math.random() * chars.length)]);
-            }
-
-            if (Math.random() < 0.01) {
-                const idx = Math.floor(Math.random() * stream.chars.length);
-                stream.chars[idx] = chars[Math.floor(Math.random() * chars.length)];
-            }
-        });
-
-        requestAnimationFrame(draw);
-    }
-
-    window.addEventListener('resize', debounce(resizeCanvas, 250));
-
-    function debounce(func, wait) {
-        let timeout;
-        return function(...args) {
-            clearTimeout(timeout);
-            timeout = setTimeout(() => func.apply(this, args), wait);
-        };
-    }
-
-    resizeCanvas();
-    draw();
-})();
-
-// ===========================
-// Internationalization (i18n)
+// Kairos.ai — iTech / AI Rebar Estimation
 // ===========================
 
 const translations = {
@@ -1181,505 +1084,330 @@ window.addEventListener('DOMContentLoaded', () => {
 });
 
 // ===========================
-// Background Image Slider
+// Extra i18n — new sections (merged into translations)
 // ===========================
-
-let currentSlide = 0;
-const slides = document.querySelectorAll('.bg-slide');
-const totalSlides = slides.length;
-
-function changeSlide() {
-    // Remove active class from current slide
-    slides[currentSlide].classList.remove('active');
-
-    // Move to next slide
-    currentSlide = (currentSlide + 1) % totalSlides;
-
-    // Add active class to new slide
-    slides[currentSlide].classList.add('active');
+const extraI18n = {
+    en: {
+        'nav.how': 'How it works',
+        'hero.badge': 'AI Rebar Estimation · AEC',
+        'hero.metric1label': 'Faster takeoff',
+        'hero.metric2label': 'Estimate accuracy',
+        'hero.metric3label': 'Drawings parsed',
+        'process.title': 'From drawing to schedule',
+        'process.subtitle': 'iTech runs the full rebar takeoff pipeline — no manual counting, no spreadsheet errors.',
+        'process.step1.title': 'Upload drawings',
+        'process.step1.desc': 'Drop in structural drawings — PDF or CAD. iTech ingests plans, sections, and details.',
+        'process.step2.title': 'AI detects rebar',
+        'process.step2.desc': 'Computer-vision models read bars, sizes, spacing, and laps directly from the drawings.',
+        'process.step3.title': 'Estimate & schedule',
+        'process.step3.desc': 'Get accurate quantities, weights, and a bar-bending schedule ready to export.',
+        'footer.tagline': 'AI rebar estimation and applied AI for the construction industry.'
+    },
+    'zh-TW': {
+        'nav.how': '運作方式',
+        'hero.badge': 'AI 鋼筋估算 · 營建',
+        'hero.metric1label': '更快翻樣',
+        'hero.metric2label': '估算準確度',
+        'hero.metric3label': '已解析圖面',
+        'process.title': '從圖面到斷料表',
+        'process.subtitle': 'iTech 跑完整鋼筋翻樣流程 — 免人工計算、零試算表錯誤。',
+        'process.step1.title': '上傳圖面',
+        'process.step1.desc': '匯入結構施工圖（PDF 或 CAD），iTech 解析平面、剖面與細部。',
+        'process.step2.title': 'AI 辨識鋼筋',
+        'process.step2.desc': '電腦視覺模型直接從圖面讀取鋼筋號數、間距與搭接。',
+        'process.step3.title': '估算與斷料',
+        'process.step3.desc': '產出精準數量、重量與可匯出的鋼筋斷料彎曲表。',
+        'footer.tagline': '為營建產業打造的 AI 鋼筋估算與應用 AI。'
+    },
+    ja: {
+        'nav.how': '仕組み',
+        'hero.badge': 'AI鉄筋積算 · 建設',
+        'hero.metric1label': '積算の高速化',
+        'hero.metric2label': '積算精度',
+        'hero.metric3label': '解析した図面',
+        'process.title': '図面から加工帳まで',
+        'process.subtitle': 'iTechが鉄筋積算の全工程を自動化 — 手作業の集計も表計算ミスもなし。',
+        'process.step1.title': '図面をアップロード',
+        'process.step1.desc': '構造図（PDF・CAD）を取り込み、iTechが平面・断面・詳細を解析。',
+        'process.step2.title': 'AIが鉄筋を検出',
+        'process.step2.desc': 'コンピュータビジョンが鉄筋の径・ピッチ・継手を図面から直接読み取り。',
+        'process.step3.title': '積算と加工帳',
+        'process.step3.desc': '正確な数量・重量と、出力可能な鉄筋加工帳を生成。',
+        'footer.tagline': '建設業界のためのAI鉄筋積算と応用AI。'
+    },
+    es: {
+        'nav.how': 'Cómo funciona',
+        'hero.badge': 'Estimación de Acero con IA · AEC',
+        'hero.metric1label': 'Cómputo más rápido',
+        'hero.metric2label': 'Precisión de estimación',
+        'hero.metric3label': 'Planos procesados',
+        'process.title': 'Del plano al despiece',
+        'process.subtitle': 'iTech ejecuta todo el flujo de cómputo de acero — sin conteo manual ni errores de hoja de cálculo.',
+        'process.step1.title': 'Sube los planos',
+        'process.step1.desc': 'Carga planos estructurales (PDF o CAD); iTech procesa plantas, secciones y detalles.',
+        'process.step2.title': 'La IA detecta el acero',
+        'process.step2.desc': 'Modelos de visión leen barras, diámetros, separación y solapes desde los planos.',
+        'process.step3.title': 'Estima y programa',
+        'process.step3.desc': 'Obtén cantidades y pesos precisos y una lista de despiece lista para exportar.',
+        'footer.tagline': 'Estimación de acero con IA e IA aplicada para la construcción.'
+    },
+    it: {
+        'nav.how': 'Come funziona',
+        'hero.badge': 'Stima dei Ferri con IA · AEC',
+        'hero.metric1label': 'Computo più rapido',
+        'hero.metric2label': 'Precisione di stima',
+        'hero.metric3label': 'Disegni elaborati',
+        'process.title': 'Dal disegno alla distinta',
+        'process.subtitle': "iTech esegue l'intero flusso di computo dei ferri — niente conteggi manuali né errori di foglio di calcolo.",
+        'process.step1.title': 'Carica i disegni',
+        'process.step1.desc': 'Importa i disegni strutturali (PDF o CAD); iTech elabora piante, sezioni e dettagli.',
+        'process.step2.title': "L'IA rileva i ferri",
+        'process.step2.desc': 'Modelli di visione leggono barre, diametri, passo e sovrapposizioni dai disegni.',
+        'process.step3.title': 'Stima e distinta',
+        'process.step3.desc': 'Ottieni quantità e pesi precisi e una distinta di piegatura pronta da esportare.',
+        'footer.tagline': "Stima dei ferri con IA e IA applicata per le costruzioni."
+    },
+    fr: {
+        'nav.how': 'Comment ça marche',
+        'hero.badge': 'Estimation des Armatures par IA · AEC',
+        'hero.metric1label': 'Métré plus rapide',
+        'hero.metric2label': "Précision d'estimation",
+        'hero.metric3label': 'Plans traités',
+        'process.title': 'Du plan à la nomenclature',
+        'process.subtitle': "iTech exécute tout le flux de métré des armatures — sans comptage manuel ni erreurs de tableur.",
+        'process.step1.title': 'Importez les plans',
+        'process.step1.desc': 'Chargez les plans de structure (PDF ou CAO) ; iTech traite plans, coupes et détails.',
+        'process.step2.title': "L'IA détecte les armatures",
+        'process.step2.desc': 'Des modèles de vision lisent barres, diamètres, espacements et recouvrements depuis les plans.',
+        'process.step3.title': 'Estimez et planifiez',
+        'process.step3.desc': 'Obtenez quantités et poids précis et une nomenclature de façonnage prête à exporter.',
+        'footer.tagline': "Estimation des armatures par IA et IA appliquée pour la construction."
+    },
+    ko: {
+        'nav.how': '작동 방식',
+        'hero.badge': 'AI 철근 산출 · 건설',
+        'hero.metric1label': '더 빠른 산출',
+        'hero.metric2label': '산출 정확도',
+        'hero.metric3label': '처리한 도면',
+        'process.title': '도면에서 가공목록까지',
+        'process.subtitle': 'iTech가 철근 산출 전 과정을 자동화 — 수작업 집계도, 스프레드시트 오류도 없습니다.',
+        'process.step1.title': '도면 업로드',
+        'process.step1.desc': '구조 도면(PDF·CAD)을 올리면 iTech가 평면·단면·상세를 분석합니다.',
+        'process.step2.title': 'AI가 철근 인식',
+        'process.step2.desc': '컴퓨터 비전이 도면에서 철근 호칭·간격·이음을 직접 읽어냅니다.',
+        'process.step3.title': '산출 및 가공',
+        'process.step3.desc': '정확한 수량·중량과 내보내기 가능한 철근 가공목록을 생성합니다.',
+        'footer.tagline': '건설 산업을 위한 AI 철근 산출과 응용 AI.'
+    },
+    de: {
+        'nav.how': 'So funktioniert es',
+        'hero.badge': 'KI-Bewehrungskalkulation · AEC',
+        'hero.metric1label': 'Schnellere Kalkulation',
+        'hero.metric2label': 'Kalkulationsgenauigkeit',
+        'hero.metric3label': 'Verarbeitete Pläne',
+        'process.title': 'Vom Plan zur Biegeliste',
+        'process.subtitle': 'iTech führt den gesamten Bewehrungs-Workflow aus — ohne manuelles Zählen, ohne Tabellenfehler.',
+        'process.step1.title': 'Pläne hochladen',
+        'process.step1.desc': 'Lade Statikpläne (PDF oder CAD) hoch; iTech verarbeitet Grundrisse, Schnitte und Details.',
+        'process.step2.title': 'KI erkennt Bewehrung',
+        'process.step2.desc': 'Computer-Vision liest Stäbe, Durchmesser, Abstände und Übergreifungen direkt aus den Plänen.',
+        'process.step3.title': 'Kalkulieren & planen',
+        'process.step3.desc': 'Erhalte präzise Mengen und Gewichte sowie eine exportfertige Biegeliste.',
+        'footer.tagline': 'KI-Bewehrungskalkulation und angewandte KI für das Bauwesen.'
+    }
+};
+if (typeof translations === 'object') {
+    Object.keys(extraI18n).forEach(function (l) {
+        if (translations[l]) Object.assign(translations[l], extraI18n[l]);
+    });
 }
 
-// Change slide every 5 seconds
-setInterval(changeSlide, 5000);
+// ===========================
+// Utilities
+// ===========================
+function debounce(func, wait) {
+    let t;
+    return function (...args) { clearTimeout(t); t = setTimeout(() => func.apply(this, args), wait); };
+}
+const prefersReduced = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
 // ===========================
 // Mobile Navigation Toggle
 // ===========================
-
 const hamburger = document.getElementById('hamburger');
 const navMenu = document.querySelector('.nav-menu');
 const navLinks = document.querySelectorAll('.nav-link');
 
-hamburger.addEventListener('click', () => {
-    navMenu.classList.toggle('active');
-
-    // Animate hamburger icon
+function setHamburger(open) {
+    if (!hamburger) return;
     const spans = hamburger.querySelectorAll('span');
-    if (navMenu.classList.contains('active')) {
+    if (open) {
         spans[0].style.transform = 'rotate(45deg) translate(5px, 5px)';
         spans[1].style.opacity = '0';
-        spans[2].style.transform = 'rotate(-45deg) translate(7px, -6px)';
+        spans[2].style.transform = 'rotate(-45deg) translate(6px, -6px)';
     } else {
         spans[0].style.transform = 'none';
         spans[1].style.opacity = '1';
         spans[2].style.transform = 'none';
     }
-});
-
-// Close mobile menu when clicking on a link
-navLinks.forEach(link => {
-    link.addEventListener('click', () => {
+}
+if (hamburger && navMenu) {
+    hamburger.addEventListener('click', () => {
+        const open = navMenu.classList.toggle('active');
+        setHamburger(open);
+    });
+    navLinks.forEach(link => link.addEventListener('click', () => {
         navMenu.classList.remove('active');
-        const spans = hamburger.querySelectorAll('span');
-        spans[0].style.transform = 'none';
-        spans[1].style.opacity = '1';
-        spans[2].style.transform = 'none';
-    });
-});
+        setHamburger(false);
+    }));
+}
 
 // ===========================
-// Navbar Scroll Effect
+// Navbar scroll state
 // ===========================
-
 const navbar = document.querySelector('.navbar');
-let lastScroll = 0;
-
-window.addEventListener('scroll', () => {
-    const currentScroll = window.pageYOffset;
-
-    if (currentScroll > 100) {
-        navbar.classList.add('scrolled');
-    } else {
-        navbar.classList.remove('scrolled');
-    }
-
-    lastScroll = currentScroll;
-});
 
 // ===========================
-// Smooth Scroll for Navigation
+// Smooth scroll for in-page anchors
 // ===========================
-
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function(e) {
+    anchor.addEventListener('click', function (e) {
+        const href = this.getAttribute('href');
+        if (href === '#' || href.length < 2) return;
+        const target = document.querySelector(href);
+        if (!target) return;
         e.preventDefault();
-        const target = document.querySelector(this.getAttribute('href'));
-
-        if (target) {
-            const offsetTop = target.offsetTop - 80; // Account for fixed navbar
-            window.scrollTo({
-                top: offsetTop,
-                behavior: 'smooth'
-            });
-        }
+        const top = target.getBoundingClientRect().top + window.pageYOffset - 70;
+        window.scrollTo({ top, behavior: prefersReduced ? 'auto' : 'smooth' });
     });
 });
 
 // ===========================
-// Scroll Reveal Animation
+// Reveal on scroll (IntersectionObserver)
 // ===========================
-
-const revealElements = document.querySelectorAll('.service-card, .about-content, .visual-card');
-
-const revealOnScroll = () => {
-    const windowHeight = window.innerHeight;
-
-    revealElements.forEach(element => {
-        const elementTop = element.getBoundingClientRect().top;
-        const revealPoint = 150;
-
-        if (elementTop < windowHeight - revealPoint) {
-            element.classList.add('reveal', 'active');
-        }
-    });
-};
-
-// Initial check
-revealOnScroll();
-
-// Check on scroll
-window.addEventListener('scroll', revealOnScroll);
-
-// Add reveal class to elements
-revealElements.forEach(element => {
-    element.classList.add('reveal');
-});
+const revealEls = document.querySelectorAll('[data-reveal]');
+if ('IntersectionObserver' in window && !prefersReduced) {
+    const io = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('is-visible');
+                io.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.14, rootMargin: '0px 0px -8% 0px' });
+    revealEls.forEach(el => io.observe(el));
+} else {
+    revealEls.forEach(el => el.classList.add('is-visible'));
+}
 
 // ===========================
-// Contact Form Handling
+// Counters
 // ===========================
+const counters = document.querySelectorAll('[data-count]');
+function runCounter(el) {
+    const target = parseFloat(el.getAttribute('data-count'));
+    const suffix = el.getAttribute('data-suffix') || '';
+    if (prefersReduced) { el.innerHTML = target + '<span>' + suffix + '</span>'; return; }
+    const dur = 1400; const start = performance.now();
+    function tick(now) {
+        const p = Math.min((now - start) / dur, 1);
+        const eased = 1 - Math.pow(1 - p, 3);
+        const val = Math.round(target * eased);
+        el.innerHTML = val + '<span>' + suffix + '</span>';
+        if (p < 1) requestAnimationFrame(tick);
+    }
+    requestAnimationFrame(tick);
+}
+if ('IntersectionObserver' in window) {
+    const cio = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) { runCounter(entry.target); cio.unobserve(entry.target); }
+        });
+    }, { threshold: 0.6 });
+    counters.forEach(el => cio.observe(el));
+} else {
+    counters.forEach(runCounter);
+}
 
+// ===========================
+// Active nav highlight (IntersectionObserver)
+// ===========================
+const sectionEls = document.querySelectorAll('section[id]');
+if ('IntersectionObserver' in window) {
+    const nio = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const id = entry.target.getAttribute('id');
+                navLinks.forEach(l => l.classList.toggle('active', l.getAttribute('href') === '#' + id));
+            }
+        });
+    }, { threshold: 0.5 });
+    sectionEls.forEach(s => nio.observe(s));
+}
+
+// ===========================
+// Scroll engine: progress rail + spine draw + grid parallax
+// ===========================
+const root = document.documentElement;
+const rail = document.querySelector('.scroll-rail');
+let ticking = false;
+function onScroll() {
+    const scrollTop = window.pageYOffset;
+    const docH = document.documentElement.scrollHeight - window.innerHeight;
+    const p = docH > 0 ? Math.min(scrollTop / docH, 1) : 0;
+    if (rail) rail.style.setProperty('--p', p);
+    root.style.setProperty('--spine-fill', (p * 100).toFixed(2) + '%');
+    root.style.setProperty('--grid-shift', (-scrollTop * 0.04).toFixed(1) + 'px');
+    if (navbar) navbar.classList.toggle('scrolled', scrollTop > 60);
+    ticking = false;
+}
+window.addEventListener('scroll', () => {
+    if (!ticking) { requestAnimationFrame(onScroll); ticking = true; }
+}, { passive: true });
+onScroll();
+
+// ===========================
+// Pointer-reactive blueprint glow (desktop)
+// ===========================
+if (!prefersReduced && window.matchMedia('(pointer:fine)').matches) {
+    window.addEventListener('mousemove', debounce((e) => {
+        root.style.setProperty('--mx', (e.clientX / window.innerWidth * 100).toFixed(1) + '%');
+        root.style.setProperty('--my', (e.clientY / window.innerHeight * 100).toFixed(1) + '%');
+    }, 12));
+}
+
+// ===========================
+// Contact Form Handling (FormSubmit)
+// ===========================
 const contactForm = document.getElementById('contactForm');
 const submitButton = contactForm ? contactForm.querySelector('button[type="submit"]') : null;
 const submitButtonDefaultText = submitButton ? submitButton.textContent : '';
-
 if (contactForm) {
-    contactForm.addEventListener('submit', async(e) => {
+    contactForm.addEventListener('submit', async (e) => {
         e.preventDefault();
-
-        if (submitButton) {
-            submitButton.disabled = true;
-            submitButton.textContent = 'Sending...';
-        }
-
-        const formData = new FormData(contactForm);
-
+        if (submitButton) { submitButton.disabled = true; submitButton.textContent = 'Sending…'; }
         try {
             const response = await fetch(contactForm.action, {
                 method: 'POST',
-                body: formData,
-                headers: {
-                    'Accept': 'application/json'
-                }
+                body: new FormData(contactForm),
+                headers: { 'Accept': 'application/json' }
             });
-
-            if (response.ok) {
-                alert('Thank you! Your message has been sent.');
-                contactForm.reset();
-            } else {
-                alert('There was an issue sending your message. Please try again.');
-            }
-        } catch (error) {
-            console.error('Error submitting form:', error);
+            if (response.ok) { alert('Thank you! Your message has been sent.'); contactForm.reset(); }
+            else { alert('There was an issue sending your message. Please try again.'); }
+        } catch (err) {
+            console.error('Error submitting form:', err);
             alert('Unable to send your message right now. Please try again later.');
         } finally {
-            if (submitButton) {
-                submitButton.disabled = false;
-                submitButton.textContent = submitButtonDefaultText || 'Send Message';
-            }
+            if (submitButton) { submitButton.disabled = false; submitButton.textContent = submitButtonDefaultText || 'Send Message'; }
         }
     });
 }
 
 // ===========================
-// Parallax Effect for Hero
+// Loaded flag (hero entrance)
 // ===========================
+window.addEventListener('load', () => document.body.classList.add('loaded'));
 
-const heroContent = document.querySelector('.hero-content');
-
-window.addEventListener('scroll', () => {
-    const scrolled = window.pageYOffset;
-    const parallaxSpeed = 0.5;
-
-    if (heroContent && scrolled < window.innerHeight) {
-        heroContent.style.transform = `translateY(${scrolled * parallaxSpeed}px)`;
-        heroContent.style.opacity = 1 - (scrolled / window.innerHeight);
-    }
-});
-
-// ===========================
-// Interactive Gradient Orbs
-// ===========================
-
-const orbs = document.querySelectorAll('.gradient-orb');
-
-document.addEventListener('mousemove', (e) => {
-    const mouseX = e.clientX / window.innerWidth;
-    const mouseY = e.clientY / window.innerHeight;
-
-    orbs.forEach((orb, index) => {
-        const speed = (index + 1) * 20;
-        const x = mouseX * speed;
-        const y = mouseY * speed;
-
-        orb.style.transform = `translate(${x}px, ${y}px)`;
-    });
-});
-
-// ===========================
-// Performance Optimization
-// ===========================
-
-// Debounce function for scroll events
-function debounce(func, wait) {
-    let timeout;
-    return function executedFunction(...args) {
-        const later = () => {
-            clearTimeout(timeout);
-            func(...args);
-        };
-        clearTimeout(timeout);
-        timeout = setTimeout(later, wait);
-    };
-}
-
-// Apply debouncing to scroll-heavy functions
-const debouncedReveal = debounce(revealOnScroll, 100);
-window.addEventListener('scroll', debouncedReveal);
-
-// ===========================
-// Loading Animation
-// ===========================
-
-window.addEventListener('load', () => {
-    document.body.classList.add('loaded');
-});
-
-// ===========================
-// Active Navigation Link
-// ===========================
-
-const sections = document.querySelectorAll('section[id]');
-
-const highlightNavigation = () => {
-    const scrollY = window.pageYOffset;
-
-    sections.forEach(section => {
-        const sectionHeight = section.offsetHeight;
-        const sectionTop = section.offsetTop - 100;
-        const sectionId = section.getAttribute('id');
-
-        const navLink = document.querySelector(`.nav-link[href*="${sectionId}"]`);
-
-        if (!navLink) {
-            return;
-        }
-
-        if (scrollY > sectionTop && scrollY <= sectionTop + sectionHeight) {
-            navLink.classList.add('active');
-        } else {
-            navLink.classList.remove('active');
-        }
-    });
-};
-
-window.addEventListener('scroll', highlightNavigation);
-
-// ===========================
-// Particle Text Effect
-// ===========================
-
-(function() {
-    const canvas = document.getElementById('particleCanvas');
-    if (!canvas) return;
-
-    const ctx = canvas.getContext('2d');
-    let particles = [];
-    let mouse = { x: null, y: null, radius: 100 };
-    let animationId = null;
-    let isAnimating = false;
-    const text = 'Kairos.ai';
-
-    // Set canvas size
-    function resizeCanvas() {
-        const hero = document.querySelector('.hero');
-        if (hero) {
-            canvas.width = hero.offsetWidth;
-            canvas.height = hero.offsetHeight;
-        }
-        initParticles();
-    }
-
-    // Particle class
-    class Particle {
-        constructor(x, y, color) {
-            this.x = x;
-            this.y = y;
-            this.baseX = x;
-            this.baseY = y;
-            this.size = 2;
-            this.color = color;
-            this.density = (Math.random() * 30) + 1;
-        }
-
-        draw() {
-            ctx.fillStyle = this.color;
-            ctx.beginPath();
-            ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
-            ctx.closePath();
-            ctx.fill();
-        }
-
-        update() {
-            if (mouse.x === null || mouse.y === null) {
-                // Return to base position when mouse is not over canvas
-                if (this.x !== this.baseX) {
-                    let dx = this.x - this.baseX;
-                    this.x -= dx / 10;
-                }
-                if (this.y !== this.baseY) {
-                    let dy = this.y - this.baseY;
-                    this.y -= dy / 10;
-                }
-                return;
-            }
-
-            // Calculate distance between mouse and particle
-            let dx = mouse.x - this.x;
-            let dy = mouse.y - this.y;
-            let distance = Math.sqrt(dx * dx + dy * dy);
-
-            if (distance < mouse.radius) {
-                // Push particles away from mouse
-                let forceDirectionX = dx / distance;
-                let forceDirectionY = dy / distance;
-                let force = (mouse.radius - distance) / mouse.radius;
-                let directionX = forceDirectionX * force * this.density;
-                let directionY = forceDirectionY * force * this.density;
-                this.x -= directionX;
-                this.y -= directionY;
-            } else {
-                // Return to base position with easing
-                if (this.x !== this.baseX) {
-                    let dx = this.x - this.baseX;
-                    this.x -= dx / 10;
-                }
-                if (this.y !== this.baseY) {
-                    let dy = this.y - this.baseY;
-                    this.y -= dy / 10;
-                }
-            }
-        }
-    }
-
-    // Initialize particles from text
-    function initParticles() {
-        particles = [];
-
-        if (canvas.width === 0 || canvas.height === 0) return;
-
-        // Calculate font size based on canvas width
-        let fontSize = Math.min(canvas.width / 10, 90);
-        if (canvas.width < 768) {
-            fontSize = Math.min(canvas.width / 6, 45);
-        }
-
-        // Create temporary canvas for text rendering
-        const tempCanvas = document.createElement('canvas');
-        const tempCtx = tempCanvas.getContext('2d');
-
-        // Set temp canvas size
-        tempCanvas.width = canvas.width;
-        tempCanvas.height = canvas.height;
-
-        // Use system fonts that support Chinese characters
-        const fontFamily = '"PingFang SC", "Microsoft YaHei", "Hiragino Sans GB", "Noto Sans CJK SC", "WenQuanYi Micro Hei", "Heiti SC", sans-serif';
-        tempCtx.fillStyle = 'white';
-        tempCtx.font = `bold ${fontSize}px ${fontFamily}`;
-        tempCtx.textAlign = 'center';
-        tempCtx.textBaseline = 'middle';
-
-        // Position text - centered horizontally, lower position vertically
-        const textX = tempCanvas.width / 2;
-        const textY = tempCanvas.height * 0.22;
-
-        // Draw text once with center alignment
-        tempCtx.fillText(text, textX, textY);
-
-        // Get image data from temp canvas
-        const imageData = tempCtx.getImageData(0, 0, tempCanvas.width, tempCanvas.height);
-        const data = imageData.data;
-
-        // Sample pixels and create particles
-        const gap = 3; // Sampling gap - smaller = more particles
-
-        for (let y = 0; y < tempCanvas.height; y += gap) {
-            for (let x = 0; x < tempCanvas.width; x += gap) {
-                const index = (y * tempCanvas.width + x) * 4;
-                const alpha = data[index + 3];
-
-                if (alpha > 128) {
-                    // Create particle with gradient color
-                    const hue = 210 + (x / canvas.width) * 30; // Blue gradient
-                    const color = `hsla(${hue}, 80%, 70%, 0.9)`;
-                    particles.push(new Particle(x, y, color));
-                }
-            }
-        }
-    }
-
-    // Animation loop
-    function animate() {
-        if (!isAnimating) return;
-
-        ctx.clearRect(0, 0, canvas.width, canvas.height);
-
-        for (let i = 0; i < particles.length; i++) {
-            particles[i].draw();
-            particles[i].update();
-        }
-
-        animationId = requestAnimationFrame(animate);
-    }
-
-    // Start animation
-    function startAnimation() {
-        if (!isAnimating) {
-            isAnimating = true;
-            animate();
-        }
-    }
-
-    // Stop animation
-    function stopAnimation() {
-        isAnimating = false;
-        if (animationId) {
-            cancelAnimationFrame(animationId);
-            animationId = null;
-        }
-    }
-
-    // Mouse events
-    canvas.addEventListener('mousemove', function(e) {
-        const rect = canvas.getBoundingClientRect();
-        mouse.x = e.clientX - rect.left;
-        mouse.y = e.clientY - rect.top;
-    });
-
-    canvas.addEventListener('mouseleave', function() {
-        mouse.x = null;
-        mouse.y = null;
-    });
-
-    // Touch events for mobile
-    canvas.addEventListener('touchmove', function(e) {
-        e.preventDefault();
-        const rect = canvas.getBoundingClientRect();
-        const touch = e.touches[0];
-        mouse.x = touch.clientX - rect.left;
-        mouse.y = touch.clientY - rect.top;
-    }, { passive: false });
-
-    canvas.addEventListener('touchend', function() {
-        mouse.x = null;
-        mouse.y = null;
-    });
-
-    // Initialize on DOM ready
-    function init() {
-        resizeCanvas();
-        startAnimation();
-    }
-
-    // Initialize when DOM is ready
-    if (document.readyState === 'loading') {
-        document.addEventListener('DOMContentLoaded', init);
-    } else {
-        init();
-    }
-
-    // Also reinitialize on window load to ensure fonts are loaded
-    window.addEventListener('load', function() {
-        resizeCanvas();
-    });
-
-    // Handle resize
-    window.addEventListener('resize', debounce(resizeCanvas, 250));
-
-    // Handle visibility change to pause/resume animation
-    document.addEventListener('visibilitychange', function() {
-        if (document.hidden) {
-            stopAnimation();
-        } else {
-            startAnimation();
-        }
-    });
-
-    // Expose reinit function globally for language changes
-    window.reinitParticles = function() {
-        resizeCanvas();
-    };
-})();
 
 // ============================================================================
 // WebMCP — expose site tools to AI agents loading this page.
@@ -1700,14 +1428,14 @@ window.addEventListener('scroll', highlightNavigation);
     const tools = [
         {
             name: 'navigate_section',
-            description: 'Scroll the Kairos.ai homepage to one of its main sections: home, about, solutions, products, team, or contact.',
+            description: 'Scroll the Kairos.ai homepage to one of its main sections: home, how, product, services, about, or contact.',
             inputSchema: {
                 type: 'object',
                 required: ['section'],
                 properties: {
                     section: {
                         type: 'string',
-                        enum: ['home', 'about', 'solutions', 'products', 'team', 'contact'],
+                        enum: ['home', 'how', 'product', 'services', 'about', 'contact'],
                         description: 'Section anchor to scroll to.'
                     }
                 }
