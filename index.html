@@ -9,7 +9,7 @@
     <title>優時科技 Kairos.ai - iTech AI 鋼筋估算 | AI 系統與數據智慧</title>
     <meta name="title" content="優時科技 Kairos.ai - iTech AI 鋼筋估算 | AI 系統與數據智慧">
     <meta name="description" content="優時科技 Kairos.ai 打造 iTech — AEC 產業的 AI 鋼筋估算系統，將施工圖自動轉換為精準鋼筋估算與斷料彎曲表，取代耗時易錯的人工翻樣。同時提供客製 AI 系統設計、後端架構與數據分析平台。AI rebar estimation for AEC, plus custom AI systems and data platforms.">
-    <meta name="keywords" content="優時科技, Kairos.ai, iTech, AI 鋼筋估算, 鋼筋翻樣, 鋼筋估算, 斷料彎曲表, 營建 AI, AEC, AI系統, AI系統設計, 數據分析, 後端開發, AI 應用, rebar estimation, rebar takeoff, bar bending schedule, AEC AI, construction AI, AI systems design, data analysis, backend systems">
+    <meta name="keywords" content="優時科技, Kairos.ai, iTech, AI 鋼筋估算, 鋼筋估算軟體, 鋼筋翻樣, 鋼筋估算, 斷料彎曲表, 營建 AI, AR 鋼筋, AEC, AI系統, AI系統設計, 數據分析, 後端開發, AI 應用, rebar estimation, rebar estimation software, rebar takeoff, bar bending schedule, AEC AI, construction AI, AI construction estimating, AR rebar visualization, AR site verification, AI systems design, data analysis, backend systems">
     <meta name="author" content="Kairos.ai 優時科技">
     <meta name="robots" content="index, follow">
     <meta name="language" content="English, Traditional Chinese, Japanese, Spanish, Italian, French, Korean, German">
@@ -150,6 +150,7 @@
                 "Bar Bending Schedule",
                 "AEC AI",
                 "Construction AI",
+                "AR Rebar Visualization",
                 "AI Systems Design",
                 "Backend Systems",
                 "Data Analysis"
@@ -223,16 +224,21 @@
             }, {
                 "@type": "ListItem",
                 "position": 2,
+                "name": "關於我們 Our Story",
+                "item": "https://www.kairosaitech.com/#story"
+            }, {
+                "@type": "ListItem",
+                "position": 3,
                 "name": "運作方式 How it works",
                 "item": "https://www.kairosaitech.com/#how"
             }, {
                 "@type": "ListItem",
-                "position": 3,
+                "position": 4,
                 "name": "iTech AI 鋼筋估算 AI Rebar Estimation",
                 "item": "https://www.kairosaitech.com/#product"
             }, {
                 "@type": "ListItem",
-                "position": 4,
+                "position": 5,
                 "name": "AI 系統與工程服務 AI Systems & Services",
                 "item": "https://www.kairosaitech.com/#services"
             }]
@@ -345,6 +351,7 @@
                     </div>
                 </a>
                 <ul class="nav-menu" id="navMenu">
+                    <li><a href="#story" class="nav-link" data-i18n="nav.story">Our Story</a></li>
                     <li><a href="#how" class="nav-link" data-i18n="nav.how">How it works</a></li>
                     <li><a href="#product" class="nav-link" data-i18n="nav.products">iTech</a></li>
                     <li><a href="#services" class="nav-link" data-i18n="nav.services">Services</a></li>
@@ -453,11 +460,46 @@
             </div>
         </section>
 
+        <!-- Our Story -->
+        <section id="story" class="story">
+            <div class="container">
+                <div class="story-header" data-reveal>
+                    <img src="logo.png" alt="Kairos.ai 優時科技" class="story-logo">
+                    <div class="section-tag">01 — <span data-i18n="nav.story">Our Story</span></div>
+                    <h2 class="section-title" data-i18n="story.title">Applied AI, Built With Purpose</h2>
+                    <p class="section-subtitle" data-i18n="story.subtitle">Who we are, why we started, and where we're headed.</p>
+                </div>
+                <div class="story-grid">
+                    <div class="story-block" data-reveal style="--d:0s">
+                        <h3 data-i18n="story.passion.title">Our Passion</h3>
+                        <p data-i18n="story.passion.desc">We believe AI should solve real, tangible problems — not just impressive demos. Our passion is bringing engineering rigor to industries the tech world often overlooks, starting with construction.</p>
+                    </div>
+                    <div class="story-block" data-reveal style="--d:0.1s">
+                        <h3 data-i18n="story.origin.title">How We Started</h3>
+                        <p data-i18n="story.origin.desc">Kairos.ai began as a small team obsessed with a simple idea: use AI to give people back their time. That search led us deep into manufacturing and construction workflows, where we kept finding the same bottleneck — slow, error-prone manual rebar takeoff. So we built iTech to fix it.</p>
+                    </div>
+                    <div class="story-block" data-reveal style="--d:0.2s">
+                        <h3 data-i18n="story.goal.title">Where We're Headed</h3>
+                        <p data-i18n="story.goal.desc">We want iTech to become the standard way AEC teams estimate rebar — and to keep building AI systems, backend infrastructure, and data platforms with the same rigor for teams who need it.</p>
+                    </div>
+                </div>
+                <div class="story-services" data-reveal>
+                    <span class="story-services-label" data-i18n="story.services.label">What We Do</span>
+                    <div class="story-services-chips">
+                        <a href="#services" class="story-chip" data-i18n="services.ai.title">AI Systems Design</a>
+                        <a href="#services" class="story-chip" data-i18n="services.backend.title">Backend Systems</a>
+                        <a href="#services" class="story-chip" data-i18n="services.apps.title">AI Applications</a>
+                        <a href="#services" class="story-chip" data-i18n="services.data.title">Data Analysis</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
         <!-- How it works -->
         <section id="how" class="process">
             <div class="container">
                 <div class="section-header" data-reveal>
-                    <div class="section-tag">01 — <span data-i18n="nav.how">How it works</span></div>
+                    <div class="section-tag">02 — <span data-i18n="nav.how">How it works</span></div>
                     <h2 class="section-title" data-i18n="process.title">From drawing to schedule</h2>
                     <p class="section-subtitle" data-i18n="process.subtitle">iTech runs the full rebar takeoff pipeline — no manual counting, no spreadsheet errors.</p>
                 </div>
@@ -494,7 +536,7 @@
         <section id="product" class="product-showcase">
             <div class="container">
                 <div class="product-copy" data-reveal>
-                    <div class="section-tag">02 — <span>Product</span></div>
+                    <div class="section-tag">03 — <span>Product</span></div>
                     <h2 class="product-title" data-i18n="products.itech.title">iTech</h2>
                     <p class="product-tagline" data-i18n="products.itech.tagline">AI Rebar Estimation for AEC</p>
                     <p class="product-description" data-i18n="products.itech.desc">
@@ -505,6 +547,11 @@
                         <span class="product-feature" data-i18n="products.itech.feature2">Rebar Takeoff</span>
                         <span class="product-feature" data-i18n="products.itech.feature3">AEC</span>
                     </div>
+                    <ul class="product-specs">
+                        <li class="product-spec"><span class="product-spec-label" data-i18n="products.itech.spec1Label">Input</span><span class="product-spec-value" data-i18n="products.itech.spec1Value">Construction drawings — DWG or PDF</span></li>
+                        <li class="product-spec"><span class="product-spec-label" data-i18n="products.itech.spec2Label">Output</span><span class="product-spec-value" data-i18n="products.itech.spec2Value">Rebar takeoff + bar-bending schedule, exportable as CSV/Excel</span></li>
+                        <li class="product-spec"><span class="product-spec-label" data-i18n="products.itech.spec3Label">Pipeline</span><span class="product-spec-value" data-i18n="products.itech.spec3Value">Upload → AI detection → estimate &amp; schedule</span></li>
+                    </ul>
                     <a href="https://itech.kairosaitech.com/" target="_blank" rel="noopener noreferrer" class="btn btn-primary product-cta">
                         <span data-i18n="products.itech.cta">Learn More</span>
                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
@@ -512,19 +559,32 @@
                 </div>
                 <div class="schedule" data-reveal>
                     <div class="schedule-bar"><i></i><i></i><i></i> bar-bending-schedule.csv <span>iTech</span></div>
-                    <table>
-                        <thead>
-                            <tr><th>Mark</th><th>Ø</th><th>Shape</th><th>No.</th><th>Length</th><th>Weight</th></tr>
-                        </thead>
-                        <tbody>
-                            <tr><td><b>B01</b></td><td>16</td><td>Straight</td><td>24</td><td>6,200</td><td>235 kg</td></tr>
-                            <tr><td><b>B02</b></td><td>16</td><td>L-bend</td><td>18</td><td>4,850</td><td>138 kg</td></tr>
-                            <tr><td><b>S01</b></td><td>10</td><td>Stirrup</td><td>96</td><td>1,840</td><td>109 kg</td></tr>
-                            <tr><td><b>B03</b></td><td>20</td><td>Crank</td><td>12</td><td>7,400</td><td>219 kg</td></tr>
-                            <tr><td><b>S02</b></td><td>10</td><td>Tie</td><td>64</td><td>1,420</td><td>56 kg</td></tr>
-                        </tbody>
-                    </table>
+                    <div class="schedule-scroll">
+                        <table>
+                            <thead>
+                                <tr><th>Mark</th><th>Ø</th><th>Shape</th><th>No.</th><th>Length</th><th>Weight</th></tr>
+                            </thead>
+                            <tbody>
+                                <tr><td><b>B01</b></td><td>16</td><td>Straight</td><td>24</td><td>6,200</td><td>235 kg</td></tr>
+                                <tr><td><b>B02</b></td><td>16</td><td>L-bend</td><td>18</td><td>4,850</td><td>138 kg</td></tr>
+                                <tr><td><b>S01</b></td><td>10</td><td>Stirrup</td><td>96</td><td>1,840</td><td>109 kg</td></tr>
+                                <tr><td><b>B03</b></td><td>20</td><td>Crank</td><td>12</td><td>7,400</td><td>219 kg</td></tr>
+                                <tr><td><b>S02</b></td><td>10</td><td>Tie</td><td>64</td><td>1,420</td><td>56 kg</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
                     <div class="schedule-foot"><span>5 marks · 214 bars</span><b>TOTAL 757 kg</b></div>
+                </div>
+                <div class="ar-block" data-reveal>
+                    <div class="ar-badge"><span data-i18n="products.itechAr.badge">In Development</span></div>
+                    <h3 class="ar-title" data-i18n="products.itechAr.title">iTech AR</h3>
+                    <p class="ar-desc" data-i18n="products.itechAr.desc">A camera-based AR view for the job site — point a phone or tablet at the structure and see the AI-detected rebar layout overlaid on the physical bars in real time, for fast on-site verification against the drawing.</p>
+                    <ul class="ar-features">
+                        <li><span class="ar-feature-num">01</span><span data-i18n="products.itechAr.feature1">Real-time AR overlay of detected rebar and bar-bending schedule onto the camera view</span></li>
+                        <li><span class="ar-feature-num">02</span><span data-i18n="products.itechAr.feature2">Flags discrepancies between the physical site and the drawing</span></li>
+                        <li><span class="ar-feature-num">03</span><span data-i18n="products.itechAr.feature3">Offline capture mode for sites without reliable connectivity</span></li>
+                        <li><span class="ar-feature-num">04</span><span data-i18n="products.itechAr.feature4">Exportable on-site verification report</span></li>
+                    </ul>
                 </div>
             </div>
         </section>
@@ -533,7 +593,7 @@
         <section id="services" class="services">
             <div class="container">
                 <div class="section-header" data-reveal>
-                    <div class="section-tag">03 — <span data-i18n="nav.services">Services</span></div>
+                    <div class="section-tag">04 — <span data-i18n="nav.services">Services</span></div>
                     <h2 class="section-title" data-i18n="services.title">AI Systems &amp; Engineering Services</h2>
                     <p class="section-subtitle" data-i18n="services.subtitle">Beyond our products, Kairos.ai designs custom AI systems, backend infrastructure, and data platforms — the same engineering depth behind iTech.</p>
                 </div>
@@ -570,7 +630,7 @@
         <section id="about" class="about">
             <div class="container">
                 <div class="about-text" data-reveal>
-                    <div class="section-tag">04 — <span data-i18n="nav.about">Company</span></div>
+                    <div class="section-tag">05 — <span data-i18n="nav.about">Company</span></div>
                     <h2 class="section-title" data-i18n="about.title">Why Choose Kairos.ai?</h2>
                     <p class="about-description" data-i18n="about.intro">At Kairos.ai, we bring applied AI to the construction industry. Our flagship system, iTech, automates rebar estimation for AEC teams — and we build custom AI systems, backend infrastructure, and data platforms with the same engineering rigor.</p>
                     <p class="about-description" data-i18n="about.desc">We are dedicated to creating solutions that don't just save time, but unlock new possibilities for our users and customers.</p>
@@ -607,7 +667,7 @@
             <div class="container">
                 <div class="contact-main" data-reveal>
                     <div class="section-header">
-                        <div class="section-tag">05 — <span data-i18n="nav.contact">Contact</span></div>
+                        <div class="section-tag">06 — <span data-i18n="nav.contact">Contact</span></div>
                         <h2 class="section-title" data-i18n="contact.title">Let's Work Together</h2>
                         <p class="section-subtitle" data-i18n="contact.subtitle">Ready to unlock new possibilities? Get in touch with us today.</p>
                     </div>

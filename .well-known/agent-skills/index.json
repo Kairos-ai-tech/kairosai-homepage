@@ -14,16 +14,16 @@
     {
       "name": "browse-products",
       "type": "reference",
-      "description": "Browse Kairos.ai product lineup (B2B AI platforms and smart-factory services for manufacturing).",
+      "description": "Browse the Kairos.ai product lineup: iTech (AI rebar estimation for AEC), iTech AR (in development), and AI/backend/data services.",
       "url": "https://www.kairosaitech.com/.well-known/agent-skills/browse-products/SKILL.md",
-      "sha256": "1de211336a434406e2998bad955339c8497a016742c7d75da9ffe65cea12bc7f"
+      "sha256": "d8fc8f406af404a0597806dd03c98ca67df15d1a6f0585505a6294520ddcdd83"
     },
     {
       "name": "about-kairos",
       "type": "reference",
-      "description": "Learn about Kairos.ai 優時科技 — a Taiwan-based AI and smart-factory company.",
+      "description": "Learn about Kairos.ai 優時科技 — a Taiwan-based company building applied AI for the AEC/construction industry.",
       "url": "https://www.kairosaitech.com/.well-known/agent-skills/about-kairos/SKILL.md",
-      "sha256": "5c0a6314a1949b1147e779258ced00f6ebe97fc3d47215e9c03fb4e64f8fa757"
+      "sha256": "a823ab65849f9b34379795254df87a4db9e7534b98a1715fb29c14f504f403dd"
     }
   ]
 }
