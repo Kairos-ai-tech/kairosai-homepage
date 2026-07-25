@@ -33,7 +33,7 @@ The site supports 8 languages: English (`en`, default), Traditional Chinese (`zh
 
 **How it works:**
 1. HTML elements use `data-i18n` attributes for text content or `data-i18n-placeholder` for placeholders
-2. All translations are stored in the `translations` object in `script.js` (lines 5-742), merged at runtime with `extraI18n` (lines 877-1040, for sections added after the initial i18n pass)
+2. All translations are stored in the `translations` object in `script.js` (lines 5-742), merged at runtime with `extraI18n` (lines 877-1045, for sections added after the initial i18n pass)
 3. `setLanguage(lang)` function updates all translatable elements
 4. Language preference persists in localStorage
 
@@ -48,7 +48,7 @@ The site supports 8 languages: English (`en`, default), Traditional Chinese (`zh
 |---------|--------------|
 | Lines 5-742 | i18n translations object (8 languages) |
 | Lines 746-875 | `langLabels`, `setLanguage()`, language dropdown/selector |
-| Lines 877-1046 | `extraI18n` — translations for sections added after the initial i18n pass, merged into `translations` at load |
+| Lines 877-1045 | `extraI18n` — translations for sections added after the initial i18n pass, merged into `translations` at load |
 | Lines 1050-1055 | Performance optimization (debounce) |
 | Lines 1057-1088 | Mobile hamburger navigation |
 | Lines 1089-1093 | Navbar scroll effect |
