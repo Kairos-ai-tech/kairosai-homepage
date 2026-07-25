@@ -328,6 +328,10 @@ section { position: relative; padding: clamp(84px, 12vh, 150px) 0; }
     border: 1px solid var(--line); border-radius: 100px; color: var(--paper); background: rgba(91, 200, 255, 0.05);
 }
 .product-cta { display: inline-flex; }
+.product-specs { display: grid; gap: 10px; margin: 0 0 30px; }
+.product-spec { display: flex; gap: 14px; font-size: 0.92rem; padding-bottom: 10px; border-bottom: 1px dashed var(--line-2); }
+.product-spec-label { font-family: var(--font-mono); font-size: 0.72rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--cyan); flex: 0 0 90px; }
+.product-spec-value { color: var(--muted); }
 
 /* bar-bending schedule panel (the "AI output") */
 .schedule {
@@ -347,6 +351,45 @@ section { position: relative; padding: clamp(84px, 12vh, 150px) 0; }
 .schedule tr:hover td { background: rgba(91, 200, 255, 0.04); }
 .schedule-foot { display: flex; justify-content: space-between; padding: 14px 18px; border-top: 1px solid var(--line); font-size: 0.8rem; color: var(--faint); }
 .schedule-foot b { color: var(--amber); }
+
+/* iTech AR (in development) */
+.ar-block {
+    grid-column: 1 / -1; margin-top: clamp(30px, 4vw, 56px); padding: 32px clamp(24px, 4vw, 44px);
+    border: 1px dashed var(--line); border-radius: var(--radius); background: var(--panel-2);
+}
+.ar-badge {
+    display: inline-flex; align-items: center; gap: 8px; padding: 6px 14px; margin-bottom: 16px;
+    border: 1px solid var(--amber); border-radius: 100px; background: rgba(255, 155, 61, 0.08);
+    font-family: var(--font-mono); font-size: 0.7rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--amber);
+}
+.ar-badge::before { content: ""; width: 6px; height: 6px; border-radius: 50%; background: var(--amber); box-shadow: 0 0 8px var(--amber); animation: pulse 2s infinite; }
+.ar-title { font-family: var(--font-display); font-weight: 600; font-size: clamp(1.8rem, 3vw, 2.4rem); text-transform: uppercase; margin-bottom: 12px; }
+.ar-desc { color: var(--muted); max-width: 68ch; margin-bottom: 22px; }
+.ar-features { display: grid; grid-template-columns: repeat(2, 1fr); gap: 14px 30px; }
+.ar-features li { display: flex; gap: 12px; font-size: 0.92rem; color: var(--paper); align-items: baseline; }
+.ar-feature-num { font-family: var(--font-mono); font-size: 0.74rem; color: var(--cyan); flex-shrink: 0; }
+
+/* ============================================================
+   OUR JOURNEY
+   ============================================================ */
+.journey-grid { display: grid; grid-template-columns: 1fr auto 1fr; gap: clamp(20px, 3vw, 40px); align-items: center; }
+.journey-panel {
+    padding: 32px 30px; border: 1px solid var(--line); border-radius: var(--radius);
+    background: var(--panel); backdrop-filter: blur(8px);
+}
+.journey-panel--then { opacity: 0.72; border-style: dashed; }
+.journey-era { font-family: var(--font-mono); font-size: 0.74rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--faint); margin-bottom: 12px; }
+.journey-panel--now .journey-era { color: var(--amber); }
+.journey-tagline { font-family: var(--font-display); font-weight: 600; font-size: 1.4rem; text-transform: uppercase; line-height: 1.1; margin-bottom: 14px; }
+.journey-desc { color: var(--muted); font-size: 0.98rem; }
+.journey-chips { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 22px; }
+.journey-chip {
+    font-family: var(--font-mono); font-size: 0.72rem; letter-spacing: 0.05em; padding: 6px 12px;
+    border: 1px solid var(--line); border-radius: 100px; color: var(--paper); background: rgba(91, 200, 255, 0.05);
+}
+.journey-chip--legacy { color: var(--faint); border-color: var(--line-2); background: transparent; }
+.journey-connector { width: 40px; height: 40px; color: var(--cyan); justify-self: center; }
+.journey-connector svg { width: 100%; height: 100%; }
 
 /* ============================================================
    SERVICES / CAPABILITIES
@@ -449,11 +492,13 @@ section { position: relative; padding: clamp(84px, 12vh, 150px) 0; }
    Responsive
    ============================================================ */
 @media (max-width: 980px) {
-    .hero .container, .product-showcase .container, .about .container, .contact .container { grid-template-columns: 1fr; }
+    .hero .container, .product-showcase .container, .about .container, .contact .container, .journey-grid { grid-template-columns: 1fr; }
     .hero-visual { order: -1; }
     .product-showcase .container { gap: 40px; }
     .services-grid { grid-template-columns: 1fr; }
     .process-grid { grid-template-columns: 1fr; }
+    .journey-connector { display: none; }
+    .ar-features { grid-template-columns: 1fr; }
 }
 
 @media (max-width: 760px) {
