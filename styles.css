@@ -396,6 +396,21 @@ section { position: relative; padding: clamp(84px, 12vh, 150px) 0; }
 }
 .story-chip:hover { border-color: var(--cyan); color: var(--cyan); }
 
+/* story blueprint visual: animated signal path + reused facts */
+.story-visual { margin-top: 22px; }
+.story-path-svg { position: relative; width: 100%; height: auto; margin-bottom: 18px; }
+.path-draw { transition: stroke-dashoffset 1.6s var(--ease) 0.3s; }
+.story-visual.is-visible .path-draw { stroke-dashoffset: 0; }
+.path-node { animation: pulse 2.4s ease-in-out infinite; animation-delay: var(--pd, 0s); filter: drop-shadow(0 0 4px currentColor); }
+.story-facts {
+    position: relative; display: flex; gap: 18px; margin-top: 18px; padding-top: 18px;
+    border-top: 1px dashed var(--line);
+}
+.story-fact { flex: 1; text-align: center; }
+.story-fact-num { font-family: var(--font-display); font-weight: 600; font-size: clamp(1.4rem, 2.4vw, 1.9rem); color: var(--paper); line-height: 1; }
+.story-fact-num span { color: var(--amber); }
+.story-fact-label { font-family: var(--font-mono); font-size: 0.66rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--faint); margin-top: 6px; }
+
 /* ============================================================
    SERVICES / CAPABILITIES
    ============================================================ */
@@ -505,6 +520,10 @@ section { position: relative; padding: clamp(84px, 12vh, 150px) 0; }
     .story-grid { grid-template-columns: 1fr; }
     .story-services { flex-direction: column; align-items: flex-start; }
     .ar-features { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 480px) {
+    .story-facts { flex-direction: column; gap: 12px; }
 }
 
 @media (max-width: 760px) {
