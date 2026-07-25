@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project Overview
 
-Static marketing website for Kairos.ai (優時科技), a Taiwan-based company specializing in AI systems, smart factory solutions, and digital transformation for manufacturing. The site is hosted at www.kairosaitech.com via GitHub Pages.
+Static marketing website for Kairos.ai (優時科技), a Taiwan-based company building iTech — an AI rebar estimation system for the AEC/construction industry — plus custom AI systems, backend infrastructure, and data platforms. The site is hosted at www.kairosaitech.com via GitHub Pages.
 
 ## Development Commands
 
@@ -29,7 +29,7 @@ No build tools, package managers, or dependencies required - this is a pure stat
 
 ### Internationalization (i18n) System
 
-The site supports 4 languages: English (`en`), Traditional Chinese (`zh-TW`), Japanese (`ja`), and Spanish (`es`).
+The site supports 8 languages: English (`en`, default), Traditional Chinese (`zh-TW`), Japanese (`ja`), Spanish (`es`), Italian (`it`), French (`fr`), Korean (`ko`), and German (`de`).
 
 **How it works:**
 1. HTML elements use `data-i18n` attributes for text content or `data-i18n-placeholder` for placeholders

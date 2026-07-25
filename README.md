@@ -1,31 +1,32 @@
 # Kairos.ai Website
 
-A modern, responsive website for Kairos.ai - innovative AI applications and intelligent systems.
+A modern, responsive website for Kairos.ai — iTech, AI rebar estimation for the AEC/construction industry, plus custom AI systems and data platforms.
 
 ## Overview
 
-Kairos.ai is dedicated to creating solutions that help people work smarter and live better through cutting-edge AI technology and human-centered design.
+Kairos.ai builds iTech, an end-to-end AI system that turns construction drawings into accurate rebar estimates and bar-bending schedules for the AEC industry. We also design custom AI systems, backend infrastructure, and data platforms with the same engineering rigor.
 
 ## Features
 
 - **Responsive Design**: Fully responsive layout that works seamlessly on all devices
-- **Multi-language Support**: Full internationalization (i18n) in 4 languages:
-  - English
+- **Multi-language Support**: Full internationalization (i18n) in 8 languages:
+  - English (default)
   - Traditional Chinese (繁體中文)
   - Japanese (日本語)
   - Spanish (Español)
-- **Dynamic Background Slider**: Rotating hero images featuring company logo and tech/city scenes
-- **Modern UI/UX**: Clean, professional design with smooth animations and transitions
+  - Italian (Italiano)
+  - French (Français)
+  - Korean (한국어)
+  - German (Deutsch)
+- **Modern UI/UX**: Clean, professional "engineering blueprint" design with smooth animations and transitions
 - **Performance Optimized**: Fast loading times with optimized assets and code
 - **Interactive Elements**: Engaging user interactions including parallax effects and scroll animations
 - **Working Contact Form**: Email delivery via FormSubmit (no backend required)
-- **Service Showcase**: Highlighting our core services:
+- **Product & Service Showcase**: Highlighting iTech (AI rebar estimation), iTech AR (in development), and our core services:
   - AI Systems Design
   - Backend Systems Development
   - AI Applications
   - Data Analysis
-  - Factory Process Optimization
-  - Customized Solutions
 
 ## Technology Stack
 
@@ -78,7 +79,7 @@ kairosai-homepage/
 ├── index.html          # Main HTML file
 ├── styles.css          # CSS styles
 ├── script.js           # JavaScript functionality
-├── logo.png            # Company logo (used in navbar and background slider)
+├── logo.png            # Company logo (used in navbar and Our Story section)
 └── README.md           # This file
 ```
 
@@ -117,7 +118,7 @@ Edit CSS variables in `styles.css` to customize the color scheme:
 
 ### Language Support
 
-The website includes a custom internationalization system with 4 languages. All translations are in `script.js`:
+The website includes a custom internationalization system with 8 languages. All translations are in `script.js`:
 
 **To add a new language:**
 1. Add language option to the language dropdown in `index.html`

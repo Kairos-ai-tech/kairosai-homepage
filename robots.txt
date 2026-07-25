@@ -6,8 +6,12 @@
 User-agent: *
 Allow: /
 
-# Content Signals (https://contentsignals.org/) — declare AI usage preferences
-Content-Signal: ai-train=no, search=yes, ai-input=no
+# Content Signals (https://contentsignals.org/) — declare AI usage preferences.
+# ai-train=no: don't use this content to train models.
+# ai-input=yes: AI agents/assistants MAY use this content to answer a live
+#   user query (browsing, RAG, citation) — this is how we want to be found.
+# search=yes: full search indexing allowed.
+Content-Signal: ai-train=no, search=yes, ai-input=yes
 
 # Sitemap location
 Sitemap: https://www.kairosaitech.com/sitemap.xml
@@ -16,19 +20,57 @@ Sitemap: https://www.kairosaitech.com/sitemap.xml
 # contentsignals.org groups do not inherit from the '*' group.
 User-agent: Googlebot
 Allow: /
-Content-Signal: ai-train=no, search=yes, ai-input=no
+Content-Signal: ai-train=no, search=yes, ai-input=yes
 
 User-agent: Googlebot-Image
 Allow: /
-Content-Signal: ai-train=no, search=yes, ai-input=no
+Content-Signal: ai-train=no, search=yes, ai-input=yes
 
 User-agent: Bingbot
 Allow: /
-Content-Signal: ai-train=no, search=yes, ai-input=no
+Content-Signal: ai-train=no, search=yes, ai-input=yes
 
 User-agent: Baiduspider
 Allow: /
-Content-Signal: ai-train=no, search=yes, ai-input=no
+Content-Signal: ai-train=no, search=yes, ai-input=yes
+
+# AI assistants / agent browsers — allowed to read and cite this site when
+# answering a live user query. Training use stays opted out (ai-train=no).
+User-agent: GPTBot
+Allow: /
+Content-Signal: ai-train=no, search=yes, ai-input=yes
+
+User-agent: ChatGPT-User
+Allow: /
+Content-Signal: ai-train=no, search=yes, ai-input=yes
+
+User-agent: OAI-SearchBot
+Allow: /
+Content-Signal: ai-train=no, search=yes, ai-input=yes
+
+User-agent: ClaudeBot
+Allow: /
+Content-Signal: ai-train=no, search=yes, ai-input=yes
+
+User-agent: Claude-User
+Allow: /
+Content-Signal: ai-train=no, search=yes, ai-input=yes
+
+User-agent: anthropic-ai
+Allow: /
+Content-Signal: ai-train=no, search=yes, ai-input=yes
+
+User-agent: PerplexityBot
+Allow: /
+Content-Signal: ai-train=no, search=yes, ai-input=yes
+
+User-agent: Perplexity-User
+Allow: /
+Content-Signal: ai-train=no, search=yes, ai-input=yes
+
+User-agent: Google-Extended
+Allow: /
+Content-Signal: ai-train=no, search=yes, ai-input=yes
 
 # Disallow certain files (if any)
 Disallow: /CNAME

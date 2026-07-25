@@ -1261,14 +1261,14 @@ window.addEventListener('load', () => document.body.classList.add('loaded'));
     const tools = [
         {
             name: 'navigate_section',
-            description: 'Scroll the Kairos.ai homepage to one of its main sections: home, how, product, services, about, or contact.',
+            description: 'Scroll the Kairos.ai homepage to one of its main sections: home, story, how, product, services, about, or contact.',
             inputSchema: {
                 type: 'object',
                 required: ['section'],
                 properties: {
                     section: {
                         type: 'string',
-                        enum: ['home', 'how', 'product', 'services', 'about', 'contact'],
+                        enum: ['home', 'story', 'how', 'product', 'services', 'about', 'contact'],
                         description: 'Section anchor to scroll to.'
                     }
                 }
@@ -1342,7 +1342,7 @@ window.addEventListener('load', () => document.body.classList.add('loaded'));
                     homepage: 'https://www.kairosaitech.com/',
                     locales: ['en', 'zh-TW', 'ja', 'es', 'it', 'fr', 'ko', 'de'],
                     productFamilies: {
-                        b2b: ['iTech (AI rebar estimation for AEC)', 'Custom AI systems', 'Data analysis platforms']
+                        b2b: ['iTech (AI rebar estimation for AEC)', 'iTech AR (AR site verification, in development)', 'Custom AI systems', 'Data analysis platforms']
                     }
                 };
             }

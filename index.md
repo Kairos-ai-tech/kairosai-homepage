@@ -1,6 +1,6 @@
 # Kairos.ai 優時科技
 
-AI systems · Smart factory solutions · Digital transformation for manufacturing.
+AI rebar estimation for AEC · Applied AI systems, backend, and data platforms.
 
 Homepage: <https://www.kairosaitech.com/>
 Contact: <kairos.ai.tech@gmail.com>
@@ -15,34 +15,37 @@ Contact: <kairos.ai.tech@gmail.com>
 
 ## About Kairos.ai
 
-Kairos.ai 優時科技 is a Taiwan-based company specializing in AI systems, smart
-factory solutions, and digital transformation for manufacturing. We help
-manufacturers in semiconductor, solar, and food production lines adopt AI
-system design, smart-factory optimization, and data-driven decision making.
-
-## Solutions (B2B)
-
-- **Smart factory optimization** — line analytics, yield improvement, and
-  real-time monitoring for complex production environments.
-- **AI system design** — custom AI pipelines for process control, quality
-  inspection, and anomaly detection.
-- **Digital transformation consulting** — MES integration, data platform
-  migration, and AI-readiness assessments.
+Kairos.ai 優時科技 is a Taiwan-based company building applied AI for the
+construction (AEC) industry. Our flagship system, iTech, automates rebar
+estimation for AEC teams. We also design custom AI systems, backend
+infrastructure, and data platforms with the same engineering rigor.
 
 ## Products (B2B)
 
 - **iTech** — AI rebar estimation system for the AEC industry. An end-to-end
-  platform that turns construction drawings into accurate rebar estimates and
-  bar-bending schedules, replacing slow, error-prone manual takeoff.
-- **vcom** — virtual company of AI coworkers (Anna, Kai, Oliver) that runs the
-  operating cadence of a real team. Built for solo founders and lean orgs.
+  platform that turns construction drawings (DWG or PDF) into accurate rebar
+  estimates and bar-bending schedules (exportable as CSV/Excel), replacing
+  slow, error-prone manual takeoff.
+- **iTech AR** *(in development)* — a camera-based AR view for the job site
+  that overlays AI-detected rebar and the bar-bending schedule onto the
+  physical structure in real time, for on-site verification against the
+  drawing. Not yet shipped.
+
+## Services
+
+- **AI Systems Design** — custom AI solutions designed, adapted, and tuned to
+  measurable business outcomes.
+- **Backend Systems** — robust, scalable backend infrastructure for
+  performance, security, and reliability.
+- **AI Applications** — AI-powered applications from concept to deployment.
+- **Data Analysis** — turning raw data into actionable insight.
 
 ## Languages
 
-The site is available in eight languages:
+The site is available in eight languages (English is the default):
 
-- English (`en`)
-- Traditional Chinese (`zh-TW`, default)
+- English (`en`, default)
+- Traditional Chinese (`zh-TW`)
 - Japanese (`ja`)
 - Spanish (`es`)
 - Italian (`it`)
@@ -61,7 +64,10 @@ Kairos.ai publishes the following agent-discovery resources:
 - MCP server card: `/.well-known/mcp/server-card.json`
 - Agent skills index: `/.well-known/agent-skills/index.json`
 - WebMCP tools: exposed at page load via `navigator.modelContext.provideContext`
-- Content signals: declared in `/robots.txt`
+  (`navigate_section`, `set_language`, `contact_kairos`, `get_company_info`)
+- Content signals: declared in `/robots.txt` (search=yes, ai-input=yes,
+  ai-train=no — this content may be used to answer a live query, not for
+  model training)
 
 ## Contact
 

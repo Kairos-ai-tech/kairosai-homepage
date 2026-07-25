@@ -3,7 +3,7 @@
     "name": "kairosai-site",
     "version": "1.0.0",
     "title": "Kairos.ai 優時科技",
-    "description": "Marketing site for Kairos.ai — AI systems, smart factory solutions, and digital transformation for manufacturing. Tools are exposed in-page via the WebMCP browser API (navigator.modelContext.provideContext); there is no remote MCP endpoint.",
+    "description": "Marketing site for Kairos.ai — iTech, an AI rebar estimation system for the AEC/construction industry, plus custom AI systems, backend infrastructure, and data platforms. Tools are exposed in-page via the WebMCP browser API (navigator.modelContext.provideContext); there is no remote MCP endpoint.",
     "vendor": {
       "name": "Kairos.ai 優時科技",
       "url": "https://www.kairosaitech.com/",

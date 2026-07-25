@@ -2,7 +2,7 @@
 
 ## Project Overview
 
-This project is a modern, responsive, and multi-language static website for a company called **Kairos.ai**. The website showcases the company's services, which include AI systems design, backend systems development, AI applications, data analysis, factory process optimization, and customized solutions.
+This project is a modern, responsive, and multi-language static website for a company called **Kairos.ai**. The site's flagship product is iTech, an AI rebar estimation system for the AEC/construction industry. It also showcases the company's services: AI systems design, backend systems development, AI applications, and data analysis.
 
 The website is built with a focus on performance and user experience, featuring a clean design, smooth animations, and a dynamic background slider. It also includes a working contact form that uses FormSubmit for email delivery, so no backend is required.
 
@@ -31,7 +31,7 @@ To run the website locally, you can either:
 
 ### Internationalization (i18n)
 
-The website supports four languages: English, Traditional Chinese (繁體中文), Japanese (日本語), and Spanish (Español). The translations are stored in a `translations` object in the `script.js` file.
+The website supports eight languages: English (default), Traditional Chinese (繁體中文), Japanese (日本語), Spanish (Español), Italian, French, Korean, and German. The translations are stored in a `translations` object in the `script.js` file.
 
 To add a new language or edit existing translations, you need to modify the `translations` object and the `langLabels` object in `script.js`. The HTML elements that need translation have a `data-i18n` attribute with a key that corresponds to a key in the `translations` object.
 
