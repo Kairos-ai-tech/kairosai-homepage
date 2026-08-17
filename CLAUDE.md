@@ -46,20 +46,20 @@ The site supports 8 languages: English (`en`, default), Traditional Chinese (`zh
 
 | Section | Functionality |
 |---------|--------------|
-| Lines 5-742 | i18n translations object (8 languages) |
+| Lines 5-745 | i18n translations object (8 languages) |
 | Lines 746-875 | `langLabels`, `setLanguage()`, language dropdown/selector |
-| Lines 877-1045 | `extraI18n` — translations for sections added after the initial i18n pass, merged into `translations` at load |
-| Lines 1050-1055 | Performance optimization (debounce) |
-| Lines 1057-1088 | Mobile hamburger navigation |
-| Lines 1089-1093 | Navbar scroll effect |
-| Lines 1094-1108 | Smooth scroll for anchor links |
-| Lines 1109-1126 | Scroll reveal animations (IntersectionObserver) |
-| Lines 1127-1155 | Animated stat counters |
-| Lines 1156-1171 | Active navigation highlighting (IntersectionObserver) |
-| Lines 1172-1192 | Scroll engine: progress rail + spine draw + grid parallax |
-| Lines 1193-1202 | Pointer-reactive blueprint glow (desktop) |
-| Lines 1203-1239 | Contact form submission via FormSubmit |
-| Lines 1246-1358 | WebMCP — tools exposed to AI agents via `navigator.modelContext` |
+| Lines 876-1078 | `extraI18n` — translations for sections added after the initial i18n pass, merged into `translations` at load |
+| Lines 1079-1087 | Performance optimization (debounce) |
+| Lines 1088-1119 | Mobile hamburger navigation |
+| Lines 1120-1125 | Navbar scroll effect |
+| Lines 1126-1139 | Smooth scroll for anchor links |
+| Lines 1140-1157 | Scroll reveal animations (IntersectionObserver) |
+| Lines 1158-1186 | Animated stat counters |
+| Lines 1187-1202 | Active navigation highlighting (IntersectionObserver) |
+| Lines 1203-1223 | Scroll engine: progress rail + spine draw + grid parallax |
+| Lines 1224-1233 | Pointer-reactive blueprint glow (desktop) |
+| Lines 1234-1276 | Contact form submission via FormSubmit |
+| Lines 1277-1390 | WebMCP — tools exposed to AI agents via `navigator.modelContext` |
 
 ### CSS Theming
 

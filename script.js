@@ -1193,7 +1193,8 @@ if ('IntersectionObserver' in window) {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
                 const id = entry.target.getAttribute('id');
-                navLinks.forEach(l => l.classList.toggle('active', l.getAttribute('href') === '#' + id));
+                const hasNavLink = Array.from(navLinks).some(l => l.getAttribute('href') === '#' + id);
+                if (hasNavLink) navLinks.forEach(l => l.classList.toggle('active', l.getAttribute('href') === '#' + id));
             }
         });
     }, { threshold: 0.5 });
@@ -1293,14 +1294,14 @@ window.addEventListener('load', () => document.body.classList.add('loaded'));
     const tools = [
         {
             name: 'navigate_section',
-            description: 'Scroll the Kairos.ai homepage to one of its main sections: home, story, how, product, services, about, or contact.',
+            description: 'Scroll the Kairos.ai homepage to one of its main sections: home, story, how, product, pilot, services, about, or contact.',
             inputSchema: {
                 type: 'object',
                 required: ['section'],
                 properties: {
                     section: {
                         type: 'string',
-                        enum: ['home', 'story', 'how', 'product', 'services', 'about', 'contact'],
+                        enum: ['home', 'story', 'how', 'product', 'pilot', 'services', 'about', 'contact'],
                         description: 'Section anchor to scroll to.'
                     }
                 }
