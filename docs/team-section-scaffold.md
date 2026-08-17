@@ -3,9 +3,9 @@
 Not live. Built when real team member names/photos/bios weren't available yet
 (see PR #23). To ship it:
 
-1. Add `team.tag`/`team.title`/`team.subtitle` and per-member i18n keys to
-   `extraI18n` in `script.js` (all 8 languages) — follow the `pilot.*` keys
-   there as a pattern.
+1. Add `team.tag`/`team.title`/`team.subtitle`, `nav.team`, and per-member
+   i18n keys to `extraI18n` in `script.js` (all 8 languages) — follow the
+   `pilot.*`/`nav.pilot` keys there as a pattern.
 2. Replace each `.team-photo` placeholder with a real
    `<img src="team/<name>.jpg" alt="..." width="120" height="120">`.
 3. Fill in real name/title/bio/LinkedIn per card, add or remove `.team-card`
