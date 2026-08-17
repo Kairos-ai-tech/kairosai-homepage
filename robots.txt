@@ -14,12 +14,14 @@ Allow: /
 Content-Signal: ai-train=no, search=yes, ai-input=yes
 
 # Disallow: /CNAME (repo config file, not meant to be indexed), *.log
-# (debug logs), and WordPress-style ?s=/&s= search-query URLs (this site has
-# no search feature, so these would just be junk crawled/indexed URLs).
+# (debug logs), WordPress-style ?s=/&s= search-query URLs (this site has no
+# search feature, so these would just be junk crawled/indexed URLs), and
+# /docs/ (internal working notes, not public-facing content).
 Disallow: /CNAME
 Disallow: /*.log$
 Disallow: /*?s=
 Disallow: /*&s=
+Disallow: /docs/
 
 # Sitemap location
 Sitemap: https://www.kairosaitech.com/sitemap.xml
@@ -61,3 +63,4 @@ Disallow: /CNAME
 Disallow: /*.log$
 Disallow: /*?s=
 Disallow: /*&s=
+Disallow: /docs/
