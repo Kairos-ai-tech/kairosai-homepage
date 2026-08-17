@@ -879,6 +879,7 @@ window.addEventListener('DOMContentLoaded', () => {
 const extraI18n = {
     en: {
         'nav.how': 'How it works',
+        'nav.pilot': 'Pilot',
         'hero.badge': 'AI Rebar Estimation · AEC',
         'hero.metric1label': 'Faster takeoff',
         'hero.metric2label': 'Estimate accuracy',
@@ -892,6 +893,10 @@ const extraI18n = {
         'process.step3.title': 'Estimate & schedule',
         'process.step3.desc': 'Get accurate quantities, weights, and a bar-bending schedule ready to export.',
         'footer.tagline': 'AI rebar estimation and applied AI for the construction industry.',
+        'pilot.tag': 'Now Recruiting',
+        'pilot.title': 'Now Recruiting Pilot Clients',
+        'pilot.desc': "We're partnering with AEC firms to pilot iTech on real projects — bring your drawings, help shape the product, and get early access before general release.",
+        'pilot.cta': 'Apply for the Pilot Program',
         'form.sending': 'Sending…',
         'form.success': 'Thank you! Your message has been sent.',
         'form.error': 'There was an issue sending your message. Please try again.',
@@ -899,6 +904,7 @@ const extraI18n = {
     },
     'zh-TW': {
         'nav.how': '運作方式',
+        'nav.pilot': '試點',
         'hero.badge': 'AI 鋼筋估算 · 營建',
         'hero.metric1label': '更快翻樣',
         'hero.metric2label': '估算準確度',
@@ -912,6 +918,10 @@ const extraI18n = {
         'process.step3.title': '估算與斷料',
         'process.step3.desc': '產出精準數量、重量與可匯出的鋼筋斷料彎曲表。',
         'footer.tagline': '為營建產業打造的 AI 鋼筋估算與應用 AI。',
+        'pilot.tag': '招募中',
+        'pilot.title': '招募 iTech 試點客戶',
+        'pilot.desc': '我們正與 AEC 廠商合作，在真實專案中試行 iTech — 提供您的圖面、參與產品打磨，並在正式發布前搶先使用。',
+        'pilot.cta': '申請加入試點計畫',
         'form.sending': '傳送中…',
         'form.success': '感謝您！訊息已送出。',
         'form.error': '訊息送出時發生問題，請再試一次。',
@@ -919,6 +929,7 @@ const extraI18n = {
     },
     ja: {
         'nav.how': '仕組み',
+        'nav.pilot': 'パイロット',
         'hero.badge': 'AI鉄筋積算 · 建設',
         'hero.metric1label': '積算の高速化',
         'hero.metric2label': '積算精度',
@@ -932,6 +943,10 @@ const extraI18n = {
         'process.step3.title': '積算と加工帳',
         'process.step3.desc': '正確な数量・重量と、出力可能な鉄筋加工帳を生成。',
         'footer.tagline': '建設業界のためのAI鉄筋積算と応用AI。',
+        'pilot.tag': '募集中',
+        'pilot.title': 'パイロット導入企業を募集中',
+        'pilot.desc': '実プロジェクトでiTechを試験導入していただけるAEC企業を募集しています — 図面をお持ちいただき、製品づくりにご参加、正式リリース前の先行アクセスをご提供します。',
+        'pilot.cta': 'パイロットプログラムに応募する',
         'form.sending': '送信中…',
         'form.success': 'ありがとうございます！メッセージを送信しました。',
         'form.error': '送信中に問題が発生しました。もう一度お試しください。',
@@ -939,6 +954,7 @@ const extraI18n = {
     },
     es: {
         'nav.how': 'Cómo funciona',
+        'nav.pilot': 'Piloto',
         'hero.badge': 'Estimación de Acero con IA · AEC',
         'hero.metric1label': 'Cómputo más rápido',
         'hero.metric2label': 'Precisión de estimación',
@@ -952,6 +968,10 @@ const extraI18n = {
         'process.step3.title': 'Estima y programa',
         'process.step3.desc': 'Obtén cantidades y pesos precisos y una lista de despiece lista para exportar.',
         'footer.tagline': 'Estimación de acero con IA e IA aplicada para la construcción.',
+        'pilot.tag': 'Buscando Ahora',
+        'pilot.title': 'Buscando Clientes Piloto',
+        'pilot.desc': 'Nos asociamos con empresas AEC para probar iTech en proyectos reales — trae tus planos, ayuda a dar forma al producto y obtén acceso anticipado antes del lanzamiento general.',
+        'pilot.cta': 'Postula al Programa Piloto',
         'form.sending': 'Enviando…',
         'form.success': '¡Gracias! Tu mensaje ha sido enviado.',
         'form.error': 'Hubo un problema al enviar tu mensaje. Inténtalo de nuevo.',
@@ -959,6 +979,7 @@ const extraI18n = {
     },
     it: {
         'nav.how': 'Come funziona',
+        'nav.pilot': 'Pilota',
         'hero.badge': 'Stima dei Ferri con IA · AEC',
         'hero.metric1label': 'Computo più rapido',
         'hero.metric2label': 'Precisione di stima',
@@ -972,6 +993,10 @@ const extraI18n = {
         'process.step3.title': 'Stima e distinta',
         'process.step3.desc': 'Ottieni quantità e pesi precisi e una distinta di piegatura pronta da esportare.',
         'footer.tagline': "Stima dei ferri con IA e IA applicata per le costruzioni.",
+        'pilot.tag': 'Ricerca Aperta',
+        'pilot.title': 'Cerchiamo Clienti Pilota',
+        'pilot.desc': 'Collaboriamo con aziende AEC per testare iTech su progetti reali — porta i tuoi disegni, aiuta a plasmare il prodotto e ottieni accesso anticipato prima del rilascio generale.',
+        'pilot.cta': 'Candidati al Programma Pilota',
         'form.sending': 'Invio in corso…',
         'form.success': 'Grazie! Il tuo messaggio è stato inviato.',
         'form.error': "Si è verificato un problema nell'invio del messaggio. Riprova.",
@@ -979,6 +1004,7 @@ const extraI18n = {
     },
     fr: {
         'nav.how': 'Comment ça marche',
+        'nav.pilot': 'Pilote',
         'hero.badge': 'Estimation des Armatures par IA · AEC',
         'hero.metric1label': 'Métré plus rapide',
         'hero.metric2label': "Précision d'estimation",
@@ -992,6 +1018,10 @@ const extraI18n = {
         'process.step3.title': 'Estimez et planifiez',
         'process.step3.desc': 'Obtenez quantités et poids précis et une nomenclature de façonnage prête à exporter.',
         'footer.tagline': "Estimation des armatures par IA et IA appliquée pour la construction.",
+        'pilot.tag': 'Recrutement en cours',
+        'pilot.title': 'Recherche de Clients Pilotes',
+        'pilot.desc': "Nous nous associons à des entreprises AEC pour tester iTech sur des projets réels — apportez vos plans, participez à façonner le produit et bénéficiez d'un accès anticipé avant le lancement général.",
+        'pilot.cta': 'Postuler au Programme Pilote',
         'form.sending': 'Envoi en cours…',
         'form.success': 'Merci ! Votre message a été envoyé.',
         'form.error': "Un problème est survenu lors de l'envoi. Veuillez réessayer.",
@@ -999,6 +1029,7 @@ const extraI18n = {
     },
     ko: {
         'nav.how': '작동 방식',
+        'nav.pilot': '파일럿',
         'hero.badge': 'AI 철근 산출 · 건설',
         'hero.metric1label': '더 빠른 산출',
         'hero.metric2label': '산출 정확도',
@@ -1012,6 +1043,10 @@ const extraI18n = {
         'process.step3.title': '산출 및 가공',
         'process.step3.desc': '정확한 수량·중량과 내보내기 가능한 철근 가공목록을 생성합니다.',
         'footer.tagline': '건설 산업을 위한 AI 철근 산출과 응용 AI.',
+        'pilot.tag': '모집 중',
+        'pilot.title': '파일럿 고객 모집 중',
+        'pilot.desc': '실제 프로젝트에서 iTech를 시범 도입할 AEC 기업을 모집합니다 — 도면을 제공하고 제품 개선에 참여하며 정식 출시 전 우선 이용 기회를 얻으세요.',
+        'pilot.cta': '파일럿 프로그램 신청하기',
         'form.sending': '전송 중…',
         'form.success': '감사합니다! 메시지가 전송되었습니다.',
         'form.error': '메시지 전송 중 문제가 발생했습니다. 다시 시도해 주세요.',
@@ -1019,6 +1054,7 @@ const extraI18n = {
     },
     de: {
         'nav.how': 'So funktioniert es',
+        'nav.pilot': 'Pilot',
         'hero.badge': 'KI-Bewehrungskalkulation · AEC',
         'hero.metric1label': 'Schnellere Kalkulation',
         'hero.metric2label': 'Kalkulationsgenauigkeit',
@@ -1032,6 +1068,10 @@ const extraI18n = {
         'process.step3.title': 'Kalkulieren & planen',
         'process.step3.desc': 'Erhalte präzise Mengen und Gewichte sowie eine exportfertige Biegeliste.',
         'footer.tagline': 'KI-Bewehrungskalkulation und angewandte KI für das Bauwesen.',
+        'pilot.tag': 'Jetzt Gesucht',
+        'pilot.title': 'Pilotkunden Gesucht',
+        'pilot.desc': 'Wir arbeiten mit AEC-Unternehmen zusammen, um iTech in echten Projekten zu erproben — bringen Sie Ihre Pläne mit, gestalten Sie das Produkt mit und erhalten Sie frühzeitigen Zugang vor dem allgemeinen Start.',
+        'pilot.cta': 'Für das Pilotprogramm bewerben',
         'form.sending': 'Wird gesendet…',
         'form.success': 'Danke! Ihre Nachricht wurde gesendet.',
         'form.error': 'Beim Senden Ihrer Nachricht ist ein Problem aufgetreten. Bitte erneut versuchen.',
@@ -1261,14 +1301,14 @@ window.addEventListener('load', () => document.body.classList.add('loaded'));
     const tools = [
         {
             name: 'navigate_section',
-            description: 'Scroll the Kairos.ai homepage to one of its main sections: home, story, how, product, services, about, or contact.',
+            description: 'Scroll the Kairos.ai homepage to one of its main sections: home, story, how, product, pilot, services, about, or contact.',
             inputSchema: {
                 type: 'object',
                 required: ['section'],
                 properties: {
                     section: {
                         type: 'string',
-                        enum: ['home', 'story', 'how', 'product', 'services', 'about', 'contact'],
+                        enum: ['home', 'story', 'how', 'product', 'pilot', 'services', 'about', 'contact'],
                         description: 'Section anchor to scroll to.'
                     }
                 }

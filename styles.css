@@ -374,13 +374,13 @@ section { position: relative; padding: clamp(84px, 12vh, 150px) 0; }
    OUR STORY
    ============================================================ */
 .story-header { text-align: center; max-width: 720px; margin: 0 auto 56px; }
-.story-header .section-tag, .story-header .section-title, .story-header .section-subtitle { margin-left: auto; margin-right: auto; }
+.story-header .section-subtitle, .pilot-inner .section-subtitle { margin-left: auto; margin-right: auto; }
 .story-logo { width: clamp(96px, 12vw, 140px); height: clamp(96px, 12vw, 140px); margin: 0 auto 26px; border-radius: 20px; box-shadow: 0 12px 40px rgba(91, 200, 255, 0.18); }
 .story-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; margin-bottom: 40px; }
-.story-block {
-    padding: 30px 28px; border: 1px solid var(--line); border-radius: var(--radius);
-    background: var(--panel); backdrop-filter: blur(8px);
+.story-block, .service-card, .stat-card, .pilot-inner {
+    border: 1px solid var(--line); border-radius: var(--radius); background: var(--panel); backdrop-filter: blur(8px);
 }
+.story-block { padding: 30px 28px; }
 .story-block h3 { font-family: var(--font-display); font-weight: 600; font-size: 1.3rem; text-transform: uppercase; color: var(--cyan); margin-bottom: 14px; }
 .story-block p { color: var(--muted); font-size: 0.96rem; }
 .story-services {
@@ -401,8 +401,7 @@ section { position: relative; padding: clamp(84px, 12vh, 150px) 0; }
    ============================================================ */
 .services-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; }
 .service-card {
-    position: relative; padding: 34px 30px; border: 1px solid var(--line); border-radius: var(--radius);
-    background: var(--panel); backdrop-filter: blur(8px); overflow: hidden;
+    position: relative; padding: 34px 30px; overflow: hidden;
     transition: transform 0.4s var(--ease), border-color 0.4s, background 0.4s;
 }
 .service-card:hover { transform: translateY(-6px); border-color: rgba(91, 200, 255, 0.4); background: var(--panel-2); }
@@ -430,14 +429,18 @@ section { position: relative; padding: clamp(84px, 12vh, 150px) 0; }
 .experience-description { color: var(--muted); margin-top: 8px; font-size: 0.96rem; }
 
 .about-stats { display: grid; gap: 16px; }
-.stat-card {
-    padding: 30px; border: 1px solid var(--line); border-radius: var(--radius);
-    background: var(--panel); backdrop-filter: blur(8px); position: relative; overflow: hidden;
-}
+.stat-card { padding: 30px; position: relative; overflow: hidden; }
 .stat-card::after { content: ""; position: absolute; left: 0; bottom: 0; height: 2px; width: 100%; background: linear-gradient(90deg, var(--amber), transparent); }
 .stat-number { font-family: var(--font-display); font-weight: 600; font-size: clamp(2.4rem, 4vw, 3.4rem); line-height: 1; color: var(--paper); }
 .stat-number span { color: var(--cyan); }
 .stat-label { font-family: var(--font-mono); font-size: 0.74rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--faint); margin-top: 10px; }
+
+/* ============================================================
+   PILOT PROGRAM CTA
+   ============================================================ */
+.pilot { padding-top: clamp(50px, 6vw, 80px); padding-bottom: clamp(50px, 6vw, 80px); }
+.pilot-inner { text-align: center; max-width: 68ch; margin: 0 auto; padding: clamp(40px, 5vw, 60px); }
+.pilot-inner .section-subtitle { margin-bottom: 28px; }
 
 /* ============================================================
    CONTACT
@@ -505,9 +508,6 @@ section { position: relative; padding: clamp(84px, 12vh, 150px) 0; }
     .story-grid { grid-template-columns: 1fr; }
     .story-services { flex-direction: column; align-items: flex-start; }
     .ar-features { grid-template-columns: 1fr; }
-}
-
-@media (max-width: 760px) {
     .nav-menu {
         position: fixed; inset: 64px 0 auto 0; flex-direction: column; align-items: stretch; gap: 4px;
         background: rgba(8, 12, 20, 0.97); backdrop-filter: blur(16px); padding: 16px var(--gutter) 24px;
@@ -518,6 +518,9 @@ section { position: relative; padding: clamp(84px, 12vh, 150px) 0; }
     .nav-link { padding: 14px; font-size: 1rem; }
     .nav-link::after { display: none; }
     .hamburger { display: flex; }
+}
+
+@media (max-width: 760px) {
     .logo-text { font-size: 1.15rem; }
     .spine { display: none; }
     .hero-metrics { grid-template-columns: 1fr; }

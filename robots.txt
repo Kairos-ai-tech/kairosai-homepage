@@ -13,69 +13,58 @@ Allow: /
 # search=yes: full search indexing allowed.
 Content-Signal: ai-train=no, search=yes, ai-input=yes
 
+# Disallow: /CNAME (repo config file, not meant to be indexed), *.log
+# (debug logs), WordPress-style ?s=/&s= search-query URLs (this site has no
+# search feature, so these would just be junk crawled/indexed URLs), and
+# /docs/ (internal working notes, not public-facing content).
+Disallow: /CNAME
+Disallow: /*.log$
+Disallow: /*?s=
+Disallow: /*&s=
+Disallow: /docs/
+
 # Sitemap location
 Sitemap: https://www.kairosaitech.com/sitemap.xml
 
-# Specific crawlers — each carries its own Content-Signal because
-# contentsignals.org groups do not inherit from the '*' group.
+# Specific crawlers — stacked under one shared rule block (RFC 9309 groups
+# rules by the User-agent lines immediately above them, so consecutive
+# User-agent lines all get the same rules below). They need their own
+# explicit block because robots.txt groups do not inherit from the '*'
+# group above — every named agent here gets the exact same
+# Allow/Content-Signal/Disallow as '*' would give it, just made explicit.
+# IMPORTANT: do not insert any Allow/Disallow/Content-Signal line between
+# two User-agent lines below — that would end the group early and drop
+# every User-agent after it back to inheriting nothing. Only add more
+# 'User-agent: X' lines to the stack, or new rule lines after the last one.
+#
+# Search engines:
 User-agent: Googlebot
-Allow: /
-Content-Signal: ai-train=no, search=yes, ai-input=yes
-
 User-agent: Googlebot-Image
-Allow: /
-Content-Signal: ai-train=no, search=yes, ai-input=yes
-
 User-agent: Bingbot
-Allow: /
-Content-Signal: ai-train=no, search=yes, ai-input=yes
-
 User-agent: Baiduspider
-Allow: /
-Content-Signal: ai-train=no, search=yes, ai-input=yes
-
 # AI assistants / agent browsers — allowed to read and cite this site when
 # answering a live user query. Training use stays opted out (ai-train=no).
 User-agent: GPTBot
-Allow: /
-Content-Signal: ai-train=no, search=yes, ai-input=yes
-
 User-agent: ChatGPT-User
-Allow: /
-Content-Signal: ai-train=no, search=yes, ai-input=yes
-
 User-agent: OAI-SearchBot
-Allow: /
-Content-Signal: ai-train=no, search=yes, ai-input=yes
-
 User-agent: ClaudeBot
-Allow: /
-Content-Signal: ai-train=no, search=yes, ai-input=yes
-
 User-agent: Claude-User
-Allow: /
-Content-Signal: ai-train=no, search=yes, ai-input=yes
-
 User-agent: anthropic-ai
-Allow: /
-Content-Signal: ai-train=no, search=yes, ai-input=yes
-
 User-agent: PerplexityBot
-Allow: /
-Content-Signal: ai-train=no, search=yes, ai-input=yes
-
 User-agent: Perplexity-User
-Allow: /
-Content-Signal: ai-train=no, search=yes, ai-input=yes
-
 User-agent: Google-Extended
+User-agent: Applebot
+User-agent: Applebot-Extended
+User-agent: meta-externalagent
+User-agent: Amazonbot
+User-agent: CCBot
+User-agent: Bytespider
+User-agent: cohere-ai
+User-agent: DuckAssistBot
 Allow: /
 Content-Signal: ai-train=no, search=yes, ai-input=yes
-
-# Disallow certain files (if any)
 Disallow: /CNAME
 Disallow: /*.log$
-
-# Block WordPress-style search URLs (no search functionality on this static site)
 Disallow: /*?s=
 Disallow: /*&s=
+Disallow: /docs/

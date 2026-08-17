@@ -33,7 +33,7 @@ The site supports 8 languages: English (`en`, default), Traditional Chinese (`zh
 
 **How it works:**
 1. HTML elements use `data-i18n` attributes for text content or `data-i18n-placeholder` for placeholders
-2. All translations are stored in the `translations` object in `script.js` (lines 5-742), merged at runtime with `extraI18n` (lines 877-1045, for sections added after the initial i18n pass)
+2. All translations are stored in the `translations` object in `script.js` (lines 5-742), merged at runtime with `extraI18n` (lines 876-1086, for sections added after the initial i18n pass)
 3. `setLanguage(lang)` function updates all translatable elements
 4. Language preference persists in localStorage
 
@@ -48,18 +48,19 @@ The site supports 8 languages: English (`en`, default), Traditional Chinese (`zh
 |---------|--------------|
 | Lines 5-742 | i18n translations object (8 languages) |
 | Lines 746-875 | `langLabels`, `setLanguage()`, language dropdown/selector |
-| Lines 877-1045 | `extraI18n` — translations for sections added after the initial i18n pass, merged into `translations` at load |
-| Lines 1050-1055 | Performance optimization (debounce) |
-| Lines 1057-1088 | Mobile hamburger navigation |
-| Lines 1089-1093 | Navbar scroll effect |
-| Lines 1094-1108 | Smooth scroll for anchor links |
-| Lines 1109-1126 | Scroll reveal animations (IntersectionObserver) |
-| Lines 1127-1155 | Animated stat counters |
-| Lines 1156-1171 | Active navigation highlighting (IntersectionObserver) |
-| Lines 1172-1192 | Scroll engine: progress rail + spine draw + grid parallax |
-| Lines 1193-1202 | Pointer-reactive blueprint glow (desktop) |
-| Lines 1203-1239 | Contact form submission via FormSubmit |
-| Lines 1246-1358 | WebMCP — tools exposed to AI agents via `navigator.modelContext` |
+| Lines 876-1086 | `extraI18n` — translations for sections added after the initial i18n pass, merged into `translations` at load |
+| Lines 1087-1095 | Performance optimization (debounce) |
+| Lines 1096-1127 | Mobile hamburger navigation |
+| Lines 1128-1132 | `navbar` element reference (the `.scrolled` class it gets toggled is actual logic in the Scroll engine block below, not here) |
+| Lines 1133-1147 | Smooth scroll for anchor links |
+| Lines 1148-1165 | Scroll reveal animations (IntersectionObserver) |
+| Lines 1166-1194 | Animated stat counters |
+| Lines 1195-1210 | Active navigation highlighting (IntersectionObserver) |
+| Lines 1211-1231 | Scroll engine: progress rail + spine draw + grid parallax + navbar `.scrolled` toggle |
+| Lines 1232-1241 | Pointer-reactive blueprint glow (desktop) |
+| Lines 1242-1278 | Contact form submission via FormSubmit |
+| Lines 1279-1284 | Loaded flag (hero entrance) |
+| Lines 1285-1398 | WebMCP — tools exposed to AI agents via `navigator.modelContext` |
 
 ### CSS Theming
 
