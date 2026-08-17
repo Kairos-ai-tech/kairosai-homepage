@@ -12,6 +12,15 @@ Allow: /
 #   user query (browsing, RAG, citation) — this is how we want to be found.
 # search=yes: full search indexing allowed.
 Content-Signal: ai-train=no, search=yes, ai-input=yes
+
+# Disallow: /CNAME (repo config file, not meant to be indexed), *.log
+# (debug logs), and WordPress-style ?s=/&s= search-query URLs (this site has
+# no search feature, so these would just be junk crawled/indexed URLs).
+# NOTE: robots.txt groups do not inherit rules from the '*' group (same
+# reason Content-Signal is repeated per group below) — these 4 lines are
+# intentionally duplicated into every User-agent group in this file. Do NOT
+# consolidate them into a single group; that silently un-blocks every named
+# bot below from these paths.
 Disallow: /CNAME
 Disallow: /*.log$
 Disallow: /*?s=

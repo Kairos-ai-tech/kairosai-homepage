@@ -1187,8 +1187,7 @@ if ('IntersectionObserver' in window) {
 // ===========================
 // Active nav highlight (IntersectionObserver)
 // ===========================
-const navHrefs = new Set(Array.from(navLinks).map(l => l.getAttribute('href')));
-const sectionEls = Array.from(document.querySelectorAll('section[id]')).filter(s => navHrefs.has('#' + s.id));
+const sectionEls = document.querySelectorAll('section[id]');
 if ('IntersectionObserver' in window) {
     const nio = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
