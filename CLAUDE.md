@@ -46,7 +46,7 @@ The site supports 8 languages: English (`en`, default), Traditional Chinese (`zh
 
 | Section | Functionality |
 |---------|--------------|
-| Lines 5-745 | i18n translations object (8 languages) |
+| Lines 5-742 | i18n translations object (8 languages) |
 | Lines 746-875 | `langLabels`, `setLanguage()`, language dropdown/selector |
 | Lines 876-1078 | `extraI18n` — translations for sections added after the initial i18n pass, merged into `translations` at load |
 | Lines 1079-1087 | Performance optimization (debounce) |
