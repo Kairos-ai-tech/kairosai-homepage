@@ -32,6 +32,10 @@ Sitemap: https://www.kairosaitech.com/sitemap.xml
 # explicit block because robots.txt groups do not inherit from the '*'
 # group above — every named agent here gets the exact same
 # Allow/Content-Signal/Disallow as '*' would give it, just made explicit.
+# IMPORTANT: do not insert any Allow/Disallow/Content-Signal line between
+# two User-agent lines below — that would end the group early and drop
+# every User-agent after it back to inheriting nothing. Only add more
+# 'User-agent: X' lines to the stack, or new rule lines after the last one.
 #
 # Search engines:
 User-agent: Googlebot

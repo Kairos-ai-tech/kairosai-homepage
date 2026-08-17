@@ -16,7 +16,11 @@ Not live. Built when real team member names/photos/bios weren't available yet
 5. Optionally add `Person` schema (with `sameAs` LinkedIn URLs) alongside the
    existing `Organization` JSON-LD in `index.html`.
 6. Paste the HTML below into `index.html` (right before `<!-- Contact -->`)
-   and the CSS below into `styles.css`.
+   and the CSS below into `styles.css`. Also add `.team-card` to the shared
+   panel selector at `styles.css:380` (`.story-block, .service-card,
+   .stat-card, .pilot-inner`) instead of repeating the
+   border/radius/background/blur bundle — see the `.team-card` CSS below
+   for exactly which declarations that removes.
 
 ## HTML
 
@@ -63,9 +67,11 @@ Not live. Built when real team member names/photos/bios weren't available yet
    TEAM
    ============================================================ */
 .team-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+/* Add .team-card to the shared selector at styles.css:380 instead of
+   repeating border/border-radius/background/backdrop-filter here. */
 .team-card {
-    padding: 30px; border: 1px solid var(--line); border-radius: var(--radius); text-align: center;
-    background: var(--panel); backdrop-filter: blur(8px); transition: transform 0.4s var(--ease), border-color 0.4s;
+    padding: 30px; text-align: center;
+    transition: transform 0.4s var(--ease), border-color 0.4s;
 }
 .team-card:hover { transform: translateY(-6px); border-color: rgba(91, 200, 255, 0.4); }
 .team-photo {
