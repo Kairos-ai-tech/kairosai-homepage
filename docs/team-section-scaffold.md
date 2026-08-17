@@ -17,8 +17,8 @@ Not live. Built when real team member names/photos/bios weren't available yet
    existing `Organization` JSON-LD in `index.html`.
 6. Paste the HTML below into `index.html` (right before `<!-- Contact -->`)
    and the CSS below into `styles.css`. Also add `.team-card` to the shared
-   panel selector at `styles.css:380` (`.story-block, .service-card,
-   .stat-card, .pilot-inner`) instead of repeating the
+   panel selector — search styles.css for `.story-block, .service-card,
+   .stat-card, .pilot-inner {` — instead of repeating the
    border/radius/background/blur bundle — see the `.team-card` CSS below
    for exactly which declarations that removes.
 
@@ -67,7 +67,8 @@ Not live. Built when real team member names/photos/bios weren't available yet
    TEAM
    ============================================================ */
 .team-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
-/* Add .team-card to the shared selector at styles.css:380 instead of
+/* Add .team-card to the shared ".story-block, .service-card, .stat-card,
+   .pilot-inner" selector in styles.css instead of
    repeating border/border-radius/background/backdrop-filter here. */
 .team-card {
     padding: 30px; text-align: center;
