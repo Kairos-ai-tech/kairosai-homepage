@@ -72,6 +72,38 @@ User-agent: Google-Extended
 Allow: /
 Content-Signal: ai-train=no, search=yes, ai-input=yes
 
+User-agent: Applebot
+Allow: /
+Content-Signal: ai-train=no, search=yes, ai-input=yes
+
+User-agent: Applebot-Extended
+Allow: /
+Content-Signal: ai-train=no, search=yes, ai-input=yes
+
+User-agent: meta-externalagent
+Allow: /
+Content-Signal: ai-train=no, search=yes, ai-input=yes
+
+User-agent: Amazonbot
+Allow: /
+Content-Signal: ai-train=no, search=yes, ai-input=yes
+
+User-agent: CCBot
+Allow: /
+Content-Signal: ai-train=no, search=yes, ai-input=yes
+
+User-agent: Bytespider
+Allow: /
+Content-Signal: ai-train=no, search=yes, ai-input=yes
+
+User-agent: cohere-ai
+Allow: /
+Content-Signal: ai-train=no, search=yes, ai-input=yes
+
+User-agent: DuckAssistBot
+Allow: /
+Content-Signal: ai-train=no, search=yes, ai-input=yes
+
 # Disallow certain files (if any)
 Disallow: /CNAME
 Disallow: /*.log$
