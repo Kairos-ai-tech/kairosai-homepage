@@ -1187,14 +1187,14 @@ if ('IntersectionObserver' in window) {
 // ===========================
 // Active nav highlight (IntersectionObserver)
 // ===========================
-const sectionEls = document.querySelectorAll('section[id]');
+const navHrefs = new Set(Array.from(navLinks).map(l => l.getAttribute('href')));
+const sectionEls = Array.from(document.querySelectorAll('section[id]')).filter(s => navHrefs.has('#' + s.id));
 if ('IntersectionObserver' in window) {
     const nio = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
                 const id = entry.target.getAttribute('id');
-                const hasNavLink = Array.from(navLinks).some(l => l.getAttribute('href') === '#' + id);
-                if (hasNavLink) navLinks.forEach(l => l.classList.toggle('active', l.getAttribute('href') === '#' + id));
+                navLinks.forEach(l => l.classList.toggle('active', l.getAttribute('href') === '#' + id));
             }
         });
     }, { threshold: 0.5 });

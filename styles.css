@@ -449,7 +449,6 @@ section { position: relative; padding: clamp(84px, 12vh, 150px) 0; }
     border: 1px solid var(--line); border-radius: var(--radius); background: var(--panel); backdrop-filter: blur(8px);
 }
 .pilot-inner .section-subtitle { margin-bottom: 28px; }
-.pilot-inner .btn { display: inline-flex; }
 
 /* ============================================================
    TEAM (scaffold — see HTML comment at #team for activation steps)

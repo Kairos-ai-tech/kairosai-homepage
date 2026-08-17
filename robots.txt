@@ -12,6 +12,10 @@ Allow: /
 #   user query (browsing, RAG, citation) — this is how we want to be found.
 # search=yes: full search indexing allowed.
 Content-Signal: ai-train=no, search=yes, ai-input=yes
+Disallow: /CNAME
+Disallow: /*.log$
+Disallow: /*?s=
+Disallow: /*&s=
 
 # Sitemap location
 Sitemap: https://www.kairosaitech.com/sitemap.xml
@@ -21,93 +25,170 @@ Sitemap: https://www.kairosaitech.com/sitemap.xml
 User-agent: Googlebot
 Allow: /
 Content-Signal: ai-train=no, search=yes, ai-input=yes
+Disallow: /CNAME
+Disallow: /*.log$
+Disallow: /*?s=
+Disallow: /*&s=
 
 User-agent: Googlebot-Image
 Allow: /
 Content-Signal: ai-train=no, search=yes, ai-input=yes
+Disallow: /CNAME
+Disallow: /*.log$
+Disallow: /*?s=
+Disallow: /*&s=
 
 User-agent: Bingbot
 Allow: /
 Content-Signal: ai-train=no, search=yes, ai-input=yes
+Disallow: /CNAME
+Disallow: /*.log$
+Disallow: /*?s=
+Disallow: /*&s=
 
 User-agent: Baiduspider
 Allow: /
 Content-Signal: ai-train=no, search=yes, ai-input=yes
+Disallow: /CNAME
+Disallow: /*.log$
+Disallow: /*?s=
+Disallow: /*&s=
 
 # AI assistants / agent browsers — allowed to read and cite this site when
 # answering a live user query. Training use stays opted out (ai-train=no).
 User-agent: GPTBot
 Allow: /
 Content-Signal: ai-train=no, search=yes, ai-input=yes
+Disallow: /CNAME
+Disallow: /*.log$
+Disallow: /*?s=
+Disallow: /*&s=
 
 User-agent: ChatGPT-User
 Allow: /
 Content-Signal: ai-train=no, search=yes, ai-input=yes
+Disallow: /CNAME
+Disallow: /*.log$
+Disallow: /*?s=
+Disallow: /*&s=
 
 User-agent: OAI-SearchBot
 Allow: /
 Content-Signal: ai-train=no, search=yes, ai-input=yes
+Disallow: /CNAME
+Disallow: /*.log$
+Disallow: /*?s=
+Disallow: /*&s=
 
 User-agent: ClaudeBot
 Allow: /
 Content-Signal: ai-train=no, search=yes, ai-input=yes
+Disallow: /CNAME
+Disallow: /*.log$
+Disallow: /*?s=
+Disallow: /*&s=
 
 User-agent: Claude-User
 Allow: /
 Content-Signal: ai-train=no, search=yes, ai-input=yes
+Disallow: /CNAME
+Disallow: /*.log$
+Disallow: /*?s=
+Disallow: /*&s=
 
 User-agent: anthropic-ai
 Allow: /
 Content-Signal: ai-train=no, search=yes, ai-input=yes
+Disallow: /CNAME
+Disallow: /*.log$
+Disallow: /*?s=
+Disallow: /*&s=
 
 User-agent: PerplexityBot
 Allow: /
 Content-Signal: ai-train=no, search=yes, ai-input=yes
+Disallow: /CNAME
+Disallow: /*.log$
+Disallow: /*?s=
+Disallow: /*&s=
 
 User-agent: Perplexity-User
 Allow: /
 Content-Signal: ai-train=no, search=yes, ai-input=yes
+Disallow: /CNAME
+Disallow: /*.log$
+Disallow: /*?s=
+Disallow: /*&s=
 
 User-agent: Google-Extended
 Allow: /
 Content-Signal: ai-train=no, search=yes, ai-input=yes
+Disallow: /CNAME
+Disallow: /*.log$
+Disallow: /*?s=
+Disallow: /*&s=
 
 User-agent: Applebot
 Allow: /
 Content-Signal: ai-train=no, search=yes, ai-input=yes
+Disallow: /CNAME
+Disallow: /*.log$
+Disallow: /*?s=
+Disallow: /*&s=
 
 User-agent: Applebot-Extended
 Allow: /
 Content-Signal: ai-train=no, search=yes, ai-input=yes
+Disallow: /CNAME
+Disallow: /*.log$
+Disallow: /*?s=
+Disallow: /*&s=
 
 User-agent: meta-externalagent
 Allow: /
 Content-Signal: ai-train=no, search=yes, ai-input=yes
+Disallow: /CNAME
+Disallow: /*.log$
+Disallow: /*?s=
+Disallow: /*&s=
 
 User-agent: Amazonbot
 Allow: /
 Content-Signal: ai-train=no, search=yes, ai-input=yes
+Disallow: /CNAME
+Disallow: /*.log$
+Disallow: /*?s=
+Disallow: /*&s=
 
 User-agent: CCBot
 Allow: /
 Content-Signal: ai-train=no, search=yes, ai-input=yes
+Disallow: /CNAME
+Disallow: /*.log$
+Disallow: /*?s=
+Disallow: /*&s=
 
 User-agent: Bytespider
 Allow: /
 Content-Signal: ai-train=no, search=yes, ai-input=yes
+Disallow: /CNAME
+Disallow: /*.log$
+Disallow: /*?s=
+Disallow: /*&s=
 
 User-agent: cohere-ai
 Allow: /
 Content-Signal: ai-train=no, search=yes, ai-input=yes
+Disallow: /CNAME
+Disallow: /*.log$
+Disallow: /*?s=
+Disallow: /*&s=
 
 User-agent: DuckAssistBot
 Allow: /
 Content-Signal: ai-train=no, search=yes, ai-input=yes
-
-# Disallow certain files (if any)
 Disallow: /CNAME
 Disallow: /*.log$
-
-# Block WordPress-style search URLs (no search functionality on this static site)
 Disallow: /*?s=
 Disallow: /*&s=
+
