@@ -879,7 +879,7 @@ window.addEventListener('DOMContentLoaded', () => {
 const extraI18n = {
     en: {
         'nav.how': 'How it works',
-        'nav.pilot': 'Pilot Program',
+        'nav.pilot': 'Pilot',
         'hero.badge': 'AI Rebar Estimation · AEC',
         'hero.metric1label': 'Faster takeoff',
         'hero.metric2label': 'Estimate accuracy',
@@ -904,7 +904,7 @@ const extraI18n = {
     },
     'zh-TW': {
         'nav.how': '運作方式',
-        'nav.pilot': '試點計畫',
+        'nav.pilot': '試點',
         'hero.badge': 'AI 鋼筋估算 · 營建',
         'hero.metric1label': '更快翻樣',
         'hero.metric2label': '估算準確度',
@@ -954,7 +954,7 @@ const extraI18n = {
     },
     es: {
         'nav.how': 'Cómo funciona',
-        'nav.pilot': 'Programa Piloto',
+        'nav.pilot': 'Piloto',
         'hero.badge': 'Estimación de Acero con IA · AEC',
         'hero.metric1label': 'Cómputo más rápido',
         'hero.metric2label': 'Precisión de estimación',
@@ -979,7 +979,7 @@ const extraI18n = {
     },
     it: {
         'nav.how': 'Come funziona',
-        'nav.pilot': 'Programma Pilota',
+        'nav.pilot': 'Pilota',
         'hero.badge': 'Stima dei Ferri con IA · AEC',
         'hero.metric1label': 'Computo più rapido',
         'hero.metric2label': 'Precisione di stima',
@@ -1004,7 +1004,7 @@ const extraI18n = {
     },
     fr: {
         'nav.how': 'Comment ça marche',
-        'nav.pilot': 'Programme Pilote',
+        'nav.pilot': 'Pilote',
         'hero.badge': 'Estimation des Armatures par IA · AEC',
         'hero.metric1label': 'Métré plus rapide',
         'hero.metric2label': "Précision d'estimation",
@@ -1029,7 +1029,7 @@ const extraI18n = {
     },
     ko: {
         'nav.how': '작동 방식',
-        'nav.pilot': '파일럿 프로그램',
+        'nav.pilot': '파일럿',
         'hero.badge': 'AI 철근 산출 · 건설',
         'hero.metric1label': '더 빠른 산출',
         'hero.metric2label': '산출 정확도',
@@ -1054,7 +1054,7 @@ const extraI18n = {
     },
     de: {
         'nav.how': 'So funktioniert es',
-        'nav.pilot': 'Pilotprogramm',
+        'nav.pilot': 'Pilot',
         'hero.badge': 'KI-Bewehrungskalkulation · AEC',
         'hero.metric1label': 'Schnellere Kalkulation',
         'hero.metric2label': 'Kalkulationsgenauigkeit',
