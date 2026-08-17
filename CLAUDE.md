@@ -58,7 +58,8 @@ The site supports 8 languages: English (`en`, default), Traditional Chinese (`zh
 | Lines 1195-1210 | Active navigation highlighting (IntersectionObserver) |
 | Lines 1211-1231 | Scroll engine: progress rail + spine draw + grid parallax |
 | Lines 1232-1241 | Pointer-reactive blueprint glow (desktop) |
-| Lines 1242-1284 | Contact form submission via FormSubmit |
+| Lines 1242-1278 | Contact form submission via FormSubmit |
+| Lines 1279-1284 | Loaded flag (hero entrance) |
 | Lines 1285-1398 | WebMCP — tools exposed to AI agents via `navigator.modelContext` |
 
 ### CSS Theming
