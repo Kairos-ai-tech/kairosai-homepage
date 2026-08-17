@@ -508,9 +508,6 @@ section { position: relative; padding: clamp(84px, 12vh, 150px) 0; }
     .story-grid { grid-template-columns: 1fr; }
     .story-services { flex-direction: column; align-items: flex-start; }
     .ar-features { grid-template-columns: 1fr; }
-}
-
-@media (max-width: 760px) {
     .nav-menu {
         position: fixed; inset: 64px 0 auto 0; flex-direction: column; align-items: stretch; gap: 4px;
         background: rgba(8, 12, 20, 0.97); backdrop-filter: blur(16px); padding: 16px var(--gutter) 24px;
@@ -521,6 +518,9 @@ section { position: relative; padding: clamp(84px, 12vh, 150px) 0; }
     .nav-link { padding: 14px; font-size: 1rem; }
     .nav-link::after { display: none; }
     .hamburger { display: flex; }
+}
+
+@media (max-width: 760px) {
     .logo-text { font-size: 1.15rem; }
     .spine { display: none; }
     .hero-metrics { grid-template-columns: 1fr; }

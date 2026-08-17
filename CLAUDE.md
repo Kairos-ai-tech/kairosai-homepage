@@ -51,12 +51,12 @@ The site supports 8 languages: English (`en`, default), Traditional Chinese (`zh
 | Lines 876-1086 | `extraI18n` — translations for sections added after the initial i18n pass, merged into `translations` at load |
 | Lines 1087-1095 | Performance optimization (debounce) |
 | Lines 1096-1127 | Mobile hamburger navigation |
-| Lines 1128-1132 | Navbar scroll effect |
+| Lines 1128-1132 | `navbar` element reference (the `.scrolled` class it gets toggled is actual logic in the Scroll engine block below, not here) |
 | Lines 1133-1147 | Smooth scroll for anchor links |
 | Lines 1148-1165 | Scroll reveal animations (IntersectionObserver) |
 | Lines 1166-1194 | Animated stat counters |
 | Lines 1195-1210 | Active navigation highlighting (IntersectionObserver) |
-| Lines 1211-1231 | Scroll engine: progress rail + spine draw + grid parallax |
+| Lines 1211-1231 | Scroll engine: progress rail + spine draw + grid parallax + navbar `.scrolled` toggle |
 | Lines 1232-1241 | Pointer-reactive blueprint glow (desktop) |
 | Lines 1242-1278 | Contact form submission via FormSubmit |
 | Lines 1279-1284 | Loaded flag (hero entrance) |
