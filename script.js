@@ -1389,14 +1389,14 @@ window.addEventListener('load', () => document.body.classList.add('loaded'));
     const tools = [
         {
             name: 'navigate_section',
-            description: 'Scroll the Kairos.ai homepage to one of its main sections: home, story, how, product, pilot, services, about, or contact.',
+            description: 'Scroll the Kairos.ai homepage to one of its main sections: home, story, how, product, pilot, services, faq, about, or contact.',
             inputSchema: {
                 type: 'object',
                 required: ['section'],
                 properties: {
                     section: {
                         type: 'string',
-                        enum: ['home', 'story', 'how', 'product', 'pilot', 'services', 'about', 'contact'],
+                        enum: ['home', 'story', 'how', 'product', 'pilot', 'services', 'faq', 'about', 'contact'],
                         description: 'Section anchor to scroll to.'
                     }
                 }

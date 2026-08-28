@@ -377,7 +377,7 @@ section { position: relative; padding: clamp(84px, 12vh, 150px) 0; }
 .story-header .section-subtitle, .pilot-inner .section-subtitle { margin-left: auto; margin-right: auto; }
 .story-logo { width: clamp(96px, 12vw, 140px); height: clamp(96px, 12vw, 140px); margin: 0 auto 26px; border-radius: 20px; box-shadow: 0 12px 40px rgba(91, 200, 255, 0.18); }
 .story-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; margin-bottom: 40px; }
-.story-block, .service-card, .stat-card, .pilot-inner {
+.story-block, .service-card, .stat-card, .pilot-inner, .faq-item {
     border: 1px solid var(--line); border-radius: var(--radius); background: var(--panel); backdrop-filter: blur(8px);
 }
 .story-block { padding: 30px 28px; }
@@ -420,10 +420,7 @@ section { position: relative; padding: clamp(84px, 12vh, 150px) 0; }
    FAQ
    ============================================================ */
 .faq-list { display: grid; gap: 14px; max-width: 78ch; }
-.faq-item {
-    border: 1px solid var(--line); border-radius: var(--radius); background: var(--panel);
-    padding: 22px 26px; backdrop-filter: blur(8px);
-}
+.faq-item { padding: 22px 26px; }
 .faq-question {
     font-family: var(--font-display); font-weight: 600; font-size: 1.15rem; letter-spacing: 0.01em;
     color: var(--paper); cursor: pointer; list-style: none; display: flex; align-items: center;
