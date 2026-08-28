@@ -900,7 +900,18 @@ const extraI18n = {
         'form.sending': 'Sending…',
         'form.success': 'Thank you! Your message has been sent.',
         'form.error': 'There was an issue sending your message. Please try again.',
-        'form.errorNetwork': 'Unable to send your message right now. Please try again later.'
+        'form.errorNetwork': 'Unable to send your message right now. Please try again later.',
+        'faq.tag': 'FAQ',
+        'faq.title': 'Frequently Asked Questions',
+        'faq.subtitle': 'Common questions about iTech and Kairos.ai, answered directly.',
+        'faq.q1': 'What is iTech and how does it estimate rebar?',
+        'faq.a1': "iTech is Kairos.ai's end-to-end AI system that turns construction drawings (PDF or CAD) into accurate rebar estimates and bar-bending schedules. Its computer vision models read rebar sizes, spacing, and laps directly from the drawings, replacing slow, error-prone manual takeoff.",
+        'faq.q2': 'Who is iTech for?',
+        'faq.a2': 'iTech is built for the AEC (architecture, engineering, construction) industry — serving contractors, rebar fabricators, structural engineers, and estimating teams who need faster, more accurate rebar takeoff and a shorter bid-prep time.',
+        'faq.q3': 'What does iTech output?',
+        'faq.a3': 'iTech produces accurate rebar quantities, weights, and an exportable bar-bending schedule — ready for procurement, fabrication scheduling, and cost estimation.',
+        'faq.q4': 'What else does Kairos.ai offer besides iTech?',
+        'faq.a4': 'Beyond iTech, Kairos.ai also provides custom AI systems design, backend infrastructure, AI application development, and data analysis platforms — built with the same engineering rigor as iTech.'
     },
     'zh-TW': {
         'nav.how': '運作方式',
@@ -925,7 +936,18 @@ const extraI18n = {
         'form.sending': '傳送中…',
         'form.success': '感謝您！訊息已送出。',
         'form.error': '訊息送出時發生問題，請再試一次。',
-        'form.errorNetwork': '目前無法送出訊息，請稍後再試。'
+        'form.errorNetwork': '目前無法送出訊息，請稍後再試。',
+        'faq.tag': '常見問題',
+        'faq.title': '常見問題 FAQ',
+        'faq.subtitle': '關於 iTech 與優時科技的常見問題，直接解答。',
+        'faq.q1': 'iTech 是什麼？如何進行鋼筋估算？',
+        'faq.a1': 'iTech 是優時科技打造的端到端 AI 系統，將施工圖（PDF 或 CAD）自動轉換為精準的鋼筋估算與斷料彎曲表。電腦視覺模型直接從圖面讀取鋼筋號數、間距與搭接，取代耗時且易錯的人工翻樣。',
+        'faq.q2': 'iTech 適用於哪些對象？',
+        'faq.a2': 'iTech 專為 AEC（建築、工程、營建）產業設計，服務承包商、鋼筋加工廠、結構技師與估價團隊，加速鋼筋翻樣與用量估算，提升準確度並縮短備標時間。',
+        'faq.q3': 'iTech 會輸出什麼？',
+        'faq.a3': 'iTech 產出精準的鋼筋數量、重量與可匯出的鋼筋斷料彎曲表，可用於採購、加工排程與成本估算。',
+        'faq.q4': '除了 iTech，優時科技還提供什麼？',
+        'faq.a4': '除了 iTech，優時科技也提供客製 AI 系統設計、後端系統架構、AI 應用開發與數據分析平台 — 與 iTech 同等的工程實力。'
     },
     ja: {
         'nav.how': '仕組み',
@@ -950,7 +972,18 @@ const extraI18n = {
         'form.sending': '送信中…',
         'form.success': 'ありがとうございます！メッセージを送信しました。',
         'form.error': '送信中に問題が発生しました。もう一度お試しください。',
-        'form.errorNetwork': '現在メッセージを送信できません。後ほどお試しください。'
+        'form.errorNetwork': '現在メッセージを送信できません。後ほどお試しください。',
+        'faq.tag': 'よくある質問',
+        'faq.title': 'よくある質問',
+        'faq.subtitle': 'iTechと優時科技に関するよくある質問にお答えします。',
+        'faq.q1': 'iTechとは何ですか？どのように鉄筋を積算しますか？',
+        'faq.a1': 'iTechは優時科技が開発したエンドツーエンドのAIシステムで、施工図（PDFまたはCAD）を正確な鉄筋積算と鉄筋加工帳に自動変換します。コンピュータビジョンモデルが図面から鉄筋径・ピッチ・継手を直接読み取り、手作業で時間がかかり誤りやすい積算作業に代わります。',
+        'faq.q2': 'iTechは誰のためのものですか？',
+        'faq.a2': 'iTechはAEC（建築・エンジニアリング・建設）業界向けに開発され、施工業者、鉄筋加工業者、構造技術者、積算チームが、より速く正確な鉄筋積算と入札準備期間の短縮を実現できます。',
+        'faq.q3': 'iTechは何を出力しますか？',
+        'faq.a3': 'iTechは正確な鉄筋数量・重量と、出力可能な鉄筋加工帳を生成します。調達、加工スケジュール、コスト積算にすぐ使えます。',
+        'faq.q4': 'iTech以外に優時科技は何を提供していますか？',
+        'faq.a4': 'iTechに加え、優時科技はカスタムAIシステム設計、バックエンドインフラ、AIアプリケーション開発、データ分析プラットフォームも提供しています — iTechと同じ技術力で。'
     },
     es: {
         'nav.how': 'Cómo funciona',
@@ -975,7 +1008,18 @@ const extraI18n = {
         'form.sending': 'Enviando…',
         'form.success': '¡Gracias! Tu mensaje ha sido enviado.',
         'form.error': 'Hubo un problema al enviar tu mensaje. Inténtalo de nuevo.',
-        'form.errorNetwork': 'No se puede enviar tu mensaje ahora. Inténtalo más tarde.'
+        'form.errorNetwork': 'No se puede enviar tu mensaje ahora. Inténtalo más tarde.',
+        'faq.tag': 'Preguntas Frecuentes',
+        'faq.title': 'Preguntas Frecuentes',
+        'faq.subtitle': 'Preguntas comunes sobre iTech y Kairos.ai, respondidas directamente.',
+        'faq.q1': '¿Qué es iTech y cómo estima el acero de refuerzo?',
+        'faq.a1': 'iTech es el sistema de IA integral de Kairos.ai que convierte planos de construcción (PDF o CAD) en estimaciones precisas de acero y listas de despiece. Sus modelos de visión por computadora leen diámetros, separación y solapes directamente de los planos, reemplazando el cómputo manual, lento y propenso a errores.',
+        'faq.q2': '¿Para quién es iTech?',
+        'faq.a2': 'iTech está diseñado para la industria AEC (arquitectura, ingeniería, construcción) — para contratistas, fabricantes de acero, ingenieros estructurales y equipos de cómputo que necesitan un despiece más rápido y preciso y menos tiempo de preparación de ofertas.',
+        'faq.q3': '¿Qué entrega iTech?',
+        'faq.a3': 'iTech produce cantidades y pesos precisos de acero, y una lista de despiece exportable — lista para compras, programación de fabricación y estimación de costos.',
+        'faq.q4': '¿Qué más ofrece Kairos.ai además de iTech?',
+        'faq.a4': 'Además de iTech, Kairos.ai también ofrece diseño de sistemas de IA personalizados, infraestructura backend, desarrollo de aplicaciones de IA y plataformas de análisis de datos — con el mismo rigor de ingeniería que iTech.'
     },
     it: {
         'nav.how': 'Come funziona',
@@ -1000,7 +1044,18 @@ const extraI18n = {
         'form.sending': 'Invio in corso…',
         'form.success': 'Grazie! Il tuo messaggio è stato inviato.',
         'form.error': "Si è verificato un problema nell'invio del messaggio. Riprova.",
-        'form.errorNetwork': 'Impossibile inviare il messaggio ora. Riprova più tardi.'
+        'form.errorNetwork': 'Impossibile inviare il messaggio ora. Riprova più tardi.',
+        'faq.tag': 'Domande Frequenti',
+        'faq.title': 'Domande Frequenti',
+        'faq.subtitle': 'Domande comuni su iTech e Kairos.ai, con risposte dirette.',
+        'faq.q1': "Cos'è iTech e come stima i ferri d'armatura?",
+        'faq.a1': "iTech è il sistema AI end-to-end di Kairos.ai che trasforma disegni di costruzione (PDF o CAD) in stime precise dei ferri e distinte di piegatura. I suoi modelli di visione artificiale leggono diametri, passo e sovrapposizioni direttamente dai disegni, sostituendo il computo manuale, lento e soggetto a errori.",
+        'faq.q2': 'A chi si rivolge iTech?',
+        'faq.a2': "iTech è progettato per il settore AEC (architettura, ingegneria, costruzioni) — al servizio di imprese, carpenterie, ingegneri strutturisti e team di computo che necessitano di un rilievo dei ferri più rapido e preciso e tempi di offerta più brevi.",
+        'faq.q3': 'Cosa produce iTech in output?',
+        'faq.a3': "iTech produce quantità e pesi precisi dei ferri e una distinta di piegatura esportabile — pronta per acquisti, pianificazione della produzione e stima dei costi.",
+        'faq.q4': 'Cos\'altro offre Kairos.ai oltre a iTech?',
+        'faq.a4': "Oltre a iTech, Kairos.ai offre anche progettazione di sistemi AI su misura, infrastrutture backend, sviluppo di applicazioni AI e piattaforme di analisi dati — con lo stesso rigore ingegneristico di iTech."
     },
     fr: {
         'nav.how': 'Comment ça marche',
@@ -1025,7 +1080,18 @@ const extraI18n = {
         'form.sending': 'Envoi en cours…',
         'form.success': 'Merci ! Votre message a été envoyé.',
         'form.error': "Un problème est survenu lors de l'envoi. Veuillez réessayer.",
-        'form.errorNetwork': "Impossible d'envoyer votre message pour le moment. Réessayez plus tard."
+        'form.errorNetwork': "Impossible d'envoyer votre message pour le moment. Réessayez plus tard.",
+        'faq.tag': 'FAQ',
+        'faq.title': 'Questions Fréquentes',
+        'faq.subtitle': "Questions courantes sur iTech et Kairos.ai, avec des réponses directes.",
+        'faq.q1': "Qu'est-ce qu'iTech et comment estime-t-il les armatures ?",
+        'faq.a1': "iTech est le système IA de bout en bout de Kairos.ai qui transforme les plans de construction (PDF ou CAO) en estimations précises des armatures et en nomenclatures de façonnage. Ses modèles de vision par ordinateur lisent diamètres, espacements et recouvrements directement depuis les plans, remplaçant un métré manuel lent et sujet aux erreurs.",
+        'faq.q2': 'À qui s\'adresse iTech ?',
+        'faq.a2': "iTech est conçu pour le secteur AEC (architecture, ingénierie, construction) — au service des entreprises, des façonniers, des ingénieurs structure et des équipes de métré qui ont besoin d'un métré des armatures plus rapide et plus précis, et d'une préparation d'offres plus courte.",
+        'faq.q3': "Que produit iTech ?",
+        'faq.a3': "iTech produit des quantités et poids précis d'armatures, ainsi qu'une nomenclature de façonnage exportable — prête pour les achats, la planification de fabrication et l'estimation des coûts.",
+        'faq.q4': "Que propose Kairos.ai en plus d'iTech ?",
+        'faq.a4': "Au-delà d'iTech, Kairos.ai propose aussi la conception de systèmes IA sur mesure, des infrastructures backend, le développement d'applications IA et des plateformes d'analyse de données — avec la même rigueur d'ingénierie qu'iTech."
     },
     ko: {
         'nav.how': '작동 방식',
@@ -1050,7 +1116,18 @@ const extraI18n = {
         'form.sending': '전송 중…',
         'form.success': '감사합니다! 메시지가 전송되었습니다.',
         'form.error': '메시지 전송 중 문제가 발생했습니다. 다시 시도해 주세요.',
-        'form.errorNetwork': '지금은 메시지를 보낼 수 없습니다. 나중에 다시 시도해 주세요.'
+        'form.errorNetwork': '지금은 메시지를 보낼 수 없습니다. 나중에 다시 시도해 주세요.',
+        'faq.tag': '자주 묻는 질문',
+        'faq.title': '자주 묻는 질문',
+        'faq.subtitle': 'iTech와 Kairos.ai에 대해 자주 묻는 질문에 답합니다.',
+        'faq.q1': 'iTech란 무엇이며 철근을 어떻게 산출하나요?',
+        'faq.a1': 'iTech는 Kairos.ai가 개발한 엔드투엔드 AI 시스템으로, 시공 도면(PDF 또는 CAD)을 정확한 철근 산출 및 가공목록으로 자동 변환합니다. 컴퓨터 비전 모델이 도면에서 철근 호칭·간격·이음을 직접 읽어내어, 느리고 오류가 잦은 수작업 산출을 대체합니다.',
+        'faq.q2': 'iTech는 누구를 위한 것인가요?',
+        'faq.a2': 'iTech는 AEC(건축·엔지니어링·건설) 산업을 위해 만들어졌으며, 시공사, 철근 가공업체, 구조 엔지니어, 산출 팀이 더 빠르고 정확한 철근 산출과 더 짧은 입찰 준비 시간을 얻도록 돕습니다.',
+        'faq.q3': 'iTech는 무엇을 출력하나요?',
+        'faq.a3': 'iTech는 정확한 철근 수량·중량과 내보내기 가능한 철근 가공목록을 생성합니다 — 구매, 가공 일정 수립, 원가 산출에 바로 사용할 수 있습니다.',
+        'faq.q4': 'iTech 외에 Kairos.ai는 무엇을 제공하나요?',
+        'faq.a4': 'iTech 외에도 Kairos.ai는 맞춤형 AI 시스템 설계, 백엔드 인프라, AI 애플리케이션 개발, 데이터 분석 플랫폼을 제공합니다 — iTech와 동일한 수준의 엔지니어링 역량으로.'
     },
     de: {
         'nav.how': 'So funktioniert es',
@@ -1075,7 +1152,18 @@ const extraI18n = {
         'form.sending': 'Wird gesendet…',
         'form.success': 'Danke! Ihre Nachricht wurde gesendet.',
         'form.error': 'Beim Senden Ihrer Nachricht ist ein Problem aufgetreten. Bitte erneut versuchen.',
-        'form.errorNetwork': 'Ihre Nachricht kann derzeit nicht gesendet werden. Bitte später erneut versuchen.'
+        'form.errorNetwork': 'Ihre Nachricht kann derzeit nicht gesendet werden. Bitte später erneut versuchen.',
+        'faq.tag': 'FAQ',
+        'faq.title': 'Häufig gestellte Fragen',
+        'faq.subtitle': 'Häufige Fragen zu iTech und Kairos.ai, direkt beantwortet.',
+        'faq.q1': 'Was ist iTech und wie kalkuliert es Bewehrung?',
+        'faq.a1': 'iTech ist das Ende-zu-Ende-KI-System von Kairos.ai, das Baupläne (PDF oder CAD) in präzise Bewehrungsmengen und Biegelisten umwandelt. Computer-Vision-Modelle lesen Stabdurchmesser, Abstände und Übergreifungen direkt aus den Plänen und ersetzen die langsame, fehleranfällige manuelle Aufmaßerstellung.',
+        'faq.q2': 'Für wen ist iTech gedacht?',
+        'faq.a2': 'iTech wurde für die AEC-Branche (Architektur, Ingenieurwesen, Bauwesen) entwickelt — für Bauunternehmen, Bewehrungsbetriebe, Statiker und Kalkulationsteams, die ein schnelleres, genaueres Bewehrungsaufmaß und kürzere Angebotszeiten benötigen.',
+        'faq.q3': 'Was liefert iTech als Ergebnis?',
+        'faq.a3': 'iTech erzeugt präzise Bewehrungsmengen und -gewichte sowie eine exportierbare Biegeliste — einsatzbereit für Beschaffung, Fertigungsplanung und Kostenkalkulation.',
+        'faq.q4': 'Was bietet Kairos.ai neben iTech noch an?',
+        'faq.a4': 'Neben iTech bietet Kairos.ai auch die Entwicklung individueller KI-Systeme, Backend-Infrastruktur, KI-Anwendungsentwicklung und Datenanalyseplattformen — mit derselben technischen Sorgfalt wie bei iTech.'
     }
 };
 if (typeof translations === 'object') {

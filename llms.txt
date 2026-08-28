@@ -1,0 +1,26 @@
+# Kairos.ai 優時科技
+
+> AI rebar estimation for the AEC (architecture, engineering, construction)
+> industry, plus custom AI systems, backend infrastructure, and data
+> platforms. Taiwan-based.
+
+Kairos.ai's flagship product, iTech, converts construction drawings (PDF or
+CAD) into accurate rebar estimates and exportable bar-bending schedules,
+replacing slow, error-prone manual takeoff. Beyond iTech, Kairos.ai designs
+custom AI systems, backend infrastructure, and data platforms for clients.
+
+## Docs
+
+- [Full site content (markdown)](https://www.kairosaitech.com/index.md): About, products, services, languages, and agent-discovery resources in plain markdown.
+- [Homepage (HTML)](https://www.kairosaitech.com/): The live site, with structured data (Organization, ProfessionalService, FAQPage, ItemList) in JSON-LD.
+
+## Agent discovery
+
+- [API catalog (RFC 9727)](https://www.kairosaitech.com/.well-known/api-catalog)
+- [MCP server card](https://www.kairosaitech.com/.well-known/mcp/server-card.json)
+- [Agent skills index](https://www.kairosaitech.com/.well-known/agent-skills/index.json)
+
+## Contact
+
+- Email: kairos.ai.tech@gmail.com
+- Contact form: https://www.kairosaitech.com/#contact
