@@ -40,6 +40,30 @@ infrastructure, and data platforms with the same engineering rigor.
 - **AI Applications** — AI-powered applications from concept to deployment.
 - **Data Analysis** — turning raw data into actionable insight.
 
+## FAQ
+
+**What is iTech and how does it estimate rebar?**
+iTech is Kairos.ai's end-to-end AI system that turns construction drawings
+(PDF or CAD) into accurate rebar estimates and bar-bending schedules. Its
+computer vision models read rebar sizes, spacing, and laps directly from the
+drawings, replacing slow, error-prone manual takeoff.
+
+**Who is iTech for?**
+iTech is built for the AEC (architecture, engineering, construction)
+industry — serving contractors, rebar fabricators, structural engineers, and
+estimating teams who need faster, more accurate rebar takeoff and a shorter
+bid-prep time.
+
+**What does iTech output?**
+iTech produces accurate rebar quantities, weights, and an exportable
+bar-bending schedule — ready for procurement, fabrication scheduling, and
+cost estimation.
+
+**What else does Kairos.ai offer besides iTech?**
+Beyond iTech, Kairos.ai also provides custom AI systems design, backend
+infrastructure, AI application development, and data analysis platforms —
+built with the same engineering rigor as iTech.
+
 ## Languages
 
 The site is available in eight languages (English is the default):

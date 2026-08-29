@@ -66,6 +66,7 @@
     <link rel="service-doc" href="/" type="text/html">
     <link rel="service-meta" href="/.well-known/mcp/server-card.json" type="application/json">
     <link rel="alternate" type="text/markdown" href="/index.md" title="Markdown version for AI agents">
+    <link rel="llms-txt" href="/llms.txt" type="text/plain" title="llms.txt (llmstxt.org)">
     <link rel="author" href="mailto:kairos.ai.tech@gmail.com">
 
     <link rel="stylesheet" href="styles.css">
@@ -242,6 +243,11 @@
                 "position": 5,
                 "name": "AI 系統與工程服務 AI Systems & Services",
                 "item": "https://www.kairosaitech.com/#services"
+            }, {
+                "@type": "ListItem",
+                "position": 6,
+                "name": "常見問題 FAQ",
+                "item": "https://www.kairosaitech.com/#faq"
             }]
         }
     </script>
@@ -252,31 +258,31 @@
             "@type": "FAQPage",
             "mainEntity": [{
                 "@type": "Question",
-                "name": "iTech 是什麼？How does iTech estimate rebar?",
+                "name": "What is iTech and how does it estimate rebar?",
                 "acceptedAnswer": {
                     "@type": "Answer",
-                    "text": "iTech 是優時科技打造的端到端 AI 系統，將施工圖（PDF 或 CAD）自動轉換為精準的鋼筋估算與斷料彎曲表。電腦視覺模型直接從圖面讀取鋼筋號數、間距與搭接，取代耗時且易錯的人工翻樣。"
+                    "text": "iTech is Kairos.ai's end-to-end AI system that turns construction drawings (PDF or CAD) into accurate rebar estimates and bar-bending schedules. Its computer vision models read rebar sizes, spacing, and laps directly from the drawings, replacing slow, error-prone manual takeoff."
                 }
             }, {
                 "@type": "Question",
-                "name": "iTech 適用於哪些產業？Who is iTech for?",
+                "name": "Who is iTech for?",
                 "acceptedAnswer": {
                     "@type": "Answer",
-                    "text": "iTech 專為 AEC（建築、工程、營建）產業設計，服務承包商、鋼筋加工廠、結構技師與估價團隊，加速鋼筋翻樣與用量估算，提升準確度並縮短備標時間。"
+                    "text": "iTech is built for the AEC (architecture, engineering, construction) industry — serving contractors, rebar fabricators, structural engineers, and estimating teams who need faster, more accurate rebar takeoff and a shorter bid-prep time."
                 }
             }, {
                 "@type": "Question",
-                "name": "iTech 會輸出什麼？What does iTech output?",
+                "name": "What does iTech output?",
                 "acceptedAnswer": {
                     "@type": "Answer",
-                    "text": "iTech 產出精準的鋼筋數量、重量與可匯出的鋼筋斷料彎曲表（Bar Bending Schedule），可用於採購、加工排程與成本估算。"
+                    "text": "iTech produces accurate rebar quantities, weights, and an exportable bar-bending schedule — ready for procurement, fabrication scheduling, and cost estimation."
                 }
             }, {
                 "@type": "Question",
-                "name": "除了 iTech，優時科技還提供什麼？What else does Kairos.ai offer?",
+                "name": "What else does Kairos.ai offer besides iTech?",
                 "acceptedAnswer": {
                     "@type": "Answer",
-                    "text": "除了 iTech，優時科技也提供客製 AI 系統設計、後端系統架構、AI 應用開發與數據分析平台 — 與 iTech 同等的工程實力。"
+                    "text": "Beyond iTech, Kairos.ai also provides custom AI systems design, backend infrastructure, AI application development, and data analysis platforms — built with the same engineering rigor as iTech."
                 }
             }]
         }
@@ -640,11 +646,40 @@
             </div>
         </section>
 
+        <!-- FAQ: visible content matching the FAQPage JSON-LD above, for AI answer engines (AEO) -->
+        <section id="faq" class="faq">
+            <div class="container">
+                <div class="section-header" data-reveal>
+                    <div class="section-tag">05 — <span data-i18n="faq.tag">FAQ</span></div>
+                    <h2 class="section-title" data-i18n="faq.title">Frequently Asked Questions</h2>
+                    <p class="section-subtitle" data-i18n="faq.subtitle">Common questions about iTech and Kairos.ai, answered directly.</p>
+                </div>
+                <div class="faq-list" data-reveal>
+                    <details class="faq-item" open>
+                        <summary class="faq-question" data-i18n="faq.q1">What is iTech and how does it estimate rebar?</summary>
+                        <p class="faq-answer" data-i18n="faq.a1">iTech is Kairos.ai's end-to-end AI system that turns construction drawings (PDF or CAD) into accurate rebar estimates and bar-bending schedules. Its computer vision models read rebar sizes, spacing, and laps directly from the drawings, replacing slow, error-prone manual takeoff.</p>
+                    </details>
+                    <details class="faq-item">
+                        <summary class="faq-question" data-i18n="faq.q2">Who is iTech for?</summary>
+                        <p class="faq-answer" data-i18n="faq.a2">iTech is built for the AEC (architecture, engineering, construction) industry — serving contractors, rebar fabricators, structural engineers, and estimating teams who need faster, more accurate rebar takeoff and a shorter bid-prep time.</p>
+                    </details>
+                    <details class="faq-item">
+                        <summary class="faq-question" data-i18n="faq.q3">What does iTech output?</summary>
+                        <p class="faq-answer" data-i18n="faq.a3">iTech produces accurate rebar quantities, weights, and an exportable bar-bending schedule — ready for procurement, fabrication scheduling, and cost estimation.</p>
+                    </details>
+                    <details class="faq-item">
+                        <summary class="faq-question" data-i18n="faq.q4">What else does Kairos.ai offer besides iTech?</summary>
+                        <p class="faq-answer" data-i18n="faq.a4">Beyond iTech, Kairos.ai also provides custom AI systems design, backend infrastructure, AI application development, and data analysis platforms — built with the same engineering rigor as iTech.</p>
+                    </details>
+                </div>
+            </div>
+        </section>
+
         <!-- Company / about -->
         <section id="about" class="about">
             <div class="container">
                 <div class="about-text" data-reveal>
-                    <div class="section-tag">05 — <span data-i18n="nav.about">Company</span></div>
+                    <div class="section-tag">06 — <span data-i18n="nav.about">Company</span></div>
                     <h2 class="section-title" data-i18n="about.title">Why Choose Kairos.ai?</h2>
                     <p class="about-description" data-i18n="about.intro">At Kairos.ai, we bring applied AI to the construction industry. Our flagship system, iTech, automates rebar estimation for AEC teams — and we build custom AI systems, backend infrastructure, and data platforms with the same engineering rigor.</p>
                     <p class="about-description" data-i18n="about.desc">We are dedicated to creating solutions that don't just save time, but unlock new possibilities for our users and customers.</p>
@@ -685,7 +720,7 @@
             <div class="container">
                 <div class="contact-main" data-reveal>
                     <div class="section-header">
-                        <div class="section-tag">06 — <span data-i18n="nav.contact">Contact</span></div>
+                        <div class="section-tag">07 — <span data-i18n="nav.contact">Contact</span></div>
                         <h2 class="section-title" data-i18n="contact.title">Let's Work Together</h2>
                         <p class="section-subtitle" data-i18n="contact.subtitle">Ready to unlock new possibilities? Get in touch with us today.</p>
                     </div>
