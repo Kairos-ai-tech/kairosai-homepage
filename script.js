@@ -1384,17 +1384,23 @@ function setFieldValue(id, value) {
 // template. Strip angle brackets and cap length before they ever reach a form
 // field or localStorage.
 function sanitizeAttributionValue(value) {
-    return String(value || '').replace(/[<>]/g, '').replace(/[\r\n]+/g, ' ').slice(0, 120);
+    return String(value || '').trim().replace(/[<>]/g, '').replace(/[\r\n]+/g, ' ').slice(0, 120);
 }
 
 // Cached so the hidden fields can be repopulated after contactForm.reset()
 // wipes them back to their blank HTML defaults on a repeat submission.
 let cachedAttribution = null;
 
-// Falls back to sessionStorage when localStorage throws or is unavailable
-// (Safari "Block All Cookies", strict privacy modes) so first-touch dedup
-// still works across reloads for that tab instead of silently refiring the
-// GA4 event on every page view. Returns null only if both are unavailable.
+// Falls back to sessionStorage when localStorage specifically throws or is
+// unavailable (e.g. some in-app browsers, extensions, or partial storage
+// restrictions that only affect localStorage) so dedup still works across
+// reloads in that case. Note this does NOT cover a browser configuration
+// that blocks ALL Web Storage (e.g. Safari "Block All Cookies" blocks both
+// localStorage and sessionStorage) — for that narrow case both calls below
+// return null, capture degrades to "fresh on every reload" (form still
+// populates correctly each time; the GA4 event just isn't deduped), and
+// there is no storage-based fix available since no persistence mechanism
+// survives a full storage lockout.
 function readAttributionStore() {
     try { const v = localStorage.getItem(UTM_STORAGE_KEY); if (v) return v; } catch (e) { /* unavailable */ }
     try { return sessionStorage.getItem(UTM_STORAGE_KEY); } catch (e) { return null; }
