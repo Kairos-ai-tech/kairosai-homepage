@@ -2,6 +2,10 @@
 // Kairos.ai — iTech / AI Rebar Estimation
 // ===========================
 
+// Snapshot the raw query string before any later code can strip it (the
+// DOMContentLoaded handler below removes all non-"lang" params from the URL).
+const RAW_QUERY_STRING = window.location.search;
+
 const translations = {
     en: {
         'nav.home': 'Home',
@@ -854,7 +858,9 @@ window.addEventListener('DOMContentLoaded', () => {
     const savedLang = localStorage.getItem('preferredLanguage');
 
     // Strip unknown query parameters (e.g. ?s= from WordPress search bots)
-    // Only ?lang= is a valid parameter for this site
+    // Only ?lang= is a valid parameter for this site. This deletes utm_*
+    // params too — attribution capture reads RAW_QUERY_STRING (snapshotted
+    // at file load) instead of window.location.search to stay unaffected.
     const allowedParams = ['lang'];
     const cleanUrl = new URL(window.location);
     let hasUnknownParams = false;
@@ -1328,6 +1334,194 @@ if (!prefersReduced && window.matchMedia('(pointer:fine)').matches) {
 }
 
 // ===========================
+// Traffic source attribution (UTM + referrer)
+// ===========================
+// Captures utm_source/medium/campaign from the URL, or infers a source from
+// document.referrer (google, linkedin, chatgpt/openai, etc.) when no UTM tags
+// are present. First-touch is persisted in localStorage so it survives to the
+// contact form even if the visitor lands on one page and converts on another;
+// a fresh UTM-tagged visit overwrites it (last campaign click wins).
+const UTM_STORAGE_KEY = 'kairos_attribution';
+
+// [hostLabel, source, medium]. hostLabel must be the label immediately
+// before the TLD (e.g. "google.com", "mail.google.com" match; a spoofed
+// "google.attacker.com" does not, since "attacker.com" has a dot after it).
+const REFERRER_BRANDS = [
+    ['google', 'google', 'organic'],
+    ['bing', 'bing', 'organic'],
+    ['linkedin', 'linkedin', 'social'],
+    ['chatgpt', 'chatgpt', 'ai-referral'],
+    ['openai', 'openai', 'ai-referral'],
+    ['perplexity', 'perplexity', 'ai-referral'],
+    ['claude', 'claude', 'ai-referral'],
+    ['anthropic', 'anthropic', 'ai-referral'],
+    ['facebook', 'facebook', 'social'],
+    ['fb', 'facebook', 'social'],
+    ['twitter', 'x', 'social'],
+    ['x', 'x', 'social'],
+    ['github', 'github', 'referral']
+];
+
+function inferSourceFromReferrer(referrer) {
+    if (!referrer) return { source: 'direct', medium: 'none' };
+    let host = '';
+    try { host = new URL(referrer).hostname.replace(/^www\./, ''); } catch (e) { return { source: 'direct', medium: 'none' }; }
+    if (host === window.location.hostname.replace(/^www\./, '')) return { source: 'direct', medium: 'none' };
+    for (const [label, source, medium] of REFERRER_BRANDS) {
+        // Trailing TLD may be a single label (.com) or ccTLD pair (.com.tw, .co.jp).
+        if (new RegExp('(^|\\.)' + label + '\\.[^.]+(\\.[a-z]{2})?$').test(host)) return { source, medium };
+    }
+    return { source: host, medium: 'referral' };
+}
+
+function setFieldValue(id, value) {
+    const field = document.getElementById(id);
+    if (field) field.value = value || '';
+}
+
+// UTM values are attacker-controllable (anyone can craft ?utm_source=... and
+// send the link to a victim) and flow unsanitized into a FormSubmit email
+// template. Strip angle brackets and cap length before they ever reach a form
+// field or localStorage.
+function sanitizeAttributionValue(value) {
+    return String(value || '').trim().replace(/[<>]/g, '').replace(/[\r\n]+/g, ' ').slice(0, 120);
+}
+
+// Cached so the hidden fields can be repopulated after contactForm.reset()
+// wipes them back to their blank HTML defaults on a repeat submission.
+let cachedAttribution = null;
+
+// Falls back to sessionStorage when localStorage specifically throws or is
+// unavailable (e.g. some in-app browsers, extensions, or partial storage
+// restrictions that only affect localStorage) so dedup still works across
+// reloads in that case. Note this does NOT cover a browser configuration
+// that blocks ALL Web Storage (e.g. Safari "Block All Cookies" blocks both
+// localStorage and sessionStorage) — for that narrow case both calls below
+// return null, capture degrades to "fresh on every reload" (form still
+// populates correctly each time; the GA4 event just isn't deduped), and
+// there is no storage-based fix available since no persistence mechanism
+// survives a full storage lockout.
+function readAttributionStore() {
+    try { const v = localStorage.getItem(UTM_STORAGE_KEY); if (v) return v; } catch (e) { /* unavailable */ }
+    try { return sessionStorage.getItem(UTM_STORAGE_KEY); } catch (e) { return null; }
+}
+function writeAttributionStore(value) {
+    try { localStorage.setItem(UTM_STORAGE_KEY, value); return; } catch (e) { /* unavailable */ }
+    try { sessionStorage.setItem(UTM_STORAGE_KEY, value); } catch (e) { /* both unavailable, in-memory only */ }
+}
+
+function applyAttributionToForm(attribution) {
+    setFieldValue('utmSource', attribution.source);
+    setFieldValue('utmMedium', attribution.medium);
+    setFieldValue('utmCampaign', attribution.campaign);
+    setFieldValue('landingPage', attribution.landingPage);
+}
+
+function captureAttribution() {
+    // Read from the pre-strip snapshot, not window.location.search (which
+    // may already be cleaned up by the DOMContentLoaded handler above).
+    const params = new URLSearchParams(RAW_QUERY_STRING);
+    const hasUtm = ['utm_source', 'utm_medium', 'utm_campaign'].some((k) => params.get(k));
+
+    // Storage access can throw (Safari "Block All Cookies", strict privacy
+    // modes, kiosk policies). readAttributionStore() falls back through
+    // localStorage -> sessionStorage -> null so a storage error here can
+    // never abort this script and skip the contact-form wiring after it.
+    const stored = readAttributionStore();
+    let storedAttribution = null;
+    if (stored) {
+        try { storedAttribution = JSON.parse(stored); } catch (e) { storedAttribution = null; }
+    }
+
+    let attribution = null;
+    let isFreshCapture = false;
+
+    if (hasUtm) {
+        // A link may only set some utm_* params (e.g. just utm_campaign) —
+        // fall back per field to the existing stored attribution instead of
+        // blanking out a good prior source/medium.
+        const utmSourceParam = sanitizeAttributionValue(params.get('utm_source'));
+        const utmMediumParam = sanitizeAttributionValue(params.get('utm_medium'));
+        const utmCampaignParam = sanitizeAttributionValue(params.get('utm_campaign'));
+        let fallback;
+        if (storedAttribution && (!utmSourceParam || storedAttribution.source === utmSourceParam)) {
+            // Only reuse stored medium/campaign when this is the same
+            // source (or the URL doesn't specify one) — otherwise a new
+            // utm_source would inherit a stale, unrelated medium/campaign
+            // from a previous, different-source touch.
+            fallback = storedAttribution;
+        } else if (utmSourceParam) {
+            // Explicit new utm_source with no matching prior history —
+            // don't pair it with an unrelated referrer-inferred medium
+            // (e.g. a newsletter link with document.referrer stripped
+            // shouldn't become medium=none).
+            fallback = { source: utmSourceParam, medium: 'utm', campaign: '' };
+        } else {
+            const inferred = inferSourceFromReferrer(document.referrer);
+            fallback = { source: sanitizeAttributionValue(inferred.source), medium: sanitizeAttributionValue(inferred.medium), campaign: '' };
+        }
+        const resolvedSource = utmSourceParam || fallback.source;
+        const resolvedMedium = utmMediumParam || fallback.medium;
+        const resolvedCampaign = utmCampaignParam || fallback.campaign;
+        // A reload of the same UTM-tagged URL (or a bfcache restore) isn't a
+        // new touch — only fresh if the campaign values actually changed.
+        isFreshCapture = !storedAttribution
+            || storedAttribution.source !== resolvedSource
+            || storedAttribution.medium !== resolvedMedium
+            || storedAttribution.campaign !== resolvedCampaign;
+        attribution = {
+            source: resolvedSource,
+            medium: resolvedMedium,
+            campaign: resolvedCampaign,
+            // Only recompute landingPage/capturedAt on an actual new touch —
+            // otherwise keep the true first-touch page instead of whatever
+            // page this same-campaign revisit happens to land on.
+            landingPage: isFreshCapture ? sanitizeAttributionValue(window.location.pathname + RAW_QUERY_STRING) : storedAttribution.landingPage,
+            capturedAt: isFreshCapture ? new Date().toISOString() : storedAttribution.capturedAt
+        };
+    } else if (storedAttribution) {
+        attribution = storedAttribution;
+    }
+
+    if (!attribution) {
+        const inferred = inferSourceFromReferrer(document.referrer);
+        attribution = {
+            source: sanitizeAttributionValue(inferred.source),
+            medium: sanitizeAttributionValue(inferred.medium),
+            campaign: '',
+            landingPage: sanitizeAttributionValue(window.location.pathname + RAW_QUERY_STRING),
+            capturedAt: new Date().toISOString()
+        };
+        isFreshCapture = true;
+    }
+
+    // Only persist and emit the GA4 event on first capture — a cache hit
+    // just replays the stored first-touch attribution into the form fields
+    // without re-firing the event on every subsequent page view.
+    if (isFreshCapture) {
+        writeAttributionStore(JSON.stringify(attribution));
+        if (typeof gtag === 'function') {
+            gtag('event', 'traffic_source_captured', {
+                traffic_source: attribution.source,
+                traffic_medium: attribution.medium,
+                traffic_campaign: attribution.campaign
+            });
+        }
+    }
+
+    applyAttributionToForm(attribution);
+    cachedAttribution = attribution;
+
+    return attribution;
+}
+
+try {
+    captureAttribution();
+} catch (e) {
+    console.error('Attribution capture failed:', e);
+}
+
+// ===========================
 // Contact Form Handling (FormSubmit)
 // ===========================
 const contactForm = document.getElementById('contactForm');
@@ -1348,7 +1542,13 @@ if (contactForm) {
                 body: new FormData(contactForm),
                 headers: { 'Accept': 'application/json' }
             });
-            if (response.ok) { alert(formMsg('form.success', 'Thank you! Your message has been sent.')); contactForm.reset(); }
+            if (response.ok) {
+                alert(formMsg('form.success', 'Thank you! Your message has been sent.'));
+                contactForm.reset();
+                // reset() also wipes the hidden attribution fields back to
+                // their blank HTML defaults — restore them for a repeat submit.
+                if (cachedAttribution) applyAttributionToForm(cachedAttribution);
+            }
             else { alert(formMsg('form.error', 'There was an issue sending your message. Please try again.')); }
         } catch (err) {
             console.error('Error submitting form:', err);
