@@ -1328,6 +1328,81 @@ if (!prefersReduced && window.matchMedia('(pointer:fine)').matches) {
 }
 
 // ===========================
+// Traffic source attribution (UTM + referrer)
+// ===========================
+// Captures utm_source/medium/campaign from the URL, or infers a source from
+// document.referrer (google, linkedin, chatgpt/openai, etc.) when no UTM tags
+// are present. First-touch is persisted in localStorage so it survives to the
+// contact form even if the visitor lands on one page and converts on another;
+// a fresh UTM-tagged visit overwrites it (last campaign click wins).
+const UTM_STORAGE_KEY = 'kairos_attribution';
+
+function inferSourceFromReferrer(referrer) {
+    if (!referrer) return { source: 'direct', medium: 'none' };
+    let host = '';
+    try { host = new URL(referrer).hostname.replace(/^www\./, ''); } catch (e) { return { source: 'direct', medium: 'none' }; }
+    if (/(^|\.)google\./.test(host)) return { source: 'google', medium: 'organic' };
+    if (/(^|\.)bing\./.test(host)) return { source: 'bing', medium: 'organic' };
+    if (/(^|\.)linkedin\./.test(host)) return { source: 'linkedin', medium: 'social' };
+    if (/(^|\.)(chatgpt|openai)\./.test(host)) return { source: 'chatgpt', medium: 'ai-referral' };
+    if (/(^|\.)(perplexity)\./.test(host)) return { source: 'perplexity', medium: 'ai-referral' };
+    if (/(^|\.)(claude|anthropic)\./.test(host)) return { source: 'claude', medium: 'ai-referral' };
+    if (/(^|\.)(facebook|fb)\./.test(host)) return { source: 'facebook', medium: 'social' };
+    if (/(^|\.)(twitter|x)\.com$/.test(host)) return { source: 'x', medium: 'social' };
+    if (/(^|\.)github\./.test(host)) return { source: 'github', medium: 'referral' };
+    return { source: host, medium: 'referral' };
+}
+
+function captureAttribution() {
+    const params = new URLSearchParams(window.location.search);
+    const hasUtm = params.has('utm_source');
+    let attribution;
+    if (hasUtm) {
+        attribution = {
+            source: params.get('utm_source') || '',
+            medium: params.get('utm_medium') || '',
+            campaign: params.get('utm_campaign') || '',
+            landingPage: window.location.pathname + window.location.search,
+            capturedAt: new Date().toISOString()
+        };
+    } else {
+        const stored = localStorage.getItem(UTM_STORAGE_KEY);
+        if (stored) {
+            try { attribution = JSON.parse(stored); } catch (e) { attribution = null; }
+        }
+        if (!attribution) {
+            const inferred = inferSourceFromReferrer(document.referrer);
+            attribution = {
+                source: inferred.source,
+                medium: inferred.medium,
+                campaign: '',
+                landingPage: window.location.pathname + window.location.search,
+                capturedAt: new Date().toISOString()
+            };
+        }
+    }
+    localStorage.setItem(UTM_STORAGE_KEY, JSON.stringify(attribution));
+
+    ['utmSource', 'utmMedium', 'utmCampaign', 'landingPage'].forEach((id) => {
+        const field = document.getElementById(id);
+        if (!field) return;
+        const key = { utmSource: 'source', utmMedium: 'medium', utmCampaign: 'campaign', landingPage: 'landingPage' }[id];
+        field.value = attribution[key] || '';
+    });
+
+    if (typeof gtag === 'function') {
+        gtag('event', 'traffic_source_captured', {
+            traffic_source: attribution.source,
+            traffic_medium: attribution.medium,
+            traffic_campaign: attribution.campaign
+        });
+    }
+    return attribution;
+}
+
+captureAttribution();
+
+// ===========================
 // Contact Form Handling (FormSubmit)
 // ===========================
 const contactForm = document.getElementById('contactForm');
