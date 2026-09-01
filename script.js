@@ -1359,12 +1359,28 @@ function inferSourceFromReferrer(referrer) {
     return { source: host, medium: 'referral' };
 }
 
+function setFieldValue(id, value) {
+    const field = document.getElementById(id);
+    if (field) field.value = value || '';
+}
+
 function captureAttribution() {
     // Read from the pre-strip snapshot, not window.location.search (which
     // may already be cleaned up by the DOMContentLoaded handler above).
     const params = new URLSearchParams(RAW_QUERY_STRING);
     const hasUtm = ['utm_source', 'utm_medium', 'utm_campaign'].some((k) => params.get(k));
-    const stored = localStorage.getItem(UTM_STORAGE_KEY);
+
+    // localStorage can throw (Safari "Block All Cookies", strict privacy
+    // modes, kiosk policies). Swallow failures and fall back to an
+    // in-memory-only attribution so a storage error here can never abort
+    // this script and skip the contact-form wiring that runs after it.
+    let stored = null;
+    try { stored = localStorage.getItem(UTM_STORAGE_KEY); } catch (e) { stored = null; }
+    let storedAttribution = null;
+    if (stored) {
+        try { storedAttribution = JSON.parse(stored); } catch (e) { storedAttribution = null; }
+    }
+
     let attribution = null;
     let isFreshCapture = false;
 
@@ -1376,9 +1392,14 @@ function captureAttribution() {
             landingPage: window.location.pathname + RAW_QUERY_STRING,
             capturedAt: new Date().toISOString()
         };
-        isFreshCapture = true;
-    } else if (stored) {
-        try { attribution = JSON.parse(stored); } catch (e) { attribution = null; }
+        // A reload of the same UTM-tagged URL (or a bfcache restore) isn't a
+        // new touch — only fresh if the campaign values actually changed.
+        isFreshCapture = !storedAttribution
+            || storedAttribution.source !== attribution.source
+            || storedAttribution.medium !== attribution.medium
+            || storedAttribution.campaign !== attribution.campaign;
+    } else if (storedAttribution) {
+        attribution = storedAttribution;
     }
 
     if (!attribution) {
@@ -1397,7 +1418,7 @@ function captureAttribution() {
     // just replays the stored first-touch attribution into the form fields
     // without re-firing the event on every subsequent page view.
     if (isFreshCapture) {
-        localStorage.setItem(UTM_STORAGE_KEY, JSON.stringify(attribution));
+        try { localStorage.setItem(UTM_STORAGE_KEY, JSON.stringify(attribution)); } catch (e) { /* storage unavailable, in-memory only */ }
         if (typeof gtag === 'function') {
             gtag('event', 'traffic_source_captured', {
                 traffic_source: attribution.source,
@@ -1407,15 +1428,19 @@ function captureAttribution() {
         }
     }
 
-    document.getElementById('utmSource') && (document.getElementById('utmSource').value = attribution.source || '');
-    document.getElementById('utmMedium') && (document.getElementById('utmMedium').value = attribution.medium || '');
-    document.getElementById('utmCampaign') && (document.getElementById('utmCampaign').value = attribution.campaign || '');
-    document.getElementById('landingPage') && (document.getElementById('landingPage').value = attribution.landingPage || '');
+    setFieldValue('utmSource', attribution.source);
+    setFieldValue('utmMedium', attribution.medium);
+    setFieldValue('utmCampaign', attribution.campaign);
+    setFieldValue('landingPage', attribution.landingPage);
 
     return attribution;
 }
 
-captureAttribution();
+try {
+    captureAttribution();
+} catch (e) {
+    console.error('Attribution capture failed:', e);
+}
 
 // ===========================
 // Contact Form Handling (FormSubmit)
