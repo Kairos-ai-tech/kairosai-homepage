@@ -2,6 +2,10 @@
 // Kairos.ai — iTech / AI Rebar Estimation
 // ===========================
 
+// Snapshot the raw query string before any later code can strip it (the
+// DOMContentLoaded handler below removes all non-"lang" params from the URL).
+const RAW_QUERY_STRING = window.location.search;
+
 const translations = {
     en: {
         'nav.home': 'Home',
@@ -854,7 +858,9 @@ window.addEventListener('DOMContentLoaded', () => {
     const savedLang = localStorage.getItem('preferredLanguage');
 
     // Strip unknown query parameters (e.g. ?s= from WordPress search bots)
-    // Only ?lang= is a valid parameter for this site
+    // Only ?lang= is a valid parameter for this site. This deletes utm_*
+    // params too — attribution capture reads RAW_QUERY_STRING (snapshotted
+    // at file load) instead of window.location.search to stay unaffected.
     const allowedParams = ['lang'];
     const cleanUrl = new URL(window.location);
     let hasUnknownParams = false;
@@ -1354,49 +1360,58 @@ function inferSourceFromReferrer(referrer) {
 }
 
 function captureAttribution() {
-    const params = new URLSearchParams(window.location.search);
-    const hasUtm = params.has('utm_source');
-    let attribution;
+    // Read from the pre-strip snapshot, not window.location.search (which
+    // may already be cleaned up by the DOMContentLoaded handler above).
+    const params = new URLSearchParams(RAW_QUERY_STRING);
+    const hasUtm = ['utm_source', 'utm_medium', 'utm_campaign'].some((k) => params.get(k));
+    const stored = localStorage.getItem(UTM_STORAGE_KEY);
+    let attribution = null;
+    let isFreshCapture = false;
+
     if (hasUtm) {
         attribution = {
             source: params.get('utm_source') || '',
             medium: params.get('utm_medium') || '',
             campaign: params.get('utm_campaign') || '',
-            landingPage: window.location.pathname + window.location.search,
+            landingPage: window.location.pathname + RAW_QUERY_STRING,
             capturedAt: new Date().toISOString()
         };
-    } else {
-        const stored = localStorage.getItem(UTM_STORAGE_KEY);
-        if (stored) {
-            try { attribution = JSON.parse(stored); } catch (e) { attribution = null; }
-        }
-        if (!attribution) {
-            const inferred = inferSourceFromReferrer(document.referrer);
-            attribution = {
-                source: inferred.source,
-                medium: inferred.medium,
-                campaign: '',
-                landingPage: window.location.pathname + window.location.search,
-                capturedAt: new Date().toISOString()
-            };
+        isFreshCapture = true;
+    } else if (stored) {
+        try { attribution = JSON.parse(stored); } catch (e) { attribution = null; }
+    }
+
+    if (!attribution) {
+        const inferred = inferSourceFromReferrer(document.referrer);
+        attribution = {
+            source: inferred.source,
+            medium: inferred.medium,
+            campaign: '',
+            landingPage: window.location.pathname + RAW_QUERY_STRING,
+            capturedAt: new Date().toISOString()
+        };
+        isFreshCapture = true;
+    }
+
+    // Only persist and emit the GA4 event on first capture — a cache hit
+    // just replays the stored first-touch attribution into the form fields
+    // without re-firing the event on every subsequent page view.
+    if (isFreshCapture) {
+        localStorage.setItem(UTM_STORAGE_KEY, JSON.stringify(attribution));
+        if (typeof gtag === 'function') {
+            gtag('event', 'traffic_source_captured', {
+                traffic_source: attribution.source,
+                traffic_medium: attribution.medium,
+                traffic_campaign: attribution.campaign
+            });
         }
     }
-    localStorage.setItem(UTM_STORAGE_KEY, JSON.stringify(attribution));
 
-    ['utmSource', 'utmMedium', 'utmCampaign', 'landingPage'].forEach((id) => {
-        const field = document.getElementById(id);
-        if (!field) return;
-        const key = { utmSource: 'source', utmMedium: 'medium', utmCampaign: 'campaign', landingPage: 'landingPage' }[id];
-        field.value = attribution[key] || '';
-    });
+    document.getElementById('utmSource') && (document.getElementById('utmSource').value = attribution.source || '');
+    document.getElementById('utmMedium') && (document.getElementById('utmMedium').value = attribution.medium || '');
+    document.getElementById('utmCampaign') && (document.getElementById('utmCampaign').value = attribution.campaign || '');
+    document.getElementById('landingPage') && (document.getElementById('landingPage').value = attribution.landingPage || '');
 
-    if (typeof gtag === 'function') {
-        gtag('event', 'traffic_source_captured', {
-            traffic_source: attribution.source,
-            traffic_medium: attribution.medium,
-            traffic_campaign: attribution.campaign
-        });
-    }
     return attribution;
 }
 
