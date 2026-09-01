@@ -1368,7 +1368,8 @@ function inferSourceFromReferrer(referrer) {
     try { host = new URL(referrer).hostname.replace(/^www\./, ''); } catch (e) { return { source: 'direct', medium: 'none' }; }
     if (host === window.location.hostname.replace(/^www\./, '')) return { source: 'direct', medium: 'none' };
     for (const [label, source, medium] of REFERRER_BRANDS) {
-        if (new RegExp('(^|\\.)' + label + '\\.[^.]+$').test(host)) return { source, medium };
+        // Trailing TLD may be a single label (.com) or ccTLD pair (.com.tw, .co.jp).
+        if (new RegExp('(^|\\.)' + label + '\\.[^.]+(\\.[a-z]{2})?$').test(host)) return { source, medium };
     }
     return { source: host, medium: 'referral' };
 }
@@ -1431,16 +1432,27 @@ function captureAttribution() {
 
     if (hasUtm) {
         // A link may only set some utm_* params (e.g. just utm_campaign) —
-        // fall back per field to the existing stored/inferred attribution
-        // instead of blanking out a good prior source/medium.
-        const fallback = storedAttribution || (() => {
+        // fall back per field to the existing stored attribution instead of
+        // blanking out a good prior source/medium.
+        const utmSourceParam = sanitizeAttributionValue(params.get('utm_source'));
+        const utmMediumParam = sanitizeAttributionValue(params.get('utm_medium'));
+        const utmCampaignParam = sanitizeAttributionValue(params.get('utm_campaign'));
+        let fallback;
+        if (storedAttribution) {
+            fallback = storedAttribution;
+        } else if (utmSourceParam) {
+            // Explicit utm_source with no prior history — don't pair it with
+            // an unrelated referrer-inferred medium (e.g. a newsletter link
+            // with document.referrer stripped shouldn't become medium=none).
+            fallback = { source: utmSourceParam, medium: 'utm', campaign: '' };
+        } else {
             const inferred = inferSourceFromReferrer(document.referrer);
-            return { source: sanitizeAttributionValue(inferred.source), medium: sanitizeAttributionValue(inferred.medium), campaign: '' };
-        })();
+            fallback = { source: sanitizeAttributionValue(inferred.source), medium: sanitizeAttributionValue(inferred.medium), campaign: '' };
+        }
         attribution = {
-            source: sanitizeAttributionValue(params.get('utm_source')) || fallback.source,
-            medium: sanitizeAttributionValue(params.get('utm_medium')) || fallback.medium,
-            campaign: sanitizeAttributionValue(params.get('utm_campaign')) || fallback.campaign,
+            source: utmSourceParam || fallback.source,
+            medium: utmMediumParam || fallback.medium,
+            campaign: utmCampaignParam || fallback.campaign,
             landingPage: sanitizeAttributionValue(window.location.pathname + RAW_QUERY_STRING),
             capturedAt: new Date().toISOString()
         };
