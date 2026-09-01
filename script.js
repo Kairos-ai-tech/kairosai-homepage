@@ -1449,19 +1449,25 @@ function captureAttribution() {
             const inferred = inferSourceFromReferrer(document.referrer);
             fallback = { source: sanitizeAttributionValue(inferred.source), medium: sanitizeAttributionValue(inferred.medium), campaign: '' };
         }
-        attribution = {
-            source: utmSourceParam || fallback.source,
-            medium: utmMediumParam || fallback.medium,
-            campaign: utmCampaignParam || fallback.campaign,
-            landingPage: sanitizeAttributionValue(window.location.pathname + RAW_QUERY_STRING),
-            capturedAt: new Date().toISOString()
-        };
+        const resolvedSource = utmSourceParam || fallback.source;
+        const resolvedMedium = utmMediumParam || fallback.medium;
+        const resolvedCampaign = utmCampaignParam || fallback.campaign;
         // A reload of the same UTM-tagged URL (or a bfcache restore) isn't a
         // new touch — only fresh if the campaign values actually changed.
         isFreshCapture = !storedAttribution
-            || storedAttribution.source !== attribution.source
-            || storedAttribution.medium !== attribution.medium
-            || storedAttribution.campaign !== attribution.campaign;
+            || storedAttribution.source !== resolvedSource
+            || storedAttribution.medium !== resolvedMedium
+            || storedAttribution.campaign !== resolvedCampaign;
+        attribution = {
+            source: resolvedSource,
+            medium: resolvedMedium,
+            campaign: resolvedCampaign,
+            // Only recompute landingPage/capturedAt on an actual new touch —
+            // otherwise keep the true first-touch page instead of whatever
+            // page this same-campaign revisit happens to land on.
+            landingPage: isFreshCapture ? sanitizeAttributionValue(window.location.pathname + RAW_QUERY_STRING) : storedAttribution.landingPage,
+            capturedAt: isFreshCapture ? new Date().toISOString() : storedAttribution.capturedAt
+        };
     } else if (storedAttribution) {
         attribution = storedAttribution;
     }
