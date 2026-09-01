@@ -1351,9 +1351,11 @@ function inferSourceFromReferrer(referrer) {
     if (/(^|\.)google\./.test(host)) return { source: 'google', medium: 'organic' };
     if (/(^|\.)bing\./.test(host)) return { source: 'bing', medium: 'organic' };
     if (/(^|\.)linkedin\./.test(host)) return { source: 'linkedin', medium: 'social' };
-    if (/(^|\.)(chatgpt|openai)\./.test(host)) return { source: 'chatgpt', medium: 'ai-referral' };
-    if (/(^|\.)(perplexity)\./.test(host)) return { source: 'perplexity', medium: 'ai-referral' };
-    if (/(^|\.)(claude|anthropic)\./.test(host)) return { source: 'claude', medium: 'ai-referral' };
+    if (/(^|\.)chatgpt\./.test(host)) return { source: 'chatgpt', medium: 'ai-referral' };
+    if (/(^|\.)openai\./.test(host)) return { source: 'openai', medium: 'ai-referral' };
+    if (/(^|\.)perplexity\./.test(host)) return { source: 'perplexity', medium: 'ai-referral' };
+    if (/(^|\.)claude\./.test(host)) return { source: 'claude', medium: 'ai-referral' };
+    if (/(^|\.)anthropic\./.test(host)) return { source: 'anthropic', medium: 'ai-referral' };
     if (/(^|\.)(facebook|fb)\./.test(host)) return { source: 'facebook', medium: 'social' };
     if (/(^|\.)(twitter|x)\.com$/.test(host)) return { source: 'x', medium: 'social' };
     if (/(^|\.)github\./.test(host)) return { source: 'github', medium: 'referral' };
@@ -1377,6 +1379,19 @@ function sanitizeAttributionValue(value) {
 // wipes them back to their blank HTML defaults on a repeat submission.
 let cachedAttribution = null;
 
+// Falls back to sessionStorage when localStorage throws or is unavailable
+// (Safari "Block All Cookies", strict privacy modes) so first-touch dedup
+// still works across reloads for that tab instead of silently refiring the
+// GA4 event on every page view. Returns null only if both are unavailable.
+function readAttributionStore() {
+    try { const v = localStorage.getItem(UTM_STORAGE_KEY); if (v) return v; } catch (e) { /* unavailable */ }
+    try { return sessionStorage.getItem(UTM_STORAGE_KEY); } catch (e) { return null; }
+}
+function writeAttributionStore(value) {
+    try { localStorage.setItem(UTM_STORAGE_KEY, value); return; } catch (e) { /* unavailable */ }
+    try { sessionStorage.setItem(UTM_STORAGE_KEY, value); } catch (e) { /* both unavailable, in-memory only */ }
+}
+
 function applyAttributionToForm(attribution) {
     setFieldValue('utmSource', attribution.source);
     setFieldValue('utmMedium', attribution.medium);
@@ -1390,12 +1405,11 @@ function captureAttribution() {
     const params = new URLSearchParams(RAW_QUERY_STRING);
     const hasUtm = ['utm_source', 'utm_medium', 'utm_campaign'].some((k) => params.get(k));
 
-    // localStorage can throw (Safari "Block All Cookies", strict privacy
-    // modes, kiosk policies). Swallow failures and fall back to an
-    // in-memory-only attribution so a storage error here can never abort
-    // this script and skip the contact-form wiring that runs after it.
-    let stored = null;
-    try { stored = localStorage.getItem(UTM_STORAGE_KEY); } catch (e) { stored = null; }
+    // Storage access can throw (Safari "Block All Cookies", strict privacy
+    // modes, kiosk policies). readAttributionStore() falls back through
+    // localStorage -> sessionStorage -> null so a storage error here can
+    // never abort this script and skip the contact-form wiring after it.
+    const stored = readAttributionStore();
     let storedAttribution = null;
     if (stored) {
         try { storedAttribution = JSON.parse(stored); } catch (e) { storedAttribution = null; }
@@ -1425,8 +1439,8 @@ function captureAttribution() {
     if (!attribution) {
         const inferred = inferSourceFromReferrer(document.referrer);
         attribution = {
-            source: inferred.source,
-            medium: inferred.medium,
+            source: sanitizeAttributionValue(inferred.source),
+            medium: sanitizeAttributionValue(inferred.medium),
             campaign: '',
             landingPage: sanitizeAttributionValue(window.location.pathname + RAW_QUERY_STRING),
             capturedAt: new Date().toISOString()
@@ -1438,7 +1452,7 @@ function captureAttribution() {
     // just replays the stored first-touch attribution into the form fields
     // without re-firing the event on every subsequent page view.
     if (isFreshCapture) {
-        try { localStorage.setItem(UTM_STORAGE_KEY, JSON.stringify(attribution)); } catch (e) { /* storage unavailable, in-memory only */ }
+        writeAttributionStore(JSON.stringify(attribution));
         if (typeof gtag === 'function') {
             gtag('event', 'traffic_source_captured', {
                 traffic_source: attribution.source,
