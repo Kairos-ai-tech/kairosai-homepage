@@ -1343,22 +1343,33 @@ if (!prefersReduced && window.matchMedia('(pointer:fine)').matches) {
 // a fresh UTM-tagged visit overwrites it (last campaign click wins).
 const UTM_STORAGE_KEY = 'kairos_attribution';
 
+// [hostLabel, source, medium]. hostLabel must be the label immediately
+// before the TLD (e.g. "google.com", "mail.google.com" match; a spoofed
+// "google.attacker.com" does not, since "attacker.com" has a dot after it).
+const REFERRER_BRANDS = [
+    ['google', 'google', 'organic'],
+    ['bing', 'bing', 'organic'],
+    ['linkedin', 'linkedin', 'social'],
+    ['chatgpt', 'chatgpt', 'ai-referral'],
+    ['openai', 'openai', 'ai-referral'],
+    ['perplexity', 'perplexity', 'ai-referral'],
+    ['claude', 'claude', 'ai-referral'],
+    ['anthropic', 'anthropic', 'ai-referral'],
+    ['facebook', 'facebook', 'social'],
+    ['fb', 'facebook', 'social'],
+    ['twitter', 'x', 'social'],
+    ['x', 'x', 'social'],
+    ['github', 'github', 'referral']
+];
+
 function inferSourceFromReferrer(referrer) {
     if (!referrer) return { source: 'direct', medium: 'none' };
     let host = '';
     try { host = new URL(referrer).hostname.replace(/^www\./, ''); } catch (e) { return { source: 'direct', medium: 'none' }; }
     if (host === window.location.hostname.replace(/^www\./, '')) return { source: 'direct', medium: 'none' };
-    if (/(^|\.)google\./.test(host)) return { source: 'google', medium: 'organic' };
-    if (/(^|\.)bing\./.test(host)) return { source: 'bing', medium: 'organic' };
-    if (/(^|\.)linkedin\./.test(host)) return { source: 'linkedin', medium: 'social' };
-    if (/(^|\.)chatgpt\./.test(host)) return { source: 'chatgpt', medium: 'ai-referral' };
-    if (/(^|\.)openai\./.test(host)) return { source: 'openai', medium: 'ai-referral' };
-    if (/(^|\.)perplexity\./.test(host)) return { source: 'perplexity', medium: 'ai-referral' };
-    if (/(^|\.)claude\./.test(host)) return { source: 'claude', medium: 'ai-referral' };
-    if (/(^|\.)anthropic\./.test(host)) return { source: 'anthropic', medium: 'ai-referral' };
-    if (/(^|\.)(facebook|fb)\./.test(host)) return { source: 'facebook', medium: 'social' };
-    if (/(^|\.)(twitter|x)\.com$/.test(host)) return { source: 'x', medium: 'social' };
-    if (/(^|\.)github\./.test(host)) return { source: 'github', medium: 'referral' };
+    for (const [label, source, medium] of REFERRER_BRANDS) {
+        if (new RegExp('(^|\\.)' + label + '\\.[^.]+$').test(host)) return { source, medium };
+    }
     return { source: host, medium: 'referral' };
 }
 
@@ -1372,7 +1383,7 @@ function setFieldValue(id, value) {
 // template. Strip angle brackets and cap length before they ever reach a form
 // field or localStorage.
 function sanitizeAttributionValue(value) {
-    return String(value || '').replace(/[<>]/g, '').slice(0, 120);
+    return String(value || '').replace(/[<>]/g, '').replace(/[\r\n]+/g, ' ').slice(0, 120);
 }
 
 // Cached so the hidden fields can be repopulated after contactForm.reset()
@@ -1419,10 +1430,17 @@ function captureAttribution() {
     let isFreshCapture = false;
 
     if (hasUtm) {
+        // A link may only set some utm_* params (e.g. just utm_campaign) —
+        // fall back per field to the existing stored/inferred attribution
+        // instead of blanking out a good prior source/medium.
+        const fallback = storedAttribution || (() => {
+            const inferred = inferSourceFromReferrer(document.referrer);
+            return { source: sanitizeAttributionValue(inferred.source), medium: sanitizeAttributionValue(inferred.medium), campaign: '' };
+        })();
         attribution = {
-            source: sanitizeAttributionValue(params.get('utm_source')),
-            medium: sanitizeAttributionValue(params.get('utm_medium')),
-            campaign: sanitizeAttributionValue(params.get('utm_campaign')),
+            source: sanitizeAttributionValue(params.get('utm_source')) || fallback.source,
+            medium: sanitizeAttributionValue(params.get('utm_medium')) || fallback.medium,
+            campaign: sanitizeAttributionValue(params.get('utm_campaign')) || fallback.campaign,
             landingPage: sanitizeAttributionValue(window.location.pathname + RAW_QUERY_STRING),
             capturedAt: new Date().toISOString()
         };
