@@ -1347,6 +1347,7 @@ function inferSourceFromReferrer(referrer) {
     if (!referrer) return { source: 'direct', medium: 'none' };
     let host = '';
     try { host = new URL(referrer).hostname.replace(/^www\./, ''); } catch (e) { return { source: 'direct', medium: 'none' }; }
+    if (host === window.location.hostname.replace(/^www\./, '')) return { source: 'direct', medium: 'none' };
     if (/(^|\.)google\./.test(host)) return { source: 'google', medium: 'organic' };
     if (/(^|\.)bing\./.test(host)) return { source: 'bing', medium: 'organic' };
     if (/(^|\.)linkedin\./.test(host)) return { source: 'linkedin', medium: 'social' };
@@ -1362,6 +1363,25 @@ function inferSourceFromReferrer(referrer) {
 function setFieldValue(id, value) {
     const field = document.getElementById(id);
     if (field) field.value = value || '';
+}
+
+// UTM values are attacker-controllable (anyone can craft ?utm_source=... and
+// send the link to a victim) and flow unsanitized into a FormSubmit email
+// template. Strip angle brackets and cap length before they ever reach a form
+// field or localStorage.
+function sanitizeAttributionValue(value) {
+    return String(value || '').replace(/[<>]/g, '').slice(0, 120);
+}
+
+// Cached so the hidden fields can be repopulated after contactForm.reset()
+// wipes them back to their blank HTML defaults on a repeat submission.
+let cachedAttribution = null;
+
+function applyAttributionToForm(attribution) {
+    setFieldValue('utmSource', attribution.source);
+    setFieldValue('utmMedium', attribution.medium);
+    setFieldValue('utmCampaign', attribution.campaign);
+    setFieldValue('landingPage', attribution.landingPage);
 }
 
 function captureAttribution() {
@@ -1386,10 +1406,10 @@ function captureAttribution() {
 
     if (hasUtm) {
         attribution = {
-            source: params.get('utm_source') || '',
-            medium: params.get('utm_medium') || '',
-            campaign: params.get('utm_campaign') || '',
-            landingPage: window.location.pathname + RAW_QUERY_STRING,
+            source: sanitizeAttributionValue(params.get('utm_source')),
+            medium: sanitizeAttributionValue(params.get('utm_medium')),
+            campaign: sanitizeAttributionValue(params.get('utm_campaign')),
+            landingPage: sanitizeAttributionValue(window.location.pathname + RAW_QUERY_STRING),
             capturedAt: new Date().toISOString()
         };
         // A reload of the same UTM-tagged URL (or a bfcache restore) isn't a
@@ -1408,7 +1428,7 @@ function captureAttribution() {
             source: inferred.source,
             medium: inferred.medium,
             campaign: '',
-            landingPage: window.location.pathname + RAW_QUERY_STRING,
+            landingPage: sanitizeAttributionValue(window.location.pathname + RAW_QUERY_STRING),
             capturedAt: new Date().toISOString()
         };
         isFreshCapture = true;
@@ -1428,10 +1448,8 @@ function captureAttribution() {
         }
     }
 
-    setFieldValue('utmSource', attribution.source);
-    setFieldValue('utmMedium', attribution.medium);
-    setFieldValue('utmCampaign', attribution.campaign);
-    setFieldValue('landingPage', attribution.landingPage);
+    applyAttributionToForm(attribution);
+    cachedAttribution = attribution;
 
     return attribution;
 }
@@ -1463,7 +1481,13 @@ if (contactForm) {
                 body: new FormData(contactForm),
                 headers: { 'Accept': 'application/json' }
             });
-            if (response.ok) { alert(formMsg('form.success', 'Thank you! Your message has been sent.')); contactForm.reset(); }
+            if (response.ok) {
+                alert(formMsg('form.success', 'Thank you! Your message has been sent.'));
+                contactForm.reset();
+                // reset() also wipes the hidden attribution fields back to
+                // their blank HTML defaults — restore them for a repeat submit.
+                if (cachedAttribution) applyAttributionToForm(cachedAttribution);
+            }
             else { alert(formMsg('form.error', 'There was an issue sending your message. Please try again.')); }
         } catch (err) {
             console.error('Error submitting form:', err);
