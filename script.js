@@ -1438,12 +1438,17 @@ function captureAttribution() {
         const utmMediumParam = sanitizeAttributionValue(params.get('utm_medium'));
         const utmCampaignParam = sanitizeAttributionValue(params.get('utm_campaign'));
         let fallback;
-        if (storedAttribution) {
+        if (storedAttribution && (!utmSourceParam || storedAttribution.source === utmSourceParam)) {
+            // Only reuse stored medium/campaign when this is the same
+            // source (or the URL doesn't specify one) — otherwise a new
+            // utm_source would inherit a stale, unrelated medium/campaign
+            // from a previous, different-source touch.
             fallback = storedAttribution;
         } else if (utmSourceParam) {
-            // Explicit utm_source with no prior history — don't pair it with
-            // an unrelated referrer-inferred medium (e.g. a newsletter link
-            // with document.referrer stripped shouldn't become medium=none).
+            // Explicit new utm_source with no matching prior history —
+            // don't pair it with an unrelated referrer-inferred medium
+            // (e.g. a newsletter link with document.referrer stripped
+            // shouldn't become medium=none).
             fallback = { source: utmSourceParam, medium: 'utm', campaign: '' };
         } else {
             const inferred = inferSourceFromReferrer(document.referrer);
