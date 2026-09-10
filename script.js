@@ -1601,12 +1601,20 @@ if (contactForm) {
         e.preventDefault();
         if (submitButton) { submitButton.disabled = true; submitButton.textContent = formMsg('form.sending', 'Sending…'); }
         try {
-            const response = await fetch(contactForm.action, {
+            // FormSubmit's plain endpoint (contactForm.action, kept as the
+            // no-JS fallback) returns HTTP 200 even when the destination
+            // address hasn't clicked its one-time activation link yet, so a
+            // bare response.ok check reports false success. The /ajax/
+            // endpoint returns a JSON body with an explicit success field
+            // that reflects real delivery state (incl. pending activation).
+            const ajaxAction = contactForm.action.replace('https://formsubmit.co/', 'https://formsubmit.co/ajax/');
+            const response = await fetch(ajaxAction, {
                 method: 'POST',
                 body: new FormData(contactForm),
                 headers: { 'Accept': 'application/json' }
             });
-            if (response.ok) {
+            const data = await response.json().catch(() => null);
+            if (response.ok && data && String(data.success) === 'true') {
                 alert(formMsg('form.success', 'Thank you! Your message has been sent.'));
                 contactForm.reset();
                 // reset() also wipes the hidden attribution fields back to

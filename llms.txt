@@ -1,8 +1,8 @@
 # Kairos.ai 優時科技
 
-> AI solutions for the AEC (architecture, engineering, construction) and
-> construction industry, starting with AI rebar estimation, plus custom AI
-> systems, backend infrastructure, and data platforms. Taiwan-based.
+> AI solutions for the AEC (architecture, engineering, construction)
+> industry, starting with AI rebar estimation, plus custom AI systems,
+> backend infrastructure, and data platforms. Taiwan-based.
 
 Kairos.ai's first product, SetTime (formerly iTech), converts construction
 drawings (PDF or CAD) into accurate rebar estimates and exportable
