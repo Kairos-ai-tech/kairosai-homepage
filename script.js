@@ -1729,7 +1729,7 @@ window.addEventListener('load', () => document.body.classList.add('loaded'));
             execute: async function() {
                 return {
                     name: 'Kairos.ai 優時科技',
-                    tagline: 'AI solutions for the AEC and construction industry, starting with SetTime AI rebar estimation.',
+                    tagline: 'AI solutions for the AEC and construction industry, starting with SetTime, AI rebar estimation.',
                     contact: 'seanchen@kairosaitech.com',
                     homepage: 'https://www.kairosaitech.com/',
                     locales: ['en', 'zh-TW', 'ja', 'es', 'it', 'fr', 'ko', 'de'],

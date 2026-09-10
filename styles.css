@@ -183,7 +183,7 @@ section { position: relative; padding: clamp(84px, 12vh, 150px) 0; }
 }
 .logo-accent { color: var(--cyan); font-size: 0.78em; letter-spacing: 0.04em; }
 
-.nav-menu { display: flex; align-items: center; gap: 6px; }
+.nav-menu { display: flex; align-items: center; gap: 6px; flex-wrap: wrap; justify-content: flex-end; }
 .nav-link {
     position: relative; padding: 8px 14px; font-size: 0.86rem; font-weight: 600;
     letter-spacing: 0.04em; color: var(--muted); border-radius: 8px;
