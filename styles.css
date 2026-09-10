@@ -316,7 +316,7 @@ section { position: relative; padding: clamp(84px, 12vh, 150px) 0; }
 .step p { color: var(--muted); margin-top: 10px; font-size: 0.98rem; }
 
 /* ============================================================
-   iTECH PRODUCT SHOWCASE
+   SETTIME PRODUCT SHOWCASE
    ============================================================ */
 .product-showcase .container { display: grid; grid-template-columns: 1fr 1.1fr; gap: clamp(36px, 5vw, 80px); align-items: center; }
 .product-copy .product-title { font-family: var(--font-display); font-weight: 600; font-size: clamp(3rem, 6vw, 5rem); text-transform: uppercase; line-height: 0.9; }
