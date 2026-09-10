@@ -907,6 +907,7 @@ const extraI18n = {
         'form.success': 'Thank you! Your message has been sent.',
         'form.error': 'There was an issue sending your message. Please try again.',
         'form.errorNetwork': 'Unable to send your message right now. Please try again later.',
+        'form.errorFallback': 'You can also reach us directly at seanchen@kairosaitech.com.',
         'faq.tag': 'FAQ',
         'faq.title': 'Frequently Asked Questions',
         'faq.subtitle': 'Common questions about SetTime and Kairos.ai, answered directly.',
@@ -951,6 +952,7 @@ const extraI18n = {
         'form.success': '感謝您！訊息已送出。',
         'form.error': '訊息送出時發生問題，請再試一次。',
         'form.errorNetwork': '目前無法送出訊息，請稍後再試。',
+        'form.errorFallback': '您也可以直接透過 seanchen@kairosaitech.com 與我們聯繫。',
         'faq.tag': '常見問題',
         'faq.title': '常見問題 FAQ',
         'faq.subtitle': '關於 SetTime 與優時科技的常見問題，直接解答。',
@@ -995,6 +997,7 @@ const extraI18n = {
         'form.success': 'ありがとうございます！メッセージを送信しました。',
         'form.error': '送信中に問題が発生しました。もう一度お試しください。',
         'form.errorNetwork': '現在メッセージを送信できません。後ほどお試しください。',
+        'form.errorFallback': 'seanchen@kairosaitech.com まで直接ご連絡いただくこともできます。',
         'faq.tag': 'よくある質問',
         'faq.title': 'よくある質問',
         'faq.subtitle': 'SetTimeと優時科技に関するよくある質問にお答えします。',
@@ -1039,6 +1042,7 @@ const extraI18n = {
         'form.success': '¡Gracias! Tu mensaje ha sido enviado.',
         'form.error': 'Hubo un problema al enviar tu mensaje. Inténtalo de nuevo.',
         'form.errorNetwork': 'No se puede enviar tu mensaje ahora. Inténtalo más tarde.',
+        'form.errorFallback': 'También puedes contactarnos directamente en seanchen@kairosaitech.com.',
         'faq.tag': 'Preguntas Frecuentes',
         'faq.title': 'Preguntas Frecuentes',
         'faq.subtitle': 'Preguntas comunes sobre SetTime y Kairos.ai, respondidas directamente.',
@@ -1083,6 +1087,7 @@ const extraI18n = {
         'form.success': 'Grazie! Il tuo messaggio è stato inviato.',
         'form.error': "Si è verificato un problema nell'invio del messaggio. Riprova.",
         'form.errorNetwork': 'Impossibile inviare il messaggio ora. Riprova più tardi.',
+        'form.errorFallback': "Puoi anche contattarci direttamente all'indirizzo seanchen@kairosaitech.com.",
         'faq.tag': 'Domande Frequenti',
         'faq.title': 'Domande Frequenti',
         'faq.subtitle': 'Domande comuni su SetTime e Kairos.ai, con risposte dirette.',
@@ -1127,6 +1132,7 @@ const extraI18n = {
         'form.success': 'Merci ! Votre message a été envoyé.',
         'form.error': "Un problème est survenu lors de l'envoi. Veuillez réessayer.",
         'form.errorNetwork': "Impossible d'envoyer votre message pour le moment. Réessayez plus tard.",
+        'form.errorFallback': 'Vous pouvez aussi nous contacter directement à seanchen@kairosaitech.com.',
         'faq.tag': 'FAQ',
         'faq.title': 'Questions Fréquentes',
         'faq.subtitle': "Questions courantes sur SetTime et Kairos.ai, avec des réponses directes.",
@@ -1171,6 +1177,7 @@ const extraI18n = {
         'form.success': '감사합니다! 메시지가 전송되었습니다.',
         'form.error': '메시지 전송 중 문제가 발생했습니다. 다시 시도해 주세요.',
         'form.errorNetwork': '지금은 메시지를 보낼 수 없습니다. 나중에 다시 시도해 주세요.',
+        'form.errorFallback': 'seanchen@kairosaitech.com 으로 직접 연락하실 수도 있습니다.',
         'faq.tag': '자주 묻는 질문',
         'faq.title': '자주 묻는 질문',
         'faq.subtitle': 'SetTime과 Kairos.ai에 대해 자주 묻는 질문에 답합니다.',
@@ -1215,6 +1222,7 @@ const extraI18n = {
         'form.success': 'Danke! Ihre Nachricht wurde gesendet.',
         'form.error': 'Beim Senden Ihrer Nachricht ist ein Problem aufgetreten. Bitte erneut versuchen.',
         'form.errorNetwork': 'Ihre Nachricht kann derzeit nicht gesendet werden. Bitte später erneut versuchen.',
+        'form.errorFallback': 'Sie erreichen uns auch direkt unter seanchen@kairosaitech.com.',
         'faq.tag': 'FAQ',
         'faq.title': 'Häufig gestellte Fragen',
         'faq.subtitle': 'Häufige Fragen zu SetTime und Kairos.ai, direkt beantwortet.',
@@ -1622,10 +1630,14 @@ if (contactForm) {
                 // their blank HTML defaults — restore them for a repeat submit.
                 if (cachedAttribution) applyAttributionToForm(cachedAttribution);
             }
-            else { alert(formMsg('form.error', 'There was an issue sending your message. Please try again.')); }
+            // A failure here also covers FormSubmit's pending-activation window
+            // for a not-yet-confirmed destination address (indistinguishable
+            // from a real send failure via this API) - give the visitor a
+            // direct fallback so a lead is never a dead end either way.
+            else { alert(formMsg('form.error', 'There was an issue sending your message. Please try again.') + '\n\n' + formMsg('form.errorFallback', 'You can also reach us directly at seanchen@kairosaitech.com.')); }
         } catch (err) {
             console.error('Error submitting form:', err);
-            alert(formMsg('form.errorNetwork', 'Unable to send your message right now. Please try again later.'));
+            alert(formMsg('form.errorNetwork', 'Unable to send your message right now. Please try again later.') + '\n\n' + formMsg('form.errorFallback', 'You can also reach us directly at seanchen@kairosaitech.com.'));
         } finally {
             if (submitButton) {
                 submitButton.disabled = false;

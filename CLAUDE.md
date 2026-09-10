@@ -33,7 +33,7 @@ The site supports 8 languages: English (`en`, default), Traditional Chinese (`zh
 
 **How it works:**
 1. HTML elements use `data-i18n` attributes for text content or `data-i18n-placeholder` for placeholders
-2. All translations are stored in the `translations` object in `script.js` (lines 9-746), merged at runtime with `extraI18n` (lines 885-1243, for sections added after the initial i18n pass)
+2. All translations are stored in the `translations` object in `script.js` (lines 9-746), merged at runtime with `extraI18n` (lines 885-1251, for sections added after the initial i18n pass)
 3. `setLanguage(lang)` function updates all translatable elements
 4. Language preference persists in localStorage
 
@@ -48,20 +48,20 @@ The site supports 8 languages: English (`en`, default), Traditional Chinese (`zh
 |---------|--------------|
 | Lines 9-746 | i18n translations object (8 languages) |
 | Lines 750-881 | `langLabels`, `setLanguage()`, language dropdown/selector |
-| Lines 885-1243 | `extraI18n` — translations for sections added after the initial i18n pass (incl. FAQ and News), merged into `translations` at load |
-| Lines 1245-1253 | Performance optimization (debounce) |
-| Lines 1254-1285 | Mobile hamburger navigation |
-| Lines 1289 | `navbar` element reference (the `.scrolled` class it gets toggled is actual logic in the Scroll engine block below, not here) |
-| Lines 1292-1305 | Smooth scroll for anchor links |
-| Lines 1306-1323 | Scroll reveal animations (IntersectionObserver) |
-| Lines 1324-1352 | Animated stat counters |
-| Lines 1353-1368 | Active navigation highlighting (IntersectionObserver) |
-| Lines 1369-1389 | Scroll engine: progress rail + spine draw + grid parallax + navbar `.scrolled` toggle |
-| Lines 1390-1399 | Pointer-reactive blueprint glow (desktop) |
-| Lines 1400-1587 | Traffic source attribution (UTM + referrer), applied to hidden contact-form fields |
-| Lines 1588-1638 | Contact form submission via FormSubmit (posts to the `/ajax/` endpoint and checks the JSON `success` field, since FormSubmit returns HTTP 200 even before the destination address has clicked its activation link) |
-| Lines 1639-1644 | Loaded flag (hero entrance) |
-| Lines 1645-1758 | WebMCP — tools exposed to AI agents via `navigator.modelContext` |
+| Lines 885-1251 | `extraI18n` — translations for sections added after the initial i18n pass (incl. FAQ and News), merged into `translations` at load |
+| Lines 1253-1261 | Performance optimization (debounce) |
+| Lines 1262-1293 | Mobile hamburger navigation |
+| Lines 1294-1298 | `navbar` element reference (the `.scrolled` class it gets toggled is actual logic in the Scroll engine block below, not here) |
+| Lines 1299-1313 | Smooth scroll for anchor links |
+| Lines 1314-1331 | Scroll reveal animations (IntersectionObserver) |
+| Lines 1332-1360 | Animated stat counters |
+| Lines 1361-1376 | Active navigation highlighting (IntersectionObserver) |
+| Lines 1377-1397 | Scroll engine: progress rail + spine draw + grid parallax + navbar `.scrolled` toggle |
+| Lines 1398-1407 | Pointer-reactive blueprint glow (desktop) |
+| Lines 1408-1595 | Traffic source attribution (UTM + referrer), applied to hidden contact-form fields |
+| Lines 1596-1651 | Contact form submission via FormSubmit (posts to the `/ajax/` endpoint and checks the JSON `success` field, since FormSubmit returns HTTP 200 even before the destination address has clicked its activation link; on failure also shows a direct-contact-email fallback) |
+| Lines 1652-1657 | Loaded flag (hero entrance) |
+| Lines 1658-1771 | WebMCP — tools exposed to AI agents via `navigator.modelContext` |
 
 ### CSS Theming
 
