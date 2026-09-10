@@ -658,7 +658,7 @@ const translations = {
         'nav.about': 'Über Uns',
         'nav.contact': 'Kontakt',
         'hero.title1': 'KI-Lösungen',
-        'hero.title2': 'für AEC & Bauwesen',
+        'hero.title2': 'für AEC und Bauwesen',
         'hero.subtitle': 'Kairos.ai entwickelt KI-Lösungen für die AEC-Branche — beginnend mit SetTime, einem durchgängigen System, das Baupläne in präzise Bewehrungskalkulationen und Biegelisten umwandelt und so die langsame, fehleranfällige manuelle Mengenermittlung ersetzt.',
         'hero.cta1': 'SetTime entdecken',
         'hero.cta2': 'Kontakt',
@@ -1194,7 +1194,7 @@ const extraI18n = {
     de: {
         'nav.how': 'So funktioniert es',
         'nav.pilot': 'Pilot',
-        'hero.badge': 'KI für AEC & Bauwesen',
+        'hero.badge': 'KI für AEC und Bauwesen',
         'hero.metric1label': 'Schnellere Kalkulation',
         'hero.metric2label': 'Kalkulationsgenauigkeit',
         'hero.metric3label': 'Verarbeitete Pläne',
