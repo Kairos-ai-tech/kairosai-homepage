@@ -377,7 +377,7 @@ section { position: relative; padding: clamp(84px, 12vh, 150px) 0; }
 .story-header .section-subtitle, .pilot-inner .section-subtitle { margin-left: auto; margin-right: auto; }
 .story-logo { width: clamp(96px, 12vw, 140px); height: clamp(96px, 12vw, 140px); margin: 0 auto 26px; border-radius: 20px; box-shadow: 0 12px 40px rgba(91, 200, 255, 0.18); }
 .story-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; margin-bottom: 40px; }
-.story-block, .service-card, .stat-card, .pilot-inner, .faq-item {
+.story-block, .service-card, .stat-card, .pilot-inner, .faq-item, .news-item {
     border: 1px solid var(--line); border-radius: var(--radius); background: var(--panel); backdrop-filter: blur(8px);
 }
 .story-block { padding: 30px 28px; }
@@ -433,6 +433,20 @@ section { position: relative; padding: clamp(84px, 12vh, 150px) 0; }
 }
 .faq-item[open] .faq-question::after { transform: rotate(45deg); }
 .faq-answer { color: var(--muted); font-size: 0.98rem; margin-top: 14px; max-width: 68ch; }
+
+/* ============================================================
+   NEWS
+   ============================================================ */
+.news-list { display: grid; gap: 14px; max-width: 78ch; }
+.news-item { padding: 26px 28px; }
+.news-item-date {
+    display: block; font-family: var(--font-mono); font-size: 0.78rem; letter-spacing: 0.08em;
+    text-transform: uppercase; color: var(--cyan); margin-bottom: 10px;
+}
+.news-item-title { font-family: var(--font-display); font-weight: 600; font-size: 1.25rem; letter-spacing: 0.01em; }
+.news-item-desc { color: var(--muted); font-size: 0.98rem; margin-top: 12px; max-width: 68ch; }
+.news-item-link { display: inline-block; margin-top: 16px; color: var(--cyan); font-size: 0.94rem; font-weight: 600; }
+.news-item-link:hover { text-decoration: underline; }
 
 /* ============================================================
    ABOUT / COMPANY

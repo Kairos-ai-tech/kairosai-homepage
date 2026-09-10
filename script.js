@@ -917,7 +917,15 @@ const extraI18n = {
         'faq.q3': 'What does iTech output?',
         'faq.a3': 'iTech produces accurate rebar quantities, weights, and an exportable bar-bending schedule — ready for procurement, fabrication scheduling, and cost estimation.',
         'faq.q4': 'What else does Kairos.ai offer besides iTech?',
-        'faq.a4': 'Beyond iTech, Kairos.ai also provides custom AI systems design, backend infrastructure, AI application development, and data analysis platforms — built with the same engineering rigor as iTech.'
+        'faq.a4': 'Beyond iTech, Kairos.ai also provides custom AI systems design, backend infrastructure, AI application development, and data analysis platforms — built with the same engineering rigor as iTech.',
+        'nav.news': 'News',
+        'news.tag': 'News',
+        'news.title': 'Latest News',
+        'news.subtitle': 'Updates on our products and company.',
+        'news.item1.date': 'September 9, 2026',
+        'news.item1.title': 'iTech is now SetTime',
+        'news.item1.desc': "We renamed iTech to SetTime to better capture what the product delivers — precise rebar estimates and bar-bending schedules, ready right before the concrete sets. The AI engine, accuracy, and pipeline are unchanged.",
+        'news.item1.cta': 'Visit the SetTime product page →'
     },
     'zh-TW': {
         'nav.how': '運作方式',
@@ -953,7 +961,15 @@ const extraI18n = {
         'faq.q3': 'iTech 會輸出什麼？',
         'faq.a3': 'iTech 產出精準的鋼筋數量、重量與可匯出的鋼筋斷料彎曲表，可用於採購、加工排程與成本估算。',
         'faq.q4': '除了 iTech，優時科技還提供什麼？',
-        'faq.a4': '除了 iTech，優時科技也提供客製 AI 系統設計、後端系統架構、AI 應用開發與數據分析平台 — 與 iTech 同等的工程實力。'
+        'faq.a4': '除了 iTech，優時科技也提供客製 AI 系統設計、後端系統架構、AI 應用開發與數據分析平台 — 與 iTech 同等的工程實力。',
+        'nav.news': '最新消息',
+        'news.tag': '最新消息',
+        'news.title': '最新消息',
+        'news.subtitle': '關於我們產品與公司的最新動態。',
+        'news.item1.date': '2026 年 9 月 9 日',
+        'news.item1.title': 'iTech 更名為 SetTime',
+        'news.item1.desc': '我們將 iTech 更名為 SetTime，更貼切傳達產品的核心承諾 — 在混凝土澆置前，提供精準的鋼筋估算與斷料彎曲表。AI 引擎、準確度與流程完全不變。',
+        'news.item1.cta': '前往 SetTime 產品頁面 →'
     },
     ja: {
         'nav.how': '仕組み',
@@ -989,7 +1005,15 @@ const extraI18n = {
         'faq.q3': 'iTechは何を出力しますか？',
         'faq.a3': 'iTechは正確な鉄筋数量・重量と、出力可能な鉄筋加工帳を生成します。調達、加工スケジュール、コスト積算にすぐ使えます。',
         'faq.q4': 'iTech以外に優時科技は何を提供していますか？',
-        'faq.a4': 'iTechに加え、優時科技はカスタムAIシステム設計、バックエンドインフラ、AIアプリケーション開発、データ分析プラットフォームも提供しています — iTechと同じ技術力で。'
+        'faq.a4': 'iTechに加え、優時科技はカスタムAIシステム設計、バックエンドインフラ、AIアプリケーション開発、データ分析プラットフォームも提供しています — iTechと同じ技術力で。',
+        'nav.news': 'ニュース',
+        'news.tag': 'ニュース',
+        'news.title': '最新ニュース',
+        'news.subtitle': '製品と会社の最新情報。',
+        'news.item1.date': '2026年9月9日',
+        'news.item1.title': 'iTechはSetTimeに名称変更しました',
+        'news.item1.desc': '製品が提供する価値 — コンクリート打設の直前に届く正確な鉄筋積算と加工帳 — をより的確に表すため、iTechをSetTimeに改称しました。AIエンジン、精度、処理フローに変更はありません。',
+        'news.item1.cta': 'SetTime製品ページへ →'
     },
     es: {
         'nav.how': 'Cómo funciona',
@@ -1025,7 +1049,15 @@ const extraI18n = {
         'faq.q3': '¿Qué entrega iTech?',
         'faq.a3': 'iTech produce cantidades y pesos precisos de acero, y una lista de despiece exportable — lista para compras, programación de fabricación y estimación de costos.',
         'faq.q4': '¿Qué más ofrece Kairos.ai además de iTech?',
-        'faq.a4': 'Además de iTech, Kairos.ai también ofrece diseño de sistemas de IA personalizados, infraestructura backend, desarrollo de aplicaciones de IA y plataformas de análisis de datos — con el mismo rigor de ingeniería que iTech.'
+        'faq.a4': 'Además de iTech, Kairos.ai también ofrece diseño de sistemas de IA personalizados, infraestructura backend, desarrollo de aplicaciones de IA y plataformas de análisis de datos — con el mismo rigor de ingeniería que iTech.',
+        'nav.news': 'Noticias',
+        'news.tag': 'Noticias',
+        'news.title': 'Últimas Noticias',
+        'news.subtitle': 'Novedades sobre nuestros productos y la empresa.',
+        'news.item1.date': '9 de septiembre de 2026',
+        'news.item1.title': 'iTech ahora se llama SetTime',
+        'news.item1.desc': 'Renombramos iTech a SetTime para reflejar mejor lo que ofrece el producto — estimaciones precisas de acero y listas de despiece, listas justo antes de que fragüe el concreto. El motor de IA, la precisión y el flujo de trabajo no cambian.',
+        'news.item1.cta': 'Visita la página del producto SetTime →'
     },
     it: {
         'nav.how': 'Come funziona',
@@ -1061,7 +1093,15 @@ const extraI18n = {
         'faq.q3': 'Cosa produce iTech in output?',
         'faq.a3': "iTech produce quantità e pesi precisi dei ferri e una distinta di piegatura esportabile — pronta per acquisti, pianificazione della produzione e stima dei costi.",
         'faq.q4': 'Cos\'altro offre Kairos.ai oltre a iTech?',
-        'faq.a4': "Oltre a iTech, Kairos.ai offre anche progettazione di sistemi AI su misura, infrastrutture backend, sviluppo di applicazioni AI e piattaforme di analisi dati — con lo stesso rigore ingegneristico di iTech."
+        'faq.a4': "Oltre a iTech, Kairos.ai offre anche progettazione di sistemi AI su misura, infrastrutture backend, sviluppo di applicazioni AI e piattaforme di analisi dati — con lo stesso rigore ingegneristico di iTech.",
+        'nav.news': 'Notizie',
+        'news.tag': 'Notizie',
+        'news.title': 'Ultime Notizie',
+        'news.subtitle': 'Novità sui nostri prodotti e sull\'azienda.',
+        'news.item1.date': '9 settembre 2026',
+        'news.item1.title': 'iTech ora si chiama SetTime',
+        'news.item1.desc': "Abbiamo rinominato iTech in SetTime per riflettere meglio ciò che offre il prodotto — stime precise dei ferri e distinte di piegatura, pronte proprio prima della presa del calcestruzzo. Il motore AI, la precisione e il flusso di lavoro restano invariati.",
+        'news.item1.cta': 'Vai alla pagina del prodotto SetTime →'
     },
     fr: {
         'nav.how': 'Comment ça marche',
@@ -1097,7 +1137,15 @@ const extraI18n = {
         'faq.q3': "Que produit iTech ?",
         'faq.a3': "iTech produit des quantités et poids précis d'armatures, ainsi qu'une nomenclature de façonnage exportable — prête pour les achats, la planification de fabrication et l'estimation des coûts.",
         'faq.q4': "Que propose Kairos.ai en plus d'iTech ?",
-        'faq.a4': "Au-delà d'iTech, Kairos.ai propose aussi la conception de systèmes IA sur mesure, des infrastructures backend, le développement d'applications IA et des plateformes d'analyse de données — avec la même rigueur d'ingénierie qu'iTech."
+        'faq.a4': "Au-delà d'iTech, Kairos.ai propose aussi la conception de systèmes IA sur mesure, des infrastructures backend, le développement d'applications IA et des plateformes d'analyse de données — avec la même rigueur d'ingénierie qu'iTech.",
+        'nav.news': 'Actualités',
+        'news.tag': 'Actualités',
+        'news.title': 'Dernières Actualités',
+        'news.subtitle': "Nouveautés sur nos produits et l'entreprise.",
+        'news.item1.date': '9 septembre 2026',
+        'news.item1.title': "iTech s'appelle désormais SetTime",
+        'news.item1.desc': "Nous avons renommé iTech en SetTime pour mieux refléter ce que le produit offre — des estimations précises des armatures et des nomenclatures de façonnage, prêtes juste avant la prise du béton. Le moteur IA, la précision et le flux de travail restent inchangés.",
+        'news.item1.cta': 'Voir la page produit SetTime →'
     },
     ko: {
         'nav.how': '작동 방식',
@@ -1133,7 +1181,15 @@ const extraI18n = {
         'faq.q3': 'iTech는 무엇을 출력하나요?',
         'faq.a3': 'iTech는 정확한 철근 수량·중량과 내보내기 가능한 철근 가공목록을 생성합니다 — 구매, 가공 일정 수립, 원가 산출에 바로 사용할 수 있습니다.',
         'faq.q4': 'iTech 외에 Kairos.ai는 무엇을 제공하나요?',
-        'faq.a4': 'iTech 외에도 Kairos.ai는 맞춤형 AI 시스템 설계, 백엔드 인프라, AI 애플리케이션 개발, 데이터 분석 플랫폼을 제공합니다 — iTech와 동일한 수준의 엔지니어링 역량으로.'
+        'faq.a4': 'iTech 외에도 Kairos.ai는 맞춤형 AI 시스템 설계, 백엔드 인프라, AI 애플리케이션 개발, 데이터 분석 플랫폼을 제공합니다 — iTech와 동일한 수준의 엔지니어링 역량으로.',
+        'nav.news': '소식',
+        'news.tag': '소식',
+        'news.title': '최신 소식',
+        'news.subtitle': '제품 및 회사 관련 최신 소식입니다.',
+        'news.item1.date': '2026년 9월 9일',
+        'news.item1.title': 'iTech가 SetTime으로 이름을 바꿨습니다',
+        'news.item1.desc': '제품이 전달하는 가치 — 콘크리트가 굳기 직전에 제공되는 정확한 철근 산출과 가공목록 — 을 더 잘 담기 위해 iTech를 SetTime으로 이름을 바꿨습니다. AI 엔진, 정확도, 처리 과정은 그대로입니다.',
+        'news.item1.cta': 'SetTime 제품 페이지로 이동 →'
     },
     de: {
         'nav.how': 'So funktioniert es',
@@ -1169,7 +1225,15 @@ const extraI18n = {
         'faq.q3': 'Was liefert iTech als Ergebnis?',
         'faq.a3': 'iTech erzeugt präzise Bewehrungsmengen und -gewichte sowie eine exportierbare Biegeliste — einsatzbereit für Beschaffung, Fertigungsplanung und Kostenkalkulation.',
         'faq.q4': 'Was bietet Kairos.ai neben iTech noch an?',
-        'faq.a4': 'Neben iTech bietet Kairos.ai auch die Entwicklung individueller KI-Systeme, Backend-Infrastruktur, KI-Anwendungsentwicklung und Datenanalyseplattformen — mit derselben technischen Sorgfalt wie bei iTech.'
+        'faq.a4': 'Neben iTech bietet Kairos.ai auch die Entwicklung individueller KI-Systeme, Backend-Infrastruktur, KI-Anwendungsentwicklung und Datenanalyseplattformen — mit derselben technischen Sorgfalt wie bei iTech.',
+        'nav.news': 'News',
+        'news.tag': 'News',
+        'news.title': 'Neuigkeiten',
+        'news.subtitle': 'Neuigkeiten zu unseren Produkten und dem Unternehmen.',
+        'news.item1.date': '9. September 2026',
+        'news.item1.title': 'iTech heißt jetzt SetTime',
+        'news.item1.desc': 'Wir haben iTech in SetTime umbenannt, um besser zu vermitteln, was das Produkt leistet — präzise Bewehrungsmengen und Biegelisten, fertig kurz bevor der Beton abbindet. KI-Engine, Genauigkeit und Ablauf bleiben unverändert.',
+        'news.item1.cta': 'Zur SetTime-Produktseite →'
     }
 };
 if (typeof translations === 'object') {
