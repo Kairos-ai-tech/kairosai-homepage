@@ -437,16 +437,22 @@ section { position: relative; padding: clamp(84px, 12vh, 150px) 0; }
 /* ============================================================
    NEWS
    ============================================================ */
-.news-list { display: grid; gap: 14px; max-width: 78ch; }
-.news-item { padding: 26px 28px; }
+.news-list { display: grid; gap: 20px; max-width: 78ch; }
+.news-item { display: flex; align-items: flex-start; gap: 24px; padding: 28px; }
+.news-item-media {
+    flex: none; width: 64px; height: 64px; padding: 12px; box-sizing: border-box;
+    border-radius: 14px; color: var(--cyan); background: rgba(91, 200, 255, 0.08);
+}
+.news-item-media svg { width: 100%; height: 100%; }
+.news-item-body { flex: 1; min-width: 0; padding-left: 24px; border-left: 1px solid var(--line); }
 .news-item-date {
     display: block; font-family: var(--font-mono); font-size: 0.78rem; letter-spacing: 0.08em;
     text-transform: uppercase; color: var(--cyan); margin-bottom: 10px;
 }
 .news-item-title { font-family: var(--font-display); font-weight: 600; font-size: 1.25rem; letter-spacing: 0.01em; }
 .news-item-desc { color: var(--muted); font-size: 0.98rem; margin-top: 12px; max-width: 68ch; }
-.news-item-link { display: inline-block; margin-top: 16px; color: var(--cyan); font-size: 0.94rem; font-weight: 600; }
-.news-item-link:hover { text-decoration: underline; }
+.news-item-link { display: inline-block; margin-top: 16px; color: var(--cyan); font-size: 0.94rem; font-weight: 600; text-decoration: underline; text-underline-offset: 3px; }
+.news-item-link:hover { color: var(--paper); }
 
 /* ============================================================
    ABOUT / COMPANY
@@ -560,6 +566,8 @@ section { position: relative; padding: clamp(84px, 12vh, 150px) 0; }
     .hero-metric:last-child { border-bottom: none; }
     .footer-content { grid-template-columns: 1fr; gap: 32px; }
     .section-tag { display: none; }
+    .news-item { flex-direction: column; gap: 16px; }
+    .news-item-body { padding-left: 0; border-left: none; border-top: 1px solid var(--line); padding-top: 16px; }
 }
 
 /* spine offset content on desktop */
