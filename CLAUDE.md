@@ -59,9 +59,9 @@ The site supports 8 languages: English (`en`, default), Traditional Chinese (`zh
 | Lines 1369-1389 | Scroll engine: progress rail + spine draw + grid parallax + navbar `.scrolled` toggle |
 | Lines 1390-1399 | Pointer-reactive blueprint glow (desktop) |
 | Lines 1400-1587 | Traffic source attribution (UTM + referrer), applied to hidden contact-form fields |
-| Lines 1588-1631 | Contact form submission via FormSubmit |
-| Lines 1632-1636 | Loaded flag (hero entrance) |
-| Lines 1637-1750 | WebMCP — tools exposed to AI agents via `navigator.modelContext` |
+| Lines 1588-1638 | Contact form submission via FormSubmit (posts to the `/ajax/` endpoint and checks the JSON `success` field, since FormSubmit returns HTTP 200 even before the destination address has clicked its activation link) |
+| Lines 1639-1644 | Loaded flag (hero entrance) |
+| Lines 1645-1758 | WebMCP — tools exposed to AI agents via `navigator.modelContext` |
 
 ### CSS Theming
 
