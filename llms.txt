@@ -13,8 +13,9 @@ systems, backend infrastructure, and data platforms for clients.
 
 ## Docs
 
-- [Full site content (markdown)](https://www.kairosaitech.com/index.md): About, products, services, languages, and agent-discovery resources in plain markdown.
+- [Full site content (markdown)](https://www.kairosaitech.com/index.md): About, products, services, news, languages, and agent-discovery resources in plain markdown.
 - [Homepage (HTML)](https://www.kairosaitech.com/): The live site, with structured data (Organization, ProfessionalService, FAQPage, ItemList) in JSON-LD.
+- [News](https://www.kairosaitech.com/#news): Company and product announcements, starting with the 2026-09-09 iTech → SetTime rename.
 
 ## Agent discovery
 

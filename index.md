@@ -69,6 +69,14 @@ construction. Beyond SetTime, we also provide custom AI systems design,
 backend infrastructure, AI application development, and data analysis
 platforms — built with the same engineering rigor.
 
+## News
+
+**2026-09-09 — iTech is now SetTime.** We renamed iTech to SetTime to better
+capture what the product delivers — precise rebar estimates and bar-bending
+schedules, ready right before the concrete sets. The AI engine, accuracy, and
+pipeline are unchanged. See the [SetTime product page](https://settime.kairosaitech.com/)
+or `https://www.kairosaitech.com/#news` for the full announcement.
+
 ## Languages
 
 The site is available in eight languages (English is the default):
@@ -93,7 +101,8 @@ Kairos.ai publishes the following agent-discovery resources:
 - MCP server card: `/.well-known/mcp/server-card.json`
 - Agent skills index: `/.well-known/agent-skills/index.json`
 - WebMCP tools: exposed at page load via `navigator.modelContext.provideContext`
-  (`navigate_section`, `set_language`, `contact_kairos`, `get_company_info`)
+  (`navigate_section` — home, story, how, product, pilot, services, faq, news,
+  about, contact — plus `set_language`, `contact_kairos`, `get_company_info`)
 - Content signals: declared in `/robots.txt` (search=yes, ai-input=yes,
   ai-train=no — this content may be used to answer a live query, not for
   model training)
