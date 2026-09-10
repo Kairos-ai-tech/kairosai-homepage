@@ -1607,7 +1607,8 @@ if (contactForm) {
             // bare response.ok check reports false success. The /ajax/
             // endpoint returns a JSON body with an explicit success field
             // that reflects real delivery state (incl. pending activation).
-            const ajaxAction = contactForm.action.replace('https://formsubmit.co/', 'https://formsubmit.co/ajax/');
+            const actionUrl = new URL(contactForm.action);
+            const ajaxAction = `${actionUrl.origin}/ajax${actionUrl.pathname}`;
             const response = await fetch(ajaxAction, {
                 method: 'POST',
                 body: new FormData(contactForm),
