@@ -1,5 +1,5 @@
 /* ============================================================
-   Kairos.ai — iTech / AI Rebar Estimation
+   Kairos.ai — AI Solutions for AEC & Construction, starting with SetTime
    Aesthetic: Engineering Blueprint. One continuous ink canvas,
    blueprint-cyan linework, safety-amber accent, a rebar "spine"
    that draws itself as you scroll.
@@ -316,7 +316,7 @@ section { position: relative; padding: clamp(84px, 12vh, 150px) 0; }
 .step p { color: var(--muted); margin-top: 10px; font-size: 0.98rem; }
 
 /* ============================================================
-   iTECH PRODUCT SHOWCASE
+   SETTIME PRODUCT SHOWCASE
    ============================================================ */
 .product-showcase .container { display: grid; grid-template-columns: 1fr 1.1fr; gap: clamp(36px, 5vw, 80px); align-items: center; }
 .product-copy .product-title { font-family: var(--font-display); font-weight: 600; font-size: clamp(3rem, 6vw, 5rem); text-transform: uppercase; line-height: 0.9; }
@@ -353,7 +353,7 @@ section { position: relative; padding: clamp(84px, 12vh, 150px) 0; }
 .schedule-foot { display: flex; justify-content: space-between; padding: 14px 18px; border-top: 1px solid var(--line); font-size: 0.8rem; color: var(--faint); }
 .schedule-foot b { color: var(--amber); }
 
-/* iTech AR (in development) */
+/* SetTime AR (in development) */
 .ar-block {
     grid-column: 1 / -1; margin-top: clamp(30px, 4vw, 56px); padding: 32px clamp(24px, 4vw, 44px);
     border: 1px dashed var(--line); border-radius: var(--radius); background: var(--panel-2);
@@ -377,7 +377,7 @@ section { position: relative; padding: clamp(84px, 12vh, 150px) 0; }
 .story-header .section-subtitle, .pilot-inner .section-subtitle { margin-left: auto; margin-right: auto; }
 .story-logo { width: clamp(96px, 12vw, 140px); height: clamp(96px, 12vw, 140px); margin: 0 auto 26px; border-radius: 20px; box-shadow: 0 12px 40px rgba(91, 200, 255, 0.18); }
 .story-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; margin-bottom: 40px; }
-.story-block, .service-card, .stat-card, .pilot-inner, .faq-item {
+.story-block, .service-card, .stat-card, .pilot-inner, .faq-item, .news-item {
     border: 1px solid var(--line); border-radius: var(--radius); background: var(--panel); backdrop-filter: blur(8px);
 }
 .story-block { padding: 30px 28px; }
@@ -433,6 +433,27 @@ section { position: relative; padding: clamp(84px, 12vh, 150px) 0; }
 }
 .faq-item[open] .faq-question::after { transform: rotate(45deg); }
 .faq-answer { color: var(--muted); font-size: 0.98rem; margin-top: 14px; max-width: 68ch; }
+
+/* ============================================================
+   NEWS
+   ============================================================ */
+.news-list { display: grid; gap: 20px; max-width: 78ch; }
+.news-item { display: flex; align-items: flex-start; gap: 24px; padding: 28px; }
+.news-item-media {
+    display: block; flex: none; width: 64px; height: 64px; padding: 10px; box-sizing: border-box;
+    border-radius: 14px; background: var(--paper); transition: transform 0.3s var(--ease);
+}
+.news-item-media:hover { transform: translateY(-2px); }
+.news-item-media img { display: block; width: 100%; height: 100%; object-fit: contain; }
+.news-item-body { flex: 1; min-width: 0; padding-left: 24px; border-left: 1px solid var(--line); }
+.news-item-date {
+    display: block; font-family: var(--font-mono); font-size: 0.78rem; letter-spacing: 0.08em;
+    text-transform: uppercase; color: var(--cyan); margin-bottom: 10px;
+}
+.news-item-title { font-family: var(--font-display); font-weight: 600; font-size: 1.25rem; letter-spacing: 0.01em; }
+.news-item-desc { color: var(--muted); font-size: 0.98rem; margin-top: 12px; max-width: 68ch; }
+.news-item-link { display: inline-block; margin-top: 16px; color: var(--cyan); font-size: 0.94rem; font-weight: 600; text-decoration: underline; text-underline-offset: 3px; }
+.news-item-link:hover { color: var(--paper); }
 
 /* ============================================================
    ABOUT / COMPANY
@@ -526,6 +547,13 @@ section { position: relative; padding: clamp(84px, 12vh, 150px) 0; }
     .story-grid { grid-template-columns: 1fr; }
     .story-services { flex-direction: column; align-items: flex-start; }
     .ar-features { grid-template-columns: 1fr; }
+}
+
+/* Nav collapses to the hamburger overlay a bit earlier than the other
+   980px breakpoints: 8 nav links (Story..Contact, incl. News) no longer
+   fit next to the logo + language switcher in a single row once the
+   container's fluid gutter has shrunk much below ~1180px viewport width. */
+@media (max-width: 1180px) {
     .nav-menu {
         position: fixed; inset: 64px 0 auto 0; flex-direction: column; align-items: stretch; gap: 4px;
         background: rgba(8, 12, 20, 0.97); backdrop-filter: blur(16px); padding: 16px var(--gutter) 24px;
@@ -546,6 +574,8 @@ section { position: relative; padding: clamp(84px, 12vh, 150px) 0; }
     .hero-metric:last-child { border-bottom: none; }
     .footer-content { grid-template-columns: 1fr; gap: 32px; }
     .section-tag { display: none; }
+    .news-item { flex-direction: column; gap: 16px; }
+    .news-item-body { padding-left: 0; border-left: none; border-top: 1px solid var(--line); padding-top: 16px; }
 }
 
 /* spine offset content on desktop */

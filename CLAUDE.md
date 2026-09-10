@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project Overview
 
-Static marketing website for Kairos.ai (優時科技), a Taiwan-based company building iTech — an AI rebar estimation system for the AEC/construction industry — plus custom AI systems, backend infrastructure, and data platforms. The site is hosted at www.kairosaitech.com via GitHub Pages.
+Static marketing website for Kairos.ai (優時科技), a Taiwan-based company building AI solutions for the AEC/construction industry. Its first product, SetTime (formerly iTech), is an AI rebar estimation system — the starting point of a broader AEC AI mission — plus custom AI systems, backend infrastructure, and data platforms. The site is hosted at www.kairosaitech.com via GitHub Pages.
 
 ## Development Commands
 
@@ -33,7 +33,7 @@ The site supports 8 languages: English (`en`, default), Traditional Chinese (`zh
 
 **How it works:**
 1. HTML elements use `data-i18n` attributes for text content or `data-i18n-placeholder` for placeholders
-2. All translations are stored in the `translations` object in `script.js` (lines 5-742), merged at runtime with `extraI18n` (lines 876-1168, for sections added after the initial i18n pass)
+2. All translations are stored in the `translations` object in `script.js` (lines 9-746), merged at runtime with `extraI18n` (lines 885-1251, for sections added after the initial i18n pass)
 3. `setLanguage(lang)` function updates all translatable elements
 4. Language preference persists in localStorage
 
@@ -46,21 +46,22 @@ The site supports 8 languages: English (`en`, default), Traditional Chinese (`zh
 
 | Section | Functionality |
 |---------|--------------|
-| Lines 5-742 | i18n translations object (8 languages) |
-| Lines 746-875 | `langLabels`, `setLanguage()`, language dropdown/selector |
-| Lines 876-1168 | `extraI18n` — translations for sections added after the initial i18n pass (incl. the FAQ section), merged into `translations` at load |
-| Lines 1175-1183 | Performance optimization (debounce) |
-| Lines 1184-1215 | Mobile hamburger navigation |
-| Lines 1216-1220 | `navbar` element reference (the `.scrolled` class it gets toggled is actual logic in the Scroll engine block below, not here) |
-| Lines 1221-1235 | Smooth scroll for anchor links |
-| Lines 1236-1253 | Scroll reveal animations (IntersectionObserver) |
-| Lines 1254-1282 | Animated stat counters |
-| Lines 1283-1298 | Active navigation highlighting (IntersectionObserver) |
-| Lines 1299-1319 | Scroll engine: progress rail + spine draw + grid parallax + navbar `.scrolled` toggle |
-| Lines 1320-1329 | Pointer-reactive blueprint glow (desktop) |
-| Lines 1330-1366 | Contact form submission via FormSubmit |
-| Lines 1367-1372 | Loaded flag (hero entrance) |
-| Lines 1373-1486 | WebMCP — tools exposed to AI agents via `navigator.modelContext` |
+| Lines 9-746 | i18n translations object (8 languages) |
+| Lines 750-881 | `langLabels`, `setLanguage()`, language dropdown/selector |
+| Lines 885-1251 | `extraI18n` — translations for sections added after the initial i18n pass (incl. FAQ and News), merged into `translations` at load |
+| Lines 1253-1261 | Performance optimization (debounce) |
+| Lines 1262-1293 | Mobile hamburger navigation |
+| Lines 1294-1298 | `navbar` element reference (the `.scrolled` class it gets toggled is actual logic in the Scroll engine block below, not here) |
+| Lines 1299-1313 | Smooth scroll for anchor links |
+| Lines 1314-1331 | Scroll reveal animations (IntersectionObserver) |
+| Lines 1332-1360 | Animated stat counters |
+| Lines 1361-1376 | Active navigation highlighting (IntersectionObserver) |
+| Lines 1377-1397 | Scroll engine: progress rail + spine draw + grid parallax + navbar `.scrolled` toggle |
+| Lines 1398-1407 | Pointer-reactive blueprint glow (desktop) |
+| Lines 1408-1595 | Traffic source attribution (UTM + referrer), applied to hidden contact-form fields |
+| Lines 1596-1651 | Contact form submission via FormSubmit (posts to the `/ajax/` endpoint and checks the JSON `success` field, since FormSubmit returns HTTP 200 even before the destination address has clicked its activation link; on failure also shows a direct-contact-email fallback) |
+| Lines 1652-1657 | Loaded flag (hero entrance) |
+| Lines 1658-1771 | WebMCP — tools exposed to AI agents via `navigator.modelContext` |
 
 ### CSS Theming
 
@@ -68,7 +69,7 @@ Primary brand color: `#2680FF` (matches logo). All colors defined as CSS variabl
 
 ### Contact Form
 
-Uses FormSubmit (formsubmit.co) for email delivery - no backend required. Emails go to kairos.ai.tech@gmail.com.
+Uses FormSubmit (formsubmit.co) for email delivery - no backend required. Emails go to seanchen@kairosaitech.com.
 
 ### SEO
 
