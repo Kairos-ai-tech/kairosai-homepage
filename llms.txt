@@ -1,13 +1,15 @@
 # Kairos.ai 優時科技
 
-> AI rebar estimation for the AEC (architecture, engineering, construction)
-> industry, plus custom AI systems, backend infrastructure, and data
-> platforms. Taiwan-based.
+> AI solutions for the AEC (architecture, engineering, construction) and
+> construction industry, starting with AI rebar estimation, plus custom AI
+> systems, backend infrastructure, and data platforms. Taiwan-based.
 
-Kairos.ai's flagship product, iTech, converts construction drawings (PDF or
-CAD) into accurate rebar estimates and exportable bar-bending schedules,
-replacing slow, error-prone manual takeoff. Beyond iTech, Kairos.ai designs
-custom AI systems, backend infrastructure, and data platforms for clients.
+Kairos.ai's first product, SetTime (formerly iTech), converts construction
+drawings (PDF or CAD) into accurate rebar estimates and exportable
+bar-bending schedules, replacing slow, error-prone manual takeoff. Rebar
+estimation is the starting point of a broader mission to bring AI solutions
+across the AEC industry. Beyond SetTime, Kairos.ai designs custom AI
+systems, backend infrastructure, and data platforms for clients.
 
 ## Docs
 
@@ -22,5 +24,5 @@ custom AI systems, backend infrastructure, and data platforms for clients.
 
 ## Contact
 
-- Email: kairos.ai.tech@gmail.com
+- Email: seanchen@kairosaitech.com
 - Contact form: https://www.kairosaitech.com/#contact

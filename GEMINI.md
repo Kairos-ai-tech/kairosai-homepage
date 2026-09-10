@@ -2,7 +2,7 @@
 
 ## Project Overview
 
-This project is a modern, responsive, and multi-language static website for a company called **Kairos.ai**. The site's flagship product is iTech, an AI rebar estimation system for the AEC/construction industry. It also showcases the company's services: AI systems design, backend systems development, AI applications, and data analysis.
+This project is a modern, responsive, and multi-language static website for a company called **Kairos.ai**. Kairos.ai builds AI solutions for the AEC/construction industry. Its first product, SetTime (formerly iTech), is an AI rebar estimation system — the starting point of that broader mission. It also showcases the company's services: AI systems design, backend systems development, AI applications, and data analysis.
 
 The website is built with a focus on performance and user experience, featuring a clean design, smooth animations, and a dynamic background slider. It also includes a working contact form that uses FormSubmit for email delivery, so no backend is required.
 

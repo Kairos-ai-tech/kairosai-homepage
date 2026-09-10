@@ -1,9 +1,9 @@
 # Kairos.ai 優時科技
 
-AI rebar estimation for AEC · Applied AI systems, backend, and data platforms.
+AI solutions for AEC & construction, starting with AI rebar estimation · Applied AI systems, backend, and data platforms.
 
 Homepage: <https://www.kairosaitech.com/>
-Contact: <kairos.ai.tech@gmail.com>
+Contact: <seanchen@kairosaitech.com>
 
 > This is the markdown-for-agents mirror of the Kairos.ai homepage. The live
 > site at `/` serves HTML for browsers; this file serves the same information
@@ -15,19 +15,22 @@ Contact: <kairos.ai.tech@gmail.com>
 
 ## About Kairos.ai
 
-Kairos.ai 優時科技 is a Taiwan-based company building applied AI for the
-construction (AEC) industry. Our flagship system, iTech, automates rebar
-estimation for AEC teams. We also design custom AI systems, backend
-infrastructure, and data platforms with the same engineering rigor.
+Kairos.ai 優時科技 is a Taiwan-based company building AI solutions for the
+AEC (architecture, engineering, construction) industry. Our first product,
+SetTime (formerly iTech), automates rebar estimation for AEC teams — the
+starting point of a broader mission to bring AI across the full AEC
+industry. We also design custom AI systems, backend infrastructure, and
+data platforms with the same engineering rigor.
 
 ## Products (B2B)
 
-- **iTech** — AI rebar estimation system for the AEC industry. An end-to-end
-  platform that turns construction drawings (DWG or PDF) into accurate rebar
-  estimates and bar-bending schedules (exportable as CSV/Excel), replacing
-  slow, error-prone manual takeoff.
-- **iTech AR** *(in development)* — a camera-based AR view for the job site
-  that overlays AI-detected rebar and the bar-bending schedule onto the
+- **SetTime** *(formerly iTech)* — AI rebar estimation system for the AEC
+  industry, and Kairos.ai's first step toward broader AEC AI solutions. An
+  end-to-end platform that turns construction drawings (DWG or PDF) into
+  accurate rebar estimates and bar-bending schedules (exportable as
+  CSV/Excel), replacing slow, error-prone manual takeoff.
+- **SetTime AR** *(in development)* — a camera-based AR view for the job
+  site that overlays AI-detected rebar and the bar-bending schedule onto the
   physical structure in real time, for on-site verification against the
   drawing. Not yet shipped.
 
@@ -42,27 +45,29 @@ infrastructure, and data platforms with the same engineering rigor.
 
 ## FAQ
 
-**What is iTech and how does it estimate rebar?**
-iTech is Kairos.ai's end-to-end AI system that turns construction drawings
+**What is SetTime and how does it estimate rebar?**
+SetTime is Kairos.ai's end-to-end AI system that turns construction drawings
 (PDF or CAD) into accurate rebar estimates and bar-bending schedules. Its
 computer vision models read rebar sizes, spacing, and laps directly from the
 drawings, replacing slow, error-prone manual takeoff.
 
-**Who is iTech for?**
-iTech is built for the AEC (architecture, engineering, construction)
+**Who is SetTime for?**
+SetTime is built for the AEC (architecture, engineering, construction)
 industry — serving contractors, rebar fabricators, structural engineers, and
 estimating teams who need faster, more accurate rebar takeoff and a shorter
 bid-prep time.
 
-**What does iTech output?**
-iTech produces accurate rebar quantities, weights, and an exportable
+**What does SetTime output?**
+SetTime produces accurate rebar quantities, weights, and an exportable
 bar-bending schedule — ready for procurement, fabrication scheduling, and
 cost estimation.
 
-**What else does Kairos.ai offer besides iTech?**
-Beyond iTech, Kairos.ai also provides custom AI systems design, backend
-infrastructure, AI application development, and data analysis platforms —
-built with the same engineering rigor as iTech.
+**What else does Kairos.ai offer besides SetTime?**
+SetTime is Kairos.ai's first product for the AEC industry — rebar estimation
+is the starting point of our broader mission to bring AI solutions across
+construction. Beyond SetTime, we also provide custom AI systems design,
+backend infrastructure, AI application development, and data analysis
+platforms — built with the same engineering rigor.
 
 ## Languages
 
@@ -95,5 +100,5 @@ Kairos.ai publishes the following agent-discovery resources:
 
 ## Contact
 
-- Email: <kairos.ai.tech@gmail.com>
+- Email: <seanchen@kairosaitech.com>
 - Contact form: <https://www.kairosaitech.com/#contact>

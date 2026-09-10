@@ -1,5 +1,5 @@
 /* ============================================================
-   Kairos.ai — iTech / AI Rebar Estimation
+   Kairos.ai — AI Solutions for AEC & Construction, starting with SetTime
    Aesthetic: Engineering Blueprint. One continuous ink canvas,
    blueprint-cyan linework, safety-amber accent, a rebar "spine"
    that draws itself as you scroll.
@@ -353,7 +353,7 @@ section { position: relative; padding: clamp(84px, 12vh, 150px) 0; }
 .schedule-foot { display: flex; justify-content: space-between; padding: 14px 18px; border-top: 1px solid var(--line); font-size: 0.8rem; color: var(--faint); }
 .schedule-foot b { color: var(--amber); }
 
-/* iTech AR (in development) */
+/* SetTime AR (in development) */
 .ar-block {
     grid-column: 1 / -1; margin-top: clamp(30px, 4vw, 56px); padding: 32px clamp(24px, 4vw, 44px);
     border: 1px dashed var(--line); border-radius: var(--radius); background: var(--panel-2);

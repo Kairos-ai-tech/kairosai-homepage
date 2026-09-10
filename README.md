@@ -1,10 +1,10 @@
 # Kairos.ai Website
 
-A modern, responsive website for Kairos.ai — iTech, AI rebar estimation for the AEC/construction industry, plus custom AI systems and data platforms.
+A modern, responsive website for Kairos.ai — AI solutions for the AEC/construction industry, starting with SetTime (AI rebar estimation), plus custom AI systems and data platforms.
 
 ## Overview
 
-Kairos.ai builds iTech, an end-to-end AI system that turns construction drawings into accurate rebar estimates and bar-bending schedules for the AEC industry. We also design custom AI systems, backend infrastructure, and data platforms with the same engineering rigor.
+Kairos.ai builds AI solutions for the AEC industry. Our first product, SetTime (formerly iTech), is an end-to-end AI system that turns construction drawings into accurate rebar estimates and bar-bending schedules — the starting point of a broader mission across AEC. We also design custom AI systems, backend infrastructure, and data platforms with the same engineering rigor.
 
 ## Features
 
@@ -22,7 +22,7 @@ Kairos.ai builds iTech, an end-to-end AI system that turns construction drawings
 - **Performance Optimized**: Fast loading times with optimized assets and code
 - **Interactive Elements**: Engaging user interactions including parallax effects and scroll animations
 - **Working Contact Form**: Email delivery via FormSubmit (no backend required)
-- **Product & Service Showcase**: Highlighting iTech (AI rebar estimation), iTech AR (in development), and our core services:
+- **Product & Service Showcase**: Highlighting SetTime (AI rebar estimation, formerly iTech), SetTime AR (in development), and our core services:
   - AI Systems Design
   - Backend Systems Development
   - AI Applications
@@ -134,7 +134,7 @@ The website includes a custom internationalization system with 8 languages. All 
 The contact form uses [FormSubmit](https://formsubmit.co/) for email delivery - no backend required!
 
 **Current configuration:**
-- Emails are sent to: `kairos.ai.tech@gmail.com`
+- Emails are sent to: `seanchen@kairosaitech.com`
 - Custom subject line: "New contact form submission from Kairos.ai"
 - Spam protection via honeypot field
 - Table format for clean email display
@@ -142,7 +142,7 @@ The contact form uses [FormSubmit](https://formsubmit.co/) for email delivery - 
 **First-time setup:**
 1. Deploy the website to a public URL (FormSubmit doesn't work on localhost)
 2. Submit the form once
-3. Check kairos.ai.tech@gmail.com for a confirmation email
+3. Check seanchen@kairosaitech.com for a confirmation email
 4. Click the confirmation link to activate
 5. All future submissions will be delivered automatically
 
@@ -189,4 +189,4 @@ Copyright © 2025 Kairos.ai. All rights reserved.
 
 ## Contact
 
-For inquiries, please contact us at kairos.ai.tech@gmail.com
+For inquiries, please contact us at seanchen@kairosaitech.com

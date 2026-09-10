@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project Overview
 
-Static marketing website for Kairos.ai (優時科技), a Taiwan-based company building iTech — an AI rebar estimation system for the AEC/construction industry — plus custom AI systems, backend infrastructure, and data platforms. The site is hosted at www.kairosaitech.com via GitHub Pages.
+Static marketing website for Kairos.ai (優時科技), a Taiwan-based company building AI solutions for the AEC/construction industry. Its first product, SetTime (formerly iTech), is an AI rebar estimation system — the starting point of a broader AEC AI mission — plus custom AI systems, backend infrastructure, and data platforms. The site is hosted at www.kairosaitech.com via GitHub Pages.
 
 ## Development Commands
 
@@ -68,7 +68,7 @@ Primary brand color: `#2680FF` (matches logo). All colors defined as CSS variabl
 
 ### Contact Form
 
-Uses FormSubmit (formsubmit.co) for email delivery - no backend required. Emails go to kairos.ai.tech@gmail.com.
+Uses FormSubmit (formsubmit.co) for email delivery - no backend required. Emails go to seanchen@kairosaitech.com.
 
 ### SEO
 
