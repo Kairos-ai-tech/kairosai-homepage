@@ -2,6 +2,7 @@
 """Structural checks for the static site (no build step, so this is the test suite).
 Run: python3 tests/check_site.py
 """
+import hashlib
 import json
 import re
 import sys
@@ -20,8 +21,8 @@ def check(name, condition):
 
 html = (ROOT / "index.html").read_text(encoding="utf-8")
 
-# JSON-LD blocks must be valid JSON (Organization, ProfessionalService, WebSite,
-# BreadcrumbList, FAQPage, ItemList schemas that AEO/rich-results depend on).
+# JSON-LD blocks must be valid JSON (the Organization/SoftwareApplication @graph,
+# BreadcrumbList, and FAQPage schemas that AEO/rich-results depend on).
 ld_blocks = re.findall(r'<script type="application/ld\+json">(.*?)</script>', html, re.S)
 check("index.html has JSON-LD blocks", len(ld_blocks) > 0)
 for i, block in enumerate(ld_blocks):
@@ -81,6 +82,15 @@ for rel in [
     ".well-known/agent-skills/index.json",
 ]:
     check(f"{rel} exists", (ROOT / rel).is_file())
+
+# Agent skills index sha256 digests must match the SKILL.md files they describe
+# (agents that verify the digest reject a skill whose file changed without it).
+skills_index = json.loads((ROOT / ".well-known/agent-skills/index.json").read_text(encoding="utf-8"))
+for skill in skills_index.get("skills", []):
+    rel = skill["url"].split("kairosaitech.com/", 1)[1]
+    path = ROOT / rel
+    digest = hashlib.sha256(path.read_bytes()).hexdigest() if path.is_file() else None
+    check(f"agent skill {skill.get('name', rel)} sha256 matches {rel}", digest == skill.get("sha256"))
 
 # script.js sanity (CI also runs `node --check` separately for real syntax validation).
 js = (ROOT / "script.js").read_text(encoding="utf-8")
