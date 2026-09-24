@@ -16,14 +16,14 @@
       "type": "reference",
       "description": "Browse the Kairos.ai product lineup: SetTime (AI rebar estimation for AEC, formerly iTech), SetTime AR (in development), and AI/backend/data services.",
       "url": "https://www.kairosaitech.com/.well-known/agent-skills/browse-products/SKILL.md",
-      "sha256": "2c21293891087461f312c8204ebdf8a8497f160c8dfd7dcbd484453c74e187d2"
+      "sha256": "a565d29adfe2afcd49336a6df03b36b54d084a6882796aeb8ed46e82c21e9f49"
     },
     {
       "name": "about-kairos",
       "type": "reference",
       "description": "Learn about Kairos.ai 優時科技 — a Taiwan-based company building AI solutions for the AEC/construction industry, starting with SetTime AI rebar estimation.",
       "url": "https://www.kairosaitech.com/.well-known/agent-skills/about-kairos/SKILL.md",
-      "sha256": "5ed713f16eda040f29143c17111fe679c731fe285640ee4b39e14532acaa9b62"
+      "sha256": "09b60ec04fbf29078cb7cf1a8b3ff54ccdbe37ba7aa3b1ca6e6be8d505418670"
     }
   ]
 }

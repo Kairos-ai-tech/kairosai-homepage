@@ -33,6 +33,13 @@
           "href": "mailto:seanchen@kairosaitech.com",
           "title": "Kairos.ai 優時科技"
         }
+      ],
+      "related": [
+        {
+          "href": "https://settime.kairosaitech.com/",
+          "type": "text/html",
+          "title": "SetTime (formerly iTech) — AI rebar estimation, official product page"
+        }
       ]
     }
   ]
