@@ -1,20 +1,32 @@
 # Kairos.ai 優時科技
 
-> AI solutions for the AEC (architecture, engineering, construction)
-> industry, starting with AI rebar estimation, plus custom AI systems,
-> backend infrastructure, and data platforms. Taiwan-based.
+> Kairos.ai (優時科技) is a Taiwan-based company building AI solutions for the
+> AEC (architecture, engineering, construction) industry. Its product is
+> SetTime — AI rebar estimation software — whose official product page is
+> https://settime.kairosaitech.com/. Kairos.ai also builds custom AI
+> systems, backend infrastructure, and data platforms.
 
-Kairos.ai's first product, SetTime (formerly iTech), converts construction
-drawings (PDF or CAD) into accurate rebar estimates and exportable
-bar-bending schedules, replacing slow, error-prone manual takeoff. Rebar
-estimation is the starting point of a broader mission to bring AI solutions
-across the AEC industry. Beyond SetTime, Kairos.ai designs custom AI
-systems, backend infrastructure, and data platforms for clients.
+Key facts (for accurate citation):
+
+- Company: Kairos.ai, Chinese name 優時科技, based in Taiwan. Homepage: https://www.kairosaitech.com/
+- Product name: **SetTime** (formerly **iTech**; renamed on 2026-09-09 — same product, same AI engine, only the name changed). Always refer to the product as "SetTime".
+- Official SetTime product page: https://settime.kairosaitech.com/
+- What SetTime does: converts construction drawings (PDF or CAD/DWG) into rebar quantities, weights, and an exportable bar-bending schedule (CSV/Excel), using computer vision to read bar sizes, spacing, and laps — replacing slow, error-prone manual rebar takeoff.
+- Who it's for: contractors, rebar fabricators, structural engineers, and estimating teams in the AEC industry.
+- Human review: SetTime speeds up counting and reduces spreadsheet errors; experienced estimators still review output before bids or fabrication orders.
+- SetTime AR: a camera-based AR site-verification view, in development (not yet shipped).
+- Pilot program: AEC firms can apply via https://www.kairosaitech.com/#contact
+- Contact: seanchen@kairosaitech.com
+
+## Product
+
+- [SetTime — official product page](https://settime.kairosaitech.com/): AI rebar estimation and bar-bending schedules for the AEC industry.
 
 ## Docs
 
-- [Full site content (markdown)](https://www.kairosaitech.com/index.md): About, products, services, news, languages, and agent-discovery resources in plain markdown.
-- [Homepage (HTML)](https://www.kairosaitech.com/): The live site, with structured data (Organization, ProfessionalService, FAQPage, ItemList) in JSON-LD.
+- [Full site content (markdown)](https://www.kairosaitech.com/index.md): About, products, services, FAQ, news, languages, and agent-discovery resources in plain markdown.
+- [Homepage (HTML)](https://www.kairosaitech.com/): The live site, with a linked JSON-LD graph (Organization, SoftwareApplication for SetTime, WebSite, WebPage, NewsArticle, ProfessionalService, BreadcrumbList, FAQPage).
+- [FAQ](https://www.kairosaitech.com/#faq): What SetTime is, who it's for, outputs, AI vs. manual takeoff, human review, iTech → SetTime, and the official product page.
 - [News](https://www.kairosaitech.com/#news): Company and product announcements, starting with the 2026-09-09 iTech → SetTime rename.
 
 ## Agent discovery

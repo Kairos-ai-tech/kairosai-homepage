@@ -33,7 +33,7 @@ The site supports 8 languages: English (`en`, default), Traditional Chinese (`zh
 
 **How it works:**
 1. HTML elements use `data-i18n` attributes for text content or `data-i18n-placeholder` for placeholders
-2. All translations are stored in the `translations` object in `script.js` (lines 9-746), merged at runtime with `extraI18n` (lines 885-1251, for sections added after the initial i18n pass)
+2. All translations are stored in the `translations` object in `script.js` (lines 9-746), merged at runtime with `extraI18n` (lines 883-1316, for sections added after the initial i18n pass)
 3. `setLanguage(lang)` function updates all translatable elements
 4. Language preference persists in localStorage
 
@@ -48,20 +48,20 @@ The site supports 8 languages: English (`en`, default), Traditional Chinese (`zh
 |---------|--------------|
 | Lines 9-746 | i18n translations object (8 languages) |
 | Lines 750-881 | `langLabels`, `setLanguage()`, language dropdown/selector |
-| Lines 885-1251 | `extraI18n` — translations for sections added after the initial i18n pass (incl. FAQ and News), merged into `translations` at load |
-| Lines 1253-1261 | Performance optimization (debounce) |
-| Lines 1262-1293 | Mobile hamburger navigation |
-| Lines 1294-1298 | `navbar` element reference (the `.scrolled` class it gets toggled is actual logic in the Scroll engine block below, not here) |
-| Lines 1299-1313 | Smooth scroll for anchor links |
-| Lines 1314-1331 | Scroll reveal animations (IntersectionObserver) |
-| Lines 1332-1360 | Animated stat counters |
-| Lines 1361-1376 | Active navigation highlighting (IntersectionObserver) |
-| Lines 1377-1397 | Scroll engine: progress rail + spine draw + grid parallax + navbar `.scrolled` toggle |
-| Lines 1398-1407 | Pointer-reactive blueprint glow (desktop) |
-| Lines 1408-1595 | Traffic source attribution (UTM + referrer), applied to hidden contact-form fields |
-| Lines 1596-1651 | Contact form submission via FormSubmit (posts to the `/ajax/` endpoint and checks the JSON `success` field, since FormSubmit returns HTTP 200 even before the destination address has clicked its activation link; on failure also shows a direct-contact-email fallback) |
-| Lines 1652-1657 | Loaded flag (hero entrance) |
-| Lines 1658-1771 | WebMCP — tools exposed to AI agents via `navigator.modelContext` |
+| Lines 883-1316 | `extraI18n` — translations for sections added after the initial i18n pass (incl. FAQ and News), merged into `translations` at load |
+| Lines 1317-1325 | Performance optimization (debounce) |
+| Lines 1326-1357 | Mobile hamburger navigation |
+| Lines 1358-1362 | `navbar` element reference (the `.scrolled` class it gets toggled is actual logic in the Scroll engine block below, not here) |
+| Lines 1363-1377 | Smooth scroll for anchor links |
+| Lines 1378-1395 | Scroll reveal animations (IntersectionObserver) |
+| Lines 1396-1424 | Animated stat counters |
+| Lines 1425-1440 | Active navigation highlighting (IntersectionObserver) |
+| Lines 1441-1461 | Scroll engine: progress rail + spine draw + grid parallax + navbar `.scrolled` toggle |
+| Lines 1462-1471 | Pointer-reactive blueprint glow (desktop) |
+| Lines 1472-1659 | Traffic source attribution (UTM + referrer), applied to hidden contact-form fields |
+| Lines 1660-1715 | Contact form submission via FormSubmit (posts to the `/ajax/` endpoint and checks the JSON `success` field, since FormSubmit returns HTTP 200 even before the destination address has clicked its activation link; on failure also shows a direct-contact-email fallback) |
+| Lines 1716-1721 | Loaded flag (hero entrance) |
+| Lines 1722-1836 | WebMCP — tools exposed to AI agents via `navigator.modelContext` |
 
 ### CSS Theming
 
@@ -71,9 +71,12 @@ Primary brand color: `#2680FF` (matches logo). All colors defined as CSS variabl
 
 Uses FormSubmit (formsubmit.co) for email delivery - no backend required. Emails go to seanchen@kairosaitech.com.
 
-### SEO
+### SEO / AEO / LEO
 
-- Schema.org structured data in `index.html`
+- Product naming: the product is **SetTime** (formerly iTech — only mention the old name to disambiguate). Its official product page is https://settime.kairosaitech.com/ — link there for any product CTA.
+- Schema.org structured data in `index.html`: one linked `@graph` (Organization `#organization` ⇄ SetTime `SoftwareApplication` `https://settime.kairosaitech.com/#software`, WebSite, WebPage, NewsArticle, ProfessionalService) plus BreadcrumbList and FAQPage blocks
+- The FAQPage JSON-LD must mirror the visible `#faq` items (and `index.md`'s FAQ); add new Q&As in all three places plus `extraI18n` for all 8 languages
+- AI-agent / LLM-facing copies of key facts: `llms.txt`, `index.md`, `.well-known/*`, WebMCP `get_company_info` — keep them in sync with the page
 - Open Graph and Twitter card meta tags
 - Google Analytics (G-N7Z66L7WBR)
 - Sitemap at `sitemap.xml`

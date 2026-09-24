@@ -33,6 +33,21 @@ for i, block in enumerate(ld_blocks):
         print(f"    JSON-LD block {i}: {e}")
     check(f"JSON-LD block {i} is valid JSON", ok)
 
+# FAQPage JSON-LD must mirror the visible #faq items (AEO: Google requires marked-up
+# Q&As to be visible on the page).
+faq_ld = [json.loads(b) for b in ld_blocks if '"FAQPage"' in b]
+visible_q = re.findall(r'<summary class="faq-question"[^>]*>(.*?)</summary>', html, re.S)
+ld_q = [q["name"] for q in faq_ld[0]["mainEntity"]] if faq_ld else []
+check("FAQPage JSON-LD questions match visible FAQ questions", ld_q == [q.strip() for q in visible_q])
+
+# Product naming: SetTime's official product page is its own subdomain.
+SETTIME_URL = "https://settime.kairosaitech.com/"
+graph = next((json.loads(b) for b in ld_blocks if '"@graph"' in b), {"@graph": []})
+software = [n for n in graph["@graph"] if n.get("@type") == "SoftwareApplication"]
+check("JSON-LD has a SoftwareApplication named SetTime at the product URL",
+      any(n.get("name") == "SetTime" and n.get("url") == SETTIME_URL for n in software))
+check("product CTA links to the SetTime product page", f'href="{SETTIME_URL}"' in html)
+
 # sitemap.xml must be well-formed XML.
 try:
     minidom.parse(str(ROOT / "sitemap.xml"))

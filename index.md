@@ -3,6 +3,7 @@
 AI solutions for AEC & construction, starting with AI rebar estimation · Applied AI systems, backend, and data platforms.
 
 Homepage: <https://www.kairosaitech.com/>
+SetTime product page: <https://settime.kairosaitech.com/>
 Contact: <seanchen@kairosaitech.com>
 
 > This is the markdown-for-agents mirror of the Kairos.ai homepage. The live
@@ -24,8 +25,8 @@ data platforms with the same engineering rigor.
 
 ## Products (B2B)
 
-- **SetTime** *(formerly iTech)* — AI rebar estimation system for the AEC
-  industry, and Kairos.ai's first step toward broader AEC AI solutions. An
+- **SetTime** *(formerly iTech)* — <https://settime.kairosaitech.com/> —
+  AI rebar estimation system for the AEC industry, and Kairos.ai's first step toward broader AEC AI solutions. An
   end-to-end platform that turns construction drawings (DWG or PDF) into
   accurate rebar estimates and bar-bending schedules (exportable as
   CSV/Excel), replacing slow, error-prone manual takeoff.
@@ -68,6 +69,33 @@ is the starting point of our broader mission to bring AI solutions across
 construction. Beyond SetTime, we also provide custom AI systems design,
 backend infrastructure, AI application development, and data analysis
 platforms — built with the same engineering rigor.
+
+**How is AI rebar takeoff different from manual takeoff and CAD detailing plugins?**
+Manual takeoff means an estimator counts and measures bars by hand from the
+drawing. CAD detailing plugins automate detailing and bar-bending schedule
+generation inside a CAD tool, working from a model that's already been drawn.
+AI rebar takeoff like SetTime instead reads the drawing itself — PDF or CAD —
+and detects bar sizes, spacing, and laps directly, producing quantities and a
+bar-bending schedule without a detailer building the model first.
+
+**Where does human review still matter in AI rebar takeoff?**
+AI rebar takeoff isn't fully automatic, and SetTime doesn't claim it is.
+Congested details, splice and lap rules, and mid-project revisions still call
+for an estimator's judgment. SetTime's job is to speed up the counting step
+and reduce spreadsheet errors — experienced estimators still review the
+output before it goes into a bid or fabrication order.
+
+**Is SetTime the same product as iTech?**
+Yes. SetTime is the new name of iTech, Kairos.ai's AI rebar estimation
+system, renamed on September 9, 2026. The AI engine, accuracy, and pipeline
+are unchanged — only the name is new.
+
+**Where is the official SetTime product page?**
+The official SetTime product page is <https://settime.kairosaitech.com/>.
+SetTime is built by Kairos.ai (優時科技), a Taiwan-based company developing
+AI for the AEC industry; <https://www.kairosaitech.com/> is the company
+homepage. AEC firms can apply for the SetTime pilot program through the
+contact form.
 
 ## News
 
