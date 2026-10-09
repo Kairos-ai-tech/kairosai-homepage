@@ -25,6 +25,7 @@ No build tools, package managers, or dependencies required - this is a pure stat
 - `index.html` - Single-page application with all HTML content and SEO metadata
 - `styles.css` - All styling with CSS variables for theming at `:root`
 - `script.js` - All JavaScript functionality (vanilla JS, no frameworks)
+- `motion.js` - Progressive-enhancement motion layer: Lenis smooth scroll, GSAP/ScrollTrigger choreography, lazy Vanta NET hero background, React Bits–style vanilla ports (spotlight cards, magnet buttons, tilted hero card). Libraries load from jsDelivr (pinned versions); everything degrades to the base page if blocked or `prefers-reduced-motion`.
 - `logo.png`, `logo_title.png` - Brand assets
 
 ### Internationalization (i18n) System
