@@ -618,6 +618,8 @@ html.lenis, html.lenis body { height: auto; }
 /* React Bits · Magnet — GSAP drives the vars; `translate` composes with hover transforms */
 .btn { translate: var(--magx, 0) var(--magy, 0); }
 
+/* Hero blueprint: GSAP scroll parallax (--py) applies on every device; tilt only with a fine pointer */
+.blueprint-card { --py: 0px; translate: 0 var(--py); }
 /* React Bits · TiltedCard (hero blueprint) */
 .blueprint-card.tilt {
     --rx: 0deg; --ry: 0deg;

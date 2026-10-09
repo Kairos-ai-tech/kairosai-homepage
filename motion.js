@@ -42,18 +42,7 @@
             const raf = (t) => { lenis.raf(t); requestAnimationFrame(raf); };
             requestAnimationFrame(raf);
         }
-        // Route in-page anchors through Lenis (runs before script.js's native handler).
-        document.addEventListener('click', (e) => {
-            const a = e.target.closest && e.target.closest('a[href^="#"]');
-            if (!a) return;
-            const href = a.getAttribute('href');
-            if (!href || href.length < 2) return;
-            const target = document.querySelector(href);
-            if (!target) return;
-            e.preventDefault();
-            e.stopPropagation();
-            lenis.scrollTo(target, { offset: -70, duration: 1.2 });
-        }, true);
+        // In-page anchors are routed through window.__lenis by script.js's handler.
     }
 
     // ---------- GSAP + ScrollTrigger choreography ----------
@@ -61,7 +50,7 @@
         // Hero blueprint drifts slower than the page, content eases out on exit.
         const heroCard = document.querySelector('.blueprint-card');
         if (heroCard) {
-            gsap.to(heroCard, { y: 70, ease: 'none',
+            gsap.to(heroCard, { '--py': '70px', ease: 'none',
                 scrollTrigger: { trigger: '.hero', start: 'top top', end: 'bottom top', scrub: true } });
         }
         const heroContent = document.querySelector('.hero-content');
@@ -74,13 +63,6 @@
             h.classList.add('rule-draw');
             ScrollTrigger.create({ trigger: h, start: 'top 85%', once: true,
                 onEnter: () => gsap.to(h, { '--rule': 1, duration: 0.9, ease: 'power3.out' }) });
-        });
-        // Grids: staggered settle (adds depth on top of the IntersectionObserver fade).
-        ['.process-grid', '.services-grid'].forEach((sel) => {
-            const grid = document.querySelector(sel);
-            if (!grid) return;
-            gsap.from(grid.children, { scale: 0.97, duration: 0.8, ease: 'power3.out', stagger: 0.1, clearProps: 'scale',
-                scrollTrigger: { trigger: grid, start: 'top 85%', once: true } });
         });
         window.addEventListener('load', () => ScrollTrigger.refresh());
     }
