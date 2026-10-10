@@ -588,3 +588,48 @@ section { position: relative; padding: clamp(84px, 12vh, 150px) 0; }
     [data-reveal] { opacity: 1; transform: none; }
     .hero-content > *, .hero-visual { opacity: 1; transform: none; }
 }
+
+/* ============================================================
+   MOTION LAYER (motion.js) — Lenis, GSAP, Vanta, React Bits ports
+   ============================================================ */
+/* Lenis requirements */
+html.lenis, html.lenis body { height: auto; }
+.lenis.lenis-smooth { scroll-behavior: auto !important; }
+.lenis.lenis-stopped { overflow: hidden; }
+
+/* Vanta NET hero background — fades in, masked so it dissolves into the page */
+.hero { position: relative; }
+.hero-vanta {
+    position: absolute; inset: 0; z-index: 0; pointer-events: none; opacity: 0; transition: opacity 1.4s var(--ease);
+    -webkit-mask-image: linear-gradient(to bottom, #000 55%, transparent 100%);
+            mask-image: linear-gradient(to bottom, #000 55%, transparent 100%);
+}
+.hero-vanta.is-on { opacity: 0.55; }
+.hero .container { position: relative; z-index: 1; }
+
+/* React Bits · SpotlightCard — pointer-follow glow (a .spot-glow layer injected by motion.js) */
+.spotlight { position: relative; --sx: 50%; --sy: 50%; }
+.spot-glow {
+    position: absolute; inset: 0; pointer-events: none; opacity: 0; transition: opacity 0.35s; border-radius: inherit;
+    background: radial-gradient(360px circle at var(--sx) var(--sy), rgba(91, 200, 255, 0.12), transparent 65%);
+}
+.spotlight:hover > .spot-glow { opacity: 1; }
+
+/* React Bits · Magnet — GSAP drives the vars; `translate` composes with hover transforms */
+.btn { translate: var(--magx, 0) var(--magy, 0); }
+
+/* Hero blueprint: GSAP scroll parallax (--py) applies on every device; tilt only with a fine pointer */
+.blueprint-card { --py: 0px; translate: 0 var(--py); }
+/* React Bits · TiltedCard (hero blueprint) */
+.blueprint-card.tilt {
+    --rx: 0deg; --ry: 0deg;
+    transform: perspective(1000px) rotateX(var(--rx)) rotateY(var(--ry));
+    will-change: transform;
+}
+
+/* GSAP-drawn amber rule under section titles */
+.section-title.rule-draw { --rule: 0; position: relative; padding-bottom: 14px; }
+.section-title.rule-draw::after {
+    content: ""; position: absolute; left: 0; bottom: 0; width: 64px; height: 2px; background: var(--amber);
+    transform: scaleX(var(--rule)); transform-origin: left;
+}

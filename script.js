@@ -1371,6 +1371,7 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         if (!target) return;
         e.preventDefault();
         const top = target.getBoundingClientRect().top + window.pageYOffset - 70;
+        if (window.__lenis) { window.__lenis.scrollTo(top, { duration: 1.2 }); return; }
         window.scrollTo({ top, behavior: prefersReduced ? 'auto' : 'smooth' });
     });
 });
