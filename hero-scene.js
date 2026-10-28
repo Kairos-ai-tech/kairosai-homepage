@@ -200,7 +200,7 @@
             renderer.domElement.style.cssText = 'position:absolute;inset:0;width:100%;height:100%';
             uniforms.uPx.value = dpr * height / 900;
             camera.aspect = width / height;
-            if (width >= 900) camera.setViewOffset(width, height, -width * 0.19, height * 0.07, width, height);
+            if (width >= 980) camera.setViewOffset(width, height, -width * 0.19, height * 0.07, width, height);
             else camera.setViewOffset(width, height, 0, Math.max(0, height / 2 - 290), width, height);
             camera.updateProjectionMatrix();
         };
@@ -209,7 +209,7 @@
             mouse.x += (mouse.tx - mouse.x) * 0.04;
             mouse.y += (mouse.ty - mouse.y) * 0.04;
             const angle = 0.7 + t * 0.05 + mouse.x * 0.18;
-            const radius = width >= 900 ? 56 : Math.min(150, Math.max(56, height / 12.2));
+            const radius = width >= 980 ? 56 : Math.min(150, Math.max(56, height / 12.2));
             uniforms.uRadius.value = radius;
             camera.position.set(Math.sin(angle) * radius, 9 - mouse.y * 1.5, Math.cos(angle) * radius);
             camera.lookAt(0, H * 0.5, 0);
@@ -236,12 +236,13 @@
         const draw = (t) => { scanAt(t); place(t); renderer.render(scene, camera); };
 
         resize();
-        new ResizeObserver(resize).observe(host);
+        let onResize = resize;
+        new ResizeObserver(() => onResize()).observe(host);
 
         if (reduced) {
             uniforms.uScan.value = SCAN_TO; uniforms.uLit.value = 1; scanGroup.visible = false;
             place(0); renderer.render(scene, camera);
-            window.addEventListener('resize', () => { resize(); renderer.render(scene, camera); });
+            onResize = () => { resize(); renderer.render(scene, camera); };
             host.classList.add('is-on');
             return;
         }
