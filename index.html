@@ -14,7 +14,7 @@
     <meta name="application-name" content="Kairos.ai">
     <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
     <meta name="language" content="English, Traditional Chinese, Japanese, Spanish, Italian, French, Korean, German">
-    <meta name="theme-color" content="#2680FF">
+    <meta name="theme-color" content="#0b0d0c">
     <meta name="company" content="優時科技">
     <meta name="geo.region" content="TW">
     <meta name="geo.placename" content="Taiwan">
@@ -77,7 +77,7 @@
     <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Khand:wght@400;500;600;700&family=Hanken+Grotesk:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
     <link rel="icon" type="image/png" href="logo.png">
     <link rel="apple-touch-icon" href="logo.png">
 
@@ -544,10 +544,6 @@
     </script>
 
     <!-- Continuous blueprint canvas (shared by all sections) -->
-    <div class="bg-atmos" aria-hidden="true"></div>
-    <div class="bg-grid" aria-hidden="true"></div>
-    <div class="bg-noise" aria-hidden="true"></div>
-    <div class="bg-scan" aria-hidden="true"></div>
     <div class="scroll-rail" aria-hidden="true"></div>
 
     <!-- Navigation -->
@@ -561,14 +557,12 @@
                     </div>
                 </a>
                 <ul class="nav-menu" id="navMenu">
-                    <li><a href="#story" class="nav-link" data-i18n="nav.story">Our Story</a></li>
                     <li><a href="#how" class="nav-link" data-i18n="nav.how">How it works</a></li>
                     <li><a href="#product" class="nav-link" data-i18n="nav.products">Products</a></li>
-                    <li><a href="#pilot" class="nav-link" data-i18n="nav.pilot">Pilot</a></li>
                     <li><a href="#services" class="nav-link" data-i18n="nav.services">Services</a></li>
                     <li><a href="#news" class="nav-link" data-i18n="nav.news">News</a></li>
                     <li><a href="#about" class="nav-link" data-i18n="nav.about">Company</a></li>
-                    <li><a href="#contact" class="nav-link" data-i18n="nav.contact">Contact</a></li>
+                    <li><a href="#contact" class="nav-link nav-cta" data-i18n="hero.cta2">Talk to Us</a></li>
                 </ul>
                 <div class="language-switcher">
                     <button class="lang-selector-btn" id="langSelector" aria-haspopup="true" aria-expanded="false" aria-label="Select language">
@@ -599,11 +593,9 @@
     </nav>
 
     <main class="flow">
-        <div class="spine" aria-hidden="true"></div>
 
         <!-- Hero -->
         <section id="home" class="hero">
-            <div id="hero-vanta" class="hero-vanta" aria-hidden="true"></div>
             <div class="container">
                 <div class="hero-content">
                     <div class="hero-badge" data-i18n="hero.badge">AI for AEC &amp; Construction</div>
@@ -618,6 +610,51 @@
                         <a href="https://settime.kairosaitech.com/" target="_blank" rel="noopener noreferrer" class="btn btn-primary" data-i18n="hero.cta1">Explore SetTime</a>
                         <a href="#contact" class="btn btn-secondary" data-i18n="hero.cta2">Talk to Us</a>
                     </div>
+                    <ol class="hero-steps" aria-label="SetTime">
+                        <li><span>01</span><span data-i18n="process.step1.title">Upload drawings</span></li>
+                        <li><span>02</span><span data-i18n="process.step2.title">AI detects rebar</span></li>
+                        <li><span>03</span><span data-i18n="process.step3.title">Estimate &amp; schedule</span></li>
+                    </ol>
+                </div>
+                <div class="hero-visual">
+                    <div class="blueprint-card">
+                        <div class="blueprint-head">
+                            <span>BEAM · B-204 · SECTION</span>
+                            <span class="dot-row"><i></i><i></i><i></i></span>
+                        </div>
+                        <svg class="beam-svg" viewBox="0 0 360 210" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <!-- stirrup -->
+                            <rect x="70" y="28" width="220" height="140" rx="8" stroke="#4b97ff" stroke-width="2"/>
+                            <rect x="80" y="38" width="200" height="120" rx="5" stroke="#7fb4ff" stroke-width="1" stroke-dasharray="4 4"/>
+                            <!-- longitudinal bars -->
+                            <g fill="#4b97ff">
+                                <circle cx="100" cy="56" r="7"/><circle cx="180" cy="56" r="7"/><circle cx="260" cy="56" r="7"/>
+                                <circle cx="100" cy="98" r="7"/><circle cx="260" cy="98" r="7"/>
+                                <circle cx="100" cy="140" r="7"/><circle cx="180" cy="140" r="7"/><circle cx="260" cy="140" r="7"/>
+                            </g>
+                            <!-- AI detection boxes -->
+                            <g class="detect-box" stroke="#f0f0eb" stroke-width="1.5" stroke-dasharray="5 4" fill="none">
+                                <rect x="88" y="44" width="24" height="24" rx="3"/>
+                                <rect x="248" y="128" width="24" height="24" rx="3"/>
+                            </g>
+                            <!-- dimension line -->
+                            <line x1="70" y1="190" x2="290" y2="190" stroke="#7f8782" stroke-width="1"/>
+                            <line x1="70" y1="185" x2="70" y2="195" stroke="#7f8782" stroke-width="1"/>
+                            <line x1="290" y1="185" x2="290" y2="195" stroke="#7f8782" stroke-width="1"/>
+                            <text x="180" y="205" fill="#a3a9a5" font-family="IBM Plex Mono, monospace" font-size="11" text-anchor="middle">600 mm</text>
+                            <!-- scan -->
+                            <g class="scan-line"><rect x="72" y="30" width="216" height="2" fill="#4b97ff" opacity="0.9"/></g>
+                        </svg>
+                        <div class="readout">
+                            <div><span>DETECTED BARS</span><b>8 / 8</b></div>
+                            <div><span>BAR SIZE</span><b>Ø16</b></div>
+                            <div><span>STIRRUP</span><b>Ø10 @ 200</b></div>
+                            <div><span>STATUS</span><b>ESTIMATE READY</b></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="container">
                     <div class="hero-metrics">
                         <div class="hero-metric">
                             <div class="hero-metric-num">10<span>×</span></div>
@@ -632,44 +669,6 @@
                             <div class="hero-metric-label" data-i18n="hero.metric3label">Drawings parsed</div>
                         </div>
                     </div>
-                </div>
-                <div class="hero-visual">
-                    <div class="blueprint-card">
-                        <div class="blueprint-head">
-                            <span>BEAM · B-204 · SECTION</span>
-                            <span class="dot-row"><i></i><i></i><i></i></span>
-                        </div>
-                        <svg class="beam-svg" viewBox="0 0 360 210" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <!-- stirrup -->
-                            <rect x="70" y="28" width="220" height="140" rx="8" stroke="#5bc8ff" stroke-width="2"/>
-                            <rect x="80" y="38" width="200" height="120" rx="5" stroke="#2f9fd8" stroke-width="1" stroke-dasharray="4 4"/>
-                            <!-- longitudinal bars -->
-                            <g fill="#5bc8ff">
-                                <circle cx="100" cy="56" r="7"/><circle cx="180" cy="56" r="7"/><circle cx="260" cy="56" r="7"/>
-                                <circle cx="100" cy="98" r="7"/><circle cx="260" cy="98" r="7"/>
-                                <circle cx="100" cy="140" r="7"/><circle cx="180" cy="140" r="7"/><circle cx="260" cy="140" r="7"/>
-                            </g>
-                            <!-- AI detection boxes -->
-                            <g class="detect-box" stroke="#ff9b3d" stroke-width="1.5" stroke-dasharray="5 4" fill="none">
-                                <rect x="88" y="44" width="24" height="24" rx="3"/>
-                                <rect x="248" y="128" width="24" height="24" rx="3"/>
-                            </g>
-                            <!-- dimension line -->
-                            <line x1="70" y1="190" x2="290" y2="190" stroke="#61768f" stroke-width="1"/>
-                            <line x1="70" y1="185" x2="70" y2="195" stroke="#61768f" stroke-width="1"/>
-                            <line x1="290" y1="185" x2="290" y2="195" stroke="#61768f" stroke-width="1"/>
-                            <text x="180" y="205" fill="#9db1cb" font-family="IBM Plex Mono, monospace" font-size="11" text-anchor="middle">600 mm</text>
-                            <!-- scan -->
-                            <g class="scan-line"><rect x="72" y="30" width="216" height="2" fill="#ff9b3d" opacity="0.85"/></g>
-                        </svg>
-                        <div class="readout">
-                            <div><span>DETECTED BARS</span><b>8 / 8</b></div>
-                            <div><span>BAR SIZE</span><b>Ø16</b></div>
-                            <div><span>STIRRUP</span><b>Ø10 @ 200</b></div>
-                            <div><span>STATUS</span><b>ESTIMATE READY</b></div>
-                        </div>
-                    </div>
-                </div>
             </div>
         </section>
 
@@ -718,7 +717,7 @@
                 </div>
                 <div class="process-grid">
                     <article class="step" data-reveal style="--d:0s">
-                        <div class="step-no">STEP 01</div>
+                        <div class="step-no"><small>STEP</small>01</div>
                         <div class="step-icon">
                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
                         </div>
@@ -726,7 +725,7 @@
                         <p data-i18n="process.step1.desc">Drop in structural drawings — PDF or CAD. SetTime ingests plans, sections, and details.</p>
                     </article>
                     <article class="step" data-reveal style="--d:0.12s">
-                        <div class="step-no">STEP 02</div>
+                        <div class="step-no"><small>STEP</small>02</div>
                         <div class="step-icon">
                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/><circle cx="15" cy="15" r="2"/></svg>
                         </div>
@@ -734,7 +733,7 @@
                         <p data-i18n="process.step2.desc">Computer-vision models read bars, sizes, spacing, and laps directly from the drawings.</p>
                     </article>
                     <article class="step" data-reveal style="--d:0.24s">
-                        <div class="step-no">STEP 03</div>
+                        <div class="step-no"><small>STEP</small>03</div>
                         <div class="step-icon">
                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><line x1="8" y1="6" x2="21" y2="6"/><line x1="8" y1="12" x2="21" y2="12"/><line x1="8" y1="18" x2="21" y2="18"/><path d="M3 6l1.5 1.5L7 5"/><path d="M3 12l1.5 1.5L7 11"/><path d="M3 18l1.5 1.5L7 17"/></svg>
                         </div>
