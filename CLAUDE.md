@@ -26,7 +26,7 @@ No build tools, package managers, or dependencies required - this is a pure stat
 - `styles.css` - All styling with CSS variables for theming at `:root`
 - `script.js` - All JavaScript functionality (vanilla JS, no frameworks)
 - `motion.js` - Progressive-enhancement motion layer: Lenis smooth scroll, GSAP/ScrollTrigger choreography, React Bits–style vanilla ports (spotlight cards, magnet buttons, tilted hero card). Libraries load from jsDelivr (pinned versions); everything degrades to the base page if blocked or `prefers-reduced-motion`.
-- `hero-scene.js` - Hero background: procedural Three.js (CDN, lazy) rebar-frame building with an amber AI scan plane sweeping up it; pauses off-screen/hidden tab, renders one static frame under `prefers-reduced-motion`, skipped on `saveData`
+- `media/` - `hero-flythrough.mp4` (+ poster): cinematic hero background video, rendered offline from `scripts/hero-video/index.html` by `scripts/render-hero-video.cjs` (puppeteer-core + ffmpeg; run with `NODE_PATH=<dir>/node_modules node scripts/render-hero-video.cjs out.mp4`); `settime-demo.mp4` (+ poster): SetTime portal demo shown in the product section
 - `logo.png`, `logo_title.png` - Brand assets
 
 ### Internationalization (i18n) System

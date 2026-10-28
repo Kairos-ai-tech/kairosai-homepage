@@ -328,6 +328,15 @@ section { position: relative; padding: clamp(84px, 12vh, 150px) 0; }
 .schedule-foot { display: flex; justify-content: space-between; padding: 14px 18px; border-top: 1px solid var(--line); font-size: 0.8rem; color: var(--faint); }
 .schedule-foot b { color: var(--amber); }
 
+/* SetTime product demo video */
+.product-demo { grid-column: 1 / -1; margin-top: clamp(36px, 5vw, 64px); }
+.demo-label { margin-bottom: 16px; }
+.demo-video {
+    display: block; width: 100%; aspect-ratio: 16 / 9; border-radius: 16px; background: var(--ink-900);
+    border: 1px solid var(--line); box-shadow: 0 30px 80px rgba(0, 0, 0, 0.5);
+}
+.demo-caption { margin-top: 14px; font-family: var(--font-mono); font-size: 0.78rem; letter-spacing: 0.06em; color: var(--faint); }
+
 /* SetTime AR (in development) */
 .ar-block {
     grid-column: 1 / -1; margin-top: clamp(30px, 4vw, 56px); padding: 32px clamp(24px, 4vw, 44px);
@@ -572,15 +581,27 @@ html.lenis, html.lenis body { height: auto; }
 .lenis.lenis-smooth { scroll-behavior: auto !important; }
 .lenis.lenis-stopped { overflow: hidden; }
 
-/* Hero 3D scene (hero-scene.js) — rebar-frame building scanned by an AI plane; dissolves into the page */
+/* Hero background video (media/hero-flythrough.mp4) — an AI-built rebar frame rising from the ground; dissolves into the page */
 .hero { position: relative; }
-.hero-scene {
-    position: absolute; inset: 0; z-index: 0; pointer-events: none; opacity: 0; transition: opacity 1.6s var(--ease);
-    -webkit-mask-image: linear-gradient(to bottom, #000 62%, transparent 100%);
-            mask-image: linear-gradient(to bottom, #000 62%, transparent 100%);
+.hero-media {
+    position: absolute; inset: 0; z-index: 0; pointer-events: none; overflow: hidden;
+    -webkit-mask-image: linear-gradient(to bottom, #000 68%, transparent 100%);
+            mask-image: linear-gradient(to bottom, #000 68%, transparent 100%);
 }
-.hero-scene.is-on { opacity: 0.95; }
-@media (max-width: 980px) { .hero-scene.is-on { opacity: 0.6; } }
+.hero-video { width: 100%; height: 100%; object-fit: cover; object-position: 60% 50%; opacity: 0.85; }
+.hero-media::after {
+    content: ""; position: absolute; inset: 0;
+    background: linear-gradient(90deg, rgba(6, 10, 17, 0.9) 0%, rgba(6, 10, 17, 0.6) 42%, rgba(6, 10, 17, 0.08) 100%);
+}
+@media (max-width: 980px) {
+    .hero-media {
+        bottom: auto; height: min(720px, 100%);
+        -webkit-mask-image: linear-gradient(to bottom, #000 40%, transparent 100%);
+                mask-image: linear-gradient(to bottom, #000 40%, transparent 100%);
+    }
+    .hero-video { object-position: 76% 50%; opacity: 0.7; }
+    .hero-media::after { background: linear-gradient(180deg, rgba(6, 10, 17, 0.1) 0%, rgba(6, 10, 17, 0.55) 70%, rgba(6, 10, 17, 0.85) 100%); }
+}
 .hero .container { position: relative; z-index: 1; }
 
 /* React Bits · SpotlightCard — pointer-follow glow (a .spot-glow layer injected by motion.js) */

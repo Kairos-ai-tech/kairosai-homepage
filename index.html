@@ -603,7 +603,11 @@
 
         <!-- Hero -->
         <section id="home" class="hero">
-            <div id="hero-scene" class="hero-scene" aria-hidden="true"></div>
+            <div class="hero-media" aria-hidden="true">
+                <video class="hero-video" muted loop playsinline preload="none" poster="media/hero-poster.jpg" tabindex="-1">
+                    <source src="media/hero-flythrough.mp4" type="video/mp4">
+                </video>
+            </div>
             <div class="container">
                 <div class="hero-content">
                     <div class="hero-badge" data-i18n="hero.badge">AI for AEC &amp; Construction</div>
@@ -751,6 +755,13 @@
                         </table>
                     </div>
                     <div class="schedule-foot"><span>5 marks · 214 bars</span><b>TOTAL 757 kg</b></div>
+                </div>
+                <div class="product-demo" data-reveal>
+                    <div class="eyebrow demo-label" data-i18n="products.demo.label">Product demo</div>
+                    <video class="demo-video" controls playsinline preload="none" poster="media/settime-demo-poster.jpg" aria-describedby="demoCaption">
+                        <source src="media/settime-demo.mp4" type="video/mp4">
+                    </video>
+                    <p class="demo-caption" id="demoCaption" data-i18n="products.demo.caption">SetTime portal walkthrough on a synthetic sample plan.</p>
                 </div>
                 <div class="ar-block" data-reveal>
                     <div class="ar-badge"><span data-i18n="products.itechAr.badge">In Development</span></div>
@@ -1011,7 +1022,6 @@
     <script defer src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
     <script defer src="https://cdn.jsdelivr.net/npm/lenis@1.1.18/dist/lenis.min.js"></script>
     <script defer src="motion.js"></script>
-    <script defer src="hero-scene.js"></script>
 </body>
 
 </html>

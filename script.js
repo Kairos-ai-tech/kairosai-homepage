@@ -884,6 +884,8 @@ window.addEventListener('DOMContentLoaded', () => {
 // ===========================
 const extraI18n = {
     en: {
+        'products.demo.label': 'Product demo',
+        'products.demo.caption': 'SetTime portal walkthrough on a synthetic sample plan.',
         'nav.how': 'How it works',
         'nav.pilot': 'Pilot',
         'hero.badge': 'AI for AEC & Construction',
@@ -937,6 +939,8 @@ const extraI18n = {
         'news.item1.cta': 'Visit the SetTime product page →'
     },
     'zh-TW': {
+        'products.demo.label': '產品展示',
+        'products.demo.caption': 'SetTime 平台操作示範，使用合成範例圖面。',
         'nav.how': '運作方式',
         'nav.pilot': '試點',
         'hero.badge': 'AI AEC 與營建解決方案',
@@ -990,6 +994,8 @@ const extraI18n = {
         'news.item1.cta': '前往 SetTime 產品頁面 →'
     },
     ja: {
+        'products.demo.label': '製品デモ',
+        'products.demo.caption': '合成サンプル図面で見る SetTime ポータルの操作デモ。',
         'nav.how': '仕組み',
         'nav.pilot': 'パイロット',
         'hero.badge': 'AEC・建設向けAIソリューション',
@@ -1043,6 +1049,8 @@ const extraI18n = {
         'news.item1.cta': 'SetTime製品ページへ →'
     },
     es: {
+        'products.demo.label': 'Demostración del producto',
+        'products.demo.caption': 'Recorrido por el portal de SetTime con un plano de muestra sintético.',
         'nav.how': 'Cómo funciona',
         'nav.pilot': 'Piloto',
         'hero.badge': 'IA para AEC y Construcción',
@@ -1096,6 +1104,8 @@ const extraI18n = {
         'news.item1.cta': 'Visita la página del producto SetTime →'
     },
     it: {
+        'products.demo.label': 'Demo del prodotto',
+        'products.demo.caption': 'Panoramica del portale SetTime su una planimetria di esempio sintetica.',
         'nav.how': 'Come funziona',
         'nav.pilot': 'Pilota',
         'hero.badge': 'IA per AEC e Costruzioni',
@@ -1149,6 +1159,8 @@ const extraI18n = {
         'news.item1.cta': 'Vai alla pagina del prodotto SetTime →'
     },
     fr: {
+        'products.demo.label': 'Démo du produit',
+        'products.demo.caption': "Visite du portail SetTime sur un plan d'exemple synthétique.",
         'nav.how': 'Comment ça marche',
         'nav.pilot': 'Pilote',
         'hero.badge': "IA pour l'AEC et la Construction",
@@ -1202,6 +1214,8 @@ const extraI18n = {
         'news.item1.cta': 'Voir la page produit SetTime →'
     },
     ko: {
+        'products.demo.label': '제품 데모',
+        'products.demo.caption': '합성 샘플 도면으로 살펴보는 SetTime 포털.',
         'nav.how': '작동 방식',
         'nav.pilot': '파일럿',
         'hero.badge': 'AEC·건설을 위한 AI 솔루션',
@@ -1255,6 +1269,8 @@ const extraI18n = {
         'news.item1.cta': 'SetTime 제품 페이지로 이동 →'
     },
     de: {
+        'products.demo.label': 'Produktdemo',
+        'products.demo.caption': 'Rundgang durch das SetTime-Portal anhand eines synthetischen Beispielplans.',
         'nav.how': 'So funktioniert es',
         'nav.pilot': 'Pilot',
         'hero.badge': 'KI für AEC und Bauwesen',
