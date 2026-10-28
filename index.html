@@ -603,7 +603,7 @@
 
         <!-- Hero -->
         <section id="home" class="hero">
-            <div id="hero-vanta" class="hero-vanta" aria-hidden="true"></div>
+            <div id="hero-scene" class="hero-scene" aria-hidden="true"></div>
             <div class="container">
                 <div class="hero-content">
                     <div class="hero-badge" data-i18n="hero.badge">AI for AEC &amp; Construction</div>
@@ -633,43 +633,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="hero-visual">
-                    <div class="blueprint-card">
-                        <div class="blueprint-head">
-                            <span>BEAM · B-204 · SECTION</span>
-                            <span class="dot-row"><i></i><i></i><i></i></span>
-                        </div>
-                        <svg class="beam-svg" viewBox="0 0 360 210" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <!-- stirrup -->
-                            <rect x="70" y="28" width="220" height="140" rx="8" stroke="#5bc8ff" stroke-width="2"/>
-                            <rect x="80" y="38" width="200" height="120" rx="5" stroke="#2f9fd8" stroke-width="1" stroke-dasharray="4 4"/>
-                            <!-- longitudinal bars -->
-                            <g fill="#5bc8ff">
-                                <circle cx="100" cy="56" r="7"/><circle cx="180" cy="56" r="7"/><circle cx="260" cy="56" r="7"/>
-                                <circle cx="100" cy="98" r="7"/><circle cx="260" cy="98" r="7"/>
-                                <circle cx="100" cy="140" r="7"/><circle cx="180" cy="140" r="7"/><circle cx="260" cy="140" r="7"/>
-                            </g>
-                            <!-- AI detection boxes -->
-                            <g class="detect-box" stroke="#ff9b3d" stroke-width="1.5" stroke-dasharray="5 4" fill="none">
-                                <rect x="88" y="44" width="24" height="24" rx="3"/>
-                                <rect x="248" y="128" width="24" height="24" rx="3"/>
-                            </g>
-                            <!-- dimension line -->
-                            <line x1="70" y1="190" x2="290" y2="190" stroke="#61768f" stroke-width="1"/>
-                            <line x1="70" y1="185" x2="70" y2="195" stroke="#61768f" stroke-width="1"/>
-                            <line x1="290" y1="185" x2="290" y2="195" stroke="#61768f" stroke-width="1"/>
-                            <text x="180" y="205" fill="#9db1cb" font-family="IBM Plex Mono, monospace" font-size="11" text-anchor="middle">600 mm</text>
-                            <!-- scan -->
-                            <g class="scan-line"><rect x="72" y="30" width="216" height="2" fill="#ff9b3d" opacity="0.85"/></g>
-                        </svg>
-                        <div class="readout">
-                            <div><span>DETECTED BARS</span><b>8 / 8</b></div>
-                            <div><span>BAR SIZE</span><b>Ø16</b></div>
-                            <div><span>STIRRUP</span><b>Ø10 @ 200</b></div>
-                            <div><span>STATUS</span><b>ESTIMATE READY</b></div>
-                        </div>
-                    </div>
-                </div>
+                <div class="hero-visual" aria-hidden="true"></div>
             </div>
         </section>
 
@@ -1047,6 +1011,7 @@
     <script defer src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
     <script defer src="https://cdn.jsdelivr.net/npm/lenis@1.1.18/dist/lenis.min.js"></script>
     <script defer src="motion.js"></script>
+    <script defer src="hero-scene.js"></script>
 </body>
 
 </html>

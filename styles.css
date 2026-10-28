@@ -270,32 +270,7 @@ section { position: relative; padding: clamp(84px, 12vh, 150px) 0; }
 .hero-metric-num span { color: var(--amber); }
 .hero-metric-label { font-family: var(--font-mono); font-size: 0.7rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--faint); margin-top: 8px; }
 
-/* hero blueprint visual */
-.hero-visual { position: relative; }
-.blueprint-card {
-    position: relative; border: 1px solid var(--line); border-radius: 18px; padding: 26px;
-    background: linear-gradient(160deg, rgba(13, 22, 38, 0.9), rgba(8, 14, 24, 0.75));
-    box-shadow: 0 30px 80px rgba(0, 0, 0, 0.5); overflow: hidden;
-}
-.blueprint-card::before {
-    content: ""; position: absolute; inset: 0; opacity: 0.5;
-    background-image: linear-gradient(var(--line-2) 1px, transparent 1px), linear-gradient(90deg, var(--line-2) 1px, transparent 1px);
-    background-size: 26px 26px;
-}
-.blueprint-head { position: relative; display: flex; justify-content: space-between; align-items: center; margin-bottom: 18px; font-family: var(--font-mono); font-size: 0.72rem; letter-spacing: 0.1em; color: var(--faint); text-transform: uppercase; }
-.blueprint-head .dot-row { display: flex; gap: 6px; }
-.blueprint-head .dot-row i { width: 8px; height: 8px; border-radius: 50%; background: var(--cyan-ink); }
-.blueprint-head .dot-row i:first-child { background: var(--amber); }
-.beam-svg { position: relative; width: 100%; height: auto; }
-.scan-line { animation: scan 3.4s var(--ease) infinite; }
-@keyframes scan { 0% { transform: translateY(0); opacity: 0; } 12% { opacity: 1; } 50% { transform: translateY(150px); opacity: 1; } 88% { opacity: 1; } 100% { transform: translateY(150px); opacity: 0; } }
-.detect-box { animation: detect 3.4s ease infinite; }
-@keyframes detect { 0%, 40% { opacity: 0; } 55%, 92% { opacity: 1; } 100% { opacity: 0; } }
-
-/* readout strip under visual */
-.readout { position: relative; margin-top: 18px; font-family: var(--font-mono); font-size: 0.78rem; color: var(--muted); display: grid; gap: 6px; }
-.readout div { display: flex; justify-content: space-between; border-bottom: 1px dashed var(--line); padding-bottom: 6px; }
-.readout b { color: var(--cyan); font-weight: 500; }
+.hero-visual { position: relative; align-self: stretch; min-height: 520px; }
 
 /* ============================================================
    PROCESS / HOW IT WORKS
@@ -540,7 +515,7 @@ section { position: relative; padding: clamp(84px, 12vh, 150px) 0; }
    ============================================================ */
 @media (max-width: 980px) {
     .hero .container, .product-showcase .container, .about .container, .contact .container { grid-template-columns: 1fr; }
-    .hero-visual { order: -1; }
+    .hero-visual { order: -1; min-height: 300px; }
     .product-showcase .container { gap: 40px; }
     .services-grid { grid-template-columns: 1fr; }
     .process-grid { grid-template-columns: 1fr; }
@@ -590,21 +565,22 @@ section { position: relative; padding: clamp(84px, 12vh, 150px) 0; }
 }
 
 /* ============================================================
-   MOTION LAYER (motion.js) — Lenis, GSAP, Vanta, React Bits ports
+   MOTION LAYER (motion.js) — Lenis, GSAP, React Bits ports
    ============================================================ */
 /* Lenis requirements */
 html.lenis, html.lenis body { height: auto; }
 .lenis.lenis-smooth { scroll-behavior: auto !important; }
 .lenis.lenis-stopped { overflow: hidden; }
 
-/* Vanta NET hero background — fades in, masked so it dissolves into the page */
+/* Hero 3D scene (hero-scene.js) — rebar-frame building scanned by an AI plane; dissolves into the page */
 .hero { position: relative; }
-.hero-vanta {
-    position: absolute; inset: 0; z-index: 0; pointer-events: none; opacity: 0; transition: opacity 1.4s var(--ease);
-    -webkit-mask-image: linear-gradient(to bottom, #000 55%, transparent 100%);
-            mask-image: linear-gradient(to bottom, #000 55%, transparent 100%);
+.hero-scene {
+    position: absolute; inset: 0; z-index: 0; pointer-events: none; opacity: 0; transition: opacity 1.6s var(--ease);
+    -webkit-mask-image: linear-gradient(to bottom, #000 62%, transparent 100%);
+            mask-image: linear-gradient(to bottom, #000 62%, transparent 100%);
 }
-.hero-vanta.is-on { opacity: 0.55; }
+.hero-scene.is-on { opacity: 0.95; }
+@media (max-width: 900px) { .hero-scene.is-on { opacity: 0.6; } }
 .hero .container { position: relative; z-index: 1; }
 
 /* React Bits · SpotlightCard — pointer-follow glow (a .spot-glow layer injected by motion.js) */
@@ -617,15 +593,6 @@ html.lenis, html.lenis body { height: auto; }
 
 /* React Bits · Magnet — GSAP drives the vars; `translate` composes with hover transforms */
 .btn { translate: var(--magx, 0) var(--magy, 0); }
-
-/* Hero blueprint: GSAP scroll parallax (--py) applies on every device; tilt only with a fine pointer */
-.blueprint-card { --py: 0px; translate: 0 var(--py); }
-/* React Bits · TiltedCard (hero blueprint) */
-.blueprint-card.tilt {
-    --rx: 0deg; --ry: 0deg;
-    transform: perspective(1000px) rotateX(var(--rx)) rotateY(var(--ry));
-    will-change: transform;
-}
 
 /* GSAP-drawn amber rule under section titles */
 .section-title.rule-draw { --rule: 0; position: relative; padding-bottom: 14px; }
