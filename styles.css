@@ -87,7 +87,6 @@ body {
 .bg-scan {
     position: fixed; z-index: -1; inset: 0; pointer-events: none; opacity: 0.5;
     background: radial-gradient(420px 420px at var(--mx, 50%) var(--my, 20%), rgba(91, 200, 255, 0.08), transparent 70%);
-    transition: background 0.2s linear;
 }
 
 /* ---------- Layout primitives ---------- */

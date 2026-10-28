@@ -1460,14 +1460,17 @@ if ('IntersectionObserver' in window) {
 // ===========================
 const root = document.documentElement;
 const rail = document.querySelector('.scroll-rail');
+const spineEl = document.querySelector('.spine');
+const gridEl = document.querySelector('.bg-grid');
+const scanEl = document.querySelector('.bg-scan');
 let ticking = false;
 function onScroll() {
     const scrollTop = window.pageYOffset;
     const docH = document.documentElement.scrollHeight - window.innerHeight;
     const p = docH > 0 ? Math.min(scrollTop / docH, 1) : 0;
     if (rail) rail.style.setProperty('--p', p);
-    root.style.setProperty('--spine-fill', (p * 100).toFixed(2) + '%');
-    root.style.setProperty('--grid-shift', (-scrollTop * 0.04).toFixed(1) + 'px');
+    if (spineEl) spineEl.style.setProperty('--spine-fill', (p * 100).toFixed(2) + '%');
+    if (gridEl) gridEl.style.setProperty('--grid-shift', (-scrollTop * 0.04).toFixed(1) + 'px');
     if (navbar) navbar.classList.toggle('scrolled', scrollTop > 60);
     ticking = false;
 }
@@ -1481,8 +1484,9 @@ onScroll();
 // ===========================
 if (!prefersReduced && window.matchMedia('(pointer:fine)').matches) {
     window.addEventListener('mousemove', debounce((e) => {
-        root.style.setProperty('--mx', (e.clientX / window.innerWidth * 100).toFixed(1) + '%');
-        root.style.setProperty('--my', (e.clientY / window.innerHeight * 100).toFixed(1) + '%');
+        if (!scanEl) return;
+        scanEl.style.setProperty('--mx', (e.clientX / window.innerWidth * 100).toFixed(1) + '%');
+        scanEl.style.setProperty('--my', (e.clientY / window.innerHeight * 100).toFixed(1) + '%');
     }, 12));
 }
 

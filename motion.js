@@ -80,10 +80,14 @@
     // ---------- Hero background video: plays only while the hero is on screen; poster-only for reduced motion / Save-Data ----------
     const heroVideo = document.querySelector('.hero-video');
     const heroEl = document.querySelector('.hero');
-    if (heroVideo && heroEl && !reduced && !(navigator.connection || {}).saveData) {
-        new IntersectionObserver((en) => {
-            if (en[0].isIntersecting) heroVideo.play().catch(() => {});
-            else heroVideo.pause();
-        }, { threshold: 0.02 }).observe(heroEl);
+    const conn = navigator.connection || {};
+    if (heroVideo && heroEl && !reduced && !conn.saveData && !/^(slow-2g|2g|3g)$/.test(conn.effectiveType || '')) {
+        let inView = true;
+        const sync = () => { if (inView && !document.hidden) heroVideo.play().catch(() => {}); else heroVideo.pause(); };
+        const start = () => {
+            new IntersectionObserver((en) => { inView = en[0].isIntersecting; sync(); }, { threshold: 0.02 }).observe(heroEl);
+            document.addEventListener('visibilitychange', sync);
+        };
+        if (document.readyState === 'complete') start(); else window.addEventListener('load', start, { once: true });
     }
 })();
