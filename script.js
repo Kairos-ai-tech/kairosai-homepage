@@ -884,6 +884,7 @@ window.addEventListener('DOMContentLoaded', () => {
 // ===========================
 const extraI18n = {
     en: {
+        'products.demo.caption': 'SetTime portal walkthrough on a synthetic sample plan.',
         'nav.how': 'How it works',
         'nav.pilot': 'Pilot',
         'hero.badge': 'AI for AEC & Construction',
@@ -937,6 +938,7 @@ const extraI18n = {
         'news.item1.cta': 'Visit the SetTime product page →'
     },
     'zh-TW': {
+        'products.demo.caption': 'SetTime 平台操作示範，使用合成範例圖面。',
         'nav.how': '運作方式',
         'nav.pilot': '試點',
         'hero.badge': 'AI AEC 與營建解決方案',
@@ -990,6 +992,7 @@ const extraI18n = {
         'news.item1.cta': '前往 SetTime 產品頁面 →'
     },
     ja: {
+        'products.demo.caption': '合成サンプル図面で見る SetTime ポータルの操作デモ。',
         'nav.how': '仕組み',
         'nav.pilot': 'パイロット',
         'hero.badge': 'AEC・建設向けAIソリューション',
@@ -1043,6 +1046,7 @@ const extraI18n = {
         'news.item1.cta': 'SetTime製品ページへ →'
     },
     es: {
+        'products.demo.caption': 'Recorrido por el portal de SetTime con un plano de muestra sintético.',
         'nav.how': 'Cómo funciona',
         'nav.pilot': 'Piloto',
         'hero.badge': 'IA para AEC y Construcción',
@@ -1096,6 +1100,7 @@ const extraI18n = {
         'news.item1.cta': 'Visita la página del producto SetTime →'
     },
     it: {
+        'products.demo.caption': 'Panoramica del portale SetTime su una planimetria di esempio sintetica.',
         'nav.how': 'Come funziona',
         'nav.pilot': 'Pilota',
         'hero.badge': 'IA per AEC e Costruzioni',
@@ -1149,6 +1154,7 @@ const extraI18n = {
         'news.item1.cta': 'Vai alla pagina del prodotto SetTime →'
     },
     fr: {
+        'products.demo.caption': "Visite du portail SetTime sur un plan d'exemple synthétique.",
         'nav.how': 'Comment ça marche',
         'nav.pilot': 'Pilote',
         'hero.badge': "IA pour l'AEC et la Construction",
@@ -1202,6 +1208,7 @@ const extraI18n = {
         'news.item1.cta': 'Voir la page produit SetTime →'
     },
     ko: {
+        'products.demo.caption': '합성 샘플 도면으로 살펴보는 SetTime 포털.',
         'nav.how': '작동 방식',
         'nav.pilot': '파일럿',
         'hero.badge': 'AEC·건설을 위한 AI 솔루션',
@@ -1255,6 +1262,7 @@ const extraI18n = {
         'news.item1.cta': 'SetTime 제품 페이지로 이동 →'
     },
     de: {
+        'products.demo.caption': 'Rundgang durch das SetTime-Portal anhand eines synthetischen Beispielplans.',
         'nav.how': 'So funktioniert es',
         'nav.pilot': 'Pilot',
         'hero.badge': 'KI für AEC und Bauwesen',
@@ -1435,7 +1443,7 @@ if ('IntersectionObserver' in window) {
                 navLinks.forEach(l => l.classList.toggle('active', l.getAttribute('href') === '#' + id));
             }
         });
-    }, { threshold: 0.5 });
+    }, { rootMargin: '-40% 0px -55% 0px', threshold: 0 });
     sectionEls.forEach(s => nio.observe(s));
 }
 
@@ -1444,14 +1452,17 @@ if ('IntersectionObserver' in window) {
 // ===========================
 const root = document.documentElement;
 const rail = document.querySelector('.scroll-rail');
+const spineEl = document.querySelector('.spine');
+const gridEl = document.querySelector('.bg-grid');
+const scanEl = document.querySelector('.bg-scan');
 let ticking = false;
 function onScroll() {
     const scrollTop = window.pageYOffset;
     const docH = document.documentElement.scrollHeight - window.innerHeight;
     const p = docH > 0 ? Math.min(scrollTop / docH, 1) : 0;
     if (rail) rail.style.setProperty('--p', p);
-    root.style.setProperty('--spine-fill', (p * 100).toFixed(2) + '%');
-    root.style.setProperty('--grid-shift', (-scrollTop * 0.04).toFixed(1) + 'px');
+    if (spineEl) spineEl.style.setProperty('--spine-fill', (p * 100).toFixed(2) + '%');
+    if (gridEl) gridEl.style.setProperty('--grid-shift', (-scrollTop * 0.04).toFixed(1) + 'px');
     if (navbar) navbar.classList.toggle('scrolled', scrollTop > 60);
     ticking = false;
 }
@@ -1465,8 +1476,9 @@ onScroll();
 // ===========================
 if (!prefersReduced && window.matchMedia('(pointer:fine)').matches) {
     window.addEventListener('mousemove', debounce((e) => {
-        root.style.setProperty('--mx', (e.clientX / window.innerWidth * 100).toFixed(1) + '%');
-        root.style.setProperty('--my', (e.clientY / window.innerHeight * 100).toFixed(1) + '%');
+        if (!scanEl) return;
+        scanEl.style.setProperty('--mx', (e.clientX / window.innerWidth * 100).toFixed(1) + '%');
+        scanEl.style.setProperty('--my', (e.clientY / window.innerHeight * 100).toFixed(1) + '%');
     }, 12));
 }
 

@@ -25,7 +25,8 @@ No build tools, package managers, or dependencies required - this is a pure stat
 - `index.html` - Single-page application with all HTML content and SEO metadata
 - `styles.css` - All styling with CSS variables for theming at `:root`
 - `script.js` - All JavaScript functionality (vanilla JS, no frameworks)
-- `motion.js` - Progressive-enhancement motion layer: Lenis smooth scroll, GSAP/ScrollTrigger choreography, lazy Vanta NET hero background, React Bits–style vanilla ports (spotlight cards, magnet buttons, tilted hero card). Libraries load from jsDelivr (pinned versions); everything degrades to the base page if blocked or `prefers-reduced-motion`.
+- `motion.js` - Progressive-enhancement motion layer: Lenis smooth scroll, GSAP/ScrollTrigger choreography, React Bits–style vanilla ports (spotlight cards, magnet buttons, tilted hero card). Libraries load from jsDelivr (pinned versions); everything degrades to the base page if blocked or `prefers-reduced-motion`.
+- `media/` - `hero-flythrough.mp4` (1080p60 desktop) and `hero-flythrough-mobile.mp4` (720p30, served via `<source media>`) plus poster: cinematic hero background video, rendered offline from `scripts/hero-video/index.html` by `scripts/render-hero-video.cjs` (puppeteer-core + ffmpeg). Render a master with `W=2560 H=1440 FPS=60 NODE_PATH=<dir>/node_modules node scripts/render-hero-video.cjs master.mp4`, then encode with `ffmpeg -i master.mp4 -an -vf scale=1920:1080:flags=lanczos:in_range=pc:out_range=tv,format=yuv420p -c:v libx264 -preset slow -crf 30 -movflags +faststart media/hero-flythrough.mp4` (mobile: `fps=30,scale=1280:720...` at crf 28); `settime-demo.mp4` (+ poster): SetTime portal demo shown in the product section
 - `logo.png`, `logo_title.png` - Brand assets
 
 ### Internationalization (i18n) System
