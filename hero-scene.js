@@ -242,7 +242,7 @@
         if (reduced) {
             uniforms.uScan.value = SCAN_TO; uniforms.uLit.value = 1; scanGroup.visible = false;
             place(0); renderer.render(scene, camera);
-            onResize = () => { resize(); renderer.render(scene, camera); };
+            onResize = () => { resize(); place(0); renderer.render(scene, camera); };
             host.classList.add('is-on');
             return;
         }

@@ -580,7 +580,7 @@ html.lenis, html.lenis body { height: auto; }
             mask-image: linear-gradient(to bottom, #000 62%, transparent 100%);
 }
 .hero-scene.is-on { opacity: 0.95; }
-@media (max-width: 900px) { .hero-scene.is-on { opacity: 0.6; } }
+@media (max-width: 980px) { .hero-scene.is-on { opacity: 0.6; } }
 .hero .container { position: relative; z-index: 1; }
 
 /* React Bits · SpotlightCard — pointer-follow glow (a .spot-glow layer injected by motion.js) */
