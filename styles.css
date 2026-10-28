@@ -36,8 +36,8 @@ ul { list-style: none; }
     --font-body: "Hanken Grotesk", system-ui, sans-serif;
     --font-mono: "IBM Plex Mono", ui-monospace, monospace;
 
-    --maxw: 1200px;
-    --gutter: clamp(20px, 5vw, 72px);
+    --maxw: 1840px;
+    --gutter: clamp(20px, 3.5vw, 64px);
     --spine-x: clamp(18px, 4vw, 56px);
     --radius: 14px;
     --ease: cubic-bezier(0.2, 0.7, 0.2, 1);
@@ -293,10 +293,12 @@ section { position: relative; padding: clamp(84px, 12vh, 150px) 0; }
 /* ============================================================
    SETTIME PRODUCT SHOWCASE
    ============================================================ */
-.product-showcase .container { display: grid; grid-template-columns: 1fr 1.1fr; gap: clamp(36px, 5vw, 80px); align-items: center; }
-.product-copy .product-title { font-family: var(--font-display); font-weight: 600; font-size: clamp(3rem, 6vw, 5rem); text-transform: uppercase; line-height: 0.9; }
-.product-copy .product-tagline { color: var(--cyan); font-family: var(--font-mono); letter-spacing: 0.08em; font-size: 1rem; margin: 12px 0 22px; }
-.product-copy .product-description { color: var(--muted); font-size: 1.1rem; max-width: 50ch; }
+.product-showcase .container { display: grid; grid-template-columns: 1fr 1.1fr; gap: clamp(36px, 5vw, 80px); align-items: center;
+    row-gap: clamp(24px, 3vw, 48px); }
+.product-head { grid-column: 1 / -1; }
+.product-head .product-title { font-family: var(--font-display); font-weight: 600; font-size: clamp(3rem, 6vw, 5rem); text-transform: uppercase; line-height: 0.9; }
+.product-head .product-tagline { color: var(--cyan); font-family: var(--font-mono); letter-spacing: 0.08em; font-size: 1rem; margin: 12px 0 0; }
+.product-description { color: var(--muted); font-size: 1.1rem; max-width: 50ch; }
 .product-features { display: flex; flex-wrap: wrap; gap: 10px; margin: 28px 0 34px; }
 .product-feature {
     font-family: var(--font-mono); font-size: 0.78rem; letter-spacing: 0.06em; padding: 8px 14px;
@@ -329,8 +331,7 @@ section { position: relative; padding: clamp(84px, 12vh, 150px) 0; }
 .schedule-foot b { color: var(--amber); }
 
 /* SetTime product demo video */
-.product-demo { grid-column: 1 / -1; margin-top: clamp(36px, 5vw, 64px); }
-.demo-label { margin-bottom: 16px; }
+.product-demo { grid-column: 1 / -1; }
 .demo-video {
     display: block; width: 100%; aspect-ratio: 16 / 9; border-radius: 16px; background: var(--ink-900);
     border: 1px solid var(--line); box-shadow: 0 30px 80px rgba(0, 0, 0, 0.5);

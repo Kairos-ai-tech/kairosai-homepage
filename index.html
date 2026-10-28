@@ -605,6 +605,7 @@
         <section id="home" class="hero">
             <div class="hero-media" aria-hidden="true">
                 <video class="hero-video" muted loop playsinline preload="none" poster="media/hero-poster.jpg" tabindex="-1">
+                    <source src="media/hero-flythrough-mobile.mp4" type="video/mp4" media="(max-width: 980px)">
                     <source src="media/hero-flythrough.mp4" type="video/mp4">
                 </video>
             </div>
@@ -716,10 +717,18 @@
         <!-- SetTime showcase -->
         <section id="product" class="product-showcase">
             <div class="container">
-                <div class="product-copy" data-reveal>
+                <div class="product-head" data-reveal>
                     <div class="section-tag">03 — <span>Product</span></div>
                     <h2 class="product-title" data-i18n="products.itech.title">SetTime</h2>
                     <p class="product-tagline" data-i18n="products.itech.tagline">SetTime — Right before it sets</p>
+                </div>
+                <div class="product-demo" data-reveal>
+                    <video class="demo-video" controls playsinline preload="none" poster="media/settime-demo-poster.jpg" aria-describedby="demoCaption">
+                        <source src="media/settime-demo.mp4" type="video/mp4">
+                    </video>
+                    <p class="demo-caption" id="demoCaption" data-i18n="products.demo.caption">SetTime portal walkthrough on a synthetic sample plan.</p>
+                </div>
+                <div class="product-copy" data-reveal>
                     <p class="product-description" data-i18n="products.itech.desc">
                         An end-to-end AI system that turns construction drawings into accurate rebar estimates and bar-bending schedules — replacing slow, error-prone manual takeoff across the AEC industry.
                     </p>
@@ -755,13 +764,6 @@
                         </table>
                     </div>
                     <div class="schedule-foot"><span>5 marks · 214 bars</span><b>TOTAL 757 kg</b></div>
-                </div>
-                <div class="product-demo" data-reveal>
-                    <div class="eyebrow demo-label" data-i18n="products.demo.label">Product demo</div>
-                    <video class="demo-video" controls playsinline preload="none" poster="media/settime-demo-poster.jpg" aria-describedby="demoCaption">
-                        <source src="media/settime-demo.mp4" type="video/mp4">
-                    </video>
-                    <p class="demo-caption" id="demoCaption" data-i18n="products.demo.caption">SetTime portal walkthrough on a synthetic sample plan.</p>
                 </div>
                 <div class="ar-block" data-reveal>
                     <div class="ar-badge"><span data-i18n="products.itechAr.badge">In Development</span></div>

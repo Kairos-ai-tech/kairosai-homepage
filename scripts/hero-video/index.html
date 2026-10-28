@@ -16,6 +16,8 @@ canvas { position: absolute; inset: 0; }
 <script>
 (function () {
     const DURATION = 16;
+    const Q = new URLSearchParams(location.search);
+    const VW = Number(Q.get('w')) || 1920, VH = Number(Q.get('h')) || 1080;
     const BAYS_X = 4, BAYS_Z = 3, BAY = 3.2, FLOORS = 7, FH = 2.4;
     const W = BAYS_X * BAY, D = BAYS_Z * BAY, H = FLOORS * FH;
     const gx = (i) => -W / 2 + i * BAY;
@@ -27,7 +29,7 @@ canvas { position: absolute; inset: 0; }
     const THREE_ = window.THREE;
     const cyan = new THREE_.Color(0x5bc8ff), amber = new THREE_.Color(0xff9b3d);
     const uniforms = {
-        uTime: { value: 0 }, uFade: { value: 1 }, uScan: { value: -10 },
+        uTime: { value: 0 }, uFade: { value: 1 }, uScan: { value: -10 }, uPS: { value: VH / 1080 },
         uCyan: { value: new THREE_.Vector3(cyan.r, cyan.g, cyan.b) },
         uAmber: { value: new THREE_.Vector3(amber.r, amber.g, amber.b) }
     };
@@ -107,13 +109,13 @@ canvas { position: absolute; inset: 0; }
         }`;
     const POINT_VERT = `
         attribute float aT;
-        uniform float uTime;
+        uniform float uTime; uniform float uPS;
         varying float vPop; varying float vDepth;
         void main() {
             vPop = clamp((uTime - aT) / 0.45, 0.0, 1.0);
             vec4 mv = modelViewMatrix * vec4(position, 1.0);
             vDepth = -mv.z;
-            gl_PointSize = clamp(380.0 * (0.4 + 0.6 * vPop) / vDepth, 2.0, 16.0);
+            gl_PointSize = clamp(380.0 * uPS * (0.4 + 0.6 * vPop) / vDepth, 2.0 * uPS, 16.0 * uPS);
             gl_Position = projectionMatrix * mv;
         }`;
     const POINT_FRAG = `
@@ -159,13 +161,14 @@ canvas { position: absolute; inset: 0; }
 
     const mat = (v, f) => new THREE_.ShaderMaterial({ uniforms, vertexShader: v, fragmentShader: f, transparent: true, depthWrite: false, blending: THREE_.AdditiveBlending, side: THREE_.DoubleSide });
     const stage = document.getElementById('stage');
+    stage.style.width = VW + 'px'; stage.style.height = VH + 'px';
     const renderer = new THREE_.WebGLRenderer({ antialias: true, alpha: true, preserveDrawingBuffer: true });
     renderer.setPixelRatio(1);
-    renderer.setSize(1920, 1080);
+    renderer.setSize(VW, VH);
     renderer.setClearColor(0x000000, 0);
     stage.insertBefore(renderer.domElement, stage.firstChild);
     const scene = new THREE_.Scene();
-    const camera = new THREE_.PerspectiveCamera(38, 1920 / 1080, 0.1, 600);
+    const camera = new THREE_.PerspectiveCamera(38, VW / VH, 0.1, 600);
 
     const lineGeo = new THREE_.BufferGeometry();
     lineGeo.setAttribute('position', new THREE_.Float32BufferAttribute(seg.pos, 3));
@@ -229,13 +232,13 @@ canvas { position: absolute; inset: 0; }
     const dust = new THREE_.Points(dustGeo, new THREE_.ShaderMaterial({
         uniforms, transparent: true, depthWrite: false, blending: THREE_.AdditiveBlending,
         vertexShader: `
-            attribute float aT; uniform float uTime; varying float vTw;
+            attribute float aT; uniform float uTime; uniform float uPS; varying float vTw;
             void main() {
                 vec3 p = position + vec3(sin(uTime * 0.25 + aT * 6.0) * 1.2, uTime * 0.35 * (0.4 + aT * 0.3), cos(uTime * 0.2 + aT * 5.0) * 1.2);
                 p.y = mod(p.y + 2.0, 34.0) - 2.0;
                 vTw = 0.5 + 0.5 * sin(uTime * 1.5 + aT * 20.0);
                 vec4 mv = modelViewMatrix * vec4(p, 1.0);
-                gl_PointSize = clamp(90.0 / -mv.z, 1.0, 3.2);
+                gl_PointSize = clamp(90.0 * uPS / -mv.z, uPS, 3.2 * uPS);
                 gl_Position = projectionMatrix * mv;
             }`,
         fragmentShader: `
