@@ -82,8 +82,12 @@
     const heroEl = document.querySelector('.hero');
     const conn = navigator.connection || {};
     if (heroVideo && heroEl && !reduced && !conn.saveData && !/^(slow-2g|2g|3g)$/.test(conn.effectiveType || '')) {
-        let inView = true;
-        const sync = () => { if (inView && !document.hidden) heroVideo.play().catch(() => {}); else heroVideo.pause(); };
+        let inView = true, playTimer = 0;
+        const sync = () => {
+            clearTimeout(playTimer);
+            if (inView && !document.hidden) playTimer = setTimeout(() => heroVideo.play().catch(() => {}), 300);
+            else heroVideo.pause();
+        };
         const start = () => {
             new IntersectionObserver((en) => { inView = en[0].isIntersecting; sync(); }, { threshold: 0.02 }).observe(heroEl);
             document.addEventListener('visibilitychange', sync);
