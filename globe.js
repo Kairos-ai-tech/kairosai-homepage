@@ -68,7 +68,7 @@
         if (!ctx) return;
         var pts = landPoints(land);
         var hq = vec(HQ.lat, HQ.lon);
-        var markers = locs.map(function (l) { return { v: vec(l.lat, l.lon) }; });
+        var markers = locs.map(function (l) { return { v: vec(l.lat, l.lon), name: l.city }; });
         var arcs = markers.map(function (m) {
             var a = [];
             var w = Math.acos(Math.max(-1, Math.min(1, hq[0] * m.v[0] + hq[1] * m.v[1] + hq[2] * m.v[2])));
@@ -83,7 +83,7 @@
         });
 
         var size = 0, dpr = 1;
-        var rot = locs[0].lon * rad;
+        var rot = HQ.lon * rad;
         var tilt = TILT;
         var dragging = false, lastX = 0, lastY = 0;
         var visible = true, rafId = 0, last = 0;
@@ -130,6 +130,7 @@
             ctx.stroke();
 
             var d = Math.max(1.4 * dpr, size / 300);
+            var fs = Math.max(11, size / dpr / 50) * dpr;
             for (var i = 0; i < pts.length; i += 3) {
                 var x = pts[i] * cr - pts[i + 2] * sr;
                 var z1 = pts[i] * sr + pts[i + 2] * cr;
@@ -148,7 +149,7 @@
                 var pen = false;
                 for (var j = 0; j < arc.length; j++) {
                     var q = project(arc[j], cr, sr, ct, st);
-                    if (q[2] <= 0.02) { pen = false; continue; }
+                    if (q[2] <= 0.02 || q[0] * q[0] + q[1] * q[1] > 1) { pen = false; continue; }
                     var px = cx + q[0] * R, py = cy - q[1] * R;
                     if (pen) ctx.lineTo(px, py); else ctx.moveTo(px, py);
                     pen = true;
@@ -158,7 +159,7 @@
                 if (!reduced) {
                     var f = (t * 0.22 + n * 0.19) % 1;
                     var q2 = project(arc[Math.round(f * 48)], cr, sr, ct, st);
-                    if (q2[2] > 0.02) {
+                    if (q2[2] > 0.02 && q2[0] * q2[0] + q2[1] * q2[1] <= 1) {
                         ctx.beginPath();
                         ctx.arc(cx + q2[0] * R, cy - q2[1] * R, 2.2 * dpr, 0, Math.PI * 2);
                         ctx.fillStyle = '#ffd9b0';
@@ -188,6 +189,20 @@
                 ctx.arc(px, py, 3.6 * dpr, 0, Math.PI * 2);
                 ctx.fillStyle = '#ff9b3d';
                 ctx.fill();
+                var fade = Math.min(1, (q[2] - 0.08) / 0.25);
+                if (fade <= 0) return;
+                ctx.globalAlpha = fade;
+                ctx.font = '600 ' + fs + 'px "Hanken Grotesk", system-ui, sans-serif';
+                ctx.textBaseline = 'middle';
+                ctx.textAlign = px > cx ? 'right' : 'left';
+                var tx = px + (px > cx ? -1 : 1) * 9 * dpr;
+                ctx.lineJoin = 'round';
+                ctx.lineWidth = 3.5 * dpr;
+                ctx.strokeStyle = 'rgba(7,13,24,0.9)';
+                ctx.strokeText(m.name, tx, py);
+                ctx.fillStyle = '#e9f1fb';
+                ctx.fillText(m.name, tx, py);
+                ctx.globalAlpha = 1;
             });
         }
 
