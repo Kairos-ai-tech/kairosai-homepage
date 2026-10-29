@@ -12,7 +12,7 @@ Submit an inquiry to Kairos.ai via the homepage contact form.
 2. Populate the form fields named `name`, `email`, and `message`.
 3. Submit the form. The page's own JavaScript intercepts the submit (no
    browser navigation occurs) and posts to FormSubmit's (formsubmit.co)
-   `/ajax/` endpoint, which delivers email to `seanchen@kairosaitech.com`.
+   `/ajax/` endpoint, which delivers email to `support@kairosaitech.com`.
 
 ## Response
 There is no separate JSON API to call directly — the page's script handles
