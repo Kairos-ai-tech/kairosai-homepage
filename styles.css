@@ -284,8 +284,96 @@ section { position: relative; padding: clamp(48px, 7vh, 88px) 0; }
 .step::after { content: ""; position: absolute; left: 0; top: 0; height: 3px; width: 100%; background: linear-gradient(90deg, var(--cyan), transparent); transform: scaleX(0); transform-origin: 0; transition: transform 0.5s var(--ease); }
 .step:hover::after { transform: scaleX(1); }
 .step-no { font-family: var(--font-mono); font-size: 0.82rem; color: var(--amber); letter-spacing: 0.1em; }
-.step-icon { width: 52px; height: 52px; margin: 18px 0 20px; color: var(--cyan); }
-.step-icon svg { width: 100%; height: 100%; }
+.stage {
+    margin: 18px 0 22px; aspect-ratio: 8 / 5; border: 1px solid var(--line); border-radius: 10px; overflow: hidden;
+    background:
+        linear-gradient(var(--line-2) 1px, transparent 1px) 0 0 / 20px 20px,
+        linear-gradient(90deg, var(--line-2) 1px, transparent 1px) 0 0 / 20px 20px,
+        var(--panel-2);
+}
+.stage svg { display: block; width: 100%; height: 100%; }
+.stage .st-paper { fill: rgba(233, 241, 251, 0.05); stroke: var(--muted); stroke-width: 1.2; }
+.stage .st-line { fill: none; stroke: var(--faint); stroke-width: 1.2; }
+.stage .st-dot { fill: var(--paper); }
+.stage .st-txt, .stage .st-tag { font: 600 9px var(--font-mono); fill: var(--cyan); letter-spacing: 0.04em; }
+.stage .st-zone { fill: rgba(91, 200, 255, 0.05); stroke: var(--cyan); stroke-width: 1.2; stroke-dasharray: 5 5; }
+.stage .st-arrow, .stage .st-check { fill: none; stroke: var(--cyan); stroke-width: 2.4; stroke-linecap: round; stroke-linejoin: round; opacity: 0; }
+.stage .st-check { stroke: var(--amber); stroke-linecap: butt; opacity: 1; }
+.stage .st-track { fill: var(--line-2); }
+.stage .st-fill { fill: var(--cyan); }
+.stage .st-box { fill: rgba(91, 200, 255, 0.14); stroke: var(--cyan); stroke-width: 1.4; }
+.stage .st-scan { fill: var(--cyan); opacity: 0; filter: drop-shadow(0 0 6px var(--cyan)); }
+.stage .st-shape { fill: none; stroke: var(--cyan); stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+.stage .st-skel { fill: var(--faint); opacity: 0.5; }
+.stage .st-num { fill: var(--amber); opacity: 0.9; }
+.stage .st-totalbox { fill: rgba(255, 155, 61, 0.1); stroke: var(--amber); stroke-width: 1.4; }
+.stage .st-sheet, .stage .st-fill, .stage .st-box, .stage .st-row, .stage .st-total, .stage .st-arrow, .stage .st-scan { transform-box: fill-box; }
+.stage .st-sheet, .stage .st-box, .stage .st-arrow { transform-origin: center; }
+.stage .st-fill, .stage .st-total { transform-origin: left center; }
+
+.process.is-live .st-sheet { animation: st-sheet 6.4s var(--ease) infinite both; }
+.process.is-live .st-arrow { animation: st-arrow 6.4s ease-in-out infinite both; }
+.process.is-live .st-fill { animation: st-fill 6.4s ease-in-out infinite both; }
+.process.is-live .st-check { stroke-dasharray: 54; animation: st-check 6.4s ease-in-out infinite both; }
+.process.is-live .st-scan { animation: st-scan 6s linear infinite both; }
+.process.is-live .st-box { animation: st-box 6s var(--ease) var(--d) infinite both; }
+.process.is-live .st-tag { animation: st-fade 6s ease var(--d) infinite both; }
+.process.is-live .st-row { animation: st-row 6s var(--ease) var(--d) infinite both; }
+.process.is-live .st-total { animation: st-total 6s var(--ease) infinite both; }
+@keyframes st-sheet {
+    0% { opacity: 0; transform: translateY(-14px); }
+    8% { opacity: 1; transform: none; }
+    38% { opacity: 1; transform: none; }
+    58% { opacity: 1; transform: translateY(62px) scale(0.78); }
+    66%, 100% { opacity: 0; transform: translateY(74px) scale(0.6); }
+}
+@keyframes st-arrow {
+    0%, 4% { opacity: 0; transform: translateY(6px); }
+    14% { opacity: 1; transform: translateY(0); }
+    30% { opacity: 1; transform: translateY(-5px); }
+    48% { opacity: 1; transform: translateY(0); }
+    56%, 100% { opacity: 0; }
+}
+@keyframes st-fill {
+    0%, 54% { transform: scaleX(0); opacity: 1; }
+    78%, 94% { transform: scaleX(1); opacity: 1; }
+    100% { transform: scaleX(1); opacity: 0; }
+}
+@keyframes st-check {
+    0%, 66% { stroke-dashoffset: 54; opacity: 0; }
+    67% { stroke-dashoffset: 54; opacity: 1; }
+    80%, 94% { stroke-dashoffset: 0; opacity: 1; }
+    100% { stroke-dashoffset: 0; opacity: 0; }
+}
+@keyframes st-scan {
+    0% { opacity: 0; transform: translateX(0); }
+    4% { opacity: 1; }
+    42% { opacity: 1; transform: translateX(152px); }
+    48%, 100% { opacity: 0; transform: translateX(152px); }
+}
+@keyframes st-box {
+    0% { opacity: 0; transform: scale(1.5); }
+    6% { opacity: 1; transform: scale(1); }
+    74% { opacity: 1; transform: scale(1); }
+    84%, 100% { opacity: 0; transform: scale(1); }
+}
+@keyframes st-fade {
+    0% { opacity: 0; }
+    8%, 74% { opacity: 1; }
+    84%, 100% { opacity: 0; }
+}
+@keyframes st-row {
+    0% { opacity: 0; transform: translateX(-18px); }
+    8% { opacity: 1; transform: none; }
+    80% { opacity: 1; transform: none; }
+    92%, 100% { opacity: 0; transform: none; }
+}
+@keyframes st-total {
+    0%, 34% { opacity: 0; transform: scaleX(0.2); }
+    44% { opacity: 1; transform: scaleX(1); }
+    80% { opacity: 1; transform: scaleX(1); }
+    92%, 100% { opacity: 0; transform: scaleX(1); }
+}
 .step h3 { font-family: var(--font-display); font-weight: 600; font-size: 1.55rem; text-transform: uppercase; letter-spacing: 0.01em; }
 .step p { color: var(--muted); margin-top: 10px; font-size: 0.98rem; }
 
@@ -495,6 +583,7 @@ section { position: relative; padding: clamp(48px, 7vh, 88px) 0; }
     .hero-visual { order: -1; min-height: 220px; }
     .product-showcase .container { gap: 40px; }
     .process-grid { grid-template-columns: 1fr; }
+    .stage { max-width: 440px; margin-inline: auto; }
     .story-grid { grid-template-columns: 1fr; }
     .ar-features { grid-template-columns: 1fr; }
 }

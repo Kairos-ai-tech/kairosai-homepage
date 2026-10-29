@@ -1335,6 +1335,15 @@ if ('IntersectionObserver' in window) {
     sectionEls.forEach(s => nio.observe(s));
 }
 
+const processEl = document.querySelector('.process');
+if (processEl && !prefersReduced) {
+    if ('IntersectionObserver' in window) {
+        new IntersectionObserver((en) => processEl.classList.toggle('is-live', en[en.length - 1].isIntersecting), { rootMargin: '-8% 0px -8% 0px' }).observe(processEl);
+    } else {
+        processEl.classList.add('is-live');
+    }
+}
+
 // ===========================
 // Scroll engine: progress rail + spine draw + grid parallax
 // ===========================
