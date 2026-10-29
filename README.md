@@ -23,11 +23,7 @@ Kairos.ai builds AI solutions for the AEC industry. Our first product, SetTime (
 - **Interactive Elements**: Engaging user interactions including parallax effects and scroll animations
 - **Working Contact Form**: Email delivery via FormSubmit (no backend required)
 - **News Section**: Timestamped company and product announcements, starting with the iTech → SetTime rename
-- **Product & Service Showcase**: Highlighting SetTime (AI rebar estimation, formerly iTech), SetTime AR (in development), and our core services:
-  - AI Systems Design
-  - Backend Systems Development
-  - AI Applications
-  - Data Analysis
+- **Product Showcase**: Highlighting SetTime (AI rebar estimation, formerly iTech) with a demo video, and SetTime AR (in development)
 
 ## Technology Stack
 
@@ -114,7 +110,7 @@ Edit CSS variables in `styles.css` to customize the color scheme:
 ### Content
 
 - **Company Information**: Edit the text content directly in `index.html`
-- **Services**: Modify the services section in `index.html`
+- **Product**: Modify the product section in `index.html`
 - **Contact Information**: Update contact details in the contact section
 
 ### Language Support

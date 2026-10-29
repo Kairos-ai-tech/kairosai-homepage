@@ -16,7 +16,7 @@
 
     // ---------- React Bits · SpotlightCard (pointer-follow glow; CSS does the paint) ----------
     if (finePointer && !reduced) {
-        document.querySelectorAll('.service-card, .stat-card, .step, .story-block, .news-item').forEach((card) => {
+        document.querySelectorAll('.stat-card, .step, .story-block, .news-item').forEach((card) => {
             card.classList.add('spotlight');
             const glow = document.createElement('span');
             glow.className = 'spot-glow'; glow.setAttribute('aria-hidden', 'true');

@@ -19,6 +19,5 @@ Browse the Kairos.ai product lineup.
 ## How to invoke
 Navigate to `https://settime.kairosaitech.com/` for the official SetTime
 product site, `https://www.kairosaitech.com/#product` for the SetTime product
-card and spec details on the company homepage, or `https://www.kairosaitech.com/#services` for the
-services list. Each section includes a short description and, where
+card and spec details on the company homepage. Each section includes a short description and, where
 applicable, a link to the product's own site.
