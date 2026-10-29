@@ -38,13 +38,17 @@
         return [a[0] * k1 + b[0] * k2, a[1] * k1 + b[1] * k2, a[2] * k1 + b[2] * k2];
     }
 
+    function label(l) {
+        return l.country ? l.city + ', ' + l.country : l.city;
+    }
+
     function fillPanel(locs) {
         var companies = 0, counted = false, seen = {};
         var list = document.getElementById('clientsList');
         locs.forEach(function (l) {
             var li = document.createElement('li');
             var name = document.createElement('span');
-            name.textContent = l.country ? l.city + ', ' + l.country : l.city;
+            name.textContent = label(l);
             li.appendChild(name);
             if (l.companies) {
                 counted = true;
@@ -68,7 +72,7 @@
         if (!ctx) return;
         var pts = landPoints(land);
         var hq = vec(HQ.lat, HQ.lon);
-        var markers = locs.map(function (l) { return { v: vec(l.lat, l.lon) }; });
+        var markers = locs.map(function (l) { return { v: vec(l.lat, l.lon), name: label(l) }; });
         var arcs = markers.map(function (m) {
             var a = [];
             var w = Math.acos(Math.max(-1, Math.min(1, hq[0] * m.v[0] + hq[1] * m.v[1] + hq[2] * m.v[2])));
@@ -83,7 +87,7 @@
         });
 
         var size = 0, dpr = 1;
-        var rot = locs[0].lon * rad;
+        var rot = HQ.lon * rad;
         var tilt = TILT;
         var dragging = false, lastX = 0, lastY = 0;
         var visible = true, rafId = 0, last = 0;
@@ -130,6 +134,7 @@
             ctx.stroke();
 
             var d = Math.max(1.4 * dpr, size / 300);
+            var fs = Math.max(11, size / dpr / 50) * dpr;
             for (var i = 0; i < pts.length; i += 3) {
                 var x = pts[i] * cr - pts[i + 2] * sr;
                 var z1 = pts[i] * sr + pts[i + 2] * cr;
@@ -148,7 +153,7 @@
                 var pen = false;
                 for (var j = 0; j < arc.length; j++) {
                     var q = project(arc[j], cr, sr, ct, st);
-                    if (q[2] <= 0.02) { pen = false; continue; }
+                    if (q[2] <= 0.02 || q[0] * q[0] + q[1] * q[1] > 1) { pen = false; continue; }
                     var px = cx + q[0] * R, py = cy - q[1] * R;
                     if (pen) ctx.lineTo(px, py); else ctx.moveTo(px, py);
                     pen = true;
@@ -158,7 +163,7 @@
                 if (!reduced) {
                     var f = (t * 0.22 + n * 0.19) % 1;
                     var q2 = project(arc[Math.round(f * 48)], cr, sr, ct, st);
-                    if (q2[2] > 0.02) {
+                    if (q2[2] > 0.02 && q2[0] * q2[0] + q2[1] * q2[1] <= 1) {
                         ctx.beginPath();
                         ctx.arc(cx + q2[0] * R, cy - q2[1] * R, 2.2 * dpr, 0, Math.PI * 2);
                         ctx.fillStyle = '#ffd9b0';
@@ -175,6 +180,7 @@
                 ctx.fill();
             }
 
+            var labels = [];
             markers.forEach(function (m, n) {
                 var q = project(m.v, cr, sr, ct, st);
                 if (q[2] <= 0) return;
@@ -188,7 +194,39 @@
                 ctx.arc(px, py, 3.6 * dpr, 0, Math.PI * 2);
                 ctx.fillStyle = '#ff9b3d';
                 ctx.fill();
+                var fade = Math.min(1, (q[2] - 0.08) / 0.25);
+                if (fade <= 0) return;
+                var band = 12 * dpr;
+                if (!m.side || px > cx + band) m.side = px > cx ? -1 : 1;
+                else if (px < cx - band) m.side = 1;
+                labels.push({ m: m, px: px, py: py, fade: fade });
             });
+
+            ctx.save();
+            ctx.textBaseline = 'middle';
+            ctx.lineJoin = 'round';
+            ctx.lineWidth = 3.5 * dpr;
+            ctx.strokeStyle = 'rgba(7,13,24,0.9)';
+            ctx.fillStyle = '#e9f1fb';
+            ctx.textAlign = 'left';
+            labels.forEach(function (l) {
+                var side = l.m.side;
+                var tx = l.px + side * 9 * dpr;
+                var avail = (side < 0 ? tx : size - tx) - 4 * dpr;
+                var f = fs;
+                ctx.font = '600 ' + f + 'px "Hanken Grotesk", system-ui, sans-serif';
+                var w = ctx.measureText(l.m.name).width;
+                if (w > avail) {
+                    f = Math.max(8 * dpr, f * avail / w);
+                    ctx.font = '600 ' + f + 'px "Hanken Grotesk", system-ui, sans-serif';
+                    w = ctx.measureText(l.m.name).width;
+                }
+                var x = side < 0 ? tx - w : tx;
+                ctx.globalAlpha = l.fade;
+                ctx.strokeText(l.m.name, x, l.py);
+                ctx.fillText(l.m.name, x, l.py);
+            });
+            ctx.restore();
         }
 
         function frame(now) {
@@ -238,6 +276,7 @@
         document.addEventListener('visibilitychange', kick);
         resize();
         kick();
+        if (document.fonts && document.fonts.ready) document.fonts.ready.then(function () { draw(performance.now()); });
     }
 
     Promise.all([

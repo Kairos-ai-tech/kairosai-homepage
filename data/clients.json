@@ -1,8 +1,8 @@
 {"locations":[
 {"city":"New York","country":"United States","lat":40.71,"lon":-74.01},
-{"city":"San Francisco, CA","country":"United States","lat":37.77,"lon":-122.42},
+{"city":"San Francisco","country":"United States","lat":37.77,"lon":-122.42},
 {"city":"Dubai","country":"United Arab Emirates","lat":25.2,"lon":55.27},
-{"city":"Bulgaria","country":"","lat":42.73,"lon":25.49},
-{"city":"Philippines","country":"","lat":12.88,"lon":121.77},
-{"city":"Taiwan","country":"","lat":23.7,"lon":121.0}
+{"city":"Sofia","country":"Bulgaria","lat":42.7,"lon":23.32},
+{"city":"Manila","country":"Philippines","lat":14.6,"lon":120.98},
+{"city":"Taipei","country":"Taiwan","lat":25.03,"lon":121.56}
 ]}
