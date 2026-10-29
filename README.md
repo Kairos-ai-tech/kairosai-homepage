@@ -131,7 +131,7 @@ The website includes a custom internationalization system with 8 languages. All 
 The contact form uses [FormSubmit](https://formsubmit.co/) for email delivery - no backend required!
 
 **Current configuration:**
-- Emails are sent to: `seanchen@kairosaitech.com`
+- Emails are sent to: `support@kairosaitech.com`
 - Custom subject line: "New contact form submission from Kairos.ai"
 - Spam protection via honeypot field
 - Table format for clean email display
@@ -139,7 +139,7 @@ The contact form uses [FormSubmit](https://formsubmit.co/) for email delivery - 
 **First-time setup:**
 1. Deploy the website to a public URL (FormSubmit doesn't work on localhost)
 2. Submit the form once
-3. Check seanchen@kairosaitech.com for a confirmation email
+3. Check support@kairosaitech.com for a confirmation email
 4. Click the confirmation link to activate
 5. All future submissions will be delivered automatically
 
@@ -186,4 +186,4 @@ Copyright © 2025 Kairos.ai. All rights reserved.
 
 ## Contact
 
-For inquiries, please contact us at seanchen@kairosaitech.com
+For inquiries, please contact us at support@kairosaitech.com

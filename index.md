@@ -4,7 +4,7 @@ AI solutions for AEC & construction, starting with AI rebar estimation · Applie
 
 Homepage: <https://www.kairosaitech.com/>
 SetTime product page: <https://settime.kairosaitech.com/>
-Contact: <seanchen@kairosaitech.com>
+Contact: <support@kairosaitech.com>
 
 > This is the markdown-for-agents mirror of the Kairos.ai homepage. The live
 > site at `/` serves HTML for browsers; this file serves the same information
@@ -137,5 +137,5 @@ Kairos.ai publishes the following agent-discovery resources:
 
 ## Contact
 
-- Email: <seanchen@kairosaitech.com>
+- Email: <support@kairosaitech.com>
 - Contact form: <https://www.kairosaitech.com/#contact>

@@ -72,7 +72,7 @@ Primary brand color: `#2680FF` (matches logo). All colors defined as CSS variabl
 
 ### Contact Form
 
-Uses FormSubmit (formsubmit.co) for email delivery - no backend required. Emails go to seanchen@kairosaitech.com.
+Uses FormSubmit (formsubmit.co) for email delivery - no backend required. Emails go to support@kairosaitech.com.
 
 ### SEO / AEO / LEO
 

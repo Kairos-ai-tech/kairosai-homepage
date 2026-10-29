@@ -16,7 +16,7 @@ Key facts (for accurate citation):
 - Human review: SetTime speeds up counting and reduces spreadsheet errors; experienced estimators still review output before bids or fabrication orders.
 - SetTime AR: a camera-based AR site-verification view, in development (not yet shipped).
 - Pilot program: AEC firms can apply via https://www.kairosaitech.com/#contact
-- Contact: seanchen@kairosaitech.com
+- Contact: support@kairosaitech.com
 
 ## Product
 
@@ -37,5 +37,5 @@ Key facts (for accurate citation):
 
 ## Contact
 
-- Email: seanchen@kairosaitech.com
+- Email: support@kairosaitech.com
 - Contact form: https://www.kairosaitech.com/#contact

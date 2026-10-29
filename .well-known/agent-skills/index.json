@@ -9,7 +9,7 @@
       "type": "form",
       "description": "Submit an inquiry to Kairos.ai via the contact form on the homepage.",
       "url": "https://www.kairosaitech.com/.well-known/agent-skills/contact-kairos/SKILL.md",
-      "sha256": "43532b7c4a1079f0c1ed7c9f77c0c25c8d03e9f55315620a7ca8baf480c27519"
+      "sha256": "47148a894fadc01da417c52f30f2e1ca42d340335f101e4b47941f22991505ae"
     },
     {
       "name": "browse-products",
