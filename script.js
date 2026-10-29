@@ -1338,7 +1338,7 @@ if ('IntersectionObserver' in window) {
 const processEl = document.querySelector('.process');
 if (processEl && !prefersReduced) {
     if ('IntersectionObserver' in window) {
-        new IntersectionObserver((en) => processEl.classList.toggle('is-live', en[0].isIntersecting), { threshold: 0.15 }).observe(processEl);
+        new IntersectionObserver((en) => processEl.classList.toggle('is-live', en[en.length - 1].isIntersecting), { rootMargin: '-8% 0px -8% 0px' }).observe(processEl);
     } else {
         processEl.classList.add('is-live');
     }

@@ -298,7 +298,7 @@ section { position: relative; padding: clamp(48px, 7vh, 88px) 0; }
 .stage .st-txt, .stage .st-tag { font: 600 9px var(--font-mono); fill: var(--cyan); letter-spacing: 0.04em; }
 .stage .st-zone { fill: rgba(91, 200, 255, 0.05); stroke: var(--cyan); stroke-width: 1.2; stroke-dasharray: 5 5; }
 .stage .st-arrow, .stage .st-check { fill: none; stroke: var(--cyan); stroke-width: 2.4; stroke-linecap: round; stroke-linejoin: round; opacity: 0; }
-.stage .st-check { stroke: var(--amber); opacity: 1; }
+.stage .st-check { stroke: var(--amber); stroke-linecap: butt; opacity: 1; }
 .stage .st-track { fill: var(--line-2); }
 .stage .st-fill { fill: var(--cyan); }
 .stage .st-box { fill: rgba(91, 200, 255, 0.14); stroke: var(--cyan); stroke-width: 1.4; }
@@ -583,7 +583,7 @@ section { position: relative; padding: clamp(48px, 7vh, 88px) 0; }
     .hero-visual { order: -1; min-height: 220px; }
     .product-showcase .container { gap: 40px; }
     .process-grid { grid-template-columns: 1fr; }
-    .stage { max-width: 440px; }
+    .stage { max-width: 440px; margin-inline: auto; }
     .story-grid { grid-template-columns: 1fr; }
     .ar-features { grid-template-columns: 1fr; }
 }
