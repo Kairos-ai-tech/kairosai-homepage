@@ -129,7 +129,7 @@ Kairos.ai publishes the following agent-discovery resources:
 - MCP server card: `/.well-known/mcp/server-card.json`
 - Agent skills index: `/.well-known/agent-skills/index.json`
 - WebMCP tools: exposed at page load via `navigator.modelContext.provideContext`
-  (`navigate_section` — home, story, how, product, pilot, services, faq, news,
+  (`navigate_section` — home, story, how, product, pilot, faq, news,
   about, contact — plus `set_language`, `contact_kairos`, `get_company_info`)
 - Content signals: declared in `/robots.txt` (search=yes, ai-input=yes,
   ai-train=no — this content may be used to answer a live query, not for
