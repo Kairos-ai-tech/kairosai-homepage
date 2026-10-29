@@ -823,6 +823,29 @@
             </div>
         </section>
 
+        <!-- Clients globe (hidden until data/clients.json lists real locations) -->
+        <section id="clients" class="clients" hidden>
+            <div class="container">
+                <div class="section-header" data-reveal>
+                    <div class="section-tag"><span data-i18n="clients.tag">Live deployments</span></div>
+                    <h2 class="section-title" data-i18n="clients.title">SetTime is running on real projects</h2>
+                    <p class="section-subtitle" data-i18n="clients.subtitle">Multiple companies use SetTime to estimate rebar on live construction projects today.</p>
+                </div>
+                <div class="clients-grid">
+                    <div class="globe-wrap" data-reveal>
+                        <canvas id="clientsGlobe" aria-hidden="true"></canvas>
+                    </div>
+                    <div class="clients-side" data-reveal style="--d:0.1s">
+                        <div class="clients-stats">
+                            <div class="clients-stat"><div class="clients-stat-num" id="clientsCompanies">0</div><div class="clients-stat-label" data-i18n="clients.stat.companies">Companies</div></div>
+                            <div class="clients-stat"><div class="clients-stat-num" id="clientsCities">0</div><div class="clients-stat-label" data-i18n="clients.stat.cities">Cities</div></div>
+                        </div>
+                        <ul class="clients-list" id="clientsList"></ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
         <!-- Pilot program CTA -->
         <section id="pilot" class="pilot">
             <div class="container">
@@ -1030,6 +1053,7 @@
     <script defer src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
     <script defer src="https://cdn.jsdelivr.net/npm/lenis@1.1.18/dist/lenis.min.js"></script>
     <script defer src="motion.js"></script>
+    <script defer src="globe.js"></script>
 </body>
 
 </html>
