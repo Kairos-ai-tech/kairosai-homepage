@@ -92,7 +92,7 @@ body {
 /* ---------- Layout primitives ---------- */
 .container { width: 100%; max-width: var(--maxw); margin: 0 auto; padding: 0 var(--gutter); }
 .flow { position: relative; }
-section { position: relative; padding: clamp(84px, 12vh, 150px) 0; }
+section { position: relative; padding: clamp(48px, 7vh, 88px) 0; }
 
 /* ===== Scroll progress rail (top) ===== */
 .scroll-rail {
@@ -136,7 +136,7 @@ section { position: relative; padding: clamp(84px, 12vh, 150px) 0; }
     color: var(--muted); font-size: clamp(1rem, 1.4vw, 1.18rem);
     max-width: 62ch; margin-top: 18px;
 }
-.section-header { margin-bottom: clamp(40px, 6vw, 70px); max-width: 70ch; }
+.section-header { margin-bottom: clamp(28px, 4vw, 48px); max-width: 70ch; }
 .accent { color: var(--cyan); }
 
 /* ---------- Buttons ---------- */
@@ -367,18 +367,6 @@ section { position: relative; padding: clamp(84px, 12vh, 150px) 0; }
 .story-block { padding: 30px 28px; }
 .story-block h3 { font-family: var(--font-display); font-weight: 600; font-size: 1.3rem; text-transform: uppercase; color: var(--cyan); margin-bottom: 14px; }
 .story-block p { color: var(--muted); font-size: 0.96rem; }
-.story-services {
-    display: flex; flex-wrap: wrap; align-items: center; gap: 18px; padding: 24px 28px;
-    border: 1px dashed var(--line); border-radius: var(--radius); background: var(--panel-2);
-}
-.story-services-label { font-family: var(--font-mono); font-size: 0.74rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--amber); }
-.story-services-chips { display: flex; flex-wrap: wrap; gap: 10px; }
-.story-chip {
-    font-family: var(--font-mono); font-size: 0.78rem; letter-spacing: 0.05em; padding: 8px 14px;
-    border: 1px solid var(--line); border-radius: 100px; color: var(--paper); background: rgba(91, 200, 255, 0.05);
-    transition: border-color 0.3s, color 0.3s;
-}
-.story-chip:hover { border-color: var(--cyan); color: var(--cyan); }
 
 /* ============================================================
    SERVICES / CAPABILITIES
@@ -461,7 +449,7 @@ section { position: relative; padding: clamp(84px, 12vh, 150px) 0; }
 /* ============================================================
    PILOT PROGRAM CTA
    ============================================================ */
-.pilot { padding-top: clamp(50px, 6vw, 80px); padding-bottom: clamp(50px, 6vw, 80px); }
+.pilot { padding-top: clamp(32px, 4vw, 56px); padding-bottom: clamp(32px, 4vw, 56px); }
 .pilot-inner { text-align: center; max-width: 68ch; margin: 0 auto; padding: clamp(40px, 5vw, 60px); }
 .pilot-inner .section-subtitle { margin-bottom: 28px; }
 
@@ -529,7 +517,6 @@ section { position: relative; padding: clamp(84px, 12vh, 150px) 0; }
     .services-grid { grid-template-columns: 1fr; }
     .process-grid { grid-template-columns: 1fr; }
     .story-grid { grid-template-columns: 1fr; }
-    .story-services { flex-direction: column; align-items: flex-start; }
     .ar-features { grid-template-columns: 1fr; }
 }
 
