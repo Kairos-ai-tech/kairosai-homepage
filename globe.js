@@ -38,13 +38,17 @@
         return [a[0] * k1 + b[0] * k2, a[1] * k1 + b[1] * k2, a[2] * k1 + b[2] * k2];
     }
 
+    function label(l) {
+        return l.country ? l.city + ', ' + l.country : l.city;
+    }
+
     function fillPanel(locs) {
         var companies = 0, counted = false, seen = {};
         var list = document.getElementById('clientsList');
         locs.forEach(function (l) {
             var li = document.createElement('li');
             var name = document.createElement('span');
-            name.textContent = l.country ? l.city + ', ' + l.country : l.city;
+            name.textContent = label(l);
             li.appendChild(name);
             if (l.companies) {
                 counted = true;
@@ -68,7 +72,7 @@
         if (!ctx) return;
         var pts = landPoints(land);
         var hq = vec(HQ.lat, HQ.lon);
-        var markers = locs.map(function (l) { return { v: vec(l.lat, l.lon), name: l.city }; });
+        var markers = locs.map(function (l) { return { v: vec(l.lat, l.lon), name: label(l) }; });
         var arcs = markers.map(function (m) {
             var a = [];
             var w = Math.acos(Math.max(-1, Math.min(1, hq[0] * m.v[0] + hq[1] * m.v[1] + hq[2] * m.v[2])));
@@ -176,6 +180,7 @@
                 ctx.fill();
             }
 
+            var labels = [];
             markers.forEach(function (m, n) {
                 var q = project(m.v, cr, sr, ct, st);
                 if (q[2] <= 0) return;
@@ -191,19 +196,37 @@
                 ctx.fill();
                 var fade = Math.min(1, (q[2] - 0.08) / 0.25);
                 if (fade <= 0) return;
-                ctx.globalAlpha = fade;
-                ctx.font = '600 ' + fs + 'px "Hanken Grotesk", system-ui, sans-serif';
-                ctx.textBaseline = 'middle';
-                ctx.textAlign = px > cx ? 'right' : 'left';
-                var tx = px + (px > cx ? -1 : 1) * 9 * dpr;
-                ctx.lineJoin = 'round';
-                ctx.lineWidth = 3.5 * dpr;
-                ctx.strokeStyle = 'rgba(7,13,24,0.9)';
-                ctx.strokeText(m.name, tx, py);
-                ctx.fillStyle = '#e9f1fb';
-                ctx.fillText(m.name, tx, py);
-                ctx.globalAlpha = 1;
+                var band = 12 * dpr;
+                if (!m.side || px > cx + band) m.side = px > cx ? -1 : 1;
+                else if (px < cx - band) m.side = 1;
+                labels.push({ m: m, px: px, py: py, fade: fade });
             });
+
+            ctx.save();
+            ctx.textBaseline = 'middle';
+            ctx.lineJoin = 'round';
+            ctx.lineWidth = 3.5 * dpr;
+            ctx.strokeStyle = 'rgba(7,13,24,0.9)';
+            ctx.fillStyle = '#e9f1fb';
+            ctx.textAlign = 'left';
+            labels.forEach(function (l) {
+                var side = l.m.side;
+                var tx = l.px + side * 9 * dpr;
+                var avail = (side < 0 ? tx : size - tx) - 4 * dpr;
+                var f = fs;
+                ctx.font = '600 ' + f + 'px "Hanken Grotesk", system-ui, sans-serif';
+                var w = ctx.measureText(l.m.name).width;
+                if (w > avail) {
+                    f = Math.max(8 * dpr, f * avail / w);
+                    ctx.font = '600 ' + f + 'px "Hanken Grotesk", system-ui, sans-serif';
+                    w = ctx.measureText(l.m.name).width;
+                }
+                var x = side < 0 ? tx - w : tx;
+                ctx.globalAlpha = l.fade;
+                ctx.strokeText(l.m.name, x, l.py);
+                ctx.fillText(l.m.name, x, l.py);
+            });
+            ctx.restore();
         }
 
         function frame(now) {
@@ -253,6 +276,7 @@
         document.addEventListener('visibilitychange', kick);
         resize();
         kick();
+        if (document.fonts && document.fonts.ready) document.fonts.ready.then(function () { draw(performance.now()); });
     }
 
     Promise.all([
