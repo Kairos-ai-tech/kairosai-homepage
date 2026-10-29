@@ -1,1 +1,7 @@
-{"locations":[]}
+{"locations":[
+{"city":"New York","country":"United States","lat":40.71,"lon":-74.01},
+{"city":"Dubai","country":"United Arab Emirates","lat":25.2,"lon":55.27},
+{"city":"Bulgaria","country":"","lat":42.73,"lon":25.49},
+{"city":"Philippines","country":"","lat":12.88,"lon":121.77},
+{"city":"Taiwan","country":"","lat":23.7,"lon":121.0}
+]}

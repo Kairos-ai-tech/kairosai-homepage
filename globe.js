@@ -20,7 +20,7 @@
         land.rows.forEach(function (hex, r) {
             var bits = '';
             for (var i = 0; i < hex.length; i++) bits += parseInt(hex[i], 16).toString(2).padStart(4, '0');
-            bits = bits.slice(1);
+            bits = bits.slice(bits.indexOf('1') + 1);
             var lat = 90 - land.step / 2 - r * land.step;
             var stride = Math.min(14, Math.max(1, Math.round(1 / Math.cos(lat * rad))));
             for (var c = 0; c < bits.length; c += stride) {
@@ -39,22 +39,28 @@
     }
 
     function fillPanel(locs) {
-        var companies = 0;
+        var companies = 0, counted = false, seen = {};
         var list = document.getElementById('clientsList');
         locs.forEach(function (l) {
-            companies += l.companies;
             var li = document.createElement('li');
             var name = document.createElement('span');
             name.textContent = l.country ? l.city + ', ' + l.country : l.city;
-            var n = document.createElement('span');
-            n.className = 'clients-list-n';
-            n.textContent = String(l.companies);
             li.appendChild(name);
-            li.appendChild(n);
+            if (l.companies) {
+                counted = true;
+                var n = document.createElement('span');
+                n.className = 'clients-list-n';
+                n.textContent = String(l.companies);
+                li.appendChild(n);
+            }
+            companies += l.companies || 1;
+            seen[(l.country || l.city).toLowerCase()] = 1;
             list.appendChild(li);
         });
-        document.getElementById('clientsCompanies').textContent = String(companies);
-        document.getElementById('clientsCities').textContent = String(locs.length);
+        var cs = document.getElementById('clientsCompanies');
+        cs.textContent = String(companies);
+        cs.parentNode.hidden = !counted;
+        document.getElementById('clientsCountries').textContent = String(Object.keys(seen).length);
     }
 
     function start(land, locs) {
@@ -65,9 +71,12 @@
         var markers = locs.map(function (l) { return { v: vec(l.lat, l.lon) }; });
         var arcs = markers.map(function (m) {
             var a = [];
+            var w = Math.acos(Math.max(-1, Math.min(1, hq[0] * m.v[0] + hq[1] * m.v[1] + hq[2] * m.v[2])));
+            if (w < 0.02 || w > Math.PI - 0.02) return a;
+            var lift = 0.15 * Math.min(1, w / 1.5);
             for (var i = 0; i <= 48; i++) {
                 var p = slerp(hq, m.v, i / 48);
-                var k = 1 + 0.2 * Math.sin(Math.PI * i / 48);
+                var k = 1 + lift * Math.sin(Math.PI * i / 48);
                 a.push([p[0] * k, p[1] * k, p[2] * k]);
             }
             return a;
@@ -99,7 +108,7 @@
 
         function draw(now) {
             if (!size) return;
-            var R = size * 0.42, cx = size / 2, cy = size / 2;
+            var R = size * 0.4, cx = size / 2, cy = size / 2;
             var cr = Math.cos(rot), sr = Math.sin(rot), ct = Math.cos(tilt), st = Math.sin(tilt);
             ctx.clearRect(0, 0, size, size);
 
@@ -134,6 +143,7 @@
             var t = now / 1000;
             ctx.lineWidth = Math.max(1, dpr);
             arcs.forEach(function (arc, n) {
+                if (!arc.length) return;
                 ctx.beginPath();
                 var pen = false;
                 for (var j = 0; j < arc.length; j++) {
@@ -197,10 +207,11 @@
         }
 
         canvas.addEventListener('pointerdown', function (e) {
+            if (e.button !== 0 || !e.isPrimary) return;
             dragging = true;
             lastX = e.clientX;
             lastY = e.clientY;
-            canvas.setPointerCapture(e.pointerId);
+            try { canvas.setPointerCapture(e.pointerId); } catch (err) {}
             canvas.classList.add('is-dragging');
         });
         canvas.addEventListener('pointermove', function (e) {
@@ -214,6 +225,7 @@
         function release() { dragging = false; canvas.classList.remove('is-dragging'); }
         canvas.addEventListener('pointerup', release);
         canvas.addEventListener('pointercancel', release);
+        canvas.addEventListener('lostpointercapture', release);
 
         if ('ResizeObserver' in window) new ResizeObserver(resize).observe(canvas);
         else window.addEventListener('resize', resize);
@@ -233,9 +245,9 @@
         fetch('data/globe-land.json').then(function (r) { return r.json(); })
     ]).then(function (res) {
         var locs = ((res[0] && res[0].locations) || []).filter(function (l) {
-            return l && typeof l.city === 'string' && isFinite(l.lat) && isFinite(l.lon) && Math.abs(l.lat) <= 90 && Math.abs(l.lon) <= 180;
+            return l && typeof l.city === 'string' && typeof l.lat === 'number' && typeof l.lon === 'number' && isFinite(l.lat) && isFinite(l.lon) && Math.abs(l.lat) <= 90 && Math.abs(l.lon) <= 180;
         }).map(function (l) {
-            return { city: l.city, country: typeof l.country === 'string' ? l.country : '', lat: +l.lat, lon: +l.lon, companies: l.companies > 0 ? Math.floor(l.companies) : 1 };
+            return { city: l.city, country: typeof l.country === 'string' ? l.country : '', lat: +l.lat, lon: +l.lon, companies: l.companies > 0 ? Math.min(9999, Math.floor(l.companies)) : 0 };
         });
         if (!locs.length) return;
         fillPanel(locs);
