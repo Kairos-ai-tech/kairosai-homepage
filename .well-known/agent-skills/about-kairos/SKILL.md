@@ -19,5 +19,6 @@ the product, process, services, and contact information.
 
 ## Localization
 The site is available in eight languages: English (default), Traditional
-Chinese, Japanese, Spanish, Italian, French, Korean, and German. Use the
-language switcher in the site header, or append `?lang=<code>` to any URL.
+Chinese, Japanese, Spanish, Italian, French, Korean, and German. Each language has its own
+page (`/zh-tw/`, `/ja/`, `/es/`, `/it/`, `/fr/`, `/ko/`, `/de/`); use the language
+switcher in the site header.

@@ -118,8 +118,8 @@ The site is available in eight languages (English is the default):
 - Korean (`ko`)
 - German (`de`)
 
-Switch language by appending `?lang=<code>` to any URL on the site, or via the
-language switcher in the site header.
+Each language has its own page: `/zh-tw/`, `/ja/`, `/es/`, `/it/`, `/fr/`, `/ko/`, `/de/`
+(English is the root). Switch with the language switcher in the site header.
 
 ## Agent discovery
 

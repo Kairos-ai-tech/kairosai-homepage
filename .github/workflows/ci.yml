@@ -12,5 +12,7 @@ jobs:
       - uses: actions/checkout@v4
       - name: Check JS syntax
         run: node --check script.js
+      - name: Check generated locale pages are current
+        run: node scripts/build-locales.mjs --check
       - name: Run site checks
         run: python3 tests/check_site.py

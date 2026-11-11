@@ -38,12 +38,13 @@ The site supports 8 languages: English (`en`, default), Traditional Chinese (`zh
 1. HTML elements use `data-i18n` attributes for text content or `data-i18n-placeholder` for placeholders
 2. All translations are stored in the `translations` object in `script.js` (lines 9-746), merged at runtime with `extraI18n` (lines 883-1316, for sections added after the initial i18n pass)
 3. `setLanguage(lang)` function updates all translatable elements
-4. Language preference persists in localStorage
+4. Every language has its own static page (`/zh-tw/`, `/ja/`, `/es/`, `/it/`, `/fr/`, `/ko/`, `/de/`; English is the root). They are generated from `index.html` plus the `script.js` translations by `node scripts/build-locales.mjs` (also rewrites root hreflang and `sitemap.xml`); run it after editing `index.html` or any translation, and CI runs it with `--check`. Per-language `<title>`/description live in the `META` object in that script. The root forwards legacy `?lang=` links and a remembered choice to the language page
+5. Language preference persists in localStorage
 
 **To add/edit translations:**
 1. Add translation keys to the `translations` object in `script.js` for each language
 2. Add `data-i18n="your.key"` attribute to HTML elements
-3. Update `langLabels` object if adding a new language
+3. Update `langLabels` object if adding a new language (and `LOCALES`/`META` in `scripts/build-locales.mjs`, plus a switcher link in `index.html`)
 
 ### Key JavaScript Modules (in script.js)
 
