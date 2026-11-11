@@ -205,6 +205,16 @@ export function buildPage(src, translations, loc) {
     /("@id": "https:\/\/www\.kairosaitech\.com\/#webpage"[\s\S]*?"inLanguage": ")[^"]*(")/,
     (_, a, b) => `${a}${loc.html}${b}`,
   );
+  html = html.replace(/<script type="application\/ld\+json">[\s\S]*?<\/script>/g, (block) => {
+    if (!block.includes('"FAQPage"')) return block;
+    const esc = (v) => JSON.stringify(v).slice(1, -1);
+    let out = block;
+    for (const [key, en] of Object.entries(translations.en)) {
+      if (!/^faq\.[qa]\d+$/.test(key) || !t[key] || t[key] === en) continue;
+      out = out.split(esc(en)).join(esc(t[key]));
+    }
+    return out;
+  });
   html = markActiveOption(html, loc);
   const label = loc.label;
   html = html.replace(/(<span id="currentLang">)[^<]*(<\/span>)/, (_, a, b) => `${a}${label}${b}`);

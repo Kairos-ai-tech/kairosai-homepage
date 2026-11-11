@@ -107,5 +107,9 @@ for code, folder in [("zh-Hant", "zh-tw"), ("ja", "ja"), ("es", "es"), ("it", "i
     check(f"{folder}/ is listed in sitemap.xml", f"<loc>{url}</loc>" in sitemap_xml)
     check(f"{folder}/ has no relative asset paths", re.search(r'(?:href|src|poster)="(?![a-z][a-z0-9+.-]*:|/|#)', page) is None)
     check(f"index.html links to {folder}/", f'href="/{folder}/"' in html)
+    page_faq = [json.loads(b) for b in re.findall(r'<script type="application/ld\+json">(.*?)</script>', page, re.S) if '"FAQPage"' in b]
+    page_ld_q = [q["name"] for q in page_faq[0]["mainEntity"]] if page_faq else []
+    page_vis_q = [q.strip() for q in re.findall(r'<summary class="faq-question"[^>]*>(.*?)</summary>', page, re.S)]
+    check(f"{folder}/ FAQPage JSON-LD questions match visible FAQ", page_ld_q == page_vis_q and len(page_ld_q) > 0)
 
 sys.exit(1 if failures else 0)

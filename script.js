@@ -688,10 +688,10 @@ function setLanguage(lang) {
     });
 
     // Update html lang attribute
-    document.documentElement.lang = lang;
+    document.documentElement.lang = lang === 'zh-TW' ? 'zh-Hant' : lang;
 
     // Save preference
-    try { localStorage.setItem('preferredLanguage', lang); } catch (e) { /* storage unavailable */ }
+    try { localStorage.setItem('preferredLanguage', lang); } catch (e) {}
 }
 
 // Language dropdown toggle
@@ -719,11 +719,10 @@ if (langSelector && langDropdown) {
 // Language options are plain links to the per-language pages; remember the choice
 document.querySelectorAll('.lang-option').forEach(option => {
     option.addEventListener('click', () => {
-        try { localStorage.setItem('preferredLanguage', option.getAttribute('data-lang')); } catch (e) { /* storage unavailable */ }
+        try { localStorage.setItem('preferredLanguage', option.getAttribute('data-lang')); } catch (e) {}
     });
 });
 
-// Each language has its own page (/ja/, /zh-tw/, ...). The English root forwards legacy ?lang= links and a remembered choice.
 const LANG_PATHS = { 'zh-TW': '/zh-tw/', 'ja': '/ja/', 'es': '/es/', 'it': '/it/', 'fr': '/fr/', 'ko': '/ko/', 'de': '/de/' };
 const lookupLangPath = (code) => (code && Object.prototype.hasOwnProperty.call(LANG_PATHS, code) ? LANG_PATHS[code] : null);
 
@@ -734,7 +733,7 @@ window.addEventListener('DOMContentLoaded', () => {
         let saved = null;
         try { saved = localStorage.getItem('preferredLanguage'); } catch (e) { saved = null; }
         const urlLang = new URLSearchParams(window.location.search).get('lang');
-        const target = lookupLangPath(urlLang) || lookupLangPath(saved);
+        const target = urlLang === 'en' ? null : (lookupLangPath(urlLang) || lookupLangPath(saved));
         if (target) {
             window.location.replace(target + window.location.hash);
             return;
@@ -1704,13 +1703,10 @@ window.addEventListener('load', () => document.body.classList.add('loaded'));
                 }
             },
             execute: async function(input) {
-                if (typeof window.setLanguage === 'function') {
-                    window.setLanguage(input.lang);
-                    return { ok: true, lang: input.lang };
-                }
-                const url = new URL(window.location.href);
-                url.searchParams.set('lang', input.lang);
-                window.location.href = url.toString();
+                const path = input.lang === 'en' ? '/' : LANG_PATHS[input.lang];
+                if (!path) return { ok: false, error: 'Unsupported language' };
+                try { localStorage.setItem('preferredLanguage', input.lang); } catch (e) {}
+                window.location.href = path;
                 return { ok: true, lang: input.lang, redirected: true };
             }
         },
