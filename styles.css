@@ -217,7 +217,7 @@ section { position: relative; padding: clamp(48px, 7vh, 88px) 0; }
 }
 .lang-dropdown.show { opacity: 1; visibility: visible; transform: translateY(0); }
 .lang-option {
-    display: flex; align-items: center; gap: 10px; width: 100%; padding: 10px 12px;
+    text-decoration: none; display: flex; align-items: center; gap: 10px; width: 100%; padding: 10px 12px;
     border-radius: 8px; color: var(--muted); font-size: 0.9rem; transition: background 0.2s, color 0.2s;
 }
 .lang-option:hover { background: rgba(91, 200, 255, 0.08); color: var(--paper); }

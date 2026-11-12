@@ -280,8 +280,8 @@
     }
 
     Promise.all([
-        fetch('data/clients.json').then(function (r) { return r.json(); }),
-        fetch('data/globe-land.json').then(function (r) { return r.json(); })
+        fetch('/data/clients.json').then(function (r) { return r.json(); }),
+        fetch('/data/globe-land.json').then(function (r) { return r.json(); })
     ]).then(function (res) {
         var locs = ((res[0] && res[0].locations) || []).filter(function (l) {
             return l && typeof l.city === 'string' && typeof l.lat === 'number' && typeof l.lon === 'number' && isFinite(l.lat) && isFinite(l.lon) && Math.abs(l.lat) <= 90 && Math.abs(l.lon) <= 180;

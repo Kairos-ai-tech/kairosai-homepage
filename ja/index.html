@@ -1,0 +1,1082 @@
+<!DOCTYPE html>
+<html lang="ja" data-page-lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Primary Meta Tags -->
+    <title>SetTime AI 鉄筋積算 | Kairos.ai 優時科技 — 建設・AEC 向け AI</title>
+    <meta name="title" content="SetTime AI 鉄筋積算 | Kairos.ai 優時科技 — 建設・AEC 向け AI">
+    <meta name="description" content="Kairos.ai（優時科技）は AEC・建設業界向けの AI を開発しています。製品の SetTime（旧 iTech）は施工図から正確な鉄筋数量と曲げ加工表を自動で作成します。詳細は settime.kairosaitech.com。">
+    <meta name="keywords" content="優時科技, Kairos.ai, SetTime, AI AEC 解決方案, AI 營建解決方案, AI 鋼筋估算, 鋼筋估算軟體, 鋼筋翻樣, 鋼筋估算, 斷料彎曲表, 營建 AI, AR 鋼筋, AEC, AI系統, AI系統設計, 數據分析, 後端開發, AI 應用, AEC AI solutions, construction AI solutions, rebar estimation, rebar estimation software, rebar takeoff, bar bending schedule, AEC AI, construction AI, AI construction estimating, AR rebar visualization, AR site verification, AI systems design, data analysis, backend systems">
+    <meta name="author" content="Kairos.ai 優時科技">
+    <meta name="application-name" content="Kairos.ai">
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+    <meta name="language" content="English, Traditional Chinese, Japanese, Spanish, Italian, French, Korean, German">
+    <meta name="theme-color" content="#2680FF">
+    <meta name="company" content="優時科技">
+    <meta name="geo.region" content="TW">
+    <meta name="geo.placename" content="Taiwan">
+
+    <!-- Google Site Verification -->
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.kairosaitech.com/ja/">
+    <meta property="og:site_name" content="Kairos.ai 優時科技">
+    <meta property="og:title" content="SetTime AI 鉄筋積算 | Kairos.ai 優時科技 — 建設・AEC 向け AI">
+    <meta property="og:description" content="Kairos.ai（優時科技）は AEC・建設業界向けの AI を開発しています。製品の SetTime（旧 iTech）は施工図から正確な鉄筋数量と曲げ加工表を自動で作成します。詳細は settime.kairosaitech.com。">
+    <meta property="og:image" content="https://www.kairosaitech.com/logo_title.png">
+    <meta property="og:image:width" content="2363">
+    <meta property="og:image:height" content="2363">
+    <meta property="og:image:alt" content="Kairos.ai 優時科技 logo">
+    <meta property="og:locale" content="ja_JP">
+    <meta property="og:locale:alternate" content="en_US">
+    <meta property="og:locale:alternate" content="zh_TW">
+    <meta property="og:locale:alternate" content="es_ES">
+    <meta property="og:locale:alternate" content="it_IT">
+    <meta property="og:locale:alternate" content="fr_FR">
+    <meta property="og:locale:alternate" content="ko_KR">
+    <meta property="og:locale:alternate" content="de_DE">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://www.kairosaitech.com/ja/">
+    <meta name="twitter:title" content="SetTime AI 鉄筋積算 | Kairos.ai 優時科技 — 建設・AEC 向け AI">
+    <meta name="twitter:description" content="Kairos.ai（優時科技）は AEC・建設業界向けの AI を開発しています。製品の SetTime（旧 iTech）は施工図から正確な鉄筋数量と曲げ加工表を自動で作成します。詳細は settime.kairosaitech.com。">
+    <meta name="twitter:image" content="https://www.kairosaitech.com/logo_title.png">
+    <meta name="twitter:image:alt" content="Kairos.ai 優時科技 logo">
+
+    <!-- Canonical URL - Dynamically updated by JavaScript to match the current language variant -->
+    <link rel="canonical" id="canonicalLink" href="https://www.kairosaitech.com/ja/">
+
+    <!-- Language Alternates for International SEO -->
+    <link rel="alternate" hreflang="en" href="https://www.kairosaitech.com/">
+    <link rel="alternate" hreflang="zh-Hant" href="https://www.kairosaitech.com/zh-tw/">
+    <link rel="alternate" hreflang="ja" href="https://www.kairosaitech.com/ja/">
+    <link rel="alternate" hreflang="es" href="https://www.kairosaitech.com/es/">
+    <link rel="alternate" hreflang="it" href="https://www.kairosaitech.com/it/">
+    <link rel="alternate" hreflang="fr" href="https://www.kairosaitech.com/fr/">
+    <link rel="alternate" hreflang="ko" href="https://www.kairosaitech.com/ko/">
+    <link rel="alternate" hreflang="de" href="https://www.kairosaitech.com/de/">
+    <link rel="alternate" hreflang="x-default" href="https://www.kairosaitech.com/">
+
+    <!-- Agent discovery link relations (RFC 8288 equivalents; GitHub Pages cannot set HTTP Link headers) -->
+    <link rel="api-catalog" href="/.well-known/api-catalog" type="application/linkset+json">
+    <link rel="api-catalog" href="/.well-known/api-catalog.json" type="application/linkset+json">
+    <link rel="service-doc" href="/" type="text/html">
+    <link rel="service-meta" href="/.well-known/mcp/server-card.json" type="application/json">
+    <link rel="alternate" type="text/markdown" href="/index.md" title="Markdown version for AI agents">
+    <link rel="llms-txt" href="/llms.txt" type="text/plain" title="llms.txt (llmstxt.org)">
+    <link rel="author" href="mailto:support@kairosaitech.com">
+    <!-- SetTime has its own product site; point crawlers/agents at it -->
+    <link rel="related" href="https://settime.kairosaitech.com/" title="SetTime — AI rebar estimation (product page)">
+
+    <link rel="stylesheet" href="/styles.css">
+    <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preload" as="image" href="/media/hero-poster.webp" fetchpriority="high">
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Khand:wght@500;600;700&family=Hanken+Grotesk:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link href="https://fonts.googleapis.com/css2?family=Khand:wght@500;600;700&family=Hanken+Grotesk:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet"></noscript>
+    <link rel="icon" type="image/png" href="/logo-96.png">
+    <link rel="apple-touch-icon" href="/logo-180.png">
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-N7Z66L7WBR"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag('js', new Date());
+
+        gtag('config', 'G-N7Z66L7WBR');
+    </script>
+
+    <!-- No-JS fallback: reveal animations rely on JS to add .is-visible. If JS is
+         unavailable, force all scroll-reveal content visible so nothing disappears. -->
+    <noscript>
+        <style>
+            [data-reveal] { opacity: 1 !important; transform: none !important; }
+        </style>
+    </noscript>
+</head>
+
+<body>
+    <!-- Structured Data (Schema.org): linked entity graph — Organization ⇄ SetTime (SoftwareApplication, own site at settime.kairosaitech.com) -->
+    <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@graph": [
+                {
+                    "@type": "Organization",
+                    "@id": "https://www.kairosaitech.com/#organization",
+                    "name": "Kairos.ai",
+                    "alternateName": [
+                        "優時科技",
+                        "Kairos AI",
+                        "Kairos.ai 優時科技",
+                        "優時科技有限公司"
+                    ],
+                    "url": "https://www.kairosaitech.com/",
+                    "logo": {
+                        "@type": "ImageObject",
+                        "@id": "https://www.kairosaitech.com/#logo",
+                        "url": "https://www.kairosaitech.com/logo.png",
+                        "width": 2363,
+                        "height": 2363,
+                        "caption": "Kairos.ai 優時科技"
+                    },
+                    "image": {
+                        "@type": "ImageObject",
+                        "url": "https://www.kairosaitech.com/logo_title.png",
+                        "width": 2363,
+                        "height": 2363
+                    },
+                    "description": "Kairos.ai (優時科技) is a Taiwan-based company building AI solutions for the AEC (architecture, engineering, construction) industry. Its first product, SetTime (formerly iTech), turns construction drawings into accurate rebar estimates and bar-bending schedules. Kairos.ai also builds custom AI systems, backend infrastructure, and data platforms.",
+                    "disambiguatingDescription": "Taiwanese AEC AI company, maker of SetTime (formerly iTech) AI rebar estimation software.",
+                    "slogan": "AI Solutions for AEC & Construction, Starting with AI Rebar Estimation",
+                    "address": {
+                        "@type": "PostalAddress",
+                        "addressCountry": "TW"
+                    },
+                    "foundingLocation": {
+                        "@type": "Place",
+                        "name": "Taiwan"
+                    },
+                    "email": "support@kairosaitech.com",
+                    "contactPoint": {
+                        "@type": "ContactPoint",
+                        "email": "support@kairosaitech.com",
+                        "contactType": "sales",
+                        "url": "https://www.kairosaitech.com/#contact",
+                        "availableLanguage": [
+                            "en",
+                            "zh-TW",
+                            "ja",
+                            "es",
+                            "it",
+                            "fr",
+                            "ko",
+                            "de"
+                        ]
+                    },
+                    "sameAs": [
+                        "https://www.linkedin.com/company/kairos-ai-tech",
+                        "https://github.com/Kairos-ai-tech"
+                    ],
+                    "areaServed": [
+                        "TW",
+                        "Asia"
+                    ],
+                    "brand": {
+                        "@type": "Brand",
+                        "@id": "https://settime.kairosaitech.com/#brand",
+                        "name": "SetTime",
+                        "url": "https://settime.kairosaitech.com/",
+                        "logo": "https://www.kairosaitech.com/settime-logo.png"
+                    },
+                    "knowsAbout": [
+                        "AI AEC Solutions",
+                        "AI Construction Solutions",
+                        "AI Rebar Estimation",
+                        "Rebar Takeoff",
+                        "Bar Bending Schedule",
+                        "Construction Drawing Recognition",
+                        "Computer Vision",
+                        "AEC AI",
+                        "Construction AI",
+                        "AR Rebar Visualization",
+                        "AI Systems Design",
+                        "Backend Systems",
+                        "Data Analysis",
+                        "AI AEC 解決方案",
+                        "AI 營建解決方案",
+                        "AI 鋼筋估算",
+                        "鋼筋翻樣",
+                        "鋼筋估算",
+                        "斷料彎曲表",
+                        "營建 AI"
+                    ],
+                    "hasOfferCatalog": {
+                        "@type": "OfferCatalog",
+                        "name": "Kairos.ai 產品與服務 Products & Services",
+                        "itemListElement": [
+                            {
+                                "@type": "Offer",
+                                "itemOffered": {
+                                    "@id": "https://settime.kairosaitech.com/#software"
+                                }
+                            },
+                            {
+                                "@type": "Offer",
+                                "itemOffered": {
+                                    "@type": "Service",
+                                    "name": "AI Systems Design AI系統設計",
+                                    "serviceType": "AI Systems Design",
+                                    "description": "Custom AI systems designed and tuned to measurable business outcomes.",
+                                    "provider": {
+                                        "@id": "https://www.kairosaitech.com/#organization"
+                                    },
+                                    "areaServed": "TW"
+                                }
+                            },
+                            {
+                                "@type": "Offer",
+                                "itemOffered": {
+                                    "@type": "Service",
+                                    "name": "Backend Systems 後端系統開發",
+                                    "serviceType": "Backend Systems",
+                                    "description": "Robust, scalable backend infrastructure for AI applications.",
+                                    "provider": {
+                                        "@id": "https://www.kairosaitech.com/#organization"
+                                    },
+                                    "areaServed": "TW"
+                                }
+                            },
+                            {
+                                "@type": "Offer",
+                                "itemOffered": {
+                                    "@type": "Service",
+                                    "name": "AI Applications AI 應用開發",
+                                    "serviceType": "AI Applications",
+                                    "description": "AI-powered applications from concept to deployment.",
+                                    "provider": {
+                                        "@id": "https://www.kairosaitech.com/#organization"
+                                    },
+                                    "areaServed": "TW"
+                                }
+                            },
+                            {
+                                "@type": "Offer",
+                                "itemOffered": {
+                                    "@type": "Service",
+                                    "name": "Data Analysis AI 數據分析",
+                                    "serviceType": "Data Analysis",
+                                    "description": "AI-driven data analysis: real-time monitoring, anomaly detection, and trend forecasting.",
+                                    "provider": {
+                                        "@id": "https://www.kairosaitech.com/#organization"
+                                    },
+                                    "areaServed": "TW"
+                                }
+                            }
+                        ]
+                    }
+                },
+                {
+                    "@type": "SoftwareApplication",
+                    "@id": "https://settime.kairosaitech.com/#software",
+                    "name": "SetTime",
+                    "alternateName": [
+                        "SetTime AI",
+                        "SetTime AI Rebar Estimation",
+                        "SetTime AI 鋼筋估算",
+                        "iTech"
+                    ],
+                    "url": "https://settime.kairosaitech.com/",
+                    "image": "https://www.kairosaitech.com/settime-logo.png",
+                    "description": "SetTime (formerly iTech) is Kairos.ai's end-to-end AI rebar estimation system for the AEC industry. It reads construction drawings (DWG/CAD or PDF) with computer vision, detects bar sizes, spacing, and laps, and produces rebar quantities, weights, and an exportable bar-bending schedule (CSV/Excel), replacing slow, error-prone manual takeoff.",
+                    "disambiguatingDescription": "AI rebar takeoff and bar-bending schedule software by Kairos.ai (優時科技), Taiwan. Renamed from iTech on 2026-09-09. Official product page: https://settime.kairosaitech.com/",
+                    "applicationCategory": "BusinessApplication",
+                    "applicationSubCategory": "Construction estimating / rebar takeoff software",
+                    "operatingSystem": "Web",
+                    "featureList": [
+                        "Upload construction drawings (PDF or CAD/DWG)",
+                        "Computer-vision detection of rebar sizes, spacing, and laps",
+                        "Rebar quantities and weights",
+                        "Exportable bar-bending schedule (CSV/Excel)"
+                    ],
+                    "audience": {
+                        "@type": "BusinessAudience",
+                        "audienceType": "Contractors, rebar fabricators, structural engineers, and estimating teams in the AEC industry"
+                    },
+                    "inLanguage": [
+                        "en",
+                        "zh-TW",
+                        "ja",
+                        "es",
+                        "it",
+                        "fr",
+                        "ko",
+                        "de"
+                    ],
+                    "creator": {
+                        "@id": "https://www.kairosaitech.com/#organization"
+                    },
+                    "publisher": {
+                        "@id": "https://www.kairosaitech.com/#organization"
+                    },
+                    "brand": {
+                        "@id": "https://settime.kairosaitech.com/#brand"
+                    },
+                    "mainEntityOfPage": "https://settime.kairosaitech.com/"
+                },
+                {
+                    "@type": "WebSite",
+                    "@id": "https://www.kairosaitech.com/#website",
+                    "name": "Kairos.ai 優時科技",
+                    "alternateName": [
+                        "Kairos.ai",
+                        "優時科技"
+                    ],
+                    "url": "https://www.kairosaitech.com/",
+                    "description": "優時科技 Kairos.ai 打造 AEC／營建產業的 AI 解決方案，從 SetTime AI 鋼筋估算系統起步，將施工圖自動轉換為精準鋼筋估算與斷料彎曲表，取代耗時易錯的人工翻樣。同時提供客製 AI 系統設計、後端架構與數據分析平台。",
+                    "inLanguage": [
+                        "en",
+                        "zh-TW",
+                        "ja",
+                        "es",
+                        "it",
+                        "fr",
+                        "ko",
+                        "de"
+                    ],
+                    "publisher": {
+                        "@id": "https://www.kairosaitech.com/#organization"
+                    }
+                },
+                {
+                    "@type": "WebPage",
+                    "@id": "https://www.kairosaitech.com/#webpage",
+                    "url": "https://www.kairosaitech.com/ja/",
+                    "name": "SetTime AI Rebar Estimation | Kairos.ai 優時科技 — AI for AEC & Construction",
+                    "isPartOf": {
+                        "@id": "https://www.kairosaitech.com/#website"
+                    },
+                    "about": {
+                        "@id": "https://www.kairosaitech.com/#organization"
+                    },
+                    "mentions": {
+                        "@id": "https://settime.kairosaitech.com/#software"
+                    },
+                    "primaryImageOfPage": {
+                        "@id": "https://www.kairosaitech.com/#logo"
+                    },
+                    "inLanguage": "ja",
+                    "dateModified": "2026-09-24",
+                    "speakable": {
+                        "@type": "SpeakableSpecification",
+                        "cssSelector": [
+                            ".hero-subtitle",
+                            ".product-description",
+                            ".faq-answer"
+                        ]
+                    }
+                },
+                {
+                    "@type": "VideoObject",
+                    "@id": "https://www.kairosaitech.com/#video",
+                    "name": "SetTime portal walkthrough: structural drawing to rebar bar schedule",
+                    "description": "SetTime portal walkthrough on a synthetic sample plan: upload a drawing, review flagged gaps, and download the rebar takeoff and bar-bending schedule.",
+                    "thumbnailUrl": "https://www.kairosaitech.com/media/settime-demo-poster.jpg",
+                    "contentUrl": "https://www.kairosaitech.com/media/settime-demo.mp4",
+                    "uploadDate": "2026-10-30T14:56:42+08:00",
+                    "duration": "PT44S",
+                    "encodingFormat": "video/mp4",
+                    "inLanguage": "en",
+                    "isPartOf": {
+                        "@id": "https://www.kairosaitech.com/#webpage"
+                    },
+                    "publisher": {
+                        "@id": "https://www.kairosaitech.com/#organization"
+                    }
+                },
+                {
+                    "@type": "NewsArticle",
+                    "@id": "https://www.kairosaitech.com/#news-settime-rename",
+                    "headline": "iTech is now SetTime",
+                    "url": "https://www.kairosaitech.com/#news",
+                    "datePublished": "2026-09-09",
+                    "dateModified": "2026-09-09",
+                    "inLanguage": "en",
+                    "description": "Kairos.ai renamed its AI rebar estimation system iTech to SetTime to better capture what the product delivers — precise rebar estimates and bar-bending schedules, ready right before the concrete sets. The AI engine, accuracy, and pipeline are unchanged.",
+                    "image": "https://www.kairosaitech.com/settime-logo.png",
+                    "about": {
+                        "@id": "https://settime.kairosaitech.com/#software"
+                    },
+                    "author": {
+                        "@id": "https://www.kairosaitech.com/#organization"
+                    },
+                    "publisher": {
+                        "@id": "https://www.kairosaitech.com/#organization"
+                    },
+                    "isPartOf": {
+                        "@id": "https://www.kairosaitech.com/#webpage"
+                    }
+                },
+                {
+                    "@type": "ProfessionalService",
+                    "@id": "https://www.kairosaitech.com/#service",
+                    "name": "Kairos.ai 優時科技 — AI AEC 與營建解決方案",
+                    "parentOrganization": {
+                        "@id": "https://www.kairosaitech.com/#organization"
+                    },
+                    "image": "https://www.kairosaitech.com/logo_title.png",
+                    "url": "https://www.kairosaitech.com/",
+                    "email": "support@kairosaitech.com",
+                    "priceRange": "$$",
+                    "address": {
+                        "@type": "PostalAddress",
+                        "addressCountry": "TW"
+                    },
+                    "areaServed": {
+                        "@type": "Country",
+                        "name": "Taiwan"
+                    },
+                    "description": "優時科技 Kairos.ai 打造 AEC／營建產業的 AI 解決方案，從 SetTime AI 鋼筋估算系統起步，將施工圖自動轉換為精準鋼筋估算與斷料彎曲表，取代耗時易錯的人工翻樣。同時提供客製 AI 系統設計、後端架構與數據分析平台。",
+                    "serviceType": [
+                        "AI Rebar Estimation",
+                        "Rebar Takeoff",
+                        "Bar Bending Schedule",
+                        "AEC AI Solutions",
+                        "Construction AI",
+                        "AI Systems Design",
+                        "Backend Systems",
+                        "AI Applications",
+                        "Data Analysis",
+                        "AI 鋼筋估算",
+                        "鋼筋翻樣",
+                        "斷料彎曲表",
+                        "營建 AI"
+                    ]
+                }
+            ]
+        }
+    </script>
+
+    <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            "itemListElement": [{
+                "@type": "ListItem",
+                "position": 1,
+                "name": "首頁 Home",
+                "item": "https://www.kairosaitech.com/"
+            }, {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "關於我們 Our Story",
+                "item": "https://www.kairosaitech.com/#story"
+            }, {
+                "@type": "ListItem",
+                "position": 3,
+                "name": "運作方式 How it works",
+                "item": "https://www.kairosaitech.com/#how"
+            }, {
+                "@type": "ListItem",
+                "position": 4,
+                "name": "SetTime AI 鋼筋估算 AI Rebar Estimation",
+                "item": "https://www.kairosaitech.com/#product"
+            }, {
+                "@type": "ListItem",
+                "position": 5,
+                "name": "常見問題 FAQ",
+                "item": "https://www.kairosaitech.com/#faq"
+            }, {
+                "@type": "ListItem",
+                "position": 6,
+                "name": "最新消息 News",
+                "item": "https://www.kairosaitech.com/#news"
+            }]
+        }
+    </script>
+
+    <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            "mainEntity": [
+                {
+                    "@type": "Question",
+                    "name": "SetTimeとは何ですか？どのように鉄筋を積算しますか？",
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "SetTimeは優時科技が開発したエンドツーエンドのAIシステムで、施工図（PDFまたはCAD）を正確な鉄筋積算と鉄筋加工帳に自動変換します。コンピュータビジョンモデルが図面から鉄筋径・ピッチ・継手を直接読み取り、手作業で時間がかかり誤りやすい積算作業に代わります。"
+                    }
+                },
+                {
+                    "@type": "Question",
+                    "name": "SetTimeは誰のためのものですか？",
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "SetTimeはAEC（建築・エンジニアリング・建設）業界向けに開発され、施工業者、鉄筋加工業者、構造技術者、積算チームが、より速く正確な鉄筋積算と入札準備期間の短縮を実現できます。"
+                    }
+                },
+                {
+                    "@type": "Question",
+                    "name": "SetTimeは何を出力しますか？",
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "SetTimeは正確な鉄筋数量・重量と、出力可能な鉄筋加工帳を生成します。調達、加工スケジュール、コスト積算にすぐ使えます。"
+                    }
+                },
+                {
+                    "@type": "Question",
+                    "name": "SetTime以外に優時科技は何を提供していますか？",
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "SetTimeは優時科技がAEC業界向けに手がける最初の製品です — 鉄筋積算はその出発点であり、建設業界全体へAIソリューションを届けるという大きなミッションの第一歩です。SetTimeに加え、同じ技術力でカスタムAIシステム設計、バックエンドインフラ、AIアプリケーション開発、データ分析プラットフォームも提供しています。"
+                    }
+                },
+                {
+                    "@type": "Question",
+                    "name": "AI鉄筋積算は、手作業の積算やCAD配筋プラグインとどう違いますか？",
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "手作業の積算は、担当者が図面から鉄筋を目視で数え、寸法を測るものです。CAD配筋プラグインは、すでに作成済みのモデルをもとにCADソフト内で配筋詳細図や鉄筋加工帳を自動生成します。SetTimeのようなAI鉄筋積算は、図面（PDFまたはCAD）そのものを直接読み取り、鉄筋のサイズ・間隔・重ね継手を検出することで、モデルを事前に作成することなく数量と鉄筋加工帳を算出します。"
+                    }
+                },
+                {
+                    "@type": "Question",
+                    "name": "AI鉄筋積算でも、人による確認が必要なのはどこですか？",
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "AI鉄筋積算は完全自動ではなく、SetTimeもそう謳っていません。配筋が密集した箇所、重ね継手のルール、工事途中の図面変更などは、依然として積算担当者の判断が必要です。SetTimeの役割は数量算出のスピードを上げ、表計算のミスを減らすことです — 見積りや加工発注に使う前には、経験ある担当者による確認が推奨されます。"
+                    }
+                },
+                {
+                    "@type": "Question",
+                    "name": "SetTimeはiTechと同じ製品ですか？",
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "はい。SetTimeは、優時科技 Kairos.ai のAI鉄筋積算システム「iTech」の新しい名称で、2026年9月9日に名称を変更しました。AIエンジン、精度、処理パイプラインは変わらず、名称のみが新しくなっています。"
+                    }
+                },
+                {
+                    "@type": "Question",
+                    "name": "SetTimeの公式製品ページはどこですか？",
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "SetTimeの公式製品ページは https://settime.kairosaitech.com です。SetTimeは、AEC業界向けのAIを開発する台湾の企業 Kairos.ai（優時科技）が開発しています。www.kairosaitech.com は会社のホームページです。AEC企業はお問い合わせフォームからSetTimeのパイロットプログラムに応募できます。"
+                    }
+                }
+            ]
+        }
+    </script>
+
+    <!-- Continuous blueprint canvas (shared by all sections) -->
+    <div class="bg-atmos" aria-hidden="true"></div>
+    <div class="bg-grid" aria-hidden="true"></div>
+    <div class="bg-noise" aria-hidden="true"></div>
+    <div class="bg-scan" aria-hidden="true"></div>
+    <div class="scroll-rail" aria-hidden="true"></div>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-wrapper">
+                <a href="#home" class="logo">
+                    <div class="logo-container">
+                        <img src="/logo-96.png" alt="Kairos.ai 優時科技 - AI Solutions for AEC &amp; Construction" class="logo-image" width="38" height="38">
+                        <span class="logo-text">Kairos<span class="logo-accent">.ai</span></span>
+                    </div>
+                </a>
+                <ul class="nav-menu" id="navMenu">
+                    <li><a href="#story" class="nav-link" data-i18n="nav.story">私たちの物語</a></li>
+                    <li><a href="#how" class="nav-link" data-i18n="nav.how">仕組み</a></li>
+                    <li><a href="#product" class="nav-link" data-i18n="nav.products">製品</a></li>
+                    <li><a href="#pilot" class="nav-link" data-i18n="nav.pilot">パイロット</a></li>
+                    <li><a href="#news" class="nav-link" data-i18n="nav.news">ニュース</a></li>
+                    <li><a href="#about" class="nav-link" data-i18n="nav.about">会社概要</a></li>
+                    <li><a href="#contact" class="nav-link" data-i18n="nav.contact">お問い合わせ</a></li>
+                </ul>
+                <div class="language-switcher">
+                    <button class="lang-selector-btn" id="langSelector" aria-haspopup="true" aria-expanded="false" aria-label="Select language">
+                        <svg class="lang-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="12" cy="12" r="10"/>
+                            <line x1="2" y1="12" x2="22" y2="12"/>
+                            <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+                        </svg>
+                        <span id="currentLang">日本</span>
+                        <svg class="dropdown-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polyline points="6 9 12 15 18 9"/>
+                        </svg>
+                    </button>
+                    <div class="lang-dropdown" id="langDropdown">
+                        <a class="lang-option" data-lang="en" href="/" hreflang="en" lang="en"><span class="lang-flag">🇬🇧</span><span class="lang-name">English</span></a>
+                        <a class="lang-option" data-lang="zh-TW" href="/zh-tw/" hreflang="zh-Hant" lang="zh-Hant"><span class="lang-flag">🇹🇼</span><span class="lang-name">繁體中文</span></a>
+                        <a class="lang-option active" data-lang="ja" href="/ja/" hreflang="ja" lang="ja"><span class="lang-flag">🇯🇵</span><span class="lang-name">日本語</span></a>
+                        <a class="lang-option" data-lang="es" href="/es/" hreflang="es" lang="es"><span class="lang-flag">🇪🇸</span><span class="lang-name">Español</span></a>
+                        <a class="lang-option" data-lang="it" href="/it/" hreflang="it" lang="it"><span class="lang-flag">🇮🇹</span><span class="lang-name">Italiano</span></a>
+                        <a class="lang-option" data-lang="fr" href="/fr/" hreflang="fr" lang="fr"><span class="lang-flag">🇫🇷</span><span class="lang-name">Français</span></a>
+                        <a class="lang-option" data-lang="ko" href="/ko/" hreflang="ko" lang="ko"><span class="lang-flag">🇰🇷</span><span class="lang-name">한국어</span></a>
+                        <a class="lang-option" data-lang="de" href="/de/" hreflang="de" lang="de"><span class="lang-flag">🇩🇪</span><span class="lang-name">Deutsch</span></a>
+                    </div>
+                </div>
+                <button class="hamburger" id="hamburger" aria-label="Menu" aria-expanded="false" aria-controls="navMenu"><span></span><span></span><span></span></button>
+            </div>
+        </div>
+    </nav>
+
+    <main class="flow">
+        <div class="spine" aria-hidden="true"></div>
+
+        <!-- Hero -->
+        <section id="home" class="hero">
+            <div class="hero-media" aria-hidden="true">
+                <video class="hero-video" muted loop playsinline preload="none" poster="/media/hero-poster.webp" tabindex="-1">
+                    <source src="/media/hero-flythrough-mobile.mp4" type="video/mp4" media="(max-width: 980px)">
+                    <source src="/media/hero-flythrough.mp4" type="video/mp4">
+                </video>
+            </div>
+            <div class="container">
+                <div class="hero-content">
+                    <div class="hero-badge" data-i18n="hero.badge">AEC・建設向けAIソリューション</div>
+                    <h1 class="hero-title">
+                        <span data-i18n="hero.title1">AIソリューション</span>
+                        <span class="gradient-text" data-i18n="hero.title2">AEC・建設のために</span>
+                    </h1>
+                    <p class="hero-subtitle" data-i18n="hero.subtitle">Kairos.aiはAEC業界向けのAIソリューションを開発 — その第一歩がSetTime。施工図面を高精度な鉄筋積算と加工帳に自動変換するエンドツーエンドのAIシステムで、手作業による積算の遅さとミスを解消します。</p>
+                    <div class="hero-cta">
+                        <a href="https://settime.kairosaitech.com/" target="_blank" rel="noopener noreferrer" class="btn btn-primary" data-i18n="hero.cta1">SetTimeを見る</a>
+                        <a href="#contact" class="btn btn-secondary" data-i18n="hero.cta2">お問い合わせ</a>
+                    </div>
+                    <div class="hero-metrics">
+                        <div class="hero-metric">
+                            <div class="hero-metric-num">10<span>×</span></div>
+                            <div class="hero-metric-label" data-i18n="hero.metric1label">積算の高速化</div>
+                        </div>
+                        <div class="hero-metric">
+                            <div class="hero-metric-num">99<span>%</span></div>
+                            <div class="hero-metric-label" data-i18n="hero.metric2label">積算精度</div>
+                        </div>
+                        <div class="hero-metric">
+                            <div class="hero-metric-num">50k<span>+</span></div>
+                            <div class="hero-metric-label" data-i18n="hero.metric3label">解析した図面</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="hero-visual" aria-hidden="true"></div>
+            </div>
+        </section>
+
+        <!-- Our Story -->
+        <section id="story" class="story">
+            <div class="container">
+                <div class="story-header" data-reveal>
+                    <img src="/logo-280.png" alt="Kairos.ai 優時科技" class="story-logo" width="140" height="140">
+                    <div class="section-tag">01 — <span data-i18n="nav.story">私たちの物語</span></div>
+                    <h2 class="section-title" data-i18n="story.title">目的を持って築く応用AI</h2>
+                    <p class="section-subtitle" data-i18n="story.subtitle">私たちが何者で、なぜ始め、どこへ向かうのか。</p>
+                </div>
+                <div class="story-grid">
+                    <div class="story-block" data-reveal style="--d:0s">
+                        <h3 data-i18n="story.passion.title">私たちの情熱</h3>
+                        <p data-i18n="story.passion.desc">私たちはAIが実際の具体的な課題を解決すべきだと信じています——単なる印象的なデモではありません。テック業界が見過ごしがちな産業に、建設業を皮切りにエンジニアリングの厳密さを届けることが私たちの情熱です。</p>
+                    </div>
+                    <div class="story-block" data-reveal style="--d:0.1s">
+                        <h3 data-i18n="story.origin.title">私たちの始まり</h3>
+                        <p data-i18n="story.origin.desc">Kairos.aiは、AIで人々に時間を取り戻すというシンプルな発想に取り憑かれた小さなチームから始まりました。その探求の中で製造業と建設業の現場を深く掘り下げ、何度も同じボトルネックに突き当たりました——遅くミスの多い手作業の鉄筋積算です。そこで私たちはSetTimeを開発しました。</p>
+                    </div>
+                    <div class="story-block" data-reveal style="--d:0.2s">
+                        <h3 data-i18n="story.goal.title">私たちが目指す先</h3>
+                        <p data-i18n="story.goal.desc">SetTimeをAEC業界における鉄筋積算の標準にし、同じ厳密さでAIシステム、バックエンド基盤、データプラットフォームを必要とするチームのために構築し続けたいと考えています。</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- How it works -->
+        <section id="how" class="process">
+            <div class="container">
+                <div class="section-header" data-reveal>
+                    <div class="section-tag">02 — <span data-i18n="nav.how">仕組み</span></div>
+                    <h2 class="section-title" data-i18n="process.title">図面から加工帳まで</h2>
+                    <p class="section-subtitle" data-i18n="process.subtitle">SetTimeが鉄筋積算の全工程を自動化 — 手作業の集計も表計算ミスもなし。</p>
+                </div>
+                <div class="process-grid">
+                    <article class="step" data-reveal style="--d:0s">
+                        <div class="step-no">STEP 01</div>
+                        <div class="stage" aria-hidden="true">
+                            <svg viewBox="0 0 320 200" focusable="false">
+                                <rect class="st-zone" x="60" y="112" width="200" height="66" rx="8"/>
+                                <path class="st-arrow" d="M160 160v-28M148 144l12-12 12 12"/>
+                                <path class="st-check" d="M144 146l12 12 22-26"/>
+                                <g class="st-sheet">
+                                    <rect class="st-paper" x="116" y="14" width="88" height="68" rx="4"/>
+                                    <text class="st-txt" x="124" y="30">PDF</text>
+                                    <path class="st-line" d="M124 40h72M124 50h72M124 60h48"/>
+                                    <circle class="st-dot" cx="188" cy="68" r="4"/>
+                                </g>
+                                <rect class="st-track" x="60" y="188" width="200" height="4" rx="2"/>
+                                <rect class="st-fill" x="60" y="188" width="200" height="4" rx="2"/>
+                            </svg>
+                        </div>
+                        <h3 data-i18n="process.step1.title">図面をアップロード</h3>
+                        <p data-i18n="process.step1.desc">構造図（PDF・CAD）を取り込み、SetTimeが平面・断面・詳細を解析。</p>
+                    </article>
+                    <article class="step" data-reveal style="--d:0.12s">
+                        <div class="step-no">STEP 02</div>
+                        <div class="stage" aria-hidden="true">
+                            <svg viewBox="0 0 320 200" focusable="false">
+                                <rect class="st-paper" x="90" y="44" width="140" height="112" rx="3"/>
+                                <rect class="st-line" x="102" y="56" width="116" height="88" rx="2"/>
+                                <circle class="st-dot" cx="118" cy="70" r="6"/><circle class="st-dot" cx="160" cy="70" r="6"/><circle class="st-dot" cx="202" cy="70" r="6"/>
+                                <circle class="st-dot" cx="118" cy="130" r="6"/><circle class="st-dot" cx="160" cy="130" r="6"/><circle class="st-dot" cx="202" cy="130" r="6"/>
+                                <rect class="st-box" style="--d:.3s" x="107" y="59" width="22" height="22" rx="3"/>
+                                <rect class="st-box" style="--d:.3s" x="107" y="119" width="22" height="22" rx="3"/>
+                                <rect class="st-box" style="--d:1.07s" x="149" y="59" width="22" height="22" rx="3"/>
+                                <rect class="st-box" style="--d:1.07s" x="149" y="119" width="22" height="22" rx="3"/>
+                                <rect class="st-box" style="--d:1.8s" x="191" y="59" width="22" height="22" rx="3"/>
+                                <rect class="st-box" style="--d:1.8s" x="191" y="119" width="22" height="22" rx="3"/>
+                                <text class="st-tag" style="--d:.5s" x="84" y="73" text-anchor="end">Ø16</text>
+                                <text class="st-tag" style="--d:.5s" x="84" y="133" text-anchor="end">Ø20</text>
+                                <text class="st-tag" style="--d:2.2s" x="160" y="176" text-anchor="middle">Ø10 @150</text>
+                                <rect class="st-scan" x="84" y="38" width="2" height="124"/>
+                            </svg>
+                        </div>
+                        <h3 data-i18n="process.step2.title">AIが鉄筋を検出</h3>
+                        <p data-i18n="process.step2.desc">コンピュータビジョンが鉄筋の径・ピッチ・継手を図面から直接読み取り。</p>
+                    </article>
+                    <article class="step" data-reveal style="--d:0.24s">
+                        <div class="step-no">STEP 03</div>
+                        <div class="stage" aria-hidden="true">
+                            <svg viewBox="0 0 320 200" focusable="false">
+                                <g class="st-row" style="--d:0.0s">
+                                    <rect class="st-paper" x="40" y="22" width="240" height="26" rx="4"/>
+                                    <path class="st-shape" d="M52 35h22"/>
+                                    <rect class="st-skel" x="90" y="30" width="70" height="4" rx="2"/><rect class="st-skel" x="90" y="37" width="44" height="3" rx="1.5"/>
+                                    <rect class="st-num" x="236" y="30" width="34" height="10" rx="2"/>
+                                </g>
+                                <g class="st-row" style="--d:0.3s">
+                                    <rect class="st-paper" x="40" y="56" width="240" height="26" rx="4"/>
+                                    <path class="st-shape" d="M52 64v10h20"/>
+                                    <rect class="st-skel" x="90" y="64" width="70" height="4" rx="2"/><rect class="st-skel" x="90" y="71" width="44" height="3" rx="1.5"/>
+                                    <rect class="st-num" x="236" y="64" width="34" height="10" rx="2"/>
+                                </g>
+                                <g class="st-row" style="--d:0.6s">
+                                    <rect class="st-paper" x="40" y="90" width="240" height="26" rx="4"/>
+                                    <path class="st-shape" d="M52 98v10h14v-10"/>
+                                    <rect class="st-skel" x="90" y="98" width="70" height="4" rx="2"/><rect class="st-skel" x="90" y="105" width="44" height="3" rx="1.5"/>
+                                    <rect class="st-num" x="236" y="98" width="34" height="10" rx="2"/>
+                                </g>
+                                <g class="st-row" style="--d:0.9s">
+                                    <rect class="st-paper" x="40" y="124" width="240" height="26" rx="4"/>
+                                    <path class="st-shape" d="M52 131l8 12 8-12 8 12"/>
+                                    <rect class="st-skel" x="90" y="132" width="70" height="4" rx="2"/><rect class="st-skel" x="90" y="139" width="44" height="3" rx="1.5"/>
+                                    <rect class="st-num" x="236" y="132" width="34" height="10" rx="2"/>
+                                </g>
+                                <g class="st-total">
+                                    <rect class="st-totalbox" x="40" y="162" width="240" height="28" rx="5"/>
+                                    <rect class="st-num" x="52" y="173" width="60" height="6" rx="3"/>
+                                    <rect class="st-num" x="226" y="170" width="44" height="12" rx="3"/>
+                                </g>
+                            </svg>
+                        </div>
+                        <h3 data-i18n="process.step3.title">積算と加工帳</h3>
+                        <p data-i18n="process.step3.desc">正確な数量・重量と、出力可能な鉄筋加工帳を生成。</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- SetTime showcase -->
+        <section id="product" class="product-showcase">
+            <div class="container">
+                <div class="product-head" data-reveal>
+                    <div class="section-tag">03 — <span>Product</span></div>
+                    <h2 class="product-title" data-i18n="products.itech.title">SetTime</h2>
+                    <p class="product-tagline" data-i18n="products.itech.tagline">SetTime — 固まる前に、ぴたりと決める</p>
+                </div>
+                <div class="product-demo" data-reveal>
+                    <video class="demo-video" controls playsinline preload="none" poster="/media/settime-demo-poster.jpg" aria-describedby="demoCaption">
+                        <source src="/media/settime-demo.mp4" type="video/mp4">
+                    </video>
+                    <p class="demo-caption" id="demoCaption" data-i18n="products.demo.caption">合成サンプル図面で見る SetTime ポータルの操作デモ。</p>
+                </div>
+                <div class="product-copy" data-reveal>
+                    <p class="product-description" data-i18n="products.itech.desc">施工図面を高精度な鉄筋積算と加工帳に自動変換するエンドツーエンドのAIシステム。AEC業界の手作業による積算の遅さとミスを解消します。</p>
+                    <div class="product-features">
+                        <span class="product-feature" data-i18n="products.itech.feature1">AI積算</span>
+                        <span class="product-feature" data-i18n="products.itech.feature2">鉄筋拾い</span>
+                        <span class="product-feature" data-i18n="products.itech.feature3">AEC</span>
+                    </div>
+                    <ul class="product-specs">
+                        <li class="product-spec"><span class="product-spec-label" data-i18n="products.itech.spec1Label">入力</span><span class="product-spec-value" data-i18n="products.itech.spec1Value">施工図面 — DWGまたはPDF</span></li>
+                        <li class="product-spec"><span class="product-spec-label" data-i18n="products.itech.spec2Label">出力</span><span class="product-spec-value" data-i18n="products.itech.spec2Value">鉄筋積算と配筋表、CSV/Excelで出力可能</span></li>
+                        <li class="product-spec"><span class="product-spec-label" data-i18n="products.itech.spec3Label">パイプライン</span><span class="product-spec-value" data-i18n="products.itech.spec3Value">アップロード → AI検出 → 積算とスケジュール作成</span></li>
+                    </ul>
+                    <a href="https://settime.kairosaitech.com/" target="_blank" rel="noopener noreferrer" class="btn btn-primary product-cta">
+                        <span data-i18n="products.itech.cta">詳しく見る</span>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+                    </a>
+                </div>
+                <div class="schedule" data-reveal>
+                    <div class="schedule-bar"><i></i><i></i><i></i> bar-bending-schedule.csv <span>SetTime</span></div>
+                    <div class="schedule-scroll">
+                        <table>
+                            <thead>
+                                <tr><th>Mark</th><th>Ø</th><th>Shape</th><th>No.</th><th>Length</th><th>Weight</th></tr>
+                            </thead>
+                            <tbody>
+                                <tr><td><b>B01</b></td><td>16</td><td>Straight</td><td>24</td><td>6,200</td><td>235 kg</td></tr>
+                                <tr><td><b>B02</b></td><td>16</td><td>L-bend</td><td>18</td><td>4,850</td><td>138 kg</td></tr>
+                                <tr><td><b>S01</b></td><td>10</td><td>Stirrup</td><td>96</td><td>1,840</td><td>109 kg</td></tr>
+                                <tr><td><b>B03</b></td><td>20</td><td>Crank</td><td>12</td><td>7,400</td><td>219 kg</td></tr>
+                                <tr><td><b>S02</b></td><td>10</td><td>Tie</td><td>64</td><td>1,420</td><td>56 kg</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="schedule-foot"><span>5 marks · 214 bars</span><b>TOTAL 757 kg</b></div>
+                </div>
+                <div class="ar-block" data-reveal>
+                    <div class="ar-badge"><span data-i18n="products.itechAr.badge">開発中</span></div>
+                    <h3 class="ar-title" data-i18n="products.itechAr.title">SetTime AR</h3>
+                    <p class="ar-desc" data-i18n="products.itechAr.desc">現場向けカメラベースのAR表示。スマートフォンやタブレットを構造物に向けると、AIが検出した鉄筋配置がリアルタイムで実物の鉄筋に重ねて表示され、現場での図面照合を迅速に行えます。</p>
+                    <ul class="ar-features">
+                        <li><span class="ar-feature-num">01</span><span data-i18n="products.itechAr.feature1">検出された鉄筋と配筋表をカメラ映像にリアルタイムでARオーバーレイ表示</span></li>
+                        <li><span class="ar-feature-num">02</span><span data-i18n="products.itechAr.feature2">現場の実物と図面との差異を検出・表示</span></li>
+                        <li><span class="ar-feature-num">03</span><span data-i18n="products.itechAr.feature3">通信が不安定な現場向けのオフライン撮影モード</span></li>
+                        <li><span class="ar-feature-num">04</span><span data-i18n="products.itechAr.feature4">現場照合レポートの出力</span></li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Clients globe (hidden until data/clients.json lists real locations) -->
+        <section id="clients" class="clients" hidden>
+            <div class="container">
+                <div class="section-header" data-reveal>
+                    <div class="section-tag"><span data-i18n="clients.tag">稼働中の導入先</span></div>
+                    <h2 class="section-title" data-i18n="clients.title">SetTime は実際のプロジェクトで稼働中</h2>
+                    <p class="section-subtitle" data-i18n="clients.subtitle">SetTime は、進行中の建設プロジェクトですでに鉄筋の積算に使われています。</p>
+                </div>
+                <div class="clients-grid">
+                    <div class="globe-wrap" data-reveal>
+                        <canvas id="clientsGlobe" aria-hidden="true"></canvas>
+                    </div>
+                    <div class="clients-side" data-reveal style="--d:0.1s">
+                        <div class="clients-stats">
+                            <div class="clients-stat"><div class="clients-stat-num" id="clientsCompanies">0</div><div class="clients-stat-label" data-i18n="clients.stat.companies">導入企業</div></div>
+                            <div class="clients-stat"><div class="clients-stat-num" id="clientsCountries">0</div><div class="clients-stat-label" data-i18n="clients.stat.countries">国・地域</div></div>
+                        </div>
+                        <ul class="clients-list" id="clientsList"></ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Pilot program CTA -->
+        <section id="pilot" class="pilot">
+            <div class="container">
+                <div class="pilot-inner" data-reveal>
+                    <div class="section-tag" data-i18n="pilot.tag">募集中</div>
+                    <h2 class="section-title" data-i18n="pilot.title">パイロット導入企業を募集中</h2>
+                    <p class="section-subtitle" data-i18n="pilot.desc">実プロジェクトでSetTimeを試験導入していただけるAEC企業を募集しています — 図面をお持ちいただき、製品づくりにご参加、正式リリース前の先行アクセスをご提供します。</p>
+                    <a href="#contact" class="btn btn-primary" data-i18n="pilot.cta">パイロットプログラムに応募する</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ: visible content matching the FAQPage JSON-LD above, for AI answer engines (AEO) -->
+        <section id="faq" class="faq">
+            <div class="container">
+                <div class="section-header" data-reveal>
+                    <div class="section-tag">04 — <span data-i18n="faq.tag">よくある質問</span></div>
+                    <h2 class="section-title" data-i18n="faq.title">よくある質問</h2>
+                    <p class="section-subtitle" data-i18n="faq.subtitle">SetTimeと優時科技に関するよくある質問にお答えします。</p>
+                </div>
+                <div class="faq-list" data-reveal>
+                    <details class="faq-item" open>
+                        <summary class="faq-question" data-i18n="faq.q1">SetTimeとは何ですか？どのように鉄筋を積算しますか？</summary>
+                        <p class="faq-answer" data-i18n="faq.a1">SetTimeは優時科技が開発したエンドツーエンドのAIシステムで、施工図（PDFまたはCAD）を正確な鉄筋積算と鉄筋加工帳に自動変換します。コンピュータビジョンモデルが図面から鉄筋径・ピッチ・継手を直接読み取り、手作業で時間がかかり誤りやすい積算作業に代わります。</p>
+                    </details>
+                    <details class="faq-item">
+                        <summary class="faq-question" data-i18n="faq.q2">SetTimeは誰のためのものですか？</summary>
+                        <p class="faq-answer" data-i18n="faq.a2">SetTimeはAEC（建築・エンジニアリング・建設）業界向けに開発され、施工業者、鉄筋加工業者、構造技術者、積算チームが、より速く正確な鉄筋積算と入札準備期間の短縮を実現できます。</p>
+                    </details>
+                    <details class="faq-item">
+                        <summary class="faq-question" data-i18n="faq.q3">SetTimeは何を出力しますか？</summary>
+                        <p class="faq-answer" data-i18n="faq.a3">SetTimeは正確な鉄筋数量・重量と、出力可能な鉄筋加工帳を生成します。調達、加工スケジュール、コスト積算にすぐ使えます。</p>
+                    </details>
+                    <details class="faq-item">
+                        <summary class="faq-question" data-i18n="faq.q4">SetTime以外に優時科技は何を提供していますか？</summary>
+                        <p class="faq-answer" data-i18n="faq.a4">SetTimeは優時科技がAEC業界向けに手がける最初の製品です — 鉄筋積算はその出発点であり、建設業界全体へAIソリューションを届けるという大きなミッションの第一歩です。SetTimeに加え、同じ技術力でカスタムAIシステム設計、バックエンドインフラ、AIアプリケーション開発、データ分析プラットフォームも提供しています。</p>
+                    </details>
+                    <details class="faq-item">
+                        <summary class="faq-question" data-i18n="faq.q5">AI鉄筋積算は、手作業の積算やCAD配筋プラグインとどう違いますか？</summary>
+                        <p class="faq-answer" data-i18n="faq.a5">手作業の積算は、担当者が図面から鉄筋を目視で数え、寸法を測るものです。CAD配筋プラグインは、すでに作成済みのモデルをもとにCADソフト内で配筋詳細図や鉄筋加工帳を自動生成します。SetTimeのようなAI鉄筋積算は、図面（PDFまたはCAD）そのものを直接読み取り、鉄筋のサイズ・間隔・重ね継手を検出することで、モデルを事前に作成することなく数量と鉄筋加工帳を算出します。</p>
+                    </details>
+                    <details class="faq-item">
+                        <summary class="faq-question" data-i18n="faq.q6">AI鉄筋積算でも、人による確認が必要なのはどこですか？</summary>
+                        <p class="faq-answer" data-i18n="faq.a6">AI鉄筋積算は完全自動ではなく、SetTimeもそう謳っていません。配筋が密集した箇所、重ね継手のルール、工事途中の図面変更などは、依然として積算担当者の判断が必要です。SetTimeの役割は数量算出のスピードを上げ、表計算のミスを減らすことです — 見積りや加工発注に使う前には、経験ある担当者による確認が推奨されます。</p>
+                    </details>
+                    <details class="faq-item">
+                        <summary class="faq-question" data-i18n="faq.q7">SetTimeはiTechと同じ製品ですか？</summary>
+                        <p class="faq-answer" data-i18n="faq.a7">はい。SetTimeは、優時科技 Kairos.ai のAI鉄筋積算システム「iTech」の新しい名称で、2026年9月9日に名称を変更しました。AIエンジン、精度、処理パイプラインは変わらず、名称のみが新しくなっています。</p>
+                    </details>
+                    <details class="faq-item">
+                        <summary class="faq-question" data-i18n="faq.q8">SetTimeの公式製品ページはどこですか？</summary>
+                        <p class="faq-answer" data-i18n="faq.a8">SetTimeの公式製品ページは https://settime.kairosaitech.com です。SetTimeは、AEC業界向けのAIを開発する台湾の企業 Kairos.ai（優時科技）が開発しています。www.kairosaitech.com は会社のホームページです。AEC企業はお問い合わせフォームからSetTimeのパイロットプログラムに応募できます。</p>
+                    </details>
+                </div>
+            </div>
+        </section>
+
+        <!-- Latest news -->
+        <section id="news" class="news">
+            <div class="container">
+                <div class="section-header" data-reveal>
+                    <div class="section-tag">05 — <span data-i18n="news.tag">ニュース</span></div>
+                    <h2 class="section-title" data-i18n="news.title">最新ニュース</h2>
+                    <p class="section-subtitle" data-i18n="news.subtitle">製品と会社の最新情報。</p>
+                </div>
+                <div class="news-list" data-reveal>
+                    <article class="news-item">
+                        <a class="news-item-media" href="https://settime.kairosaitech.com/" target="_blank" rel="noopener noreferrer" aria-hidden="true" tabindex="-1">
+                            <img src="/settime-logo.png" alt="" width="64" height="64" loading="lazy">
+                        </a>
+                        <div class="news-item-body">
+                            <time class="news-item-date" datetime="2026-09-09" data-i18n="news.item1.date">2026年9月9日</time>
+                            <h3 class="news-item-title" data-i18n="news.item1.title">iTechはSetTimeに名称変更しました</h3>
+                            <p class="news-item-desc" data-i18n="news.item1.desc">製品が提供する価値 — コンクリート打設の直前に届く正確な鉄筋積算と加工帳 — をより的確に表すため、iTechをSetTimeに改称しました。AIエンジン、精度、処理フローに変更はありません。</p>
+                            <a href="https://settime.kairosaitech.com/" target="_blank" rel="noopener noreferrer" class="news-item-link" data-i18n="news.item1.cta">SetTime製品ページへ →</a>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Company / about -->
+        <section id="about" class="about">
+            <div class="container">
+                <div class="about-text" data-reveal>
+                    <div class="section-tag">06 — <span data-i18n="nav.about">会社概要</span></div>
+                    <h2 class="section-title" data-i18n="about.title">なぜKairos.aiを選ぶのか？</h2>
+                    <p class="about-description" data-i18n="about.intro">Kairos.aiはAEC業界向けのAIソリューションを開発します。最初の製品SetTimeはAECチームの鉄筋積算を自動化 — その大きな使命の出発点です。同じ技術力でカスタムAIシステム、バックエンド基盤、データプラットフォームも構築します。</p>
+                    <p class="about-description" data-i18n="about.desc">私たちは、単に時間を節約するだけでなく、ユーザーやお客様に新しい可能性を開くソリューションの創造に専念しています。</p>
+                    <ul class="about-features">
+                        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg><span data-i18n="about.feature1">最先端のAI技術</span></li>
+                        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg><span data-i18n="about.feature2">人間中心の設計アプローチ</span></li>
+                        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg><span data-i18n="about.feature3">実証済みの成功実績</span></li>
+                        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg><span data-i18n="about.feature4">専任サポートとパートナーシップ</span></li>
+                    </ul>
+                    <div class="about-experience">
+                        <h3 class="experience-title" data-i18n="about.experienceTitle">業界経験</h3>
+                        <p class="experience-description" data-i18n="about.experienceDesc">当社のチームは深いAIエンジニアリングと実際のAECドメイン知識を併せ持ち、構造図面の読み取りから、積算担当者や加工業者が信頼できる正確な鉄筋数量と加工帳の生成までを担います。</p>
+                    </div>
+                </div>
+                <div class="about-stats" data-reveal>
+                    <div class="stat-card">
+                        <div class="stat-number" data-count="10" data-suffix="x">10<span>x</span></div>
+                        <div class="stat-label" data-i18n="about.stat1">より速い実装</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number" data-count="99" data-suffix="%">99<span>%</span></div>
+                        <div class="stat-label" data-i18n="about.stat2">顧客満足度</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number">24<span>/7</span></div>
+                        <div class="stat-label" data-i18n="about.stat3">サポート対応</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- Team section: not live yet, ready-to-paste HTML/CSS scaffold + activation
+             steps live in docs/team-section-scaffold.md (would go here, before Contact). -->
+
+        <!-- Contact -->
+        <section id="contact" class="contact">
+            <div class="container">
+                <div class="contact-main" data-reveal>
+                    <div class="section-header">
+                        <div class="section-tag">07 — <span data-i18n="nav.contact">お問い合わせ</span></div>
+                        <h2 class="section-title" data-i18n="contact.title">一緒に働きましょう</h2>
+                        <p class="section-subtitle" data-i18n="contact.subtitle">新しい可能性を切り開く準備はできていますか？今すぐお問い合わせください。</p>
+                    </div>
+                    <!-- The owner of support@kairosaitech.com must click the activation link FormSubmit emails
+                         after this form's first submission; until then submissions are not delivered. -->
+                    <form class="contact-form" id="contactForm" action="https://formsubmit.co/support@kairosaitech.com" method="POST">
+                        <input type="hidden" name="_subject" value="New contact form submission from Kairos.ai">
+                        <input type="hidden" name="_captcha" value="false">
+                        <input type="text" name="_honey" style="display:none">
+                        <input type="hidden" name="_template" value="table">
+                        <input type="hidden" id="utmSource" name="utm_source" value="">
+                        <input type="hidden" id="utmMedium" name="utm_medium" value="">
+                        <input type="hidden" id="utmCampaign" name="utm_campaign" value="">
+                        <input type="hidden" id="landingPage" name="landing_page" value="">
+                        <div class="form-group"><input type="text" id="name" name="name" data-i18n-placeholder="contact.form.name" placeholder="お名前" required></div>
+                        <div class="form-group"><input type="email" id="email" name="email" data-i18n-placeholder="contact.form.email" placeholder="メールアドレス" required></div>
+                        <div class="form-group"><input type="text" id="company" name="company" data-i18n-placeholder="contact.form.company" placeholder="会社名"></div>
+                        <div class="form-group"><textarea id="message" name="message" rows="5" data-i18n-placeholder="contact.form.message" placeholder="プロジェクトについて教えてください" required></textarea></div>
+                        <button type="submit" class="btn btn-primary btn-block" data-i18n="contact.form.submit">メッセージを送信</button>
+                    </form>
+                </div>
+                <div class="contact-info" data-reveal>
+                    <div class="info-item">
+                        <h3 data-i18n="contact.info.email">メール</h3>
+                        <p>support@kairosaitech.com</p>
+                    </div>
+                    <div class="info-item">
+                        <h3 data-i18n="contact.info.workTitle">一緒に働く</h3>
+                        <p data-i18n="contact.info.workDesc">私たちは常にエキサイティングな新しいプロジェクトとパートナーシップを探しています。</p>
+                    </div>
+                    <div class="info-item">
+                        <h3 data-i18n="products.itech.title">SetTime</h3>
+                        <p><a href="https://settime.kairosaitech.com/" target="_blank" rel="noopener noreferrer" class="accent">settime.kairosaitech.com →</a></p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <div class="logo"><div class="logo-container"><img src="/logo_title-96.png" alt="Kairos.ai 優時科技" class="logo-title-image" width="34" height="34"></div></div>
+                    <p class="footer-tagline" data-i18n="footer.tagline">AEC・建設業界のためのAIソリューション — SetTime（AI鉄筋積算）から始動。</p>
+                    <div class="footer-social">
+                        <a href="https://www.linkedin.com/company/kairos-ai-tech" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" class="social-link"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg></a>
+                        <a href="https://github.com/Kairos-ai-tech" target="_blank" rel="noopener noreferrer" aria-label="GitHub" class="social-link"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg></a>
+                        <a href="mailto:support@kairosaitech.com" aria-label="Email" class="social-link"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg></a>
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <h4 data-i18n="footer.company">会社</h4>
+                    <ul>
+                        <li><a href="#product" data-i18n="nav.products">製品</a></li>
+                        <li><a href="#news" data-i18n="nav.news">ニュース</a></li>
+                        <li><a href="#about" data-i18n="footer.about">会社概要</a></li>
+                        <li><a href="#contact" data-i18n="footer.contact">お問い合わせ</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4 data-i18n="nav.products">製品</h4>
+                    <ul>
+                        <li><a href="https://settime.kairosaitech.com/">SetTime</a></li>
+                        <li><a href="https://dispatch.kairosaitech.com/">Dispatch</a></li>
+                        <li><a href="https://voicesketch.kairosaitech.com/">VoiceSketch</a></li>
+                        <li><a href="https://reform.kairosaitech.com/">Reform</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4 data-i18n="footer.connect">連絡先</h4>
+                    <ul class="footer-contact-list">
+                        <li><a href="mailto:support@kairosaitech.com"><svg viewBox="0 0 24 24" fill="currentColor" class="footer-icon"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg><span>support@kairosaitech.com</span></a></li>
+                        <li><a href="https://www.linkedin.com/company/kairos-ai-tech" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" fill="currentColor" class="footer-icon"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg><span data-i18n="footer.linkedin">LinkedIn</span></a></li>
+                        <li><a href="https://github.com/Kairos-ai-tech" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" fill="currentColor" class="footer-icon"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg><span data-i18n="footer.github">GitHub</span></a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom"><p data-i18n="footer.copyright">© 2025 Kairos.ai. All rights reserved.</p></div>
+        </div>
+    </footer>
+
+
+    <script src="/script.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/lenis@1.1.18/dist/lenis.min.js"></script>
+    <script defer src="/motion.js"></script>
+    <script defer src="/globe.js"></script>
+</body>
+
+</html>

@@ -687,23 +687,11 @@ function setLanguage(lang) {
         }
     });
 
-    // Update URL with language parameter
-    const url = new URL(window.location);
-    url.searchParams.set('lang', lang);
-    window.history.replaceState({}, '', url);
-
-    // Update canonical link to self-reference the current language variant
-    const canonicalLink = document.getElementById('canonicalLink');
-    if (canonicalLink) {
-        const baseURL = 'https://www.kairosaitech.com/';
-        canonicalLink.href = (lang === 'en') ? baseURL : baseURL + '?lang=' + lang;
-    }
-
     // Update html lang attribute
-    document.documentElement.lang = lang;
+    document.documentElement.lang = lang === 'zh-TW' ? 'zh-Hant' : lang;
 
     // Save preference
-    localStorage.setItem('preferredLanguage', lang);
+    try { localStorage.setItem('preferredLanguage', lang); } catch (e) {}
 }
 
 // Language dropdown toggle
@@ -728,43 +716,36 @@ if (langSelector && langDropdown) {
     });
 }
 
-// Language option selection
+// Language options are plain links to the per-language pages; remember the choice
 document.querySelectorAll('.lang-option').forEach(option => {
     option.addEventListener('click', () => {
-        const lang = option.getAttribute('data-lang');
-        setLanguage(lang);
-        langDropdown.classList.remove('show');
-        langSelector.classList.remove('active');
-        if (langSelector) langSelector.setAttribute('aria-expanded', 'false');
+        try { localStorage.setItem('preferredLanguage', option.getAttribute('data-lang')); } catch (e) {}
     });
 });
 
-// Load language preference (prioritize URL parameter over saved preference)
-window.addEventListener('DOMContentLoaded', () => {
-    const urlParams = new URLSearchParams(window.location.search);
-    const urlLang = urlParams.get('lang');
-    const savedLang = localStorage.getItem('preferredLanguage');
+const LANG_PATHS = { 'zh-TW': '/zh-tw/', 'ja': '/ja/', 'es': '/es/', 'it': '/it/', 'fr': '/fr/', 'ko': '/ko/', 'de': '/de/' };
+const lookupLangPath = (code) => (code && Object.prototype.hasOwnProperty.call(LANG_PATHS, code) ? LANG_PATHS[code] : null);
 
-    // Strip unknown query parameters (e.g. ?s= from WordPress search bots)
-    // Only ?lang= is a valid parameter for this site. This deletes utm_*
-    // params too — attribution capture reads RAW_QUERY_STRING (snapshotted
-    // at file load) instead of window.location.search to stay unaffected.
-    const allowedParams = ['lang'];
-    const cleanUrl = new URL(window.location);
-    let hasUnknownParams = false;
-    for (const key of [...cleanUrl.searchParams.keys()]) {
-        if (!allowedParams.includes(key)) {
-            cleanUrl.searchParams.delete(key);
-            hasUnknownParams = true;
+window.addEventListener('DOMContentLoaded', () => {
+    const pageLang = document.documentElement.getAttribute('data-page-lang') || 'en';
+
+    if (pageLang === 'en') {
+        let saved = null;
+        try { saved = localStorage.getItem('preferredLanguage'); } catch (e) { saved = null; }
+        const urlLang = new URLSearchParams(window.location.search).get('lang');
+        const target = urlLang === 'en' ? null : (lookupLangPath(urlLang) || lookupLangPath(saved));
+        if (target) {
+            window.location.replace(target + window.location.hash);
+            return;
+        }
+        if (window.location.search) {
+            const cleanUrl = new URL(window.location);
+            cleanUrl.search = '';
+            window.history.replaceState({}, '', cleanUrl);
         }
     }
-    if (hasUnknownParams) {
-        window.history.replaceState({}, '', cleanUrl);
-    }
 
-    // Prioritize URL parameter, then saved preference, then default to 'en'
-    const langToSet = (urlLang && ['zh-TW', 'en', 'ja', 'es', 'it', 'fr', 'ko', 'de'].includes(urlLang)) ? urlLang : (savedLang || 'en');
-    setLanguage(langToSet);
+    setLanguage(pageLang);
 });
 
 // ===========================
@@ -1722,13 +1703,10 @@ window.addEventListener('load', () => document.body.classList.add('loaded'));
                 }
             },
             execute: async function(input) {
-                if (typeof window.setLanguage === 'function') {
-                    window.setLanguage(input.lang);
-                    return { ok: true, lang: input.lang };
-                }
-                const url = new URL(window.location.href);
-                url.searchParams.set('lang', input.lang);
-                window.location.href = url.toString();
+                const path = input.lang === 'en' ? '/' : LANG_PATHS[input.lang];
+                if (!path) return { ok: false, error: 'Unsupported language' };
+                try { localStorage.setItem('preferredLanguage', input.lang); } catch (e) {}
+                window.location.href = path;
                 return { ok: true, lang: input.lang, redirected: true };
             }
         },
