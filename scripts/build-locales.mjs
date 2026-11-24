@@ -5,7 +5,7 @@ import vm from 'node:vm';
 
 export const ROOT = join(dirname(fileURLToPath(import.meta.url)), '..');
 export const SITE = 'https://www.kairosaitech.com';
-export const LASTMOD = '2026-11-12';
+export const LASTMOD = '2026-11-24';
 
 export const EN = { code: 'en', dir: '', html: 'en', og: 'en_US' };
 export const LOCALES = [
@@ -23,39 +23,39 @@ export const urlFor = (loc) => `${SITE}/${loc.dir ? `${loc.dir}/` : ''}`;
 
 const META = {
   'zh-TW': {
-    title: 'SetTime AI 鋼筋估算 | Kairos.ai 優時科技 — 營建與 AEC 的 AI 解決方案',
+    title: 'SetTime AI 施工前置作業 | Kairos.ai 優時科技 — 營建與 AEC 的 AI 解決方案',
     description:
-      'Kairos.ai（優時科技）為 AEC 與營建產業打造 AI。旗下產品 SetTime（原 iTech）將施工圖自動轉為精準的鋼筋估算與斷料彎曲表，詳見 settime.kairosaitech.com。',
+      'Kairos.ai（優時科技）為 AEC 與營建產業打造 AI。旗下產品 SetTime（原 iTech）是加工廠的 AI 施工前置作業系統：鋼筋算量已上線，混凝土與模板開發中，機電（MEP）與空調（HVAC）規劃中，詳見 settime.kairosaitech.com。',
   },
   ja: {
-    title: 'SetTime AI 鉄筋積算 | Kairos.ai 優時科技 — 建設・AEC 向け AI',
+    title: 'SetTime AI プレコンストラクション | Kairos.ai 優時科技 — 建設・AEC 向け AI',
     description:
-      'Kairos.ai（優時科技）は AEC・建設業界向けの AI を開発しています。製品の SetTime（旧 iTech）は施工図から正確な鉄筋数量と曲げ加工表を自動で作成します。詳細は settime.kairosaitech.com。',
+      'Kairos.ai（優時科技）は AEC・建設業界向けの AI を開発しています。製品の SetTime（旧 iTech）は加工会社向けの AI プレコンストラクションで、鉄筋積算は提供中、コンクリートと型枠は開発中、設備（MEP）と空調（HVAC）は計画中です。詳細は settime.kairosaitech.com。',
   },
   es: {
-    title: 'SetTime: estimación de armaduras con IA | Kairos.ai 優時科技 — IA para AEC y construcción',
+    title: 'SetTime: preconstrucción con IA | Kairos.ai 優時科技 — IA para AEC y construcción',
     description:
-      'Kairos.ai (優時科技) desarrolla IA para el sector AEC y la construcción. Su producto SetTime (antes iTech) convierte planos de construcción en mediciones de armaduras precisas y listas de doblado; más en settime.kairosaitech.com.',
+      'Kairos.ai (優時科技) desarrolla IA para el sector AEC y la construcción. Su producto SetTime (antes iTech) es preconstrucción con IA para fabricantes: cómputo de armaduras disponible, hormigón y encofrado en desarrollo, instalaciones (MEP) y climatización (HVAC) planificadas; más en settime.kairosaitech.com.',
   },
   it: {
-    title: "SetTime: stima dei ferri d'armatura con IA | Kairos.ai 優時科技 — IA per AEC ed edilizia",
+    title: 'SetTime: precostruzione con IA | Kairos.ai 優時科技 — IA per AEC ed edilizia',
     description:
-      "Kairos.ai (優時科技) sviluppa IA per il settore AEC e delle costruzioni. Il suo prodotto SetTime (ex iTech) trasforma i disegni di cantiere in stime precise dei ferri d'armatura e in distinte di piegatura; vedi settime.kairosaitech.com.",
+      'Kairos.ai (優時科技) sviluppa IA per il settore AEC e delle costruzioni. Il suo prodotto SetTime (ex iTech) è precostruzione con IA per le officine: computo armature disponibile, calcestruzzo e casseratura in sviluppo, impianti (MEP) e climatizzazione (HVAC) pianificati; dettagli su settime.kairosaitech.com.',
   },
   fr: {
-    title: "SetTime : estimation d'armatures par IA | Kairos.ai 優時科技 — IA pour l'AEC et la construction",
+    title: 'SetTime : préconstruction par IA | Kairos.ai 優時科技 — IA pour l\'AEC et la construction',
     description:
-      "Kairos.ai (優時科技) développe de l'IA pour l'AEC et la construction. Son produit SetTime (ex-iTech) transforme les plans de construction en métrés d'armatures précis et en nomenclatures de façonnage ; voir settime.kairosaitech.com.",
+      'Kairos.ai (優時科技) développe de l\'IA pour l\'AEC et la construction. Son produit SetTime (ex-iTech) est une préconstruction par IA pour les fabricants : métré d\'armatures disponible, béton et coffrage en développement, lots techniques (MEP) et CVC (HVAC) prévus ; détails sur settime.kairosaitech.com.',
   },
   ko: {
-    title: 'SetTime AI 철근 물량 산출 | Kairos.ai 優時科技 — AEC·건설을 위한 AI',
+    title: 'SetTime AI 시공 전 단계 | Kairos.ai 優時科技 — AEC·건설을 위한 AI',
     description:
-      'Kairos.ai(優時科技)는 AEC·건설 산업을 위한 AI를 만듭니다. 제품 SetTime(구 iTech)은 시공도면을 정확한 철근 물량 산출과 절단·가공표로 자동 변환합니다. settime.kairosaitech.com에서 확인하세요.',
+      'Kairos.ai(優時科技)는 AEC·건설 산업을 위한 AI를 만듭니다. 제품 SetTime(구 iTech)은 제작 업체를 위한 AI 시공 전 단계 솔루션으로, 철근 물량 산출은 제공 중이며 콘크리트와 거푸집은 개발 중, 설비(MEP)와 공조(HVAC)는 계획 중입니다. settime.kairosaitech.com에서 확인하세요.',
   },
   de: {
-    title: 'SetTime KI-Bewehrungsermittlung | Kairos.ai 優時科技 — KI für AEC und Bau',
+    title: 'SetTime KI-Bauvorbereitung | Kairos.ai 優時科技 — KI für AEC und Bau',
     description:
-      'Kairos.ai (優時科技) entwickelt KI für die AEC- und Baubranche. Das Produkt SetTime (früher iTech) wandelt Bauzeichnungen in präzise Bewehrungsmengen und Biegelisten um; mehr unter settime.kairosaitech.com.',
+      'Kairos.ai (優時科技) entwickelt KI für die AEC- und Baubranche. Das Produkt SetTime (früher iTech) ist KI für die Bauvorbereitung in Betrieben: Bewehrungsermittlung verfügbar, Beton und Schalung in Entwicklung, MEP und HVAC geplant; mehr unter settime.kairosaitech.com.',
   },
 };
 

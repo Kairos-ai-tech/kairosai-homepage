@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project Overview
 
-Static marketing website for Kairos.ai (優時科技), a Taiwan-based company building AI solutions for the AEC/construction industry. Its first product, SetTime (formerly iTech), is an AI rebar estimation system — the starting point of a broader AEC AI mission — plus custom AI systems, backend infrastructure, and data platforms. The site is hosted at www.kairosaitech.com via GitHub Pages.
+Static marketing website for Kairos.ai (優時科技), a Taiwan-based company building AI solutions for the AEC/construction industry. Its first product, SetTime (formerly iTech), is AI preconstruction for fabricators (rebar takeoff shipping; concrete and formwork in development; MEP and HVAC planned; AR field guidance was dropped, do not reintroduce it) — the starting point of a broader AEC AI mission — plus custom AI systems, backend infrastructure, and data platforms. The site is hosted at www.kairosaitech.com via GitHub Pages.
 
 ## Development Commands
 

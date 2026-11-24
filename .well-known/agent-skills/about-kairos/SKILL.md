@@ -5,10 +5,12 @@ Learn about Kairos.ai 優時科技.
 ## Summary
 Kairos.ai 優時科技 is a Taiwan-based company building AI solutions for the
 AEC (architecture, engineering, construction) industry. Our first product,
-SetTime (formerly iTech), automates rebar estimation — turning construction
-drawings into accurate rebar takeoffs and bar-bending schedules. SetTime's
+SetTime (formerly iTech), is AI preconstruction for fabricators — rebar
+takeoff is shipping today (construction drawings into accurate rebar takeoffs
+and bar-bending schedules), concrete and formwork are in development, and MEP
+and HVAC are planned. SetTime's
 official product page is `https://settime.kairosaitech.com/`. Rebar
-estimation is the starting point of a broader mission to bring AI across the
+takeoff is the starting point of a broader mission to bring AI across the
 AEC industry. We also design custom AI systems, backend infrastructure, and
 data platforms.
 

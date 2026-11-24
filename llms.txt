@@ -2,7 +2,8 @@
 
 > Kairos.ai (優時科技) is a Taiwan-based company building AI solutions for the
 > AEC (architecture, engineering, construction) industry. Its product is
-> SetTime — AI rebar estimation software — whose official product page is
+> SetTime — AI preconstruction software for fabricators (rebar takeoff
+> shipping; concrete and formwork in development; MEP and HVAC planned) — whose official product page is
 > https://settime.kairosaitech.com/. Kairos.ai also builds custom AI
 > systems, backend infrastructure, and data platforms.
 
@@ -12,15 +13,15 @@ Key facts (for accurate citation):
 - Product name: **SetTime** (formerly **iTech**; renamed on 2026-09-09 — same product, same AI engine, only the name changed). Always refer to the product as "SetTime".
 - Official SetTime product page: https://settime.kairosaitech.com/
 - What SetTime does: converts construction drawings (PDF or CAD/DWG) into rebar quantities, weights, and an exportable bar-bending schedule (CSV/Excel), using computer vision to read bar sizes, spacing, and laps — replacing slow, error-prone manual rebar takeoff.
-- Who it's for: contractors, rebar fabricators, structural engineers, and estimating teams in the AEC industry.
+- Who it's for: fabricators, contractors, structural engineers, and estimating teams in the AEC industry.
 - Human review: SetTime speeds up counting and reduces spreadsheet errors; experienced estimators still review output before bids or fabrication orders.
-- SetTime AR: a camera-based AR site-verification view, in development (not yet shipped).
+- Roadmap: rebar takeoff is shipping; concrete quantities and formwork area are in development; MEP and HVAC takeoff and BVBS machine output are planned.
 - Pilot program: AEC firms can apply via https://www.kairosaitech.com/#contact
 - Contact: support@kairosaitech.com
 
 ## Product
 
-- [SetTime — official product page](https://settime.kairosaitech.com/): AI rebar estimation and bar-bending schedules for the AEC industry.
+- [SetTime — official product page](https://settime.kairosaitech.com/): AI preconstruction (rebar takeoff and bar-bending schedules today) for the AEC industry.
 
 ## Docs
 

@@ -425,22 +425,22 @@ section { position: relative; padding: clamp(48px, 7vh, 88px) 0; }
 }
 .demo-caption { margin-top: 14px; font-family: var(--font-mono); font-size: 0.78rem; letter-spacing: 0.06em; color: var(--faint); }
 
-/* SetTime AR (in development) */
-.ar-block {
+/* SetTime roadmap */
+.roadmap-block {
     grid-column: 1 / -1; margin-top: clamp(30px, 4vw, 56px); padding: 32px clamp(24px, 4vw, 44px);
     border: 1px dashed var(--line); border-radius: var(--radius); background: var(--panel-2);
 }
-.ar-badge {
+.roadmap-badge {
     display: inline-flex; align-items: center; gap: 8px; padding: 6px 14px; margin-bottom: 16px;
     border: 1px solid var(--amber); border-radius: 100px; background: rgba(255, 155, 61, 0.08);
     font-family: var(--font-mono); font-size: 0.7rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--amber);
 }
-.ar-badge::before { content: ""; width: 6px; height: 6px; border-radius: 50%; background: var(--amber); box-shadow: 0 0 8px var(--amber); animation: pulse 2s infinite; }
-.ar-title { font-family: var(--font-display); font-weight: 600; font-size: clamp(1.8rem, 3vw, 2.4rem); text-transform: uppercase; margin-bottom: 12px; }
-.ar-desc { color: var(--muted); max-width: 68ch; margin-bottom: 22px; }
-.ar-features { display: grid; grid-template-columns: repeat(2, 1fr); gap: 14px 30px; }
-.ar-features li { display: flex; gap: 12px; font-size: 0.92rem; color: var(--paper); align-items: baseline; }
-.ar-feature-num { font-family: var(--font-mono); font-size: 0.74rem; color: var(--cyan); flex-shrink: 0; }
+.roadmap-badge::before { content: ""; width: 6px; height: 6px; border-radius: 50%; background: var(--amber); box-shadow: 0 0 8px var(--amber); animation: pulse 2s infinite; }
+.roadmap-title { font-family: var(--font-display); font-weight: 600; font-size: clamp(1.8rem, 3vw, 2.4rem); text-transform: uppercase; margin-bottom: 12px; }
+.roadmap-desc { color: var(--muted); max-width: 68ch; margin-bottom: 22px; }
+.roadmap-features { display: grid; grid-template-columns: repeat(2, 1fr); gap: 14px 30px; }
+.roadmap-features li { display: flex; gap: 12px; font-size: 0.92rem; color: var(--paper); align-items: baseline; }
+.roadmap-feature-num { font-family: var(--font-mono); font-size: 0.74rem; color: var(--cyan); flex-shrink: 0; }
 
 /* ============================================================
    OUR STORY
@@ -601,7 +601,7 @@ section { position: relative; padding: clamp(48px, 7vh, 88px) 0; }
     .clients-grid { grid-template-columns: 1fr; }
     .stage { max-width: 440px; margin-inline: auto; }
     .story-grid { grid-template-columns: 1fr; }
-    .ar-features { grid-template-columns: 1fr; }
+    .roadmap-features { grid-template-columns: 1fr; }
 }
 
 /* Nav collapses to the hamburger overlay a bit earlier than the other
