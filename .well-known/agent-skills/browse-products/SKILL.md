@@ -3,15 +3,12 @@
 Browse the Kairos.ai product lineup.
 
 ## What's available
-- **SetTime** *(formerly iTech)* — AI rebar estimation system for the AEC
+- **SetTime** *(formerly iTech)* — AI preconstruction for fabricators in the AEC
   industry (official product page: `https://settime.kairosaitech.com/`), and Kairos.ai's first step toward broader AEC AI solutions.
   Turns construction drawings (DWG or PDF) into accurate rebar estimates and
   bar-bending schedules (exportable as CSV/Excel), replacing slow,
-  error-prone manual takeoff.
-- **SetTime AR** *(in development, not yet shipped)* — a camera-based AR
-  view for the job site that overlays AI-detected rebar and the bar-bending
-  schedule onto the physical structure in real time, for on-site
-  verification against the drawing.
+  error-prone manual takeoff. Rebar takeoff is shipping; concrete and formwork
+  are in development; MEP and HVAC are planned.
 - **Services** — custom AI systems design, backend infrastructure, AI
   applications, and data analysis, delivered with the same engineering rigor
   as SetTime.

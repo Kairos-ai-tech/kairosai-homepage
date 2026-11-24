@@ -1,10 +1,10 @@
 # Kairos.ai Website
 
-A modern, responsive website for Kairos.ai — AI solutions for the AEC/construction industry, starting with SetTime (AI rebar estimation), plus custom AI systems and data platforms.
+A modern, responsive website for Kairos.ai — AI solutions for the AEC/construction industry, starting with SetTime (AI preconstruction: rebar first, then concrete, formwork, MEP and HVAC), plus custom AI systems and data platforms.
 
 ## Overview
 
-Kairos.ai builds AI solutions for the AEC industry. Our first product, SetTime (formerly iTech), is an end-to-end AI system that turns construction drawings into accurate rebar estimates and bar-bending schedules — the starting point of a broader mission across AEC. We also design custom AI systems, backend infrastructure, and data platforms with the same engineering rigor.
+Kairos.ai builds AI solutions for the AEC industry. Our first product, SetTime (formerly iTech), is AI preconstruction for fabricators: it turns construction drawings into accurate rebar estimates and bar-bending schedules today, with concrete and formwork in development and MEP and HVAC planned — the starting point of a broader mission across AEC. We also design custom AI systems, backend infrastructure, and data platforms with the same engineering rigor.
 
 ## Features
 
@@ -23,7 +23,7 @@ Kairos.ai builds AI solutions for the AEC industry. Our first product, SetTime (
 - **Interactive Elements**: Engaging user interactions including parallax effects and scroll animations
 - **Working Contact Form**: Email delivery via FormSubmit (no backend required)
 - **News Section**: Timestamped company and product announcements, starting with the iTech → SetTime rename
-- **Product Showcase**: Highlighting SetTime (AI rebar estimation, formerly iTech) with a demo video, and SetTime AR (in development)
+- **Product Showcase**: Highlighting SetTime (AI preconstruction, formerly iTech) with a demo video and a status roadmap (rebar shipping; concrete and formwork in development; MEP and HVAC planned)
 
 ## Technology Stack
 
