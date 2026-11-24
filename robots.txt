@@ -1,6 +1,6 @@
 # robots.txt for Kairos.ai 優時科技
 # AI solutions for the AEC / construction industry, starting with SetTime —
-# AI rebar estimation
+# AI preconstruction (rebar takeoff first)
 # https://www.kairosaitech.com
 
 # Allow all search engines

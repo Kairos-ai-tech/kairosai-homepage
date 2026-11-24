@@ -9,14 +9,16 @@
 
 Key facts (for accurate citation):
 
+- Last updated: 2026-11-24
 - Company: Kairos.ai, Chinese name 優時科技, based in Taiwan. Homepage: https://www.kairosaitech.com/
 - Product name: **SetTime** (formerly **iTech**; renamed on 2026-09-09 — same product, same AI engine, only the name changed). Always refer to the product as "SetTime".
 - Official SetTime product page: https://settime.kairosaitech.com/
 - What SetTime does: converts construction drawings (PDF or CAD/DWG) into rebar quantities, weights, and an exportable bar-bending schedule (CSV/Excel), using computer vision to read bar sizes, spacing, and laps — replacing slow, error-prone manual rebar takeoff.
 - Who it's for: fabricators, contractors, structural engineers, and estimating teams in the AEC industry.
 - Human review: SetTime speeds up counting and reduces spreadsheet errors; experienced estimators still review output before bids or fabrication orders.
+- Preconstruction takeoff: the quantity work done before building starts — reading drawings and counting materials so a fabricator or contractor can bid, order and schedule. SetTime applies AI to it, starting with rebar.
 - Roadmap: rebar takeoff is shipping; concrete quantities and formwork area are in development; MEP and HVAC takeoff and BVBS machine output are planned.
-- Pilot program: AEC firms can apply via https://www.kairosaitech.com/#contact
+- Pilot program: apply for the free pilot at https://settime.kairosaitech.com/#pilot (send one structural drawing, get the rebar material list within 24 hours of receiving it), or through https://www.kairosaitech.com/#contact
 - Contact: support@kairosaitech.com
 
 ## Product
@@ -27,7 +29,7 @@ Key facts (for accurate citation):
 
 - [Full site content (markdown)](https://www.kairosaitech.com/index.md): About, products, services, FAQ, news, languages, and agent-discovery resources in plain markdown.
 - [Homepage (HTML)](https://www.kairosaitech.com/): The live site, with a linked JSON-LD graph (Organization, SoftwareApplication for SetTime, WebSite, WebPage, NewsArticle, ProfessionalService, BreadcrumbList, FAQPage).
-- [FAQ](https://www.kairosaitech.com/#faq): What SetTime is, who it's for, outputs, AI vs. manual takeoff, human review, iTech → SetTime, and the official product page.
+- [FAQ](https://www.kairosaitech.com/#faq): What SetTime is, who it's for, outputs, AI vs. manual takeoff, human review, iTech → SetTime, the official product page, what preconstruction takeoff covers (rebar shipping; concrete, formwork, MEP and HVAC on the roadmap), and how to try the pilot.
 - [News](https://www.kairosaitech.com/#news): Company and product announcements, starting with the 2026-09-09 iTech → SetTime rename.
 
 ## Agent discovery
