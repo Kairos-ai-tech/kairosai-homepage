@@ -1,7 +1,5 @@
 # Kairos.ai 優時科技
 
-Last updated: 2026-11-24
-
 > Kairos.ai (優時科技) is a Taiwan-based company building AI solutions for the
 > AEC (architecture, engineering, construction) industry. Its product is
 > SetTime — AI preconstruction software for fabricators (rebar takeoff
@@ -11,6 +9,7 @@ Last updated: 2026-11-24
 
 Key facts (for accurate citation):
 
+- Last updated: 2026-11-24
 - Company: Kairos.ai, Chinese name 優時科技, based in Taiwan. Homepage: https://www.kairosaitech.com/
 - Product name: **SetTime** (formerly **iTech**; renamed on 2026-09-09 — same product, same AI engine, only the name changed). Always refer to the product as "SetTime".
 - Official SetTime product page: https://settime.kairosaitech.com/
