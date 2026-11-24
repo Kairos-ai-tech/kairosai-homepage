@@ -97,6 +97,12 @@ AI for the AEC industry; <https://www.kairosaitech.com/> is the company
 homepage. AEC firms can apply for the SetTime pilot program through the
 contact form.
 
+**What is preconstruction takeoff, and which trades will SetTime cover?**
+Preconstruction takeoff is the quantity work done before building starts: reading the drawings and counting materials so a fabricator or contractor can bid, order and schedule. SetTime starts with rebar (shipping today: bar quantities, weights and a bar-bending schedule), is developing concrete quantities and formwork area, and plans MEP and HVAC takeoff.
+
+**How can I try SetTime?**
+Apply for the free pilot at https://settime.kairosaitech.com/#pilot: send one structural drawing and SetTime returns the rebar material list within 24 hours of receiving it. You can also apply through the contact form at https://www.kairosaitech.com/#contact.
+
 ## News
 
 **2026-09-09 — iTech is now SetTime.** We renamed iTech to SetTime to better
